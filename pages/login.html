@@ -13,23 +13,143 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
-            <div class="row" style="min-height: 10rem">
-                <div class="col align-self-center">
-                    One of three columns
+        <!--login form-->
+        <div class="col-md-6 col-sm-12">
+            <div class="row justify-content-md-center login-form">
+                <div class="align-self-center col-5 text-center col-auto">
+                    <h1 class="big-title">Aqqru</h1>
+                    <p>Please login to your account</p>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <input type="email" class="form-control shadowed-input" id="login" aria-describedby="emailHelp"
+                                   placeholder="Email">
+                        </div>
+                        <div class="form-group m-top-30">
+                            <input type="password" class="form-control shadowed-input" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group form-check text-left mt-4">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-5 mb-4 shadowedBtn">Login</button>
+                        <a href="" class="">Forgot Password</a>
+                    </form>
+                </div>
+            </div>
+            <div class="row align-items-end">
+                <div class="text-center align-self-center col">
+                    &copy; Wealthtech 2020. All rights Reserved
                 </div>
             </div>
         </div>
-        <div class="col">
-            One of three columns
+        <!--end of login form-->
+
+        <!--right column-->
+        <div class="col-md-6 col-sm-12 light-bg">
+            <div class="row justify-content-md-center middle-block">
+                <div class="align-self-center col-7 text-center col-auto">
+                    <!--slider-->
+                    <div id="onboarding" class="carousel slide">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="text-center col">
+                                        <img src="../resorurces/img/Icon1.png" alt="">
+                                        <h1 class="title mt-5 mb-4">Secure the future you want.</h1>
+                                        <p class="text-justify">Aqqru simplifies the approach to financial goal planning
+                                            and advice.</p>
+                                        <p class="text-justify">
+                                            Set, track and update your goals based upon recommendations that are
+                                            personalized just for you. Receive actionable advice based upon your unique
+                                            goals and financial plan.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="text-center col">
+                                        <img src="../resorurces/img/Icon2.png" alt="">
+                                        <h1 class="title mt-5 mb-4">Financial clarity in the palm of your hand.</h1>
+                                        <p class="text-justify">Your goals, priorities and financial plan are uniquely
+                                            your own. Improve your understanding and make better decisions with
+                                            Aqqru.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="text-center col">
+                                        <img src="../resorurces/img/Icon3.png" alt="">
+                                        <h1 class="title mt-5 mb-4">As life changes, you’ll be ready</h1>
+                                        <p class="text-justify">Life changes. Goals change. </p>
+                                        <p class="text-justify">With Aqqru, you can quickly see how a change in one goal
+                                            may affect other goals allowing you to choose the correct path.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="text-center col">
+                                        <img src="../resorurces/img/Icon4.png" alt="">
+                                        <h1 class="title mt-5 mb-4">Plan, live, revise, and </h1>
+                                        <p class="text-justify">Once your goals have been added, you can track them in
+                                            the app over time, measure their progress, and revise your plan if any
+                                            changes are needed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="text-center col">
+                                        <img src="../resorurces/img/Icon5.png" alt="">
+                                        <h1 class="title mt-5 mb-4">Your accounts, working together.
+                                        </h1>
+                                        <p class="text-justify">By optionally creating a secure connection to your
+                                            financial accounts, Aqqru can fully track, your progress based upon your
+                                            spending, savings and planning.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-md-center">
+                            <div class="align-self-center col-12 text-center col-auto">
+                                <p class="text-right">
+                                    <a class="btn btn-light btn-back" href="#onboarding" role="button"
+                                       data-slide="prev">
+                                        <span class="icon-prev" aria-hidden="true"></span> Back
+                                    </a>
+                                    <a class="btn btn-primary" href="#onboarding" role="button" data-slide="next">
+                                        <span class="icon-next" aria-hidden="true"></span> Next
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#onboarding" data-slide-to="0" class="active"></li>
+                            <li data-target="#onboarding" data-slide-to="1"></li>
+                            <li data-target="#onboarding" data-slide-to="2"></li>
+                            <li data-target="#onboarding" data-slide-to="3"></li>
+                            <li data-target="#onboarding" data-slide-to="4"></li>
+                        </ol>
+                    </div>
+                    <!--end of slider-->
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 
 <!-- jQuery, Popper.js, Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
 <script src="../js/bootstrap.js"></script>
 </body>
 </html>
