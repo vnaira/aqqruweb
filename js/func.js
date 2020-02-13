@@ -15,7 +15,8 @@ $(document).ready(function () {
             $(this).addClass('active');
         }
     });
-    
+
+
     $("#multiselect .answer-btn").on('click', function () {
         let answer = $('#outgoing_value').val();
         $(this).toggleClass('active');
@@ -48,6 +49,12 @@ $(document).ready(function () {
             return ele != value;
         });
     }
+
+
+    // goals management functions
+    // $(".goal-type").on('click', function () {
+    //     alert('dfdfd');
+    // })
 });
 
 
