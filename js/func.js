@@ -2,8 +2,8 @@ $(document).ready(function () {
     "use strict";
 
     $(".sent_msg").on('click', function () {
-        console.log(count($('.msg_history').find('.active')));
         $('.msg_history').find('.active').removeAttribute('class','active');
+        console.log($('.msg_history').find('.active'));
         $(this).parent().find('.edit_delete').toggleClass('active');
     });
 

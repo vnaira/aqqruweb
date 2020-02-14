@@ -308,10 +308,10 @@ h3.section-title{
 }
 .goal-type:hover{
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 12px #DBE6F2;
 }
 .my-goals-item{
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 12px #DBE6F2;
   position: relative;
   overflow: hidden;
   height: 178px;
@@ -323,7 +323,9 @@ h3.section-title{
   width: 300px;
   height: 100vh;
 }
-.add-goal .modal-content {border-radius: 0; border: 0 none; height: 100%}
+.add-goal .modal-content {border-radius: 0; border: 0 none;
+  height: 100%; overflow: auto;
+}
 .add-goal .goal-name {font-family: Avenir-black}
 .add-goal .modal-body {padding: 0 1rem}
 .add-goal .answer-btn {background: #DBE6F2; border: 1px solid #DBE6F2;    width: 100%;
@@ -339,3 +341,14 @@ h3.section-title{
   min-width: 28px;
   padding: 0;
 }
+.goal-page-title a{
+  font-size: 35px;
+  color: #4C9BF2;
+  font-family: Avenir-black;
+}
+.goal-page-title a:hover {text-decoration: none}
+.modal-body .form-control{width: 100%}
+.priority{color: #4C9BF2;}
+.details p{padding: 0; margin: 0}
+.details{margin-top: 15px; padding-top: 15px}
+.details .value{color: #4C9BF2; margin-left: 10px}
