@@ -141,7 +141,7 @@
 }
 
 .msg_history {
-    height: 41vh;
+    height: 51vh;
     overflow-y: auto;
 }
 
@@ -170,10 +170,19 @@
     border: 1px solid #DBE6F2;
     background: #fff;
 }
+.answer-input{
+    width: 100%;
+    border: 1px solid #DBE6F2;
+    height: 32px;
+}
 .answer-btn:hover, .answer-btn.active{background: #499DF2; color:#fff}
 .answer-btn:focus{outline: 0 none; box-shadow: none}
 .right-transparent-block{
     background: url("../resources/img/bg-transparent.png")no-repeat;
     background-size: 100% 100%;
 }
+.dark-text{color:#4D4F5C; font-size: 13px}
+.dark-text-p{color:#4D4F5C; font-size: 12px}
+.child-age{border: 1px solid #DBE6F2;
+    height: 32px;}
 

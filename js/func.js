@@ -2,7 +2,7 @@ $(document).ready(function () {
     "use strict";
 
     $(".sent_msg").on('click', function () {
-        $('.msg_history').find('.active').removeAttribute('class','active');
+        $('.msg_history').find('.active').removeAttribute('class', 'active');
         console.log($('.msg_history').find('.active'));
         $(this).parent().find('.edit_delete').toggleClass('active');
     });
@@ -45,16 +45,17 @@ $(document).ready(function () {
 
 
     function arrayRemove(arr, value) {
-        return arr.filter(function(ele){
+        return arr.filter(function (ele) {
             return ele != value;
         });
     }
+    $('.children').on('click', function () {
+        $(this).toggleClass('active');
+        var id = $(this).attr('data-name');
+        $('.child-age').attr('disabled',true);
+        $('.type_msg').find("[data-id='"+ id +"']").attr('disabled', function(_, attr){ return !attr});
+    });
 
-
-    // goals management functions
-    // $(".goal-type").on('click', function () {
-    //     alert('dfdfd');
-    // })
 });
 
 
