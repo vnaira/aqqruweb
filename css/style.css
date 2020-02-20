@@ -352,3 +352,34 @@ h3.section-title{
 .details p{padding: 0; margin: 0}
 .details{margin-top: 15px; padding-top: 15px}
 .details .value{color: #4C9BF2; margin-left: 10px}
+.context-menu{background: url("../resources/img/context-menu.png") no-repeat;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+.context-menu:hover{cursor: pointer}
+.class-arrow{background: url("../resources/img/continue.png") no-repeat;
+width: 48px;
+height: 48px;
+background-size: cover;
+margin: 20px auto 10px;
+cursor: pointer;
+border: 0 none}
+.text20{color:#8A94A3;font-size: 20px; font-family: Avenir-black}
+.dropdown-item span.edit-msg {
+  font-size: 14px;
+  background: url(../resources/img/edit-icon.png) no-repeat;
+  background-position-x: left;
+  width: 100%;
+  padding-left: 30px;
+  line-height: 2;
+}
+
+.dropdown-item span.delete-msg{
+  font-size: 14px;
+  background: url(../resources/img/delete-icon.png) no-repeat;
+  background-position-x: left;
+  width: 100%;
+  padding-left: 30px;
+  line-height: 2;
+}

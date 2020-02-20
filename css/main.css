@@ -72,7 +72,7 @@ p {
 
 .title3 {
     color: #fff;
-    font-size: 50px;
+    font-size: 3em;
 
 }
 
@@ -84,8 +84,7 @@ p {
 
 .middle-text {
     color: #fff;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.95em;
 }
 
 .middle-value {

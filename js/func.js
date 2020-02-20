@@ -56,6 +56,23 @@ $(document).ready(function () {
         $('.type_msg').find("[data-id='"+ id +"']").attr('disabled', function(_, attr){ return !attr});
     });
 
+    $('.context-menu').on('click', function(e) {
+        var offset = $( this ).offset();
+        var top = offset.top + 20;
+        var left = offset.left - 10;
+        $("#context-menu").css({
+            top: top,
+            left: left,
+            display: 'block'
+        }).addClass("show");
+        return false;
+    });
+
+    $("#context-menu a").on("click", function() {
+        $(this).parent().removeClass("show").hide();
+    });
+
+
 });
 
 
