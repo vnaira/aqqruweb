@@ -22,7 +22,10 @@
 <div class="container-fluid">
     <div class="row main-content">
         <div class="align-self-start col-12">
-            <h1 class="big-title">Aqqru</h1>
+            <div class="notify-container">
+                <span class="notify-bubble"><img src="../../resources/img/tm.png" alt=""></span>
+                <h1 class="big-title d-inline-block">Aqqru</h1>
+            </div>
         </div>
         <div class="align-self-center col-md-12">
             <div class="justify-content-between col-12 mt-4">
@@ -64,7 +67,7 @@
                                                                     <span class="left-arrow-blue"></span>Back</a>
                                                                 </h1>
                                                             </div>
-                                                            <h1 class="white-title align-self-center col">Hi, Johnny</h1>
+                                                            <h1 class="white-title align-self-center col m-left-50">Hi, Johnny</h1>
                                                         </div>
                                                         <div class="msg_history p-4">
                                                             <div class="incoming_msg">
@@ -191,19 +194,19 @@
                                                         <div class="type_msg">
                                                             <div class="row justify-content-center">
                                                                 <div class="col-11 align-self-center mb-2">
-                                                                    <div class="btn-toolbar btn-input" role="toolbar" id="single-select">
+                                                                    <div class="btn-toolbar btn-input" role="toolbar" id="single-select-object">
                                                                         <div class="row">
-                                                                        <div class="col-md-4 col-sm-12 mb-1" role="group">
-                                                                            <p><button type="button" class="btn answer-btn w-100">Buy a House</button></p>
-                                                                            <p><input type="text" class="btn answer-input" disabled/></p>
+                                                                        <div class="col-md-4 col-sm-12 mb-1 object-name" role="group">
+                                                                           <button type="button" class="btn answer-btn w-100">Buy a House</button>
+                                                                            <input type="text" class="btn answer-input mt-2" readonly/>
                                                                         </div>
-                                                                        <div class="col-md-4 col-sm-12 mb-1" role="group">
-                                                                            <p><button type="button" class="btn answer-btn w-100">Buy a Car</button>
-                                                                            <p><input type="text" class="btn answer-input" disabled/></p>
+                                                                        <div class="col-md-4 col-sm-12 mb-1 object-name" role="group">
+                                                                            <button type="button" class="btn answer-btn w-100">Buy a Car</button>
+                                                                            <input type="text" class="btn answer-input mt-2" readonly/>
                                                                         </div>
-                                                                        <div class="col-md-4 col-sm-12 mb-1" role="group">
-                                                                            <p><button type="button" class="btn answer-btn w-100">Retirement</button>
-                                                                            <p><input type="text" class="btn answer-input" disabled/></p>
+                                                                        <div class="col-md-4 col-sm-12 mb-1 object-name" role="group">
+                                                                            <button type="button" class="btn answer-btn w-100">Retirement</button>
+                                                                            <input type="text" class="btn answer-input mt-2" readonly/>
                                                                         </div>
                                                                     </div>
                                                                     </div>
@@ -214,8 +217,8 @@
                                                                     <div class="input-group text-center shadowed-input">
                                                                         <input type="text"
                                                                                class="form-control align-self-center"
-                                                                               value=""
-                                                                               placeholder="Type here">
+                                                                               value="" readonly
+                                                                               placeholder="">
                                                                         <div class="input-group-append">
                                                                             <button class="btn btn-outline-secondary pl-4 pr-4"
                                                                                     type="button" id="button-send">Send

@@ -16,6 +16,14 @@ $(document).ready(function () {
         }
     });
 
+    $("#single-select-object .answer-btn").on('click', function () {
+        $(this).toggleClass('active');
+        var ans = $(this).closest('.object-name').children('input');
+        var ro = ans.prop('readonly');
+        ans.prop('readonly', !ro).focus();
+        ans.toggleAttribute("readonly");
+    });
+
 
     $("#multiselect .answer-btn").on('click', function () {
         let answer = $('#outgoing_value').val();
@@ -44,16 +52,34 @@ $(document).ready(function () {
     });
 
 
+    $("#button-send").click(function(event) {
+        var form = $("#chat-form");
+        if (form[0].checkValidity() === false) {
+            event.preventDefault()
+            event.stopPropagation()
+            $('.invalid-feedback').css('display','block');
+        }else {
+            $('.invalid-feedback').css('display','none');
+        }
+    });
+
+
     function arrayRemove(arr, value) {
         return arr.filter(function (ele) {
             return ele != value;
         });
     }
     $('.children').on('click', function () {
-        $(this).toggleClass('active');
+        $(this).parents('.btn-toolbar').find('.children').removeClass('active');
+        $(this).addClass('active');
         var id = $(this).attr('data-name');
-        $('.child-age').attr('disabled',true);
-        $('.type_msg').find("[data-id='"+ id +"']").attr('disabled', function(_, attr){ return !attr});
+        console.log(id)
+        if(id === "one-child"){
+            $('.child-age').css('display','none');
+            $('.child-ages').find("[data-id='one-child']").css('display','block');
+        }else {
+            $('.child-age').css('display','block');
+        }
     });
 
     $('.context-menu').on('click', function(e) {

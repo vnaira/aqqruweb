@@ -184,5 +184,6 @@
 .dark-text{color:#4D4F5C; font-size: 13px}
 .dark-text-p{color:#4D4F5C; font-size: 12px}
 .child-age{border: 1px solid #DBE6F2;
-    height: 32px;}
-
+    height: 32px; display: none; margin: 0 auto}
+.form-control:disabled, .form-control[readonly]{background: #fff;}
+.form-control:focus, .btn-outline-secondary:focus, .btn-outline-secondary.focus{box-shadow: none;}

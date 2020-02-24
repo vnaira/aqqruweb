@@ -18,11 +18,13 @@
     <div class="container">
     </div>
 </header><!-- End Header -->
-
 <div class="container-fluid">
     <div class="row main-content">
         <div class="align-self-start col-12">
-            <h1 class="big-title">Aqqru</h1>
+            <div class="notify-container">
+            <span class="notify-bubble"><img src="../../resources/img/tm.png" alt=""></span>
+            <h1 class="big-title d-inline-block">Aqqru</h1>
+            </div>
         </div>
         <div class="align-self-center col-md-12">
             <div class="justify-content-between col-12 mt-4">
@@ -77,6 +79,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <form id="chat-form" novalidate>
                                                         <div class="type_msg">
                                                             <div class="row justify-content-center">
                                                                 <div class="col-11 align-self-center">
@@ -84,16 +87,20 @@
                                                                         <input type="text"
                                                                                class="form-control align-self-center"
                                                                                value="Johnny Appleseed"
-                                                                               placeholder="Type here">
+                                                                               placeholder="Type here" required>
                                                                         <div class="input-group-append">
                                                                             <button class="btn btn-outline-secondary pl-4 pr-4"
                                                                                     type="button" id="button-send">Send
                                                                             </button>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid value.
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

@@ -22,7 +22,10 @@
 <div class="container-fluid">
     <div class="row main-content">
         <div class="align-self-start col-12">
-            <h1 class="big-title">Aqqru</h1>
+            <div class="notify-container">
+                <span class="notify-bubble"><img src="../../resources/img/tm.png" alt=""></span>
+                <h1 class="big-title d-inline-block">Aqqru</h1>
+            </div>
         </div>
         <div class="align-self-center col-md-12">
             <div class="justify-content-between col-12 mt-4">
@@ -64,7 +67,7 @@
                                                                     <span class="left-arrow-blue"></span>Back</a>
                                                                 </h1>
                                                             </div>
-                                                            <h1 class="white-title align-self-center col">Hi, Johnny</h1>
+                                                            <h1 class="white-title align-self-center col m-left-50">Hi, Johnny</h1>
                                                         </div>
                                                         <div class="msg_history p-4" style="height: 46vh">
                                                             <div class="incoming_msg">
@@ -135,7 +138,7 @@
                                                                 <div class="col-11 align-self-center mb-2">
                                                                     <div class="btn-toolbar" role="toolbar" id="single-select">
                                                                         <div class="btn-group mr-2 mb-1" role="group">
-                                                                            <button type="button" class="btn answer-btn">Married</button>
+                                                                            <button type="button" class="btn answer-btn active">Married</button>
                                                                         </div>
                                                                         <div class="btn-group mr-2 mb-1" role="group">
                                                                             <button type="button" class="btn answer-btn">Married Filing Jointly</button>
@@ -151,8 +154,7 @@
                                                                     <div class="input-group text-center shadowed-input">
                                                                         <input type="text"
                                                                                class="form-control align-self-center"
-                                                                               value=""
-                                                                               placeholder="Type here">
+                                                                               value="Married" readonly id="outgoing_value">
                                                                         <div class="input-group-append">
                                                                             <button class="btn btn-outline-secondary pl-4 pr-4"
                                                                                     type="button" id="button-send">Send

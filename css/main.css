@@ -84,15 +84,15 @@ p {
 
 .middle-text {
     color: #fff;
-    font-size: 1.95em;
+    font-size: 1.5em;
 }
 
 .middle-value {
     background: url("../resources/img/arrowright.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-position: bottom 0 right 0;
     width: 390px;
-    min-height: 220px;
+    min-height: 260px;
 }
 
 .light-bg {
@@ -129,7 +129,8 @@ p {
 }
 
 .sm-text small {
-    color: #5C7599
+    color: #5C7599;
+    font-size: 20px;
 }
 
 .shadowed-input {
@@ -264,7 +265,7 @@ input:focus {
 
 .subtext {
     color: #499DF2;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .right-title {
@@ -363,4 +364,14 @@ input:focus, input:active {
     background-size: 100% 100%;
     height: 95vh;
     width: 100%;
+}
+.m-left-50 {margin-left: -50px}
+.notify-bubble {
+    position: absolute;
+    top: 7px;
+    right: -17px;
+}
+.notify-container {
+    position: relative;
+    display: inline-block;
 }
