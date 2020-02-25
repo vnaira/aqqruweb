@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add goal</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
+          rel="stylesheet">
+
+</head>
+<body>
+<div style="background: url('bg.png') no-repeat; background-size: 100%; height: 100vh;">
+
+</div>
+
+<div id="myModal" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  modal-dialog-centered">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" style="font-weight: bold; margin-left: 35%">Welness Score</h5>
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+            </div>
+            <div class="modal-body text-center">
+                <div style="background:#68D12F; width: 200px; height: 200px; border-radius: 50%; margin: 10px auto; padding-top: 60px">
+                    <h2 style="color:#fff; font-size: 60px">75</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    $('#myModal').modal('show');
+    $('#myModal').modal({backdrop: 'static', keyboard: false})
+</script>
+</body>
+</html>

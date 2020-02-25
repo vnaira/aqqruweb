@@ -8,11 +8,11 @@ $(document).ready(function () {
     });
 
     $("#single-select .answer-btn").on('click', function () {
-        $('#single-select').find('.active').removeClass('active');
-        $('#outgoing_value').val();
         $('#outgoing_value').val($(this).text());
         if ($('#outgoing_value').val() == $(this).text()) {
             $(this).addClass('active');
+            $("#chat-form").submit();
+            return false;
         }
     });
 
@@ -28,26 +28,17 @@ $(document).ready(function () {
     $("#multiselect .answer-btn").on('click', function () {
         let answer = $('#outgoing_value').val();
         $(this).toggleClass('active');
-
         if ($(this).hasClass('active')) {
             if (answer !== '') {
-                if ($(this).text() == 'Other:') {
-                    $('#outgoing_value').focus();
-                    answer += ',';
-                } else
-                    answer += ',' + $(this).text();
+                answer += ',' + $(this).text();
             } else {
-                if ($(this).text() == 'Other:') {
-                    $('#outgoing_value').focus();
-                } else
-                    answer += $(this).text();
+                answer += $(this).text();
             }
         } else {
             let currentVal = ($('#outgoing_value').val()).split(',');
             var result = arrayRemove(currentVal, $(this).text());
             answer = result.join(',');
         }
-
         $('#outgoing_value').val(answer);
     });
 
@@ -73,7 +64,6 @@ $(document).ready(function () {
         $(this).parents('.btn-toolbar').find('.children').removeClass('active');
         $(this).addClass('active');
         var id = $(this).attr('data-name');
-        console.log(id)
         if(id === "one-child"){
             $('.child-age').css('display','none');
             $('.child-ages').find("[data-id='one-child']").css('display','block');
@@ -98,6 +88,37 @@ $(document).ready(function () {
         $(this).parent().removeClass("show").hide();
     });
 
+// form submit on press ENTER
+    $(document).keyup(function (event) {
+        if (event.keyCode == 13) {
+            $("#chat-form").submit();
+            return false;
+        }
+    });
+
+    // Currency format
+    $('input.number').keyup(function(event) {
+        if(event.which >= 37 && event.which <= 40) return;
+        // format number
+        $(this).val(function(index, value) {
+            return '$' + value
+                .replace(/\D/g, "")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        });
+    });
+
+    // Form Age field validate
+        $(".number-age").keyup(function() {
+
+                if($(this).val() < 18 || $(this).val() > 120)
+                {
+                    $('.error').show();
+                }
+                else
+                {
+                    $('.error').hide();
+                }
+            });
 
 });
 

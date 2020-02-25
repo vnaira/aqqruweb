@@ -47,7 +47,7 @@ p {
 
 .light-big-title {
     color: #044B87;
-    font-size: 4rem;
+    font-size: 3.7rem;
     line-height: 1;
     margin-bottom: 0;
 }
@@ -63,7 +63,7 @@ p {
 .leftphone {
     background: url("../resources/img/phoneleft.png") no-repeat;
     background-size: 100%;
-    height: 72vh;
+    height: 77vh;
 }
 
 .ml-10 {
@@ -77,7 +77,7 @@ p {
 }
 
 .title4 {
-    font-size: 80px;
+    font-size: 72px;
     color: #499DF2;
     font-family: Avenir-black;
 }
@@ -365,7 +365,7 @@ input:focus, input:active {
     height: 95vh;
     width: 100%;
 }
-.m-left-50 {margin-left: -50px}
+
 .notify-bubble {
     position: absolute;
     top: 7px;
@@ -374,4 +374,52 @@ input:focus, input:active {
 .notify-container {
     position: relative;
     display: inline-block;
+}
+
+.back-btn{
+    position: absolute;
+    top: 33px;
+}
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+    @media {
+        .light-big-title{
+            font-size: 3.5rem;
+        }
+    }
+}
+@media not all and (min-resolution:.001dpcm) { @media {
+    .light-big-title{
+        font-size: 3.5rem;
+    }
+}}
+
+@media (max-width: 1200px) {
+    .light-big-title {
+        font-size: 2.5rem;
+
+    }
+    .sm-text small {
+        color: #5C7599;
+        font-size: 14px;
+    }
+    .title3 {
+        color: #fff;
+        font-size: 2em;
+    }
+    .middle-text {
+        color: #fff;
+        font-size: 1.1em;
+    }
+    .middle-value {
+        background: url(../resources/img/arrowright.png);
+        background-repeat: no-repeat;
+        background-position: bottom 0 right 0;
+        width: 390px;
+        min-height: 200px;
+        background-size: 44%;
+    }
+    .footer-menu ul li a, .footer-menu ul li {font-size: 13px;}
+    .white-title {
+        font-size: 30px;
+    }
 }
