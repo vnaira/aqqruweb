@@ -396,7 +396,6 @@ input:focus, input:active {
 @media (max-width: 1200px) {
     .light-big-title {
         font-size: 2.5rem;
-
     }
     .sm-text small {
         color: #5C7599;
@@ -411,9 +410,6 @@ input:focus, input:active {
         font-size: 1.1em;
     }
     .middle-value {
-        background: url(../resources/img/arrowright.png);
-        background-repeat: no-repeat;
-        background-position: bottom 0 right 0;
         width: 390px;
         min-height: 200px;
         background-size: 44%;
@@ -422,4 +418,87 @@ input:focus, input:active {
     .white-title {
         font-size: 30px;
     }
+    .leftphone {
+        height: 42vh;
+    }
+    .main-content {
+        height: 92vh;}
+    .title4 {
+        font-size: 56px;}
+    .answer-btn {
+        font-size: 14px;}
 }
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (max-width: 768px) {
+    .light-big-title {
+        font-size: 2rem;
+    }
+    .sm-text small {
+        font-size: 12px;
+    }
+    .title3 {
+        color: #fff;
+        font-size: 1.5em;
+    }
+    .middle-text {
+        color: #fff;
+        font-size: 1.2em;
+    }
+    .middle-value {
+        background: none;
+    }
+    .footer-menu ul li a, .footer-menu ul li {font-size: 8px;}
+    .white-title {
+        font-size: 30px;
+    }
+
+    .main-content {
+        height: 86vh;
+        background-position-y: 18%;}
+    .title4 {
+        font-size: 30px;}
+
+}
+@media only screen and (max-width: 600px) {
+    .footer-menu ul li a, .footer-menu ul li {font-size: 12px;}
+    .middle-value {
+        background: none;
+        width: auto;
+        min-height: auto;
+    }
+    .white-title {
+        font-size: 30px;
+    }
+
+    .main-content {
+        height: 86vh;
+        background-position-y:36%; background-size: 130%;}
+    .title4 {
+        font-size: 20px;}
+    .light-big-title {
+        font-size: 30px;
+    }
+    .sm-text small {
+        font-size: 12px;
+    }
+    .title3 {
+        color: #fff;
+        font-size: 1em;
+    }
+    .middle-text {
+        color: #fff;
+        font-size: .6em;
+    }
+    .ml-10{margin-left: 0}
+    .leftphone {
+        height: 37vh;
+    }
+    #header {height: 20px}
+    .back-btn{top:5px}
+    .messaging{
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+

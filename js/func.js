@@ -16,15 +16,6 @@ $(document).ready(function () {
         }
     });
 
-    $("#single-select-object .answer-btn").on('click', function () {
-        $(this).toggleClass('active');
-        var ans = $(this).closest('.object-name').children('input');
-        var ro = ans.prop('readonly');
-        ans.prop('readonly', !ro).focus();
-        ans.toggleAttribute("readonly");
-    });
-
-
     $("#multiselect .answer-btn").on('click', function () {
         let answer = $('#outgoing_value').val();
         $(this).toggleClass('active');
@@ -105,6 +96,22 @@ $(document).ready(function () {
                 .replace(/\D/g, "")
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         });
+    });
+    $('input.object-number').keyup(function(event) {
+        $(this).parent().find('.answer-btn').addClass('active');
+        if(event.which >= 37 && event.which <= 40) return;
+        // format number
+        $(this).val(function(index, value) {
+            return '$' + value
+                .replace(/\D/g, "")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        });
+    });
+    $('input.object-number').focusout(function() {
+       if($(this).val() ==  ""){
+           $(this).parent().find('.answer-btn').removeClass('active');
+       }
     });
 
     // Form Age field validate
