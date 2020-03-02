@@ -113,6 +113,14 @@ $(document).ready(function () {
            $(this).parent().find('.answer-btn').removeClass('active');
        }
     });
+    $('input.answer-input-child').focusout(function() {
+        console.log('out')
+       if($(this).val() ==  ""){
+           $(this).parent().find('.answer-btn').removeClass('active');
+       }else {
+           $(this).parent().find('.answer-btn').addClass('active');
+       }
+    });
 
     // Form Age field validate
         $(".number-age").keyup(function() {
