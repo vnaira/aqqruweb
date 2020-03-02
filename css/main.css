@@ -84,7 +84,7 @@ p {
 
 .middle-text {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .middle-value {
@@ -380,6 +380,8 @@ input:focus, input:active {
     position: absolute;
     top: 33px;
 }
+#children-object{width: 900px}
+.children-container {overflow: auto}
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
     @media {
         .light-big-title{
