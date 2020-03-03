@@ -2,8 +2,7 @@ $(document).ready(function () {
     "use strict";
 
     $(".sent_msg").on('click', function () {
-        $('.msg_history').find('.active').removeAttribute('class', 'active');
-        console.log($('.msg_history').find('.active'));
+        $('.msg_history').find('.active').removeClass('active');
         $(this).parent().find('.edit_delete').toggleClass('active');
     });
 
@@ -114,27 +113,35 @@ $(document).ready(function () {
        }
     });
     $('input.answer-input-child').focusout(function() {
-        console.log('out')
        if($(this).val() ==  ""){
            $(this).parent().find('.answer-btn').removeClass('active');
        }else {
            $(this).parent().find('.answer-btn').addClass('active');
+           if($(this).val() > 100)
+           {
+               $('.error').show();
+           }
+           else
+           {
+               $('.error').hide();
+           }
        }
     });
 
     // Form Age field validate
         $(".number-age").keyup(function() {
-
-                if($(this).val() < 18 || $(this).val() > 120)
-                {
+                if($(this).val() < 18 || $(this).val() > 120) {
                     $('.error').show();
-                }
-                else
-                {
+                } else {
                     $('.error').hide();
                 }
             });
 
+//After closing modal hide edit-delete message bar
+    $('#confirmDelete').on('hidden.bs.modal', function () {
+        console.log($('.msg_history').find('.active'));
+        $('.msg_history').find('.active').removeClass('active');
+    });
 });
 
 

@@ -379,6 +379,7 @@ input:focus, input:active {
 .back-btn{
     position: absolute;
     top: 33px;
+    z-index: 20000;
 }
 #children-object{width: 900px}
 .children-container {overflow: auto}
