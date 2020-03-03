@@ -178,6 +178,7 @@
 .answer-input-child{
     border: 1px solid #DBE6F2;
     height: 32px;
+    -webkit-user-select: text;
 }
 #children-object .object-name{display: inline-block;width: 80px;}
 .answer-btn:hover, .answer-btn.active{background: #499DF2; color:#fff}
@@ -192,3 +193,9 @@
     height: 32px; display: none; margin: 0 auto}
 .form-control:disabled, .form-control[readonly]{background: #fff;}
 .form-control:focus, .btn-outline-secondary:focus, .btn-outline-secondary.focus{box-shadow: none;}
+#suggestionsPanel{
+    position: absolute;
+    bottom: 40px;
+    background: #fff;
+    width: 100%;
+}
