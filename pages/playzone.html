@@ -21,7 +21,33 @@
                 </div>
         </div>
         <div class="sidebar-wrapper">
-            <ul class="nav">
+            <ul class="nav border-bottom vheight-50">
+                <li class="">
+                    <a href="">
+                        <i class="nc-icon nc-playzone"></i>
+                        <p>Playzone</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="">
+                        <i class="nc-icon nc-dashboard"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="nc-icon nc-scenario"></i>
+                        <p>Scenarios</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="nc-icon nc-summary"></i>
+                        <p>Summary</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav border-bottom vheight-50">
                 <li class="">
                     <a href="">
                         <i class="nc-icon nc-playzone"></i>
@@ -48,28 +74,10 @@
                 </li>
             </ul>
             <ul class="nav">
-                <li class="">
-                    <a href="">
-                        <i class="nc-icon nc-playzone"></i>
-                        <p>Playzone</p>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="">
-                        <i class="nc-icon nc-dashboard"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
                 <li>
                     <a href="">
-                        <i class="nc-icon nc-scenario"></i>
-                        <p>Scenarios</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="nc-icon nc-summary"></i>
-                        <p>Summary</p>
+                        <i class="nc-icon nc-logout"></i>
+                        <p>Logout</p>
                     </a>
                 </li>
             </ul>
@@ -83,17 +91,26 @@
                     <a class="navbar-brand" href="">Aqqru<i class="tm"></i>
                     </a>
                 </div>
-                <div class="row justify-content-end">
-                    <div class="col">
-                        One of two columns
-                    </div>
-                    <div class="col">
-                        One of two columns
-                    </div>
-                    <div class="col-md-5">
-                        <div class="score-show pl-2 pr-2 text-center">
-                            <h5>Wellness Score</h5>
-                            <p class="score-value">75</p>
+                <div class="col-md-9 pr-0 nav-panel">
+                    <div class="row justify-content-end align-items-center">
+                        <div class="col border-right text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="nb-icon pl-2">Plan Locked</span>
+                        </div>
+                        <div class="col border-right text-center">
+                            <span class="nb-icon nb-call">Call Advisor</span>
+                        </div>
+                        <div class="col text-center">
+                            <span class="nb-icon nb-user">Johnny Appleseed</span>
+                        </div>
+                        <div class="col">
+                            <div class="score-show text-center">
+                                <h5 class="pt-2">Wellness Score</h5>
+                                <p class="score-value">75</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,91 +120,132 @@
         <div class="content">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card ">
-                        <div class="card-header ">
-                            <h5 class="card-title">Users Behavior</h5>
-                            <p class="card-category">24 Hours performance</p>
+                    <div class="card">
+                        <div class="card-header border-bottom pb-3">
+                            <div class="btn-toolbar" role="toolbar">
+                                <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Save for retirement</span></button>
+                                <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle-active.svg" alt=""> <span>House</span></button>
+                                <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Kids Education</span></button>
+                                <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Car</span></button>
+                            </div>
                         </div>
-                        <div class="card-body ">
+                        <div class="card-body">
                             <canvas id=chartHours width="400" height="100"></canvas>
                         </div>
-                        <div class="card-footer ">
-                            <hr>
+                        <div class="card-footer border-top">
                             <div class="stats">
-                                <i class="fa fa-history"></i> Updated 3 minutes ago
+                                <div class="btn-toolbar" role="toolbar">
+                                    <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Save for retirement</span></button>
+                                    <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle-active.svg" alt=""> <span>House</span></button>
+                                    <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Kids Education</span></button>
+                                    <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Car</span></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="card ">
                         <div class="card-header ">
-                            <h5 class="card-title">Email Statistics</h5>
-                            <p class="card-category">Last Campaign Performance</p>
+                            <p class="">Tradeoffs</p>
                         </div>
-                        <div class="card-body ">
-                            <canvas id="chartEmail"></canvas>
+                        <div class="card-body grey-body">
+                            <p><small>Try making some compromises to get your goals on track</small></p>
+
+                        <div class="btn-toolbar" role="toolbar">
+                            <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Save for retirement</span></button>
+                            <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle-active.svg" alt=""> <span>House</span></button>
+                            <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Kids Education</span></button>
+                            <button type="button" class="btn btn-goals"><img src="../resources/img/playzone/circle.svg" alt=""> <span>Car</span></button>
                         </div>
-                        <div class="card-footer ">
-                            <div class="legend">
-                                <i class="fa fa-circle text-primary"></i> Opened
-                                <i class="fa fa-circle text-warning"></i> Read
-                                <i class="fa fa-circle text-danger"></i> Deleted
-                                <i class="fa fa-circle text-gray"></i> Unopened
+                        <div class="card mb-4 card-border-radius mt-3">
+                            <div class="card-block p-3">
+
+                                <div class="table-card">
+                                    <div class="verticaltext_content">House Price</div>
+                                    <div>
+                                        <p class="card-title-uppercase">Years from Now</p>
+                                        <div class="table-responsive">
+                                            <table class="tabl">
+                                                <tr>
+                                                    <th></th>
+                                                    <th class="text-center">4 Years</th>
+                                                    <th class="text-center">5 Years</th>
+                                                    <th class="text-center">6 Years</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>$ 95,000</th>
+                                                    <td>
+                                                        <div class="card-value" style="background:#F0C552">78%</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="card-value" style="background:#F0C552">78%</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="card-value" style="background:#4ECC63">78%</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>$ 90,000</th>
+                                                    <td>
+                                                        <div class="card-value" style="background:#F0C552 ">78%</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="card-value" style="background:#F0C552 ">78%</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="card-value" style="background:#4ECC63">78%</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>$ 85,000</th>
+                                                    <td>
+                                                        <div class="card-value" style="background:#4ECC63">95%</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="card-value" style="background:#4ECC63">95%</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="card-value" style="background:#4ECC63">95%</div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <hr>
-                            <div class="stats">
-                                <i class="fa fa-calendar"></i> Number of emails sent
-                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="card card-chart">
                         <div class="card-header">
-                            <h5 class="card-title">NASDAQ: AAPL</h5>
-                            <p class="card-category">Line Chart with Points</p>
+                            <p class="">Notifications</p>
                         </div>
-                        <div class="card-body">
-                            <canvas id="speedChart" width="400" height="100"></canvas>
-                        </div>
-                        <div class="card-footer">
-                            <div class="chart-legend">
-                                <i class="fa fa-circle text-info"></i> Tesla Model S
-                                <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                        <div class="card-body grey-body">
+                            <div class="card mb-4 card-border-radius">
+                                <div class="card-block p-3">
+                                    <span class="nb-icon nb-suggestion">Goal Suggestion</span>
+                                    <p class="card-text mt-3">Time to celebrate! Have determined that it’s now a good time to complete your Buy a House goal. As soon as you complete your Buy a House goal, let us know and we can make any necessary changes to your profile.</p>
+                                </div>
                             </div>
-                            <hr/>
-                            <div class="card-stats">
-                                <i class="fa fa-check"></i> Data information certified
+                            <div class="card mb-4 card-border-radius">
+                                <div class="card-block p-3">
+                                    <span class="nb-icon nb-call-blue">Call</span>
+                                    <p class="card-text mt-3">Ready to call Keith Johnson? Set up a meeting now.</p>
+                                    <div class="text-right">
+                                        <button class="btn btn-blue">Call Advisor</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="footer footer-black  footer-white ">
-            <div class="container-fluid">
-                <div class="row">
-                    <nav class="footer-nav">
-                        <ul>
-                            <li>
-                                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
-                            </li>
-                            <li>
-                                <a href="http://blog.creative-tim.com/" target="_blank">Blog</a>
-                            </li>
-                            <li>
-                                <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="credits ml-auto">
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
 </div>
 
