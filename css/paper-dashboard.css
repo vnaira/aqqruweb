@@ -137,7 +137,9 @@ font-size: 24px}
   text-transform: uppercase;
 }
 .vheight-50{height: 50vh}
-
+.left-70{
+  left: -70px;
+}
 
 
 svg:hover{fill:#0AA5F3}
