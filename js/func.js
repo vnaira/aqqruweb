@@ -33,14 +33,14 @@ $(document).ready(function () {
     });
 
 
-    $("#button-send").click(function(event) {
+    $("#button-send").click(function (event) {
         var form = $("#chat-form");
         if (form[0].checkValidity() === false) {
             event.preventDefault()
             event.stopPropagation()
-            $('.invalid-feedback').css('display','block');
-        }else {
-            $('.invalid-feedback').css('display','none');
+            $('.invalid-feedback').css('display', 'block');
+        } else {
+            $('.invalid-feedback').css('display', 'none');
         }
     });
 
@@ -50,20 +50,21 @@ $(document).ready(function () {
             return ele != value;
         });
     }
+
     $('.children').on('click', function () {
         $(this).parents('.btn-toolbar').find('.children').removeClass('active');
         $(this).addClass('active');
         var id = $(this).attr('data-name');
-        if(id === "one-child"){
-            $('.child-age').css('display','none');
-            $('.child-ages').find("[data-id='one-child']").css('display','block');
-        }else {
-            $('.child-age').css('display','block');
+        if (id === "one-child") {
+            $('.child-age').css('display', 'none');
+            $('.child-ages').find("[data-id='one-child']").css('display', 'block');
+        } else {
+            $('.child-age').css('display', 'block');
         }
     });
 
-    $('.context-menu').on('click', function(e) {
-        var offset = $( this ).offset();
+    $('.context-menu').on('click', function (e) {
+        var offset = $(this).offset();
         var top = offset.top + 20;
         var left = offset.left - 10;
         $("#context-menu").css({
@@ -74,7 +75,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#context-menu a").on("click", function() {
+    $("#context-menu a").on("click", function () {
         $(this).parent().removeClass("show").hide();
     });
 
@@ -87,61 +88,67 @@ $(document).ready(function () {
     });
 
     // Currency format
-    $('input.number').keyup(function(event) {
-        if(event.which >= 37 && event.which <= 40) return;
+    $('input.number').keyup(function (event) {
+        if (event.which >= 37 && event.which <= 40) return;
         // format number
-        $(this).val(function(index, value) {
+        $(this).val(function (index, value) {
             return '$' + value
                 .replace(/\D/g, "")
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         });
     });
-    $('input.object-number').keyup(function(event) {
+    $('input.object-number').keyup(function (event) {
         $(this).parent().find('.answer-btn').addClass('active');
-        if(event.which >= 37 && event.which <= 40) return;
+        if (event.which >= 37 && event.which <= 40) return;
         // format number
-        $(this).val(function(index, value) {
+        $(this).val(function (index, value) {
             return '$' + value
                 .replace(/\D/g, "")
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         });
     });
-    $('input.object-number').focusout(function() {
-       if($(this).val() ==  ""){
-           $(this).parent().find('.answer-btn').removeClass('active');
-       }
+    $('input.object-number').focusout(function () {
+        if ($(this).val() == "") {
+            $(this).parent().find('.answer-btn').removeClass('active');
+        }
     });
-    $('input.answer-input-child').focusout(function() {
-       if($(this).val() ==  ""){
-           $(this).parent().find('.answer-btn').removeClass('active');
-       }else {
-           $(this).parent().find('.answer-btn').addClass('active');
-           if($(this).val() > 100)
-           {
-               $('.error').show();
-           }
-           else
-           {
-               $('.error').hide();
-           }
-       }
+    $('input.answer-input-child').focusout(function () {
+        if ($(this).val() == "") {
+            $(this).parent().find('.answer-btn').removeClass('active');
+        } else {
+            $(this).parent().find('.answer-btn').addClass('active');
+            if ($(this).val() > 100) {
+                $('.error').show();
+            } else {
+                $('.error').hide();
+            }
+        }
     });
 
     // Form Age field validate
-        $(".number-age").keyup(function() {
-                if($(this).val() < 18 || $(this).val() > 120) {
-                    $('.error').show();
-                } else {
-                    $('.error').hide();
-                }
-            });
+    $(".number-age").keyup(function () {
+        if ($(this).val() < 18 || $(this).val() > 120) {
+            $('.error').show();
+        } else {
+            $('.error').hide();
+        }
+    });
 
 //After closing modal hide edit-delete message bar
     $('#confirmDelete').on('hidden.bs.modal', function () {
         console.log($('.msg_history').find('.active'));
         $('.msg_history').find('.active').removeClass('active');
     });
+
+
+    // browser back button event
+    if (window.history && window.history.pushState) {
+        $(window).on('popstate', function () {
+            window.location.replace("https://www.tutorialrepublic.com/");
+        });
+    }
+
 });
 
 
