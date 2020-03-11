@@ -161,8 +161,29 @@
   border-radius: 6px;
   margin-bottom: 10px;
   margin-top: 5px;
+  height: 58px;
+  font-size: 13px;
 }
 .income-item p{
   font-size: 12px;
   margin-bottom: 5px;
 }
+.m-icon {width: 30px;height: 26px; display: inline-block;transform: rotate(-10deg);}
+.accept-icon{background: url("../resources/img/edited.png")no-repeat;
+  background-size: 100% 110%;
+}
+.text-bold{font-weight: bold}
+.btn-accept, .btn-edit{cursor: pointer; font-weight: bold}
+.accepted-income{background: #D9F7DC}
+.discarded-income{background: #EDDD84}
+.income-value{font-size: 40px}
+.shadowed-input {
+  -webkit-box-shadow: 0px 0px 5px -1px #c4c4c4;
+  -moz-box-shadow: 0px 0px 5px -1px #c4c4c4;
+  box-shadow: 0px 0px 5px -1px #c4c4c4;
+}
+.brend{
+color:#fff;
+position: absolute;
+bottom: 0;
+right:20px}

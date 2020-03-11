@@ -127,6 +127,26 @@ $(document).ready(function () {
                 }
             });
 
+// modal js functions
+    $(".btn-accept").on('click', function () {
+        $(this).parent().removeClass('discarded-income');
+        $(this).parent().addClass('accepted-income');
+        $(this).parent().find('.accept-icon').css('visibility', 'visible');
+
+        var empty = false;
+        if ($('.incoms').find(".discarded-income").length ) { empty = true;}
+
+        if (empty) {
+            $('#save-btn').attr('disabled', 'disabled');
+        } else {
+            $('#save-btn').removeAttr('disabled');
+        }
+
+    });
+    $(".btn-edit").on('click', function () {
+        $('#editModal').modal('show');
+    });
+
 });
 
 
