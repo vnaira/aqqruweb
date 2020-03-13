@@ -396,7 +396,7 @@ input:focus, input:active {
     }
 }}
 
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
     .light-big-title {
         font-size: 2.5rem;
     }
@@ -421,6 +421,9 @@ input:focus, input:active {
     .white-title {
         font-size: 30px;
     }
+    .leftphone {
+        height: 42vh;
+    }
     .main-content {
         height: 92vh;}
     .title4 {
@@ -429,11 +432,7 @@ input:focus, input:active {
         font-size: 14px;}
 }
 
-@media only screen and (max-width: 1060px) {
-    .leftphone {
-        height: 56vh;
-    }
-}
+@media only screen and (min-width: 992px) {}
 
 @media only screen and (max-width: 768px) {
     .light-big-title {

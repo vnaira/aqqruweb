@@ -361,13 +361,6 @@ input[type=radio]:checked+label {
 }
 
 
-
-
-
-/*.myGoalsContainer{*/
-  /*height: 600px;*/
-  /*overflow: auto;*/
-/*}*/
 .tooltip-badge{
   background: #DBE6F2;
   color: #5C7599;

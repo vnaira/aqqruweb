@@ -149,6 +149,45 @@ $(document).ready(function () {
         });
     }
 
+// modal js functions
+    $(".btn-accept").on('click', function () {
+        $(this).parent().removeClass('discarded-income');
+        $(this).parent().addClass('accepted-income');
+        $(this).parent().find('.accept-icon').css('visibility', 'visible');
+
+        var empty = false;
+        if ($('.incoms').find(".discarded-income").length ) { empty = true;}
+
+        if (empty) {
+            $('#save-btn').attr('disabled', 'disabled');
+        } else {
+            $('#save-btn').removeAttr('disabled');
+        }
+
+    });
+
+    // Form Age field validate
+    $(".number-age").keyup(function () {
+        if ($(this).val() < 18 || $(this).val() > 120) {
+            $('.error').show();
+        } else {
+            $('.error').hide();
+        }
+    });
+
+//After closing modal hide edit-delete message bar
+    $('#confirmDelete').on('hidden.bs.modal', function () {
+        console.log($('.msg_history').find('.active'));
+        $('.msg_history').find('.active').removeClass('active');
+    });
+
+
+    // browser back button event
+    if (window.history && window.history.pushState) {
+        $(window).on('popstate', function () {
+            window.location.replace("https://www.tutorialrepublic.com/");
+        });
+    }
 });
 
 

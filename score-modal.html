@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add goal</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
+          rel="stylesheet">
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+</head>
+<body>
+<div style="background: url('bg.png') no-repeat; background-size: 100%; height: 100vh;">
+
+</div>
+
+<div id="scoreModal" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-4">
+                    <section>
+                                <div class="radialProgressBar progress-70">
+                                    <div class="overlay">80%</div>
+                                </div>
+                    </section>
+                </div>
+                <div class="col-md-8">
+                    <h5 class="modal-title">Let's check your financials</h5>
+                    <p>This is your wealth score. It is based on your income, expenses, assets and liabilities. It will change and adjust based on how you plan goals and providing more detailed information below.</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container incoms">
+                    <div class="row income-item accepted-income">
+                        <div class="col-md-2 my-auto text-left text-bold">
+                            <i class="m-icon accept-icon"></i>
+                            Income
+                        </div>
+                        <div class="col-md-2 my-auto">$120000</div>
+                        <div class="col-md-5 my-auto"><p>All set! You provided us with this information.</p></div>
+                        <div class="col-md-2 my-auto btn-accept"></div>
+                        <div class="col-md-1 my-auto btn-edit"></div>
+                    </div>
+                    <div class="row income-item discarded-income">
+                        <div class="col-md-2 my-auto text-left text-bold">
+                            <i class="m-icon accept-icon" style="visibility: hidden"></i>Expenses</div>
+                        <div class="col-md-2 my-auto">$3,000/mo</div>
+                        <div class="col-md-5 my-auto"><p>This is an estimate based on the information
+                            you provided. Click the edit to the left to
+                            make changes.</p></div>
+                        <div class="col-md-2 my-auto btn-accept">Accept</div>
+                        <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModal">Edit</div>
+                    </div>
+                    <div class="row income-item discarded-income">
+                        <div class="col-md-2 my-auto text-left text-bold">
+                            <i class="m-icon accept-icon" style="visibility: hidden"></i>Savings</div>
+                        <div class="col-md-2 my-auto">$20,000</div>
+                        <div class="col-md-5 my-auto"><p>This is an estimate based on the information
+                            you provided. Click the edit to the left to
+                            make changes.</p></div>
+                        <div class="col-md-2 my-auto btn-accept">Accept</div>
+                        <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModalSavings">Edit</div>
+                    </div>
+                    <div class="row income-item discarded-income">
+                        <div class="col-md-2 my-auto text-left text-bold">
+                            <i class="m-icon accept-icon" style="visibility: hidden"></i>Real Estate</div>
+                        <div class="col-md-2 my-auto">$200,000</div>
+                        <div class="col-md-5 my-auto"><p>This is an estimate based on the information
+                            you provided. Click the edit to the left to
+                            make changes.</p></div>
+                        <div class="col-md-2 my-auto btn-accept">Accept</div>
+                        <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModalRealEstate">Edit</div>
+                    </div>
+                    <div class="row income-item accepted-income">
+                        <div class="col-md-2 my-auto text-left text-bold">
+                            <i class="m-icon accept-icon"></i>Liabilities</div>
+                        <div class="col-md-2 my-auto">$50,000</div>
+                        <div class="col-md-5 my-auto"><p>All set! You provided us with this information.</p></div>
+                        <div class="col-md-2 my-auto btn-accept"></div>
+                        <div class="col-md-1 my-auto btn-edit"></div>
+                    </div>
+                    <div class="text-right mt-2">
+                        <button class="btn btn-primary" disabled id="save-btn">Save and Continue</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="brend">
+        <img src="resources/img/brend.png" alt="" width="130">
+        <p>Your goals have a partner.</p>
+    </div>
+</div>
+
+<!--Expenses edit modal-->
+<div id="editModal" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-4">
+                    <section>
+                        <div class="radialProgressBar progress-70" style="width: 160px; height: 160px">
+                            <div class="overlay" style="width: 110px; height: 110px">80%</div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-8 text-right">
+                    <h2 class="modal-title text-bold">Expenses</h2>
+                    <p class="income-value">$3,000/mo</p>
+                    <p>You entered $3,000 for monthly expenses. Let’s
+                        break that down a bit more by sharing how
+                        much of this total is in each category below.</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="col-md-12">
+                        <p class="text-primary text-left">What do these categories mean?</p>
+                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input number"
+                                       id="" name="" value="" placeholder="$1,500">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input number"
+                                       id="" name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Somewhat Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input number"
+                                       id="" name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Very Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input number"
+                                       id="" name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Monthly Rent Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input number"
+                                       id="" name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="text-right mt-4 mb-4">
+                            <p class="text-bold text-right">Total: $3,000</p>
+                            <button class="btn btn-primary" id="save-changes">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal content-->
+    </div>
+</div>
+
+<!--Saving edit modal-->
+<div id="editModalRealEstate" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-4">
+                    <section>
+                        <div class="radialProgressBar progress-70" style="width: 160px; height: 160px">
+                            <div class="overlay" style="width: 110px; height: 110px">80%</div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-8 text-right">
+                    <h2 class="modal-title text-bold">Real estate</h2>
+                    <p class="income-value">$200,000/mo</p>
+                    <p>You entered $3,000 for monthly expenses. Let’s
+                        break that down a bit more by sharing how
+                        much of this total is in each category below.</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="col-md-12">
+                        <p class="text-primary text-left">What do these categories mean?</p>
+                    </div>
+                    <form action="">
+                        <div class="mb-5">
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current home value
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input number"
+                                           id="" name="" value="" placeholder="$1,500">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Priority name
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input"
+                                           id="" name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Zip code
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="number"
+                                           class="form-control form-control-sm shadowed-input"
+                                           id="" name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control col-lg-12 text-left">
+                                    <p>Primary residence</p>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="custom-control col-lg-12 text-left">
+                                    <p>I have a mortgage on this property</p>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <h5 class="text-bold text-left col-md-12">Mortgage</h5>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Lender
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Mortgage type
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input"
+                                           id="" name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current balance
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input number"
+                                           id="" name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Interest rate
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input number"
+                                           id="" name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Loan inception date
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input number"
+                                           id="" name="" value="" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapse" id="moreEstate">
+                            <hr>
+                            <div class="">
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current home value
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input number"
+                                               id="" name="" value="" placeholder="$1,500">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Priority name
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input"
+                                               id="" name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Zip code
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="number"
+                                               class="form-control form-control-sm shadowed-input"
+                                               id="" name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control col-lg-12 text-left">
+                                        <p>Primary residence</p>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control col-lg-12 text-left">
+                                        <p>I have a mortgage on this property</p>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <h5 class="text-bold text-left col-md-12">Mortgage</h5>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Lender
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Mortgage type
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input"
+                                               id="" name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current balance
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input number"
+                                               id="" name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Interest rate
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input number"
+                                               id="" name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Loan inception date
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input number"
+                                               id="" name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="text-right mt-4 mb-4">
+                            <button class="btn btn-primary" id="add-more-estate" type="button" data-toggle="collapse"
+                                    data-target="#moreEstate" aria-expanded="false" aria-controls="collapseExample">
+                                Add more Estate
+                            </button>
+                        </div>
+                        <div class="text-right mt-4 mb-4">
+                            <button class="btn btn-primary" id="save-changes-saving">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal content-->
+    </div>
+</div>
+
+
+<div id="editModalSavings" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-4">
+                    <section>
+                        <div class="radialProgressBar progress-70" style="width: 160px; height: 160px">
+                            <div class="overlay" style="width: 110px; height: 110px">80%</div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-8 text-right">
+                    <h2 class="modal-title text-bold">Saving</h2>
+                    <p class="income-value">$20,000</p>
+                    <p>You entered $3,000 for monthly expenses. Let’s
+                        break that down a bit more by sharing how
+                        much of this total is in each category below.</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input"
+                                       id="" name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input"
+                                       id="" name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input"
+                                       id="" name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="text-right mt-4 mb-4">
+                            <button class="btn btn-primary" id="saving-changes">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal content-->
+    </div>
+</div>
+
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script>
+    $('#scoreModal').modal('show');
+    $('#scoreModal').modal({backdrop: 'static', keyboard: false})
+</script>
+<script src="js/func.js"></script>
+</body>
+</html>
