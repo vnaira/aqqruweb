@@ -143,10 +143,29 @@ $(document).ready(function () {
         }
 
     });
-    $(".btn-edit").on('click', function () {
-        $('#editModal').modal('show');
+
+    // Form Age field validate
+    $(".number-age").keyup(function () {
+        if ($(this).val() < 18 || $(this).val() > 120) {
+            $('.error').show();
+        } else {
+            $('.error').hide();
+        }
     });
 
+//After closing modal hide edit-delete message bar
+    $('#confirmDelete').on('hidden.bs.modal', function () {
+        console.log($('.msg_history').find('.active'));
+        $('.msg_history').find('.active').removeClass('active');
+    });
+
+
+    // browser back button event
+    if (window.history && window.history.pushState) {
+        $(window).on('popstate', function () {
+            window.location.replace("https://www.tutorialrepublic.com/");
+        });
+    }
 });
 
 

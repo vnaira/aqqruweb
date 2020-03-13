@@ -332,6 +332,35 @@ h3.section-title{
   padding: 0;}
 .add-goal .answer-btn:hover, .add-goal .answer-btn.active {background: #499DF2; color:#fff;border: 1px solid #499DF2; }
 .add-goal .answer-btn:focus{box-shadow: none}
+
+
+.opacity {
+  position: absolute;
+  opacity: 0;
+  width: 0;		/* for internet explorer */
+}
+
+.visibility {
+  visibility: hidden;
+}
+
+.nodisplay {
+  display: none;
+}
+
+input[type=radio]+label {
+  background: #DBE6F2;
+  padding: 5px 15px;
+  border-radius: 0.25rem;
+}
+input[type=radio]:checked+label {
+  background: #499DF2;
+  padding: 5px 15px;
+  color:#fff;
+  border-radius: 0.25rem;
+}
+
+
 .tooltip-badge{
   background: #DBE6F2;
   color: #5C7599;

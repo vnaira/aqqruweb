@@ -84,7 +84,7 @@ p {
 
 .middle-text {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .middle-value {
@@ -379,7 +379,10 @@ input:focus, input:active {
 .back-btn{
     position: absolute;
     top: 33px;
+    z-index: 20000;
 }
+#children-object{width: 900px}
+.children-container {overflow: auto}
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
     @media {
         .light-big-title{
@@ -393,7 +396,7 @@ input:focus, input:active {
     }
 }}
 
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
     .light-big-title {
         font-size: 2.5rem;
     }
@@ -418,6 +421,9 @@ input:focus, input:active {
     .white-title {
         font-size: 30px;
     }
+    .leftphone {
+        height: 42vh;
+    }
     .main-content {
         height: 92vh;}
     .title4 {
@@ -426,11 +432,7 @@ input:focus, input:active {
         font-size: 14px;}
 }
 
-@media only screen and (max-width: 1060px) {
-    .leftphone {
-        height: 56vh;
-    }
-}
+@media only screen and (min-width: 992px) {}
 
 @media only screen and (max-width: 768px) {
     .light-big-title {
