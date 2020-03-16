@@ -168,23 +168,3 @@ $(document).ready(function () {
     }
 
 });
-
-
-// var wellnessState = @Html.Raw(Json.Serialize(Model?.Results.AvatarResults.WellnessState));
-//
-// function getAvatarWelnessScoreColor() {
-//     var hexColor = '';
-//     if ((wellnessState || []).length > 0) {
-//
-//         var red = [231.0, 78.0, 78.0];
-//         var yellow = [240.0, 197.0, 82];
-//         var green = [78.0, 204.0, 99.0];
-//         var currentRed = wellnessState[0]  red[0] + wellnessState[1]  yellow[0] + wellnessState[2] * green[0];
-//         var currentGreen = wellnessState[0]  red[1] + wellnessState[1]  yellow[1] + wellnessState[2] * green[1];
-//         var currentBlue = wellnessState[0]  red[2] + wellnessState[1]  yellow[2] + wellnessState[2] * green[2];
-//         hexColor = fullColorHex(parseInt(currentRed), parseInt(currentGreen), parseInt(currentBlue));
-//     }
-//     else
-//         hexColor = fullColorHex(220, 220, 220);
-//     return '#' + hexColor;
-// }
