@@ -10,6 +10,7 @@
 
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/jQuery-plugin-progressbar.css" />
 </head>
 <body>
 <div style="background: url('bg.png') no-repeat; background-size: 100%; height: 100vh;">
@@ -22,29 +23,27 @@
         <div class="modal-content">
             <div class="modal-header border-0">
                 <!-- Percentage circle -->
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6">
                     <section>
-                                <div class="radialProgressBar progress-70">
-                                    <div class="overlay">80%</div>
-                                </div>
+                        <div class="progress-bar position" data-percent="60" data-duration="1" data-color="#ccc,#6AE273"></div>
                     </section>
                 </div>
-                <div class="col-md-8">
-                    <h5 class="modal-title">Let's check your financials</h5>
-                    <p>This is your wealth score. It is based on your income, expenses, assets and liabilities. It will change and adjust based on how you plan goals and providing more detailed information below.</p>
+                <div class="col-sm-12 col-md-8 mt-3">
+                    <h5 class="modal-title" style="font-size: 26px">Let's check your financials</h5>
+                    <p style="font-size: 18px">This is your wealth score. It is based on your income, expenses, assets and liabilities. It will change and adjust based on how you plan goals and providing more detailed information below.</p>
                 </div>
             </div>
-            <div class="modal-body text-center mt-4">
+            <div class="modal-body text-center">
                 <div class="container incoms">
                     <div class="row income-item accepted-income">
-                        <div class="col-md-2 my-auto text-left text-bold">
+                        <div class="col-md-2 col-sm-6 my-auto text-left text-bold">
                             <i class="m-icon accept-icon"></i>
                             Income
                         </div>
-                        <div class="col-md-2 my-auto modal-currency">$120000</div>
-                        <div class="col-md-5 my-auto text-left"><p>All set! You provided us with this information.</p></div>
-                        <div class="col-md-2 my-auto btn-accept"></div>
-                        <div class="col-md-1 my-auto btn-edit"></div>
+                        <div class="col-md-2 col-sm-6 my-auto modal-currency">$120000</div>
+                        <div class="col-md-5 col-sm-12 my-auto text-left"><p>All set! You provided us with this information.</p></div>
+                        <div class="col-md-2 col-sm-6 my-auto btn-accept"></div>
+                        <div class="col-md-1 col-sm-6 my-auto btn-edit"></div>
                     </div>
                     <div class="row income-item discarded-income">
                         <div class="col-md-2 my-auto text-left text-bold">
@@ -84,7 +83,7 @@
                         <div class="col-md-2 my-auto btn-accept"></div>
                         <div class="col-md-1 my-auto btn-edit"></div>
                     </div>
-                    <div class="row justify-content-end mt-2">
+                    <div class="row justify-content-between mt-2">
                         <button class="btn btn-primary pl-5 pr-5" disabled id="save-btn">Save and Continue</button>
                     </div>
                 </div>
@@ -107,9 +106,7 @@
                 <!-- Percentage circle -->
                 <div class="col-md-5">
                     <section>
-                        <div class="radialProgressBar progress-70" style="width: 160px; height: 160px">
-                            <div class="overlay" style="width: 110px; height: 110px">80%</div>
-                        </div>
+                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
                     </section>
                 </div>
                 <div class="col-md-7 text-right">
@@ -136,8 +133,8 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
-                                           id="" name="" value="" placeholder="$1,500">
+                                           class="form-control form-control-sm number"
+                                           id="" name="" value="" placeholder="$">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -149,7 +146,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="">
                                 </div>
                             </div>
@@ -162,7 +159,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="">
                                 </div>
                             </div>
@@ -175,7 +172,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="">
                                 </div>
                             </div>
@@ -188,7 +185,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="">
                                 </div>
                             </div>
@@ -214,9 +211,7 @@
                 <!-- Percentage circle -->
                 <div class="col-md-5">
                     <section>
-                        <div class="radialProgressBar progress-70" style="width: 160px; height: 160px">
-                            <div class="overlay" style="width: 110px; height: 110px">80%</div>
-                        </div>
+                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
                     </section>
                 </div>
                 <div class="col-md-7 text-right">
@@ -243,7 +238,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="$1,500">
                                 </div>
                             </div>
@@ -325,7 +320,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="">
                                 </div>
                             </div>
@@ -338,7 +333,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="">
                                 </div>
                             </div>
@@ -351,7 +346,7 @@
                                 </label>
                                 <div class="col-lg-12">
                                     <input type="text"
-                                           class="form-control form-control-sm shadowed-input number"
+                                           class="form-control form-control-sm number"
                                            id="" name="" value="" placeholder="">
                                 </div>
                             </div>
@@ -369,8 +364,8 @@
                                     </label>
                                     <div class="col-lg-12">
                                         <input type="text"
-                                               class="form-control form-control-sm shadowed-input number"
-                                               id="" name="" value="" placeholder="$1,500">
+                                               class="form-control form-control-sm number"
+                                               id="" name="" value="" placeholder="$">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -451,7 +446,7 @@
                                     </label>
                                     <div class="col-lg-12">
                                         <input type="text"
-                                               class="form-control form-control-sm shadowed-input number"
+                                               class="form-control form-control-sm number"
                                                id="" name="" value="" placeholder="">
                                     </div>
                                 </div>
@@ -464,7 +459,7 @@
                                     </label>
                                     <div class="col-lg-12">
                                         <input type="text"
-                                               class="form-control form-control-sm shadowed-input number"
+                                               class="form-control form-control-sm number"
                                                id="" name="" value="" placeholder="">
                                     </div>
                                 </div>
@@ -477,7 +472,7 @@
                                     </label>
                                     <div class="col-lg-12">
                                         <input type="text"
-                                               class="form-control form-control-sm shadowed-input number"
+                                               class="form-control form-control-sm number"
                                                id="" name="" value="" placeholder="">
                                     </div>
                                 </div>
@@ -511,9 +506,7 @@
                 <!-- Percentage circle -->
                 <div class="col-md-5">
                     <section>
-                        <div class="radialProgressBar progress-70" style="width: 160px; height: 160px">
-                            <div class="overlay" style="width: 110px; height: 110px">80%</div>
-                        </div>
+                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
                     </section>
                 </div>
                 <div class="col-md-7 text-right">
@@ -538,7 +531,7 @@
                                 <input type="text"
                                        class="form-control form-control-sm shadowed-input"
                                        id="" name="" value="" placeholder="">
-                            </div>
+                           </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-lg-12 col-form-label text-left">
@@ -586,9 +579,11 @@
         crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="js/jQuery-plugin-progressbar.js"></script>
 <script>
     $('#scoreModal').modal('show');
     $('#scoreModal').modal({backdrop: 'static', keyboard: false})
+    $(".progress-bar").loading();
 </script>
 <script src="js/func.js"></script>
 </body>

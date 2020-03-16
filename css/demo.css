@@ -75,7 +75,7 @@
   background: #fff;
   text-align: center;
   padding-top: 15%;
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 700;
 }
 
@@ -165,26 +165,27 @@
   margin-bottom: 10px;
   margin-top: 5px;
   height: 58px;
-  font-size: 13px;
+  font-size: 12px;
 }
 .income-item p{
   font-size: 12px;
   margin-bottom: 5px;
 }
-.m-icon {width: 30px;height: 26px; display: inline-block;transform: rotate(-10deg);}
+.m-icon {width: 30px;height: 16px; display: inline-block;transform: rotate(-10deg);}
 .accept-icon{background: url("../resources/img/edited.png")no-repeat;
-  background-size: 100% 110%;
+  background-size: 96% 110%;
 }
 .text-bold{font-weight: bold}
 .btn-accept, .btn-edit{cursor: pointer; font-weight: bold}
 .accepted-income{background: #D9F7DC}
 .discarded-income{background: #EDDD84}
 .income-value{font-size: 40px}
-.shadowed-input {
+.shadowed-input, .k-numerictextbox .k-numeric-wrap {
   -webkit-box-shadow:0px 2px 5px 0px #c4c4c4;
   -moz-box-shadow: 0px 2px 5px 0px #c4c4c4;
   box-shadow: 0px 2px 5px 0px #c4c4c4;
 }
+#editModalSavings .k-numerictextbox{ width: 100%}
 .brend{
   color:#fff;
   position: absolute;
@@ -253,6 +254,11 @@ input:checked + .slider:before {
 }
 
 .modal-currency{
-  font-size: 20px;
+  font-size: 18px;
   text-align: left;
+}
+@media only screen and (max-width: 1060px) {
+  .income-item{
+    height: auto;
+  }
 }
