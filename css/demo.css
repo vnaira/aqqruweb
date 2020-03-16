@@ -188,7 +188,7 @@
 #editModalSavings .k-numerictextbox{ width: 100%}
 .brend{
   color:#fff;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right:20px}
 

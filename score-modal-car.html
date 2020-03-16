@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add goal</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
+          rel="stylesheet">
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/jQuery-plugin-progressbar.css" />
+</head>
+<body>
+<div style="background: url('bg.png') no-repeat; background-size: 100%; height: 100vh;">
+
+</div>
+
+<div id="car-goal-modal" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-5 col-sm-6">
+                    <section>
+                        <div class="progress-bar position" data-percent="60" data-duration="1" data-color="#ccc,#6AE273"></div>
+                        <h5 class="col-md-10">Car goal 81%</h5>
+                    </section>
+                </div>
+                <div class="col-sm-12 col-md-7 mt-3 text-right">
+                    <h5 class="modal-title" style="font-size: 26px; font-weight: bold">Buy a Car</h5>
+                    <p style="font-size: 18px">We’ve assumed the following</p>
+                    <p style="font-size: 18px">When will you achieve this goal: 1-2 years
+                        Price of the car: $35,000
+                    </p>
+                    <p style="font-size: 18px">Based on these assumptions, we’ve
+                        estimated the probability of
+                        achieving this goal to be 89%</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <form class="text-left">
+                        <div class="form-group col-md-6">
+                            <label for="goal-name" class="col-form-label">Expected Cost</label>
+                            <input type="text" class="form-control shadowed-input number" id="goal-name" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="goal-name" class="col-form-label">How important this goal?</label>
+                            <div class="btn-toolbar row justify-content-start" role="toolbar" class="single-select">
+                                <div class="col-md-3" role="group">
+                                    <input type="radio" class="btn answer-btn btn-block opacity" id="low" name="priority">
+                                    <label for="low">Low</label>
+                                </div>
+                                <div class="col-md-4 col-md-4 mr-2" role="group">
+                                    <input type="radio" class="btn answer-btn btn-block opacity" id="medium" name="priority">
+                                    <label for="low">Medium</label>
+                                </div>
+                                <div class="col-md-4" role="group">
+                                    <input type="radio" class="btn answer-btn btn-block opacity" id="height" name="priority">
+                                    <label for="low">Height</label>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">Target Purchase Date</label>
+                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                    data-placement="right" title="Target start date description">?
+                            </button>
+                            <div class="form-inline row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control shadowed-input" id="from-age"
+                                           placeholder="From">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control shadowed-input" id="to-age"
+                                           placeholder="To">
+                                </div>
+                            </div>
+                            <small class="text-muted">Years from now</small>
+                        </div>
+
+                    <div class="row justify-content-end mt-2">
+                        <button class="btn btn-primary pl-5 pr-5" id="">Save Changes</button>
+                    </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="brend">
+        <img src="resources/img/brend.png" alt="" width="130">
+        <p>Your goals have a partner.</p>
+    </div>
+</div>
+
+
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="js/jQuery-plugin-progressbar.js"></script>
+<script>
+    $('#car-goal-modal').modal('show');
+    $(".progress-bar").loading();
+</script>
+<script src="js/func.js"></script>
+</body>
+</html>
