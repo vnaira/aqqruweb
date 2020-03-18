@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add goal</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
+          rel="stylesheet">
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jQuery-plugin-progressbar.css"/>
+</head>
+<body>
+<div style="background: url('bg.png') no-repeat; background-size: 100%; height: 100vh;">
+
+</div>
+
+<div id="goals-modals" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <!--Carousel Wrapper-->
+            <div id="goals-carousel" class="carousel slid" data-ride="carousel" data-wrap="false">
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                    <li data-target="#goals-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#goals-carousel" data-slide-to="1" class="bullets"></li>
+                    <li data-target="#goals-carousel" data-slide-to="2" class="bullets"></li>
+                    <li data-target="#goals-carousel" data-slide-to="3" class="bullets"></li>
+                    <li data-target="#goals-carousel" data-slide-to="4" class="bullets"></li>
+                    <li data-target="#goals-carousel" data-slide-to="5" class="bullets"></li>
+                    <li data-target="#goals-carousel" data-slide-to="6" class="bullets"></li>
+                </ol>
+                <!--/.Indicators-->
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                    <!-- lifeobjects -->
+                    <div class="carousel-item active">
+                        <div class="modal-header border-0">
+                            <!-- Percentage circle -->
+                            <div class="col-md-4 col-sm-6">
+                                <section>
+                                    <div class="progress-bar position" data-percent="60" data-duration="1" data-color="#ccc,#6AE273"></div>
+                                </section>
+                            </div>
+                            <div class="col-sm-12 col-md-8 mt-3">
+                                <h5 class="modal-title" style="font-size: 26px">Let's check your financials</h5>
+                                <p style="font-size: 18px">This is your wealth score. It is based on your income, expenses, assets and liabilities. It will change and adjust based on how you plan goals and providing more detailed information below.</p>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div class="container incoms">
+                                <div class="row income-item accepted-income">
+                                    <div class="col-md-2 col-sm-6 my-auto text-left text-bold">
+                                        <i class="m-icon accept-icon"></i>
+                                        Income
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 my-auto modal-currency">$120000</div>
+                                    <div class="col-md-5 col-sm-12 my-auto text-left"><p>All set! You provided us with this information.</p></div>
+                                    <div class="col-md-2 col-sm-6 my-auto btn-accept"></div>
+                                    <div class="col-md-1 col-sm-6 my-auto btn-edit"></div>
+                                </div>
+                                <div class="row income-item discarded-income">
+                                    <div class="col-md-2 my-auto text-left text-bold">
+                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Expenses</div>
+                                    <div class="col-md-2 my-auto modal-currency">$3,000/mo</div>
+                                    <div class="col-md-5 my-auto text-left"><p>This is an estimate based on the information
+                                        you provided. Click the edit to the left to
+                                        make changes.</p></div>
+                                    <div class="col-md-2 my-auto btn-accept">Accept</div>
+                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModal">Edit</div>
+                                </div>
+                                <div class="row income-item discarded-income">
+                                    <div class="col-md-2 my-auto text-left text-bold">
+                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Savings</div>
+                                    <div class="col-md-2 my-auto modal-currency">$20,000</div>
+                                    <div class="col-md-5 my-auto text-left"><p>This is an estimate based on the information
+                                        you provided. Click the edit to the left to
+                                        make changes.</p></div>
+                                    <div class="col-md-2 my-auto btn-accept">Accept</div>
+                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModalSavings">Edit</div>
+                                </div>
+                                <div class="row income-item discarded-income">
+                                    <div class="col-md-2 my-auto text-left text-bold">
+                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Real Estate</div>
+                                    <div class="col-md-2 my-auto modal-currency">$200,000</div>
+                                    <div class="col-md-5 my-auto text-left"><p>This is an estimate based on the information
+                                        you provided. Click the edit to the left to
+                                        make changes.</p></div>
+                                    <div class="col-md-2 my-auto btn-accept">Accept</div>
+                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModalRealEstate">Edit</div>
+                                </div>
+                                <div class="row income-item accepted-income">
+                                    <div class="col-md-2 my-auto text-left text-bold">
+                                        <i class="m-icon accept-icon"></i>Liabilities</div>
+                                    <div class="col-md-2 my-auto modal-currency">$50,000</div>
+                                    <div class="col-md-5 my-auto text-left"><p>All set! You provided us with this information.</p></div>
+                                    <div class="col-md-2 my-auto btn-accept"></div>
+                                    <div class="col-md-1 my-auto btn-edit"></div>
+                                </div>
+                                <div class="row justify-content-end mt-2 mb-5">
+                                    <button class="btn btn-primary p-0" disabled id="save-btn">
+                                        <a class="btn btn-primary pl-5 pr-5 " href="#goals-carousel"
+                                           role="button" data-slide="next">Save Changes</a>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Retirement goal-->
+                    <div class="carousel-item">
+                        <div class="modal-header border-0">
+
+                            <div class="col-md-7 col-sm-12">
+                                <div class="fullChart">
+                                    <div class="mypiechart">
+                                        <canvas id="myCanvas" width="130" height="130"></canvas>
+                                    </div>
+                                </div>
+<p>Retirement Goal</p>
+<p>Status: On-Track</p>
+                                    <div class="progress-bar progress-bar-small position" data-percent="85" data-duration="1" data-color="#ccc,#6AE273"></div>
+
+                            </div>
+                            <div class="col-sm-12 col-md-5 mt-3 text-right">
+                                <img src="resources/img/small-icon-retirement.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Save for Retirement</span>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <form class="text-left row">
+                                    <div class="col-md-7">
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">Goal name</label>
+                                            <input type="text" class="form-control shadowed-input" id="goal-name"
+                                                   placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                <div class="col-md-3" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="low"
+                                                           name="priority">
+                                                    <label for="low">Low</label>
+                                                </div>
+                                                <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="medium"
+                                                           name="priority">
+                                                    <label for="medium">Medium</label>
+                                                </div>
+                                                <div class="col-md-4" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="height"
+                                                           name="priority">
+                                                    <label for="height">Height</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="col-form-label">Target start age</label>
+                                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                    data-placement="right" title="Target start date description">?
+                                            </button>
+                                            <div class="form-inline row">
+                                                <div class="form-group col-md-6">
+                                                    <input type="text" class="form-control shadowed-input" id="from-age"
+                                                           placeholder="From">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <input type="text" class="form-control shadowed-input" id="to-age"
+                                                           placeholder="To">
+                                                </div>
+                                            </div>
+                                            <small class="text-muted">Years from now</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 text-right">
+                                        <h6 class="text-bold">We’ve assumed the following</h6>
+                                        <p class="text1">
+                                            <span>Target purchase date: </span>
+                                            <span>1-2 years</span>
+                                        </p>
+                                        <p class="text1">
+                                            <span>Price of the car: </span>
+                                            <span>$35,000</span>
+                                        </p>
+                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                            estimated the probability of
+                                            achieving this goal to be 89%</h6>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label class="col-form-label">How much retirement income do you need compared to
+                                            your existing expenses?</label>
+                                        <input type="text" class="form-control shadowed-input" placeholder="%">
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="" class="col-form-label">How much would you like to leave your
+                                            heirs?</label>
+                                        <input type="text" class="form-control shadowed-input number" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="text-right justify-content-end mt-2 mb-3 ">
+                                            <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
+                                               data-slide="next">Save Changes</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Car goal-->
+                    <div class="carousel-item">
+                        <div class="modal-header border-0">
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="false-For-Bottom-Text">
+                                    <div class="mypiechart">
+                                        <canvas id="myCanvas" width="130" height="130"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mt-3 text-right">
+                                <img src="resources/img/small-icon-car.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <form class="text-left row">
+                                    <div class="col-md-7">
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">Goal name</label>
+                                            <input type="text" class="form-control shadowed-input" id="goal-name"
+                                                   placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                <div class="col-md-3" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="low"
+                                                           name="priority">
+                                                    <label for="low">Low</label>
+                                                </div>
+                                                <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="medium"
+                                                           name="priority">
+                                                    <label for="medium">Medium</label>
+                                                </div>
+                                                <div class="col-md-4" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="height"
+                                                           name="priority">
+                                                    <label for="height">Height</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 text-right">
+                                        <h6 class="text-bold">We’ve assumed the following</h6>
+                                        <p class="text1">
+                                            <span>Target age: </span>
+                                            <span>65</span>
+                                        </p>
+                                        <p class="text1">
+                                            <span>Priority of this goal: </span>
+                                            <span>High</span>
+                                        </p>
+                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                            estimated the probability of
+                                            achieving this goal to be 81%</h6>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="col-form-label">Target Purchase Date</label>
+                                        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                data-placement="right" title="Target start date description">?
+                                        </button>
+                                        <div class="form-inline row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control shadowed-input" id="from-age"
+                                                       placeholder="From">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control shadowed-input" id="to-age"
+                                                       placeholder="To">
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Years from now</small>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <div class="text-right justify-content-end mt-2 mb-3 ">
+                                            <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
+                                               data-slide="next">Save Changes</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Collage goal-->
+                    <div class="carousel-item">
+                        <div class="modal-header border-0">
+
+                            <div class="col-md-6 col-sm-12">
+                            </div>
+                            <div class="col-sm-12 col-md-6 mt-3 text-right">
+                                <img src="resources/img/small-icon-kids-edu.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">College</span>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <form class="text-left row">
+                                    <div class="col-md-7">
+
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                <div class="col-md-3" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="low-2"
+                                                           name="priority">
+                                                    <label for="low-2">Low</label>
+                                                </div>
+                                                <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="medium-2"
+                                                           name="priority">
+                                                    <label for="medium-2">Medium</label>
+                                                </div>
+                                                <div class="col-md-4" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="height-2"
+                                                           name="priority">
+                                                    <label for="height-2">Height</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-8">
+                                            <label class="col-form-label">Target Start Date</label>
+                                            <input type="text" class="form-control shadowed-input" id="from-age"
+                                                   placeholder="Years from now">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 text-right">
+                                        <h6 class="text-bold">We’ve assumed the following</h6>
+                                        <p class="text1">
+                                            <span>Target age: </span>
+                                            <span>1-2 years</span>
+                                        </p>
+                                        <p class="text1">
+                                            <span>Price of this goal:</span>
+                                            <span>$35,000</span>
+                                        </p>
+                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                            estimated the probability of
+                                            achieving this goal to be 81%</h6>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="col-form-label">Duration of Education</label>
+                                        <div class="form-inline row">
+                                            <div class="form-group col-md-12">
+                                                <input type="range" class="custom-range" min="0" max="5" id="customRange2">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <div class="text-right justify-content-end mt-2 mb-3 ">
+                                            <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
+                                               data-slide="next">Save Changes</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="modal-header border-0">
+
+                            <div class="col-md-6 col-sm-12">
+                            </div>
+                            <div class="col-sm-12 col-md-6 mt-3 text-right">
+                                <img src="resources/img/small-icon-car.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <form class="text-left row">
+                                    <div class="col-md-7">
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">Goal name</label>
+                                            <input type="text" class="form-control shadowed-input" id="goal-name"
+                                                   placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                <div class="col-md-3" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="low"
+                                                           name="priority">
+                                                    <label for="low">Low</label>
+                                                </div>
+                                                <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="medium"
+                                                           name="priority">
+                                                    <label for="medium">Medium</label>
+                                                </div>
+                                                <div class="col-md-4" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="height"
+                                                           name="priority">
+                                                    <label for="height">Height</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 text-right">
+                                        <h6 class="text-bold">We’ve assumed the following</h6>
+                                        <p class="text1">
+                                            <span>Target age: </span>
+                                            <span>65</span>
+                                        </p>
+                                        <p class="text1">
+                                            <span>Priority of this goal: </span>
+                                            <span>High</span>
+                                        </p>
+                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                            estimated the probability of
+                                            achieving this goal to be 81%</h6>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="col-form-label">Target Purchase Date</label>
+                                        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                data-placement="right" title="Target start date description">?
+                                        </button>
+                                        <div class="form-inline row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control shadowed-input" id="from-age"
+                                                       placeholder="From">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control shadowed-input" id="to-age"
+                                                       placeholder="To">
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Years from now</small>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <div class="text-right justify-content-end mt-2 mb-3 ">
+                                            <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
+                                               data-slide="next">Save Changes</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="modal-header border-0">
+
+                            <div class="col-md-6 col-sm-12">
+                            </div>
+                            <div class="col-sm-12 col-md-6 mt-3 text-right">
+                                <img src="resources/img/small-icon-car.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <form class="text-left row">
+                                    <div class="col-md-7">
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">Goal name</label>
+                                            <input type="text" class="form-control shadowed-input" id="goal-name"
+                                                   placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                <div class="col-md-3" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="low"
+                                                           name="priority">
+                                                    <label for="low">Low</label>
+                                                </div>
+                                                <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="medium"
+                                                           name="priority">
+                                                    <label for="medium">Medium</label>
+                                                </div>
+                                                <div class="col-md-4" role="group">
+                                                    <input type="radio" class="btn answer-btn btn-block opacity"
+                                                           id="height"
+                                                           name="priority">
+                                                    <label for="height">Height</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 text-right">
+                                        <h6 class="text-bold">We’ve assumed the following</h6>
+                                        <p class="text1">
+                                            <span>Target age: </span>
+                                            <span>65</span>
+                                        </p>
+                                        <p class="text1">
+                                            <span>Priority of this goal: </span>
+                                            <span>High</span>
+                                        </p>
+                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                            estimated the probability of
+                                            achieving this goal to be 81%</h6>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="col-form-label">Target Purchase Date</label>
+                                        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                data-placement="right" title="Target start date description">?
+                                        </button>
+                                        <div class="form-inline row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control shadowed-input" id="from-age"
+                                                       placeholder="From">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control shadowed-input" id="to-age"
+                                                       placeholder="To">
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Years from now</small>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <div class="text-right justify-content-end mt-2 mb-3 ">
+                                            <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
+                                               data-slide="next">Save Changes</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="modal-header border-0">
+
+                            <div class="col-md-6 col-sm-12">
+                            </div>
+                            <div class="col-sm-12 col-md-6 mt-3 text-right">
+                                <img src="resources/img/small-icon-car.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <form class="text-left">
+                                    <div class="form-group col-md-7">
+                                        <label for="" class="col-form-label">How important this goal?</label>
+                                        <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                            <div class="col-md-3" role="group">
+                                                <input type="radio" class="btn answer-btn btn-block opacity" id="low-5"
+                                                       name="priority">
+                                                <label for="low-5">Low</label>
+                                            </div>
+                                            <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                <input type="radio" class="btn answer-btn btn-block opacity" id="medium-5"
+                                                       name="priority">
+                                                <label for="medium-5">Medium</label>
+                                            </div>
+                                            <div class="col-md-4" role="group">
+                                                <input type="radio" class="btn answer-btn btn-block opacity" id="height-5"
+                                                       name="priority">
+                                                <label for="height-5">Height</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <h6 class="text-bold">We’ve assumed the following</h6>
+                                        <p class="text1">
+                                            <span>Target age: </span>
+                                            <span>65</span>
+                                        </p>
+                                        <p class="text1">
+                                            <span>Priority of this goal: </span>
+                                            <span>High</span>
+                                        </p>
+                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                            estimated the probability of
+                                            achieving this goal to be 81%</h6>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label class="col-form-label">Expected total cost</label>
+                                        <input type="text" class="form-control shadowed-input number"  >
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="text-right justify-content-end mt-2 mb-3 ">
+                                            <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
+                                               data-slide="next">Save and Continue</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="brend">
+        <img src="resources/img/brend.png" alt="" width="130">
+        <p>Your goals have a partner.</p>
+    </div>
+</div>
+
+
+
+<!--Expenses edit modal-->
+<div id="editModal" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-5">
+                    <section>
+                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
+                    </section>
+                </div>
+                <div class="col-md-7 text-right">
+                    <h2 class="modal-title text-bold">Expenses</h2>
+                    <p class="income-value">$3,000/mo</p>
+                    <p style="font-size: 18px">You entered $3,000 for monthly expenses. Let’s
+                        break that down a bit more by sharing how
+                        much of this total is in each category below.</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <p class="col-md-12 text-primary text-left">What do these categories mean?</p>
+                        </div>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm number"
+                                             name="" value="" placeholder="$">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm number"
+                                             name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Somewhat Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm number"
+                                             name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Very Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm number"
+                                             name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Monthly Rent Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm number"
+                                             name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="text-right mt-4 mb-4">
+                                <p class="text-bold text-right">Total: $3,000</p>
+                                <button class="btn btn-primary pl-5 pr-5" id="save-changes">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal content-->
+    </div>
+</div>
+
+<!--Saving edit modal-->
+<div id="editModalRealEstate" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-5">
+                    <section>
+                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
+                    </section>
+                </div>
+                <div class="col-md-7 text-right">
+                    <h2 class="modal-title text-bold">Real estate</h2>
+                    <p class="income-value">$200,000/mo</p>
+                    <p>You entered $3,000 for monthly expenses. Let’s
+                        break that down a bit more by sharing how
+                        much of this total is in each category below.</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="col-md-12">
+                        <p class="col-md-12 text-primary text-left">What do these categories mean?</p>
+                    </div>
+                    <form action="">
+                        <div class="mb-5">
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current home value
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm number"
+                                             name="" value="" placeholder="$1,500">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Priority name
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="text"
+                                           class="form-control form-control-sm shadowed-input"
+                                             name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Zip code
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                </label>
+                                <div class="col-lg-12">
+                                    <input type="number"
+                                           class="form-control form-control-sm shadowed-input"
+                                             name="" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control col-lg-12 text-left">
+                                    <p>Primary residence</p>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="custom-control col-lg-12 text-left">
+                                    <p>I have a mortgage on this property</p>
+                                    <label class="switch">
+                                        <input type="checkbox" data-toggle="collapse" data-target="#mortgage-collapse" aria-expanded="false" aria-controls="mortgage-collapse">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="collapse" id="mortgage-collapse">
+                                <h5 class="text-bold text-left col-md-12">Mortgage</h5>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Lender
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Mortgage type
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input"
+                                                 name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current balance
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm number"
+                                                 name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Interest rate
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm number"
+                                                 name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Loan inception date
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm number"
+                                                 name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse" id="moreEstate">
+                            <hr>
+                            <div class="">
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current home value
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm number"
+                                                 name="" value="" placeholder="$">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Priority name
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input"
+                                                 name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Zip code
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="number"
+                                               class="form-control form-control-sm shadowed-input"
+                                                 name="" value="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control col-lg-12 text-left">
+                                        <p>Primary residence</p>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control col-lg-12 text-left">
+                                        <p>I have a mortgage on this property</p>
+                                        <label class="switch">
+                                            <input type="checkbox" data-toggle="collapse" data-target="#mortgage-collapse2" aria-expanded="false" aria-controls="mortgage-collapse2">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="collapse" id="mortgage-collapse2">
+                                    <h5 class="text-bold text-left col-md-12">Mortgage</h5>
+                                    <div class="form-group">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Lender
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm shadowed-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Mortgage type
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm shadowed-input"
+                                                     name="" value="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Current balance
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm number"
+                                                     name="" value="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Interest rate
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm number"
+                                                     name="" value="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="">
+									 Loan inception date
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm number"
+                                                     name="" value="" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-right mt-4 mb-4">
+                            <button class="btn btn-primary" id="add-more-estate" type="button" data-toggle="collapse"
+                                    data-target="#moreEstate" aria-expanded="false" aria-controls="collapseExample">
+                                Add more Estate
+                            </button>
+                        </div>
+                        <div class="text-right mt-4 mb-4">
+                            <button class="btn btn-primary pl-5 pr-5" id="save-changes-saving">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal content-->
+    </div>
+</div>
+
+
+<div id="editModalSavings" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <!-- Percentage circle -->
+                <div class="col-md-5">
+                    <section>
+                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
+                    </section>
+                </div>
+                <div class="col-md-7 text-right">
+                    <h2 class="modal-title text-bold">Saving</h2>
+                    <p class="income-value">$20,000</p>
+                    <p>You entered $3,000 for monthly expenses. Let’s
+                        break that down a bit more by sharing how
+                        much of this total is in each category below.</p>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input"
+                                         name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input"
+                                         name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="" >
+									 Non-Flexible Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                            </label>
+                            <div class="col-lg-12">
+                                <input type="text"
+                                       class="form-control form-control-sm shadowed-input"
+                                         name="" value="" placeholder="">
+                            </div>
+                        </div>
+                        <div class="text-right mt-4 mb-4">
+                            <button class="btn btn-primary pl-5 pr-5" id="saving-changes">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal content-->
+    </div>
+</div>
+
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="js/jQuery-plugin-progressbar.js"></script>
+<script src="js/rpie.js"></script>
+<script>
+       $('#goals-carousel').carousel({
+        interval: false,
+        wrap: false,
+    });
+    $('#goals-modals').modal('show');
+    $(".progress-bar").loading();
+</script>
+<script type="text/javascript">
+
+    var obj = {
+        values: [35, 50, 40, 45],
+        colors: ['#E2CB6A', '#E2CB6A', '#FFC','#E2CB6A'],
+        animation: false, // Takes boolean value & default behavious is false
+        fillTextData: true, // Takes boolean value & text is not generate by default
+        fillTextColor: '#fff', // For Text colour & default colour is #fff (White)
+        fillTextAlign: 1.30, // for alignment of inner text position i.e. higher values gives closer view to center & default text alignment is 1.85 i.e closer to center
+        fillTextPosition: 'inner', // 'horizontal' or 'vertical' or 'inner' & default text position is 'horizontal' position i.e. outside the canvas
+        doughnutHoleSize: 40, // Percentage of doughnut size within the canvas & default doughnut size is null
+        doughnutHoleColor: '#fff', // For doughnut colour & default colour is #fff (White)
+        offset: 1, // Offeset between two segments & default value is null
+        pie: 'normal', // if the pie graph is single stroke then we will add the object key as "stroke" & default is normal as simple as pie graph
+        isStrokePie: {
+            stroke: 20, // Define the stroke of pie graph. It takes number value & default value is 20
+            overlayStroke: true, // Define the background stroke within pie graph. It takes boolean value & default value is false
+            overlayStrokeColor: '#eee', // Define the background stroke colour within pie graph & default value is #eee (Grey)
+            strokeStartEndPoints: 'Yes', // Define the start and end point of pie graph & default value is No
+            strokeAnimation: true, // Used for animation. It takes boolean value & default value is true
+            strokeAnimationSpeed: 40, // Used for animation speed in miliisecond. It takes number & default value is 20ms
+            fontSize: '60px', // Used to define text font size & default value is 60px
+            textAlignement: 'center', // Used for position of text within the pie graph & default value is 'center'
+            fontFamily: 'Arial', // Define the text font family & the default value is 'Arial'
+            fontWeight: 'bold' //  Define the font weight of the text & the default value is 'bold'
+        }
+    };
+    //Generate myCanvas
+    generatePieGraph('myCanvas', obj);
+
+
+</script>
+
+<script src="js/func.js"></script>
+</body>
+</html>

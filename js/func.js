@@ -118,7 +118,7 @@ $(document).ready(function () {
             $(this).parent().find('.answer-btn').removeClass('active');
         } else {
             $(this).parent().find('.answer-btn').addClass('active');
-            if ($(this).val() > 100) {
+            if ($(this).val() > 100 || $(this).val() < 1) {
                 $('.error').show();
             } else {
                 $('.error').hide();
@@ -140,6 +140,8 @@ $(document).ready(function () {
             $('#save-btn').attr('disabled', 'disabled');
         } else {
             $('#save-btn').removeAttr('disabled');
+            $('#save-btn a').removeClass('disabled');
+            $('.bullets').css('display', 'block');
         }
 
     });
