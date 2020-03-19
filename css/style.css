@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
@@ -264,7 +263,7 @@
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 30px 0;
+  /*padding: 30px 0;*/
 }
 .section-title {
   font-family: Avenir-black;
@@ -348,12 +347,12 @@ h3.section-title{
   display: none;
 }
 
-input[type=radio]+label {
+input.priority_[type=radio]+label {
   background: #DBE6F2;
   padding: 5px 15px;
   border-radius: 0.25rem;
 }
-input[type=radio]:checked+label {
+input.priority_[type=radio]:checked+label {
   background: #499DF2;
   padding: 5px 15px;
   color:#fff;
@@ -365,8 +364,8 @@ input[type=radio]:checked+label {
 
 
 /*.myGoalsContainer{*/
-  /*height: 600px;*/
-  /*overflow: auto;*/
+/*height: 600px;*/
+/*overflow: auto;*/
 /*}*/
 .tooltip-badge{
   background: #DBE6F2;
@@ -395,12 +394,12 @@ input[type=radio]:checked+label {
 }
 .context-menu:hover{cursor: pointer}
 .class-arrow{background: url("../resources/img/continue.png") no-repeat;
-width: 48px;
-height: 48px;
-background-size: cover;
-margin: 20px auto 10px;
-cursor: pointer;
-border: 0 none}
+  width: 48px;
+  height: 48px;
+  background-size: cover;
+  margin: 20px auto 10px;
+  cursor: pointer;
+  border: 0 none}
 .text20{color:#8A94A3;font-size: 20px; font-family: Avenir-black}
 .dropdown-item span.edit-msg {
   font-size: 14px;
@@ -438,3 +437,4 @@ a.disabled {
 h6{font-size: 14px}
 .fullChart{width: 160px; float: left}
 .progress-bar-small{}
+.carousel-indicators{margin-bottom: -40px}

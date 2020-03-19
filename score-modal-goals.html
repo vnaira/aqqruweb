@@ -26,13 +26,13 @@
             <div id="goals-carousel" class="carousel slid" data-ride="carousel" data-wrap="false">
                 <!--Indicators-->
                 <ol class="carousel-indicators">
-                    <li data-target="#goals-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#goals-carousel" data-slide-to="1" class="bullets"></li>
-                    <li data-target="#goals-carousel" data-slide-to="2" class="bullets"></li>
-                    <li data-target="#goals-carousel" data-slide-to="3" class="bullets"></li>
-                    <li data-target="#goals-carousel" data-slide-to="4" class="bullets"></li>
-                    <li data-target="#goals-carousel" data-slide-to="5" class="bullets"></li>
-                    <li data-target="#goals-carousel" data-slide-to="6" class="bullets"></li>
+                    <li data-target="" data-slide-to="0" class="active"></li>
+                    <li data-target="" data-slide-to="1"></li>
+                    <li data-target="" data-slide-to="2"></li>
+                    <li data-target="" data-slide-to="3"></li>
+                    <li data-target="" data-slide-to="4"></li>
+                    <li data-target="" data-slide-to="5"></li>
+                    <li data-target="" data-slide-to="6"></li>
                 </ol>
                 <!--/.Indicators-->
                 <!--Slides-->
@@ -43,12 +43,21 @@
                             <!-- Percentage circle -->
                             <div class="col-md-4 col-sm-6">
                                 <section>
-                                    <div class="progress-bar position" data-percent="60" data-duration="1" data-color="#ccc,#6AE273"></div>
+                                    <div class="progress-bar position" data-percent="60" data-duration="1"
+                                         data-color="#ccc,#6AE273"></div>
+                                    <div class="row">
+                                        <div class="ml-5">
+                                            <p>Status: On-Track</p>
+                                        </div>
+                                    </div>
                                 </section>
                             </div>
                             <div class="col-sm-12 col-md-8 mt-3">
                                 <h5 class="modal-title" style="font-size: 26px">Let's check your financials</h5>
-                                <p style="font-size: 18px">This is your wealth score. It is based on your income, expenses, assets and liabilities. It will change and adjust based on how you plan goals and providing more detailed information below.</p>
+                                <p style="font-size: 18px">This is your financial wellness score. It is based on your
+                                    income, expenses, assets, liabilities and your goals. Please update the estimations
+                                    we have made if they are not accurate.
+                                </p>
                             </div>
                         </div>
                         <div class="modal-body text-center">
@@ -59,51 +68,64 @@
                                         Income
                                     </div>
                                     <div class="col-md-2 col-sm-6 my-auto modal-currency">$120000</div>
-                                    <div class="col-md-5 col-sm-12 my-auto text-left"><p>All set! You provided us with this information.</p></div>
+                                    <div class="col-md-5 col-sm-12 my-auto text-left"><p>All set! You provided us with
+                                        this information.</p></div>
                                     <div class="col-md-2 col-sm-6 my-auto btn-accept"></div>
                                     <div class="col-md-1 col-sm-6 my-auto btn-edit"></div>
                                 </div>
                                 <div class="row income-item discarded-income">
                                     <div class="col-md-2 my-auto text-left text-bold">
-                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Expenses</div>
+                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Expenses
+                                    </div>
                                     <div class="col-md-2 my-auto modal-currency">$3,000/mo</div>
-                                    <div class="col-md-5 my-auto text-left"><p>This is an estimate based on the information
-                                        you provided. Click the edit to the left to
-                                        make changes.</p></div>
+                                    <div class="col-md-5 my-auto text-left"><p>This is an estimation of your monthly
+                                        expenses based on where you live.
+                                        Click to accept or edit.</p></div>
                                     <div class="col-md-2 my-auto btn-accept">Accept</div>
-                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModal">Edit</div>
+                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModal">
+                                        Edit
+                                    </div>
                                 </div>
                                 <div class="row income-item discarded-income">
                                     <div class="col-md-2 my-auto text-left text-bold">
-                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Savings</div>
+                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Savings
+                                    </div>
                                     <div class="col-md-2 my-auto modal-currency">$20,000</div>
-                                    <div class="col-md-5 my-auto text-left"><p>This is an estimate based on the information
-                                        you provided. Click the edit to the left to
-                                        make changes.</p></div>
+                                    <div class="col-md-5 my-auto text-left"><p>This is an estimation of your savings
+                                        based
+                                        on your age. Click to accept or edit.</p></div>
                                     <div class="col-md-2 my-auto btn-accept">Accept</div>
-                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModalSavings">Edit</div>
+                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal"
+                                         data-target="#editModalSavings">Edit
+                                    </div>
                                 </div>
                                 <div class="row income-item discarded-income">
                                     <div class="col-md-2 my-auto text-left text-bold">
-                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Real Estate</div>
+                                        <i class="m-icon accept-icon" style="visibility: hidden"></i>Real Estate
+                                    </div>
                                     <div class="col-md-2 my-auto modal-currency">$200,000</div>
-                                    <div class="col-md-5 my-auto text-left"><p>This is an estimate based on the information
-                                        you provided. Click the edit to the left to
-                                        make changes.</p></div>
+                                    <div class="col-md-5 my-auto text-left"><p>This is an estimation of your property
+                                        value
+                                        based on the mortgage you provided.
+                                        Click to accept or edit.</p></div>
                                     <div class="col-md-2 my-auto btn-accept">Accept</div>
-                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal" data-target="#editModalRealEstate">Edit</div>
+                                    <div class="col-md-1 my-auto btn-edit" data-toggle="modal"
+                                         data-target="#editModalRealEstate">Edit
+                                    </div>
                                 </div>
                                 <div class="row income-item accepted-income">
                                     <div class="col-md-2 my-auto text-left text-bold">
-                                        <i class="m-icon accept-icon"></i>Liabilities</div>
+                                        <i class="m-icon accept-icon"></i>Liabilities
+                                    </div>
                                     <div class="col-md-2 my-auto modal-currency">$50,000</div>
-                                    <div class="col-md-5 my-auto text-left"><p>All set! You provided us with this information.</p></div>
+                                    <div class="col-md-5 my-auto text-left"><p>All set! You provided us with this
+                                        information.</p></div>
                                     <div class="col-md-2 my-auto btn-accept"></div>
                                     <div class="col-md-1 my-auto btn-edit"></div>
                                 </div>
                                 <div class="row justify-content-end mt-2 mb-5">
                                     <button class="btn btn-primary p-0" disabled id="save-btn">
-                                        <a class="btn btn-primary pl-5 pr-5 " href="#goals-carousel"
+                                        <a class="btn btn-primary pl-5 pr-5 disabled" href="#goals-carousel"
                                            role="button" data-slide="next">Save Changes</a>
                                     </button>
 
@@ -122,9 +144,10 @@
                                         <canvas id="myCanvas" width="130" height="130"></canvas>
                                     </div>
                                 </div>
-<p>Retirement Goal</p>
-<p>Status: On-Track</p>
-                                    <div class="progress-bar progress-bar-small position" data-percent="85" data-duration="1" data-color="#ccc,#6AE273"></div>
+                                <p>Retirement Goal</p>
+                                <p>Status: On-Track</p>
+                                <div class="progress-bar progress-bar-small position" data-percent="85"
+                                     data-duration="1" data-color="#ccc,#6AE273"></div>
 
                             </div>
                             <div class="col-sm-12 col-md-5 mt-3 text-right">
@@ -136,65 +159,75 @@
                             <div class="container">
                                 <form class="text-left row">
                                     <div class="col-md-7">
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">Goal name</label>
-                                            <input type="text" class="form-control shadowed-input" id="goal-name"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">How important this
-                                                goal?</label>
-                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
-                                                <div class="col-md-3" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="low"
-                                                           name="priority">
-                                                    <label for="low">Low</label>
-                                                </div>
-                                                <div class="col-md-4 col-md-4 mr-2" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="medium"
-                                                           name="priority">
-                                                    <label for="medium">Medium</label>
-                                                </div>
-                                                <div class="col-md-4" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="height"
-                                                           name="priority">
-                                                    <label for="height">Height</label>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label for="goal-name" class="col-form-label">How important this
+                                                    goal?</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                    <div class="col-md-3" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="low"
+                                                               name="priority">
+                                                        <label for="low">Low</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="medium"
+                                                               name="priority">
+                                                        <label for="medium">Medium</label>
+                                                    </div>
+                                                    <div class="col-md-4" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="height"
+                                                               name="priority">
+                                                        <label for="height">Height</label>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="col-form-label">Target start age</label>
-                                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                    data-placement="right" title="Target start date description">?
-                                            </button>
-                                            <div class="form-inline row">
-                                                <div class="form-group col-md-6">
-                                                    <input type="text" class="form-control shadowed-input" id="from-age"
-                                                           placeholder="From">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <input type="text" class="form-control shadowed-input" id="to-age"
-                                                           placeholder="To">
-                                                </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="goal-name" class="col-form-label">Goal name</label>
+                                                <input type="text" class="form-control shadowed-input" placeholder="">
                                             </div>
-                                            <small class="text-muted">Years from now</small>
+
+                                            <div class="form-group col-md-12">
+                                                <label class="col-form-label">Target start age</label>
+                                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                        data-placement="right" title="Target start date description">?
+                                                </button>
+                                                <div class="form-inline row">
+                                                    <div class="form-group col-md-4">
+                                                        <input type="text" class="form-control shadowed-input"
+                                                               id="from-age"
+                                                               placeholder="From">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <input type="text" class="form-control shadowed-input"
+                                                               id="to-age"
+                                                               placeholder="To">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <small class="text-muted">Years from now</small>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-5 text-right">
                                         <h6 class="text-bold">We’ve assumed the following</h6>
                                         <p class="text1">
-                                            <span>Target purchase date: </span>
-                                            <span>1-2 years</span>
+                                            <span>Target age: </span>
+                                            <span>65</span>
                                         </p>
                                         <p class="text1">
-                                            <span>Price of the car: </span>
+                                            <span>Priority of this goal: </span>
                                             <span>$35,000</span>
                                         </p>
-                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                        <h6 class="mt-3 text-bold mt-4">Based on these assumptions, we’ve
                                             estimated the probability of
                                             achieving this goal to be 89%</h6>
                                     </div>
@@ -223,54 +256,63 @@
                     <div class="carousel-item">
                         <div class="modal-header border-0">
 
-                            <div class="col-md-6 col-sm-12">
-                                <div class="false-For-Bottom-Text">
+                            <div class="col-md-7 col-sm-12">
+                                <div class="fullChart">
                                     <div class="mypiechart">
-                                        <canvas id="myCanvas" width="130" height="130"></canvas>
+                                        <canvas id="myCanvas-car" width="130" height="130"></canvas>
                                     </div>
                                 </div>
+                                <p>Car Goal</p>
+                                <p>Status: Off-Track</p>
+                                <div class="progress-bar progress-bar-small position" data-percent="85"
+                                     data-duration="1" data-color="#ccc,#6AE273"></div>
+
                             </div>
-                            <div class="col-sm-12 col-md-6 mt-3 text-right">
+                            <div class="col-sm-12 col-md-5 mt-3 text-right">
                                 <img src="resources/img/small-icon-car.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                                     style="margin-top: -10px; margin-right: 6px"><span
+                                    class="goal-name-bold">Buy a Car</span>
                             </div>
                         </div>
                         <div class="modal-body text-center">
                             <div class="container">
                                 <form class="text-left row">
                                     <div class="col-md-7">
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">Goal name</label>
-                                            <input type="text" class="form-control shadowed-input" id="goal-name"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">How important this
-                                                goal?</label>
-                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
-                                                <div class="col-md-3" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="low"
-                                                           name="priority">
-                                                    <label for="low">Low</label>
-                                                </div>
-                                                <div class="col-md-4 col-md-4 mr-2" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="medium"
-                                                           name="priority">
-                                                    <label for="medium">Medium</label>
-                                                </div>
-                                                <div class="col-md-4" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="height"
-                                                           name="priority">
-                                                    <label for="height">Height</label>
+                                        <div class="row">
+                                            <div class="form-group col-md-10">
+                                                <label for="goal-name" class="col-form-label">How important this
+                                                    goal?</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                    <div class="col-md-3" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="low-car"
+                                                               name="priority">
+                                                        <label for="low-car">Low</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="medium-car"
+                                                               name="priority">
+                                                        <label for="medium-car">Medium</label>
+                                                    </div>
+                                                    <div class="col-md-4" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="height-car"
+                                                               name="priority">
+                                                        <label for="height-car">Height</label>
 
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div class="form-group col-md-10">
+                                                <label for="goal-name" class="col-form-label">Goal name</label>
+                                                <input type="text" class="form-control shadowed-input">
                                             </div>
                                         </div>
                                         <div class="form-group col-md-6">
-
                                         </div>
                                     </div>
                                     <div class="col-md-5 text-right">
@@ -287,24 +329,50 @@
                                             estimated the probability of
                                             achieving this goal to be 81%</h6>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="col-form-label">Target Purchase Date</label>
-                                        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                data-placement="right" title="Target start date description">?
-                                        </button>
+                                    <div class="form-group col-md-7">
+                                        <div class="col-form-label">Target Purchase Date</div>
                                         <div class="form-inline row">
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control shadowed-input" id="from-age"
-                                                       placeholder="From">
+                                                <small>From</small>
+                                                <input type="text" onfocus="(this.type='date')"
+                                                       class="form-control shadowed-input" id="from-age"
+                                                       placeholder="Years from now">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control shadowed-input" id="to-age"
-                                                       placeholder="To">
+                                                <small>To</small>
+                                                <input type="text" onfocus="(this.type='date')"
+                                                       class="form-control shadowed-input" id="to-age"
+                                                       placeholder="Years from now">
                                             </div>
                                         </div>
-                                        <small class="text-muted">Years from now</small>
                                     </div>
 
+                                    <div class="form-group col-md-7">
+                                        <label class="col-form-label">Car Type</label>
+                                        <select class="form-control shadowed-input">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-7">
+                                        <p class="col-form-label">Condition</p>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="customRadio"
+                                                   id="customRadio1">
+                                            <label class="custom-control-label" for="customRadio1">New</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="customRadio"
+                                                   id="customRadio2" checked>
+                                            <label class="custom-control-label" for="customRadio2">Used</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-7">
+                                        <label for="goal-name" class="col-form-label">Expected Cost</label>
+                                        <input type="text" class="form-control shadowed-input number">
+                                    </div>
                                     <div class="form-group col-md-12">
                                         <div class="text-right justify-content-end mt-2 mb-3 ">
                                             <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
@@ -320,50 +388,66 @@
                     <div class="carousel-item">
                         <div class="modal-header border-0">
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-7 col-sm-12">
+                                <div class="fullChart">
+                                    <div class="mypiechart">
+                                        <canvas id="myCanvas-college" width="130" height="130"></canvas>
+                                    </div>
+                                </div>
+                                <p>Retirement Goal</p>
+                                <p>Status: On-Track</p>
+                                <div class="progress-bar progress-bar-small position" data-percent="85"
+                                     data-duration="1" data-color="#ccc,#6AE273"></div>
+
                             </div>
-                            <div class="col-sm-12 col-md-6 mt-3 text-right">
+                            <div class="col-sm-12 col-md-5 mt-3 text-right">
                                 <img src="resources/img/small-icon-kids-edu.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">College</span>
+                                     style="margin-top: -10px; margin-right: 6px"><span
+                                    class="goal-name-bold">College</span>
                             </div>
                         </div>
                         <div class="modal-body text-center">
                             <div class="container">
                                 <form class="text-left row">
                                     <div class="col-md-7">
+                                        <div class="row">
+                                            <div class="form-group col-md-10">
+                                                <label for="goal-name" class="col-form-label">How important this
+                                                    goal?</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                    <div class="col-md-3" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="low-college"
+                                                               name="priority">
+                                                        <label for="low-college">Low</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="medium-college"
+                                                               name="priority">
+                                                        <label for="medium-college">Medium</label>
+                                                    </div>
+                                                    <div class="col-md-4" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="height-college"
+                                                               name="priority">
+                                                        <label for="height-college">Height</label>
 
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">How important this
-                                                goal?</label>
-                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
-                                                <div class="col-md-3" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="low-2"
-                                                           name="priority">
-                                                    <label for="low-2">Low</label>
-                                                </div>
-                                                <div class="col-md-4 col-md-4 mr-2" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="medium-2"
-                                                           name="priority">
-                                                    <label for="medium-2">Medium</label>
-                                                </div>
-                                                <div class="col-md-4" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="height-2"
-                                                           name="priority">
-                                                    <label for="height-2">Height</label>
-
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group col-md-8">
-                                            <label class="col-form-label">Target Start Date</label>
-                                            <input type="text" class="form-control shadowed-input" id="from-age"
-                                                   placeholder="Years from now">
+                                            <div class="form-group col-md-10">
+                                                <label class="col-form-label">Target Start Date</label>
+                                                <input type="text" onfocus="(this.type='date')"
+                                                       class="form-control shadowed-input" id="from-age"
+                                                       placeholder="Years from now">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 text-right">
+                                    <div class="col-md-5 text-right mt-4">
                                         <h6 class="text-bold">We’ve assumed the following</h6>
                                         <p class="text1">
                                             <span>Target age: </span>
@@ -373,7 +457,7 @@
                                             <span>Price of this goal:</span>
                                             <span>$35,000</span>
                                         </p>
-                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                        <h6 class="mt-3 text-bold mt-4">Based on these assumptions, we’ve
                                             estimated the probability of
                                             achieving this goal to be 81%</h6>
                                     </div>
@@ -381,9 +465,19 @@
                                         <label class="col-form-label">Duration of Education</label>
                                         <div class="form-inline row">
                                             <div class="form-group col-md-12">
-                                                <input type="range" class="custom-range" min="0" max="5" id="customRange2">
+                                                <input type="range" class="custom-range" min="0" max="5"
+                                                       id="customRange2">
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="form-group col-md-7">
+                                        <label class="col-form-label">For Child</label>
+                                        <select class="form-control shadowed-input">
+                                            <option selected>Choose...</option>
+                                            <option value="1">Anna</option>
+                                            <option value="2">Aram</option>
+                                            <option value="3">Mark</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group col-md-12">
@@ -400,45 +494,60 @@
                     <div class="carousel-item">
                         <div class="modal-header border-0">
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-7 col-sm-12">
+                                <div class="fullChart">
+                                    <div class="mypiechart">
+                                        <canvas id="myCanvas-house" width="130" height="130"></canvas>
+                                    </div>
+                                </div>
+                                <p>Retirement Goal</p>
+                                <p>Status: On-Track</p>
+                                <div class="progress-bar progress-bar-small position" data-percent="85"
+                                     data-duration="1" data-color="#ccc,#6AE273"></div>
+
                             </div>
-                            <div class="col-sm-12 col-md-6 mt-3 text-right">
-                                <img src="resources/img/small-icon-car.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                            <div class="col-sm-12 col-md-5 mt-3 text-right">
+                                <img src="resources/img/small-icon-house.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span
+                                    class="goal-name-bold">House</span>
                             </div>
                         </div>
                         <div class="modal-body text-center">
                             <div class="container">
                                 <form class="text-left row">
                                     <div class="col-md-7">
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">Goal name</label>
-                                            <input type="text" class="form-control shadowed-input" id="goal-name"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">How important this
-                                                goal?</label>
-                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
-                                                <div class="col-md-3" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="low"
-                                                           name="priority">
-                                                    <label for="low">Low</label>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label for="goal-name" class="col-form-label">How important this
+                                                    goal?</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                    <div class="col-md-3" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="low-house"
+                                                               name="priority">
+                                                        <label for="low-house">Low</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="medium-house"
+                                                               name="priority">
+                                                        <label for="medium-house">Medium</label>
+                                                    </div>
+                                                    <div class="col-md-4" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="height-house"
+                                                               name="priority">
+                                                        <label for="height-house">Height</label>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-4 col-md-4 mr-2" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="medium"
-                                                           name="priority">
-                                                    <label for="medium">Medium</label>
-                                                </div>
-                                                <div class="col-md-4" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="height"
-                                                           name="priority">
-                                                    <label for="height">Height</label>
+                                            </div>
 
-                                                </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="goal-name" class="col-form-label">Goal name</label>
+                                                <input type="text" class="form-control shadowed-input">
                                             </div>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -465,16 +574,46 @@
                                                 data-placement="right" title="Target start date description">?
                                         </button>
                                         <div class="form-inline row">
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-4">
                                                 <input type="text" class="form-control shadowed-input" id="from-age"
                                                        placeholder="From">
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-4">
                                                 <input type="text" class="form-control shadowed-input" id="to-age"
                                                        placeholder="To">
                                             </div>
+                                            <div class="form-group col-md-4">
+                                                <small class="text-muted">Years from now</small>
+                                            </div>
                                         </div>
-                                        <small class="text-muted">Years from now</small>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <label class="col-form-label">Desired Zip Code</label>
+                                        <input type="text" class="form-control shadowed-input" placeholder="0%">
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label class="col-form-label">Expected House Price</label>
+                                        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                data-placement="right" title="Expected House Price">?
+                                        </button>
+                                        <input type="text" class="form-control shadowed-input" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="" class="col-form-label">Downpayment Needed</label>
+                                        <input type="text" class="form-control shadowed-input" placeholder="0%">
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="" class="col-form-label">Mortgage Type</label>
+                                        <input type="text" class="form-control shadowed-input"
+                                               placeholder="3D Years Fixed">
+                                    </div>
+                                    <div class="custom-control custom-checkbox mt-4 col-md-12">
+                                        <div class="col">
+                                            <input type="checkbox" class="custom-control-input" id="residence">
+                                            <label class="custom-control-label" for="residence">Primary
+                                                Residence?</label>
+                                        </div>
                                     </div>
 
                                     <div class="form-group col-md-12">
@@ -491,52 +630,68 @@
                     <div class="carousel-item">
                         <div class="modal-header border-0">
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-7 col-sm-12">
+                                <div class="fullChart">
+                                    <div class="mypiechart">
+                                        <canvas id="myCanvas-wedding" width="130" height="130"></canvas>
+                                    </div>
+                                </div>
+                                <p>Wedding Goal</p>
+                                <p>Status: On-Track</p>
+                                <div class="progress-bar progress-bar-small position" data-percent="85"
+                                     data-duration="1" data-color="#ccc,#6AE273"></div>
+
                             </div>
-                            <div class="col-sm-12 col-md-6 mt-3 text-right">
-                                <img src="resources/img/small-icon-car.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                            <div class="col-sm-12 col-md-5 mt-3 text-right">
+                                <img src="resources/img/small-icon-wedding.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span
+                                    class="goal-name-bold">Wedding</span>
                             </div>
                         </div>
                         <div class="modal-body text-center">
                             <div class="container">
                                 <form class="text-left row">
                                     <div class="col-md-7">
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">Goal name</label>
-                                            <input type="text" class="form-control shadowed-input" id="goal-name"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="goal-name" class="col-form-label">How important this
-                                                goal?</label>
-                                            <div class="btn-toolbar row justify-content-start" role="toolbar">
-                                                <div class="col-md-3" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="low"
-                                                           name="priority">
-                                                    <label for="low">Low</label>
-                                                </div>
-                                                <div class="col-md-4 col-md-4 mr-2" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="medium"
-                                                           name="priority">
-                                                    <label for="medium">Medium</label>
-                                                </div>
-                                                <div class="col-md-4" role="group">
-                                                    <input type="radio" class="btn answer-btn btn-block opacity"
-                                                           id="height"
-                                                           name="priority">
-                                                    <label for="height">Height</label>
+                                        <div class="row">
+                                            <div class="form-group col-md-10">
+                                                <label for="" class="col-form-label">How important this
+                                                    goal?</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                    <div class="col-md-3" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="low-wedding"
+                                                               name="priority">
+                                                        <label for="low-wedding">Low</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="medium-wedding"
+                                                               name="priority">
+                                                        <label for="medium-wedding">Medium</label>
+                                                    </div>
+                                                    <div class="col-md-4" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="height-wedding"
+                                                               name="priority">
+                                                        <label for="height-wedding">Height</label>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group col-md-6">
+                                            <div class="form-group col-md-10">
+                                                <label for="goal-name" class="col-form-label">Goal name</label>
+                                                <input type="text" class="form-control shadowed-input" id="goal-name"
+                                                       placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
 
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 text-right">
+                                    <div class="col-md-5 text-right mt-4">
                                         <h6 class="text-bold">We’ve assumed the following</h6>
                                         <p class="text1">
                                             <span>Target age: </span>
@@ -546,26 +701,27 @@
                                             <span>Priority of this goal: </span>
                                             <span>High</span>
                                         </p>
-                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
+                                        <h6 class="mt-3 text-bold mt-4">Based on these assumptions, we’ve
                                             estimated the probability of
                                             achieving this goal to be 81%</h6>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="col-form-label">Target Purchase Date</label>
+                                        <label class="col-form-label">Planned wedding date</label>
                                         <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                                                 data-placement="right" title="Target start date description">?
                                         </button>
                                         <div class="form-inline row">
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control shadowed-input" id="from-age"
-                                                       placeholder="From">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control shadowed-input" id="to-age"
-                                                       placeholder="To">
+                                                <input type="text" onfocus="(this.type='date')"
+                                                       class="form-control shadowed-input" id="from-age"
+                                                       placeholder="">
                                             </div>
                                         </div>
                                         <small class="text-muted">Years from now</small>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label class="col-form-label">Expected total cost</label>
+                                        <input type="text" class="form-control shadowed-input" placeholder="$">
                                     </div>
 
                                     <div class="form-group col-md-12">
@@ -582,55 +738,67 @@
                     <div class="carousel-item">
                         <div class="modal-header border-0">
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-7 col-sm-12">
+                                <div class="fullChart">
+                                    <div class="mypiechart">
+                                        <canvas id="myCanvas-emergency" width="130" height="130"></canvas>
+                                    </div>
+                                </div>
+                                <p>Retirement Goal</p>
+                                <p>Status: On-Track</p>
+                                <div class="progress-bar progress-bar-small position" data-percent="85"
+                                     data-duration="1" data-color="#ccc,#6AE273"></div>
+
                             </div>
-                            <div class="col-sm-12 col-md-6 mt-3 text-right">
-                                <img src="resources/img/small-icon-car.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"><span class="goal-name-bold">Buy a Car</span>
+                            <div class="col-sm-12 col-md-5 mt-3 text-right">
+                                <img src="resources/img/small-icon-emergency.png" alt="" width="34"
+                                     style="margin-top: -10px; margin-right: 6px"><span
+                                    class="goal-name-bold">Emergency</span>
                             </div>
                         </div>
                         <div class="modal-body text-center">
                             <div class="container">
                                 <form class="text-left">
-                                    <div class="form-group col-md-7">
-                                        <label for="" class="col-form-label">How important this goal?</label>
-                                        <div class="btn-toolbar row justify-content-start" role="toolbar">
-                                            <div class="col-md-3" role="group">
-                                                <input type="radio" class="btn answer-btn btn-block opacity" id="low-5"
-                                                       name="priority">
-                                                <label for="low-5">Low</label>
-                                            </div>
-                                            <div class="col-md-4 col-md-4 mr-2" role="group">
-                                                <input type="radio" class="btn answer-btn btn-block opacity" id="medium-5"
-                                                       name="priority">
-                                                <label for="medium-5">Medium</label>
-                                            </div>
-                                            <div class="col-md-4" role="group">
-                                                <input type="radio" class="btn answer-btn btn-block opacity" id="height-5"
-                                                       name="priority">
-                                                <label for="height-5">Height</label>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <div class="form-group col-md-10">
+                                                <label for="goal-name" class="col-form-label">How important this
+                                                    goal?</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
+                                                    <div class="col-md-3" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="low-emergency"
+                                                               name="priority">
+                                                        <label for="low-emergency">Low</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-md-4 mr-2" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="medium-emergency"
+                                                               name="priority">
+                                                        <label for="medium-emergency">Medium</label>
+                                                    </div>
+                                                    <div class="col-md-4" role="group">
+                                                        <input type="radio"
+                                                               class="btn answer-btn btn-block opacity priority_"
+                                                               id="height-emergency"
+                                                               name="priority">
+                                                        <label for="height-emergency">Height</label>
 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-10">
+                                                <label for="goal-name" class="col-form-label">Goal name</label>
+                                                <input type="text" class="form-control shadowed-input">
                                             </div>
                                         </div>
+                                        <div class="form-group col-md-6">
+
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-5">
-                                        <h6 class="text-bold">We’ve assumed the following</h6>
-                                        <p class="text1">
-                                            <span>Target age: </span>
-                                            <span>65</span>
-                                        </p>
-                                        <p class="text1">
-                                            <span>Priority of this goal: </span>
-                                            <span>High</span>
-                                        </p>
-                                        <h6 class="mt-3 text-bold">Based on these assumptions, we’ve
-                                            estimated the probability of
-                                            achieving this goal to be 81%</h6>
-                                    </div>
-                                    <div class="form-group col-md-8">
-                                        <label class="col-form-label">Expected total cost</label>
-                                        <input type="text" class="form-control shadowed-input number"  >
-                                    </div>
+
                                     <div class="form-group col-md-12">
                                         <div class="text-right justify-content-end mt-2 mb-3 ">
                                             <a class="btn btn-primary pl-5 pr-5" href="#goals-carousel" role="button"
@@ -653,7 +821,6 @@
 </div>
 
 
-
 <!--Expenses edit modal-->
 <div id="editModal" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -663,7 +830,8 @@
                 <!-- Percentage circle -->
                 <div class="col-md-5">
                     <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
+                        <div class="progress-bar position" data-percent="85" data-duration="1"
+                             data-color="#D9F7DC,#6AE273"></div>
                     </section>
                 </div>
                 <div class="col-md-7 text-right">
@@ -691,7 +859,7 @@
                                 <div class="col-lg-12">
                                     <input type="text"
                                            class="form-control form-control-sm number"
-                                             name="" value="" placeholder="$">
+                                           name="" value="" placeholder="$">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -704,7 +872,7 @@
                                 <div class="col-lg-12">
                                     <input type="text"
                                            class="form-control form-control-sm number"
-                                             name="" value="" placeholder="">
+                                           name="" value="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -717,7 +885,7 @@
                                 <div class="col-lg-12">
                                     <input type="text"
                                            class="form-control form-control-sm number"
-                                             name="" value="" placeholder="">
+                                           name="" value="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -730,7 +898,7 @@
                                 <div class="col-lg-12">
                                     <input type="text"
                                            class="form-control form-control-sm number"
-                                             name="" value="" placeholder="">
+                                           name="" value="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -743,7 +911,7 @@
                                 <div class="col-lg-12">
                                     <input type="text"
                                            class="form-control form-control-sm number"
-                                             name="" value="" placeholder="">
+                                           name="" value="" placeholder="">
                                 </div>
                             </div>
                             <div class="text-right mt-4 mb-4">
@@ -768,7 +936,8 @@
                 <!-- Percentage circle -->
                 <div class="col-md-5">
                     <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
+                        <div class="progress-bar position" data-percent="85" data-duration="1"
+                             data-color="#D9F7DC,#6AE273"></div>
                     </section>
                 </div>
                 <div class="col-md-7 text-right">
@@ -796,7 +965,7 @@
                                 <div class="col-lg-12">
                                     <input type="text"
                                            class="form-control form-control-sm number"
-                                             name="" value="" placeholder="$1,500">
+                                           name="" value="" placeholder="$1,500">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -809,7 +978,7 @@
                                 <div class="col-lg-12">
                                     <input type="text"
                                            class="form-control form-control-sm shadowed-input"
-                                             name="" value="" placeholder="">
+                                           name="" value="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -822,7 +991,7 @@
                                 <div class="col-lg-12">
                                     <input type="number"
                                            class="form-control form-control-sm shadowed-input"
-                                             name="" value="" placeholder="">
+                                           name="" value="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -836,7 +1005,8 @@
                                 <div class="custom-control col-lg-12 text-left">
                                     <p>I have a mortgage on this property</p>
                                     <label class="switch">
-                                        <input type="checkbox" data-toggle="collapse" data-target="#mortgage-collapse" aria-expanded="false" aria-controls="mortgage-collapse">
+                                        <input type="checkbox" data-toggle="collapse" data-target="#mortgage-collapse"
+                                               aria-expanded="false" aria-controls="mortgage-collapse">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -865,7 +1035,7 @@
                                     <div class="col-lg-12">
                                         <input type="text"
                                                class="form-control form-control-sm shadowed-input"
-                                                 name="" value="" placeholder="">
+                                               name="" value="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -878,7 +1048,7 @@
                                     <div class="col-lg-12">
                                         <input type="text"
                                                class="form-control form-control-sm number"
-                                                 name="" value="" placeholder="">
+                                               name="" value="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -891,7 +1061,7 @@
                                     <div class="col-lg-12">
                                         <input type="text"
                                                class="form-control form-control-sm number"
-                                                 name="" value="" placeholder="">
+                                               name="" value="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -904,7 +1074,7 @@
                                     <div class="col-lg-12">
                                         <input type="text"
                                                class="form-control form-control-sm number"
-                                                 name="" value="" placeholder="">
+                                               name="" value="" placeholder="">
                                     </div>
                                 </div>
                             </div>
@@ -922,7 +1092,7 @@
                                     <div class="col-lg-12">
                                         <input type="text"
                                                class="form-control form-control-sm number"
-                                                 name="" value="" placeholder="$">
+                                               name="" value="" placeholder="$">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -935,7 +1105,7 @@
                                     <div class="col-lg-12">
                                         <input type="text"
                                                class="form-control form-control-sm shadowed-input"
-                                                 name="" value="" placeholder="">
+                                               name="" value="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -948,7 +1118,7 @@
                                     <div class="col-lg-12">
                                         <input type="number"
                                                class="form-control form-control-sm shadowed-input"
-                                                 name="" value="" placeholder="">
+                                               name="" value="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -962,7 +1132,9 @@
                                     <div class="custom-control col-lg-12 text-left">
                                         <p>I have a mortgage on this property</p>
                                         <label class="switch">
-                                            <input type="checkbox" data-toggle="collapse" data-target="#mortgage-collapse2" aria-expanded="false" aria-controls="mortgage-collapse2">
+                                            <input type="checkbox" data-toggle="collapse"
+                                                   data-target="#mortgage-collapse2" aria-expanded="false"
+                                                   aria-controls="mortgage-collapse2">
                                             <span class="slider round"></span>
                                         </label>
                                     </div>
@@ -991,7 +1163,7 @@
                                         <div class="col-lg-12">
                                             <input type="text"
                                                    class="form-control form-control-sm shadowed-input"
-                                                     name="" value="" placeholder="">
+                                                   name="" value="" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -1004,7 +1176,7 @@
                                         <div class="col-lg-12">
                                             <input type="text"
                                                    class="form-control form-control-sm number"
-                                                     name="" value="" placeholder="">
+                                                   name="" value="" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -1017,7 +1189,7 @@
                                         <div class="col-lg-12">
                                             <input type="text"
                                                    class="form-control form-control-sm number"
-                                                     name="" value="" placeholder="">
+                                                   name="" value="" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -1030,7 +1202,7 @@
                                         <div class="col-lg-12">
                                             <input type="text"
                                                    class="form-control form-control-sm number"
-                                                     name="" value="" placeholder="">
+                                                   name="" value="" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -1063,7 +1235,8 @@
                 <!-- Percentage circle -->
                 <div class="col-md-5">
                     <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1" data-color="#D9F7DC,#6AE273"></div>
+                        <div class="progress-bar position" data-percent="85" data-duration="1"
+                             data-color="#D9F7DC,#6AE273"></div>
                     </section>
                 </div>
                 <div class="col-md-7 text-right">
@@ -1079,7 +1252,7 @@
                     <form action="">
                         <div class="form-group">
                             <label for="" class="col-lg-12 col-form-label text-left">
-								<span class="" >
+								<span class="">
 									 Non-Flexible Expenses
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
@@ -1087,12 +1260,12 @@
                             <div class="col-lg-12">
                                 <input type="text"
                                        class="form-control form-control-sm shadowed-input"
-                                         name="" value="" placeholder="">
+                                       name="" value="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-lg-12 col-form-label text-left">
-								<span class="" >
+								<span class="">
 									 Non-Flexible Expenses
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
@@ -1100,12 +1273,12 @@
                             <div class="col-lg-12">
                                 <input type="text"
                                        class="form-control form-control-sm shadowed-input"
-                                         name="" value="" placeholder="">
+                                       name="" value="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-lg-12 col-form-label text-left">
-								<span class="" >
+								<span class="">
 									 Non-Flexible Expenses
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
@@ -1113,7 +1286,7 @@
                             <div class="col-lg-12">
                                 <input type="text"
                                        class="form-control form-control-sm shadowed-input"
-                                         name="" value="" placeholder="">
+                                       name="" value="" placeholder="">
                             </div>
                         </div>
                         <div class="text-right mt-4 mb-4">
@@ -1141,7 +1314,7 @@
 <script src="js/jQuery-plugin-progressbar.js"></script>
 <script src="js/rpie.js"></script>
 <script>
-       $('#goals-carousel').carousel({
+    $('#goals-carousel').carousel({
         interval: false,
         wrap: false,
     });
@@ -1152,7 +1325,7 @@
 
     var obj = {
         values: [35, 50, 40, 45],
-        colors: ['#E2CB6A', '#E2CB6A', '#FFC','#E2CB6A'],
+        colors: ['#E2CB6A', '#E2CB6A', '#FFC', '#E2CB6A'],
         animation: false, // Takes boolean value & default behavious is false
         fillTextData: true, // Takes boolean value & text is not generate by default
         fillTextColor: '#fff', // For Text colour & default colour is #fff (White)
@@ -1177,6 +1350,11 @@
     };
     //Generate myCanvas
     generatePieGraph('myCanvas', obj);
+    generatePieGraph('myCanvas-car', obj);
+    generatePieGraph('myCanvas-house', obj);
+    generatePieGraph('myCanvas-wedding', obj);
+    generatePieGraph('myCanvas-emergency', obj);
+    generatePieGraph('myCanvas-college', obj);
 
 
 </script>

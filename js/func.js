@@ -141,7 +141,6 @@ $(document).ready(function () {
         } else {
             $('#save-btn').removeAttr('disabled');
             $('#save-btn a').removeClass('disabled');
-            $('.bullets').css('display', 'block');
         }
 
     });
