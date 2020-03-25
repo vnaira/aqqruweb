@@ -261,4 +261,8 @@ input:checked + .slider:before {
   .income-item{
     height: auto;
   }
+  .modal-currency{
+    font-size: 13px;
+  }
+  .income-value{font-size: 26px}
 }

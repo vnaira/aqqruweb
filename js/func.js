@@ -168,4 +168,9 @@ $(document).ready(function () {
         });
     }
 
+    $("#save-btn").click(function() {
+        $("#form").submit(); // implement form submit
+        $("#goals-carousel").carousel('next');
+    });
+
 });
