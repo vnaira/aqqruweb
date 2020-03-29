@@ -164,13 +164,44 @@ $(document).ready(function () {
     // browser back button event
     if (window.history && window.history.pushState) {
         $(window).on('popstate', function () {
-            window.location.replace("https://www.tutorialrepublic.com/");
+            window.location.replace("");
         });
     }
 
     $("#save-btn").click(function() {
         $("#form").submit(); // implement form submit
         $("#goals-carousel").carousel('next');
+    });
+
+    $('#total-expense').on("input", function(){
+        var part_val = $(this).val().replace(/,/g , '');
+        $('.expense-part').val(part_val.substring(1)/5);
+    });
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // form email validation
+    function validateEmail($email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        return emailReg.test( $email );
+    }
+
+    $("#inputEmail").keyup(function () {
+        if( !validateEmail($(this).val())){
+            $('.invalid-feedback').show();
+            $(this).addClass('error');
+        } else {
+            $('.invalid-feedback').hide();
+            $(this).removeClass('error');
+        }
+    });
+    $("#pswd-confirm").keyup(function () {
+        if($('#pswd').val() != $('#pswd-confirm').val()) {
+            $('.error-confirm-pwd').show();
+        } else {
+            $('.error-confirm-pwd').hide();
+        }
     });
 
 });

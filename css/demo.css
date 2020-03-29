@@ -1,4 +1,7 @@
 /** */
+body, p{
+  color:#3D4E66;
+}
 .radialProgressBar {
   border-radius: 50%;
   -webkit-transform: translate(50%, 50%);

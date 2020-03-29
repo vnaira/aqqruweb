@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Avenir-black";
+  src: url("../resources/fonts/Avenir-Black.woff2") format("woff2"),
+  url("../resources/fonts/Avenir-Black.woff") format("woff"),
+  url("../resources/fonts/Avenir-Black.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../resources/fonts/Avenir-Book.woff2") format("woff2"),
+  url("../resources/fonts/Avenir-Book.woff") format("woff"),
+  url("../resources/fonts/Avenir-Book.ttf") format("ttf");
+}
+
+body {
+  font-family: Avenir;
+}
+
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
@@ -339,7 +357,7 @@ h3.section-title{
 
 
 .opacity {
-  position: absolute;
+  position: absolute!important;
   opacity: 0;
   width: 0;		/* for internet explorer */
 }
@@ -354,24 +372,34 @@ h3.section-title{
 
 input.priority_[type=radio]+label {
   background: #DBE6F2;
-  padding: 5px 15px;
+  padding: 7px 24px;
   border-radius: 0.25rem;
 }
 input.priority_[type=radio]:checked+label {
   background: #499DF2;
-  padding: 5px 15px;
+  padding: 7px 24px;
   color:#fff;
   border-radius: 0.25rem;
 }
+input.priority_2[type=radio]+label {
+  background: #DBE6F2;
+  padding: 8px 22px;
+  border-radius: 0.25rem;
+  width: 48%;
+  margin-left: 1%!important;
+  text-align: center;
+  margin-right: 1%;
+}
+input.priority_2[type=radio]:checked+label {
+  background: #499DF2;
+  color:#fff;
+  padding: 8px 22px;
+  border-radius: 0.25rem;
+  width: 47%;
+  margin-left: 1%!important;
+  text-align: center;
+  margin-right: 1%;}
 
-
-
-
-
-/*.myGoalsContainer{*/
-/*height: 600px;*/
-/*overflow: auto;*/
-/*}*/
 .tooltip-badge{
   background: #DBE6F2;
   color: #5C7599;
@@ -387,7 +415,7 @@ input.priority_[type=radio]:checked+label {
   font-family: Avenir-black;
 }
 .goal-page-title a:hover {text-decoration: none}
-.modal-body .form-control{width: 100%}
+.modal-body .form-control{width: 100%; font-size: 13px!important;}
 .priority{color: #4C9BF2;}
 .details p{padding: 0; margin: 0}
 .details{margin-top: 15px; padding-top: 15px}
@@ -441,23 +469,31 @@ a.disabled {
 .text1{margin-bottom: 0}
 .text1 span{font-size: 20px}
 h6{font-size: 14px}
-.fullChart{width: 160px; float: left}
+.fullChart{float: left}
 .progress-bar-small{}
 .carousel-indicators{margin-bottom: -40px}
+.goal-av{width: 100%}
 .goal-av p{text-align: center; margin-bottom: 0}
-.left-side-text{position: fixed; left: 1%; top: 45vh; width: 260px; color:#fff}
+.left-side-text{position: fixed; left: 40px; top: 45vh; width: 260px; color:#fff}
+.left-side-text p{color:#fff}
 .left-side-text img{margin-left: 70px;}
 /*.car-icon{filter: invert(42%);}*/
 .svg-icons img{position: absolute}
-.small-hr{    position: absolute;
-  width: 90px;
-  left: 128px;
-  top: 100px;}
+.small-hr{
+  position: absolute;
+  width: 47px;
+  height: 35px;
+  left: 177px;
+  top: 120px;
+  background: url("../resources/img/slaq1.png") no-repeat;
+}
 .canvas-value{
   position: absolute;
   font-size: 20px;
-  left: 60px;
-  top: 48px;
+  left: 54px;
+  top: 94px;
+  width: 113px;
+  text-align: center;
   color: #3D4E66;
   font-weight: bolder;
 }
@@ -469,3 +505,34 @@ h6{font-size: 14px}
   background-position: 50%;
   background-size: contain;
 }
+.reveal{
+  border: 0 none;
+  background: transparent;
+}
+.col-form-label{font-size: 13px}
+.form-group small{color:#5C7599; margin-top: 20px}
+.modal-content{border: 0 none}
+
+.k-radio+.k-radio-label {
+  margin-left: 14px!important;
+}
+.retirement-row .k-radio+.k-radio-label {
+  margin-left: 0!important;
+}
+.dual .k-dateinput{width: 49%!important;box-shadow: 0px 2px 5px 0px #c4c4c4; }
+.edu-for-me .k-dropdown{width: 100%; box-shadow: 0px 2px 5px 0px #c4c4c4;}
+
+.k-maskedtextbox.form-control-sm .k-textbox{box-shadow: 0px 2px 5px 0px #c4c4c4;}
+
+.reveal{
+  font-size: 12px;
+  color: #4C9BF2;
+  font-weight: bold;
+  padding: 7px 10px 0 7px;
+  border: 1px solid #ced4da;
+  border-left: 0 none!important;
+}
+.no-right-border{border-right: 0 none!important;}
+.pwd:focus, .pwd-confirm:focus{box-shadow: none;border:1px solid #ced4da}
+.error{color: #E74E4E}
+.error-confirm-pwd{color: #E74E4E!important; display: none}
