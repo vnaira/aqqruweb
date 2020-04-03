@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Avenir-black";
-  src: url("../resources/fonts/Avenir-Black.woff2") format("woff2"),
-  url("../resources/fonts/Avenir-Black.woff") format("woff"),
-  url("../resources/fonts/Avenir-Black.ttf") format("ttf");
+  src: url("fonts/Avenir-Black.woff2") format("woff2"),
+  url("fonts/Avenir-Black.woff") format("woff"),
+  url("fonts/Avenir-Black.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "Avenir";
-  src: url("../resources/fonts/Avenir-Book.woff2") format("woff2"),
-  url("../resources/fonts/Avenir-Book.woff") format("woff"),
-  url("../resources/fonts/Avenir-Book.ttf") format("ttf");
+  src: url("fonts/Avenir-Book.woff2") format("woff2"),
+  url("fonts/Avenir-Book.woff") format("woff"),
+  url("fonts/Avenir-Book.ttf") format("ttf");
 }
 
 body {
@@ -420,13 +420,13 @@ input.priority_2[type=radio]:checked+label {
 .details p{padding: 0; margin: 0}
 .details{margin-top: 15px; padding-top: 15px}
 .details .value{color: #4C9BF2; margin-left: 10px}
-.context-menu{background: url("../resources/img/context-menu.png") no-repeat;
+.context-menu{background: url("img/context-menu.png") no-repeat;
   width: 24px;
   height: 24px;
   background-size: cover;
 }
 .context-menu:hover{cursor: pointer}
-.class-arrow{background: url("../resources/img/continue.png") no-repeat;
+.class-arrow{background: url("img/continue.png") no-repeat;
   width: 48px;
   height: 48px;
   background-size: cover;
@@ -437,7 +437,7 @@ input.priority_2[type=radio]:checked+label {
 .text20-black{color:#3D4E66;font-size: 20px;font-weight: bold}
 .dropdown-item span.edit-msg {
   font-size: 14px;
-  background: url(../resources/img/edit-icon.png) no-repeat;
+  background: url(img/edit-icon.png) no-repeat;
   background-position-x: left;
   width: 100%;
   padding-left: 30px;
@@ -446,7 +446,7 @@ input.priority_2[type=radio]:checked+label {
 
 .dropdown-item span.delete-msg{
   font-size: 14px;
-  background: url(../resources/img/delete-icon.png) no-repeat;
+  background: url(img/delete-icon.png) no-repeat;
   background-position-x: left;
   width: 100%;
   padding-left: 30px;
@@ -485,7 +485,7 @@ h6{font-size: 14px}
   height: 35px;
   left: 177px;
   top: 120px;
-  background: url("../resources/img/slaq1.png") no-repeat;
+  background: url("img/slaq1.png") no-repeat;
 }
 .canvas-value{
   position: absolute;
@@ -499,7 +499,7 @@ h6{font-size: 14px}
 }
 .number{ box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);}
 .congrats{
-  background: url("../resources/img/congrats.png") no-repeat;
+  background: url("img/congrats.png") no-repeat;
   width: 100%;
   height: 164px;
   background-position: 50%;
