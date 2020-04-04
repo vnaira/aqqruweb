@@ -744,7 +744,7 @@ input:checked + .slider:before {
 }
 
 .btn-group .btn:focus {
-  background-color: #51bcda !important;
+  background-color: transparent;
 }
 
 .btn-round {
@@ -1232,23 +1232,6 @@ textarea {
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
-}
-
-a {
-  color: #51cbce;
-}
-
-a:hover,
-a:focus {
-  color: #51cbce;
-}
 
 h1,
 .h1 {

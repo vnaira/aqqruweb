@@ -1,5 +1,5 @@
 
-let priority = ['high', 'medium', 'low'];
+let priority = ['High', 'Medium', 'Low'];
 
 function drawTable(years, goals, prior = priority) {
     document.getElementById("table-canvas").innerHTML = "";
@@ -7,6 +7,11 @@ function drawTable(years, goals, prior = priority) {
     table = document.createElement("table");
     table.className = "table goals-table";
     row = table.insertRow();
+
+    var percentage = 80/(goals.length - 1);
+
+    var calcWidth;
+    var calcHeight;
 
     for (var count = 0; count < prior.length; count++) {
 
@@ -28,6 +33,7 @@ function drawTable(years, goals, prior = priority) {
 
                 for (d = 0; d < goals.length; d++) {
 
+
                     var newDate = newFormatDate(goals[d].state.target_date);
 
                     instCell.setAttribute('data-priority', goals[d].state.priority);
@@ -38,13 +44,15 @@ function drawTable(years, goals, prior = priority) {
 
                     if (newDate.year === years[i] && goals[d].state.priority === prior[count] && newDate.month == m) {
 
-
+                    calcWidth = 120 + (percentage * d);
+                    calcHeight = calcWidth - 45;
                         cellContent += "<div draggable='true' class='draggable radialProgressBar ";
                         cellContent += " progress-" + goals[d].achivability +
                             "\' id=\'" + goals[d].id + "\'" + " data-status-year='" + newDate.year +"\'" +
                             "data-status-priority='" + goals[d].state.priority + "\'"+ "data-status-month='" +
-                            newDate.month +"'><div class='overlay'><p>" + goals[d].name +
-                            " </p><p>" + "$" + goals[d].amount + "</p></div></div>";
+                            newDate.month +"' style='width: "+ calcWidth+ "px; " + " height:"+ calcWidth +
+                            "px'><div class='overlay' style='width:" + calcHeight + "px; height:"+ calcHeight +
+                            "px'><p>" + goals[d].name + "</p><p>" + "$" + goals[d].amount + "</p></div></div>";
 
 
                     }
@@ -77,7 +85,6 @@ function drawTable(years, goals, prior = priority) {
 
 var dragged;
 var old_state;
-var objects = document.querySelectorAll('.radialProgressBar');
 
   document.addEventListener("dragstart", function (event) {
     dragged = event.target;
@@ -143,5 +150,17 @@ function newFormatDate(date) {
   return false;
 }
 
+function goalClick() {
+    var objects = document.querySelectorAll('.radialProgressBar');
+
+    if(objects){
+        [].forEach.call(objects, function (el) {
+            el.addEventListener("click", function () {
+
+            }, false);
+
+        });
+    }
+}
 
 
