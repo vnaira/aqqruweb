@@ -190,15 +190,70 @@
                                 </div>
                             </div>
 
+
                             <!--droppable canvas-->
                             <div class="column is-inline-block ml-5" id="table-canvas">
 
 
                             </div>
 
+                            <div id="grid-labels"></div>
+
                             <script>
+                                let receivedData = {
+                                    "profile": {
+                                        "birthdate": "1955-04-02T07:35:53",
+                                    },
+                                    "goals": [
+                                        {
+                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
+                                            "date": "2021-04-01T00:00:00",
+                                            "goal_type": "retirement_goal",
+                                            "name": "Car",
+                                            "amount": 20972.0,
+                                            "priority": "Low",
+                                            "achievability": 58.0,
+                                            "state": [ 0.0, 1.0, 0.0 ],
+                                        },
+                                        {
+                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
+                                            "date": "2022-04-01T00:00:00",
+                                            "goal_type": "retirement_goal",
+                                            "name": "Wedding",
+                                            "amount": 267072.0,
+                                            "priority": "Medium",
+                                            "achievability": 60.0,
+                                            "state": [ 0.0, 1.0, 0.0 ],
+                                        },
+                                        {
+                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
+                                            "date": "2045-04-01T00:00:00",
+                                            "goal_type": "retirement_goal",
+                                            "name": "Retirement",
+                                            "amount": 0.0,
+                                            "priority": "Medium",
+                                            "achievability": 84.0,
+                                            "state": [ 0.0, 0.998, 0.002 ],
+                                        },
+                                        {
+                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
+                                            "date": "2028-04-01T00:00:00",
+                                            "goal_type": "house_goal",
+                                            "name": "House",
+                                            "amount":267072.0,
+                                            "priority": "High",
+                                            "achievability": 60.0,
+                                            "state": [ 0.0, 0.998, 0.002 ],
+                                        }
+                                    ]
+                                };
+                                //TODO After ajax or another call save data in local storage
+
+                                if (typeof(Storage) !== "undefined") {
+                                    localStorage.setItem('goalObject', JSON.stringify(receivedData));
+                                }
                                 window.addEventListener("load", function () {
-                                    drawTable(date_array, receivedData);
+                                    drawTable();
                                     goalClick();
                                 });
                             </script>
@@ -353,7 +408,8 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="radialProgressBar progress-85 left-20 small">
-                                            <div class="overlay dart-title">85%
+                                            <div class="overlay dart-title">
+                                                <p>85%</p>
                                                 <p><small>Jan 2022</small></p></div>
                                         </div>
                                     </div>
@@ -366,13 +422,13 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="radialProgressBar progress-61 left-20 small">
-                                            <div class="overlay dart-title">61%
+                                            <div class="overlay dart-title"><p>61%</p>
                                             <p><small>Jan 2022</small></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row justify-content-between">
+                                <div class="row justify-content-between mt-2">
                                     <p class="col-md-6"><small>Goal Achievability</small></p>
                                     <p class="col-md-6 text-right"><small>Goal Achievability</small></p>
                                 </div>
@@ -413,7 +469,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="radialProgressBar progress-85 left-20 small">
-                                            <div class="overlay dart-title">85%
+                                            <div class="overlay dart-title"><p>85%</p>
                                                 <p><small>Jan 2022</small></p></div>
                                         </div>
                                     </div>
@@ -426,13 +482,13 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="radialProgressBar progress-61 left-20 small">
-                                            <div class="overlay dart-title">61%
+                                            <div class="overlay dart-title"><p>61%</p>
                                                 <p><small>Jan 2022</small></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row justify-content-between">
+                                <div class="row justify-content-between mt-2">
                                     <p class="col-md-6"><small>Goal Achievability</small></p>
                                     <p class="col-md-6 text-right"><small>Goal Achievability</small></p>
                                 </div>
@@ -465,7 +521,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="radialProgressBar progress-85 left-20 small">
-                                            <div class="overlay dart-title">85%
+                                            <div class="overlay dart-title"><p>85%</p>
                                                 <p><small>Jan 2022</small></p></div>
                                         </div>
                                     </div>
@@ -478,13 +534,13 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="radialProgressBar progress-61 left-20 small">
-                                            <div class="overlay dart-title">61%
+                                            <div class="overlay dart-title"><p>61%</p>
                                                 <p><small>Jan 2022</small></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row justify-content-between">
+                                <div class="row justify-content-between mt-2">
                                     <p class="col-md-6"><small>Goal Achievability</small></p>
                                     <p class="col-md-6 text-right"><small>Goal Achievability</small></p>
                                 </div>
@@ -524,71 +580,6 @@
 <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 <script src="js/func.js"></script>
 <script src="js/draw-table.js"></script>
-<script>
-    let receivedData = {
-        "profile": {
-            "birthdate": "1976-04-02T07:35:53",
-        },
-        "goals": [
-            {
-                "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                "date": "2021-04-01T00:00:00",
-                "goal_type": "retirement_goal",
-                "name": "Car",
-                "amount": 20972.0,
-                "priority": "Medium",
-                "achievability": 58.0,
-                "state": [ 0.0, 1.0, 0.0 ],
-            },
-            {
-                "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                "date": "2021-04-01T00:00:00",
-                "goal_type": "retirement_goal",
-                "name": "Wedding",
-                "amount": 267072.0,
-                "priority": "Medium",
-                "achievability": 60.0,
-                "state": [ 0.0, 1.0, 0.0 ],
-            },
-            {
-                "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                "date": "2021-04-01T00:00:00",
-                "goal_type": "retirement_goal",
-                "name": "Retirement",
-                "amount": 0.0,
-                "priority": "Medium",
-                "achievability": 84.0,
-                "state": [ 0.0, 0.998, 0.002 ],
-            },
-            {
-                "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                "date": "2023-04-01T00:00:00",
-                "goal_type": "house_goal",
-                "name": "House",
-                "amount":267072.0,
-                "priority": "High",
-                "achievability": 60.0,
-                "state": [ 0.0, 0.998, 0.002 ],
-            }
-        ]
-    };
 
-        {
-            id: 22529,
-            achivability: 2,
-            name: "Car",
-            amount: 40000,
-            type: "type1",
-            color: 'rgb(226,202,105)',
-            state: {
-                target_date: "2025-02-10",
-                priority: "high",
-            }
-        }];
-
-    let date_array = [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
-
-    $('#effect-of-changes').modal('show');
-</script>
 </body>
 </html>

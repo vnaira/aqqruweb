@@ -154,7 +154,7 @@ font-size: 24px}
 }
 .vheight-50{height: 50vh}
 .left-70{
-  left: -180px;
+  left: -205px;
 }
 
 
@@ -236,7 +236,7 @@ input:checked + .slider:before {
 }
 .card-border-radius{border-radius: 8px;}
 .card .card-body {
-  padding: 15px 15px 10px 15px;
+  padding: 15px 55px 10px 15px;
 }
 
 .card .card-body.table-full-width {

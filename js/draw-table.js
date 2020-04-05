@@ -1,11 +1,17 @@
 
 let priority = ['High', 'Medium', 'Low'];
 
-function drawTable(years, goals, prior = priority) {
+function drawTable(prior = priority) {
+
+    goalsObj = JSON.parse(localStorage.getItem('goalObject'));
+    goals = goalsObj.goals;
+
+    years = calculateYearGrid(goalsObj.profile.birthdate);
+
     document.getElementById("table-canvas").innerHTML = "";
 
     table = document.createElement("table");
-    table.className = "table goals-table";
+    table.className = "table goals-table table-responsive";
     row = table.insertRow();
 
     var percentage = 80/(goals.length - 1);
@@ -17,57 +23,44 @@ function drawTable(years, goals, prior = priority) {
 
         var yearIter = "";
         // cell loop
+        var stepCell = Math.floor(years.length/11);
+
         for (let i = 0; i < years.length; i++) {
 
             var cell = row.insertCell();
 
-            insteadTable = document.createElement("table");
-            insteadTable.className = "insteadTable";
-            instRow = insteadTable.insertRow();
+            var cellContent = "";
+            if(i % stepCell == 0){cell.setAttribute('data-style', 'leftBorder');}
+            cell.setAttribute('data-priority', prior[count]);
+            cell.setAttribute('data-target', years[i]);
+            cell.setAttribute('width', 100/(years.length-1) +'%');
 
-            for (let m = 1; m <= 12; m++) {
+                for (goalItem = 0; goalItem < goals.length; goalItem++) {
 
-                var cellContent = "";
+                    var goalDate = newFormatDate(goals[goalItem].date);
 
-                var instCell = instRow.insertCell();
+                    cell.setAttribute('data-type', goals[goalItem].goal_type);
 
-                for (d = 0; d < goals.length; d++) {
+                    if ( goalDate.year == years[i] && goals[goalItem].priority === prior[count]) {
 
-
-                    var newDate = newFormatDate(goals[d].state.target_date);
-
-                    instCell.setAttribute('data-priority', goals[d].state.priority);
-                    instCell.setAttribute('data-target', years[i]);
-                    instCell.setAttribute('data-target-month', m );
-                    instCell.setAttribute('data-id', goals[d].id);
-                    instCell.setAttribute('data-type', goals[d].type);
-
-                    if (newDate.year === years[i] && goals[d].state.priority === prior[count] && newDate.month == m) {
-
-                    calcWidth = 120 + (percentage * d);
+                    calcWidth = 120 + (percentage * goalItem);
                     calcHeight = calcWidth - 45;
                         cellContent += "<div draggable='true' class='draggable radialProgressBar ";
-                        cellContent += " progress-" + goals[d].achivability +
-                            "\' id=\'" + goals[d].id + "\'" + " data-status-year='" + newDate.year +"\'" +
-                            "data-status-priority='" + goals[d].state.priority + "\'"+ "data-status-month='" +
-                            newDate.month +"' style='width: "+ calcWidth+ "px; " + " height:"+ calcWidth +
-                            "px'><div class='overlay' style='width:" + calcHeight + "px; height:"+ calcHeight +
-                            "px'><p>" + goals[d].name + "</p><p>" + "$" + goals[d].amount + "</p></div></div>";
-
+                        cellContent += " progress-" + goals[goalItem].achievability +
+                            "\' id=\'" + goals[goalItem].id + "\'" + " data-status-year='" + goalDate.year +"\'" +
+                            "data-status-priority='" + goals[goalItem].priority + "\'" + "style='width: "+
+                            calcWidth+ "px; " + " height:"+ calcWidth +
+                            "px; margin-top: "+"-"+calcWidth+ "px; margin-left: "+"-"+
+                            calcHeight +"px;'><div class='overlay' style='width:" + calcHeight +
+                            "px; height:"+ calcHeight +
+                            "px'><p>" + goals[goalItem].name +
+                            "</p><p><small>" + "$" + goals[goalItem].amount + "</small></p></div></div>";
 
                     }
 
-                }
-                instCell.className = "dropzone";
-                instCell.innerHTML = cellContent;
-
             }
-            // insteadTable.insertRow();
-            cell.className = years[i];
-            cell.className = "parent";
-            cell.appendChild(insteadTable);
-            yearIter = years[i]
-
+            cell.className = "dropzone";
+            cell.innerHTML = cellContent;
         }
         // end of cell loop
 
@@ -79,9 +72,31 @@ function drawTable(years, goals, prior = priority) {
     // ATTACH TABLE TO CONTAINER
     document.getElementById("table-canvas").appendChild(table);
     $('.verticaltext_content').show();
-
+    drawGridLabels(years);
 
 }
+
+function drawGridLabels(years) {
+    table = document.createElement("table");
+    table.className = "table grid-labels table-responsive";
+    row = table.insertRow();
+
+    var stepCell = Math.floor(years.length/11);
+    for (let i = 0; i < years.length; i++) {
+        var cellLabel = "";
+        if(i % stepCell == 0){
+            var cell = row.insertCell();
+
+            cellLabel += "<span class='years'>"+ years[i]+"</span>";
+            cell.innerHTML = cellLabel;
+            cell.colSpan = stepCell-1;
+
+            cell.setAttribute('width', Math.ceil(100/(years.length)) +'%');
+        }
+    }
+    document.getElementById("grid-labels").appendChild(table);
+}
+
 
 var dragged;
 var old_state;
@@ -91,8 +106,8 @@ var old_state;
     old_state = {
         priority: dragged.getAttribute("data-status-priority"),
         year: dragged.getAttribute('data-status-year'),
-        month: dragged.getAttribute('data-status-month')
     };
+
     // event.target.style.opacity = .5;
   }, false);
 
@@ -156,11 +171,23 @@ function goalClick() {
     if(objects){
         [].forEach.call(objects, function (el) {
             el.addEventListener("click", function () {
-
+                $('#effect-of-changes').modal('show');
             }, false);
-
         });
     }
+}
+
+
+
+function calculateYearGrid(dateBirth) {
+    years = [];
+    var nowYear = (new Date()).getFullYear();
+    var retirementYear = (new Date(dateBirth)).getFullYear() + 118;
+    for (var i = nowYear; i <= retirementYear; i++ ){
+        years.push(i);
+    }
+    return years;
+
 }
 
 
