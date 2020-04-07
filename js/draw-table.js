@@ -16,7 +16,8 @@ function drawTable(prior = priority) {
     }
     years = calculateYearGrid(goalsObj.profile.birthdate);
 
-    // create table left side
+    // create table left side priority
+    document.getElementById('priority_labels').innerHTML = '';
     priorityContent = '<div class="row">';
     for(var p = 0; p < prior.length; p++){
         priorityContent += '<div class="col-md-4 text-center">'+ prior[p]+'</div>';
@@ -24,8 +25,7 @@ function drawTable(prior = priority) {
     priorityContent+= '</div>';
     $('.verticaltext_content').append(priorityContent);
 
-
-
+    // start creation table grid
     document.getElementById("table-canvas").innerHTML = "";
 
     table = document.createElement("table");
@@ -91,7 +91,12 @@ function drawTable(prior = priority) {
 
 }
 
+/**
+ * create years labels for table
+ * @param years
+ */
 function drawGridLabels(years) {
+    document.getElementById("grid-labels").innerText = '';
     table = document.createElement("table");
     table.className = "table grid-labels table-responsive";
     row = table.insertRow();
@@ -111,6 +116,9 @@ function drawGridLabels(years) {
 }
 
 
+/**
+ * drag-drop event effects
+ */
 var dragged;
 var old_state;
 
@@ -156,17 +164,16 @@ var old_state;
     dragged.setAttribute('data-status-priority', event.target.getAttribute('data-priority'));
     dragged.setAttribute('data-status-year', event.target.getAttribute('data-target'));
     dragged.setAttribute('data-status-month', event.target.getAttribute('data-target-month'));
-   
-    // open save changes modal
-
-    // redraw table grid after each drop
-    //   setTimeout(function(){ drawTable(date_array, goalsObj); }, 2000);
 
 
   }, false);
 
 
-
+/**
+ * format from date only month and year
+  * @param date
+ * @returns {*}
+ */
 function newFormatDate(date) {
   if(date){
     var d = new Date(date);
@@ -176,19 +183,39 @@ function newFormatDate(date) {
   return false;
 }
 
+/**
+ * format from date month short name and year
+ * @param date
+ * @returns {*}
+ */
+function dateWithMonth(date) {
+    const d = new Date(date);
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    return monthNames[d.getMonth()] + " " + d.getFullYear();
+}
+
+/**
+ * Goal chart click handler
+ */
 function goalClick() {
     var objects = document.querySelectorAll('.radialProgressBar');
 
     if(objects){
         [].forEach.call(objects, function (el) {
             el.addEventListener("click", function () {
+                createEffectOfChangesModal(changedObj);
                 $('#effect-of-changes').modal('show');
             }, false);
         });
     }
 }
 
-
+/**
+ * create years array depend of birth date
+ * @param dateBirth
+ * @returns {Array}
+ */
 function calculateYearGrid(dateBirth) {
     years = [];
     var nowYear = (new Date()).getFullYear();
@@ -200,6 +227,12 @@ function calculateYearGrid(dateBirth) {
 
 }
 
+/**
+ * Calculate progressbar from achievabiliti and state
+ * @param achievValue
+ * @param state
+ * @returns {string}
+ */
 function progrssAchievability(achievValue, state) {
     var styleValue = "";
     var colorS = generateColor(state);
@@ -214,7 +247,11 @@ function progrssAchievability(achievValue, state) {
     return styleValue;
 }
 
-
+/**
+ * Generate hexadecimal color from state
+ * @param wellnessState
+ * @returns {*}
+ */
 function generateColor(wellnessState) {
     var currentRed = 0;
     var currentGreen = 0;
@@ -232,7 +269,12 @@ function generateColor(wellnessState) {
     return rgbToHex(Math.round(currentRed),Math.round(currentGreen),Math.round(currentBlue));
 }
 
-
+/**
+ * Get light or dark color from given color value
+ * @param col
+ * @param amt
+ * @returns {string}
+ */
 var lightenDarkenColor = function (col, amt) {
     var usePound = false;
     if (col[0] == "#") {
@@ -261,6 +303,7 @@ var lightenDarkenColor = function (col, amt) {
     return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
 };
 
+
 function componentToHex(c) {
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
@@ -270,145 +313,132 @@ function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
+/**
+ * reordering goals list
+ * @param goalsObject
+ * @returns {this | this | this}
+ */
 function reorderGoals(goalsObject) {
     return goalsObject.sort((a, b) => (a.amount > b.amount) ? 1 : -1);
 }
 
 
-let changedObj = {
-    "profiles": [
-        {
-            "id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-            "birthdate": "1955-04-02T07:35:53"
-        },
-        {
-            "id": "b70ce029-88d8-4598-a467-01c8c180d7b8",
-            "birthdate": "2014-04-02T07:35:53"
-        },
-        {
-            "id": "04b1d362-fd18-4849-9ee4-5b764e0b9f80",
-            "birthdate": "2017-04-02T07:35:53"
-        }
-    ],
-    "active_changed_goals":[
-        {
-            "id": "968f6828-a81a-4cfc-9b94-d2f343157822",
-            "object_type": "car_goal"
-        },
-        {
-            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-            "object_type": "house_goal"
-        }
-    ],
-    "initial_avatar_result": {
-        "state": [
-            0.0,
-            1.0,
-            0.0
-        ],
-        "wellnesscore": 14
-    },
-    "initial_goals":[
-        {
-            "id": "968f6828-a81a-4cfc-9b94-d2f343157822",
-            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-            "date": "2021-04-01T00:00:00",
-            "goal_type": "retirement_goal",
-            "name": "Car",
-            "amount": 20972.0,
-            "priority": "Low",
-            "achievability": 58.0,
-            "state": [
-                0.0,
-                1.0,
-                0.0
-            ]
-        },
-        {
-            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-            "person_id": "b70ce029-88d8-4598-a467-01c8c180d7b8",
-            "date": "2022-04-01T00:00:00",
-            "goal_type": "retirement_goal",
-            "name": "retirement",
-            "amount": 267072.0,
-            "priority": "Medium",
-            "achievability": 60.0,
-            "state": [
-                0.0,
-                1.0,
-                0.0
-            ]
-        },
-        {
-            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-            "date": "2028-04-01T00:00:00",
-            "goal_type": "house_goal",
-            "name": "House",
-            "amount": 267072.0,
-            "priority": "High",
-            "achievability": 60.0,
-            "state": [
-                0.0,
-                0.998,
-                0.002
-            ]
-        }
-    ],
-    "changed_avatar_result": {
-        "state": [
-            0.0,
-            1.0,
-            0.0
-        ],
-        "wellnesscore": 34
-    },
-    "changed_goals":[
-        {
-            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-            "date": "2021-04-01T00:00:00",
-            "goal_type": "retirement_goal",
-            "name": "Car",
-            "amount": 20972.0,
-            "priority": "Low",
-            "achievability": 58.0,
-            "state": [
-                0.0,
-                1.0,
-                0.0
-            ]
-        },
-        {
-            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-            "person_id": "b70ce029-88d8-4598-a467-01c8c180d7b8",
-            "date": "2022-04-01T00:00:00",
-            "goal_type": "retirement_goal",
-            "name": "retirement",
-            "amount": 267072.0,
-            "priority": "Medium",
-            "achievability": 60.0,
-            "state": [
-                0.0,
-                1.0,
-                0.0
-            ]
-        },
-        {
-            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-            "date": "2028-04-01T00:00:00",
-            "goal_type": "house_goal",
-            "name": "House",
-            "amount": 267072.0,
-            "priority": "High",
-            "achievability": 60.0,
-            "state": [
-                0.0,
-                0.998,
-                0.002
-            ]
-        }
-    ]
-};
+/**
+ * create effect of changes modal
+ * @param changesResponseObj
+ */
+function createEffectOfChangesModal(changesResponseObj) {
 
+    document.getElementById('changesModal').innerHTML = '';
+    var modalContent = '';
+    modalContent += '<div class="modal-header"><h5 class="modal-title">Is this correct?</h5>' +
+        '<button type="button" class="close p-2" data-dismiss="modal" aria-label="Close">' +
+        '<span aria-hidden="true">&times;</span></button></div>';
+
+    if (changesResponseObj) {
+
+        modalContent += '<div class="modal-body effect-changes pt-0">';
+
+        modalContent += '<div class="row">';
+
+        modalContent += '<div class="score-text white-title col-md-12" style="background:' + generateColor(changesResponseObj.changed_avatar_result.state) + '">';
+        modalContent += '<div class="row"><div class="status-icon col-md-1 col-lg-1 pt-3">';
+        modalContent += '<img src="css/img/playzone/down.png" alt="" class="m-auto"/></div>';
+        modalContent += '<div class="col-md-2 col-lg-1"><p class="big-title-big text-bold">' + changesResponseObj.changed_avatar_result.wellnesscore + '</p></div>';
+        modalContent += '<div class="col-md-8 col-lg-9 text-left"><p class="mt-3 ml-1 text-bold" style="color: #fff">' +
+            'Financial</p><p class="ml-1 text-bold" style="color: #fff">Wellness Score</p></div></div></div></div>';
+
+        // Active Goals list
+        if (changesResponseObj.active_changed_goals) {
+            modalContent += '<div class="col-md-12"><p class="dart-title mt-2 mb-2">Active Goal</p></div>';
+
+            for (var prop in changesResponseObj.active_changed_goals) {
+
+                modalContent += '<div class="card"><div class="card-header row"><div class="col-md-12"><p class="card-title-text">';
+                modalContent += 'This goal seems <span class="shtriched">24%</span> less likely. ' +
+                    'This change has also reduced your financial wellness score to <span class="shtriched">39</span>. ' +
+                    'Are you sure you would like to continue?</p></div></div>';
+                modalContent += '<div class="card-body"><div class="row"><div class="col-md-5"><div class="row">' +
+                    '<div class="col-md-3"> <img src="css/img/small-icon-'+changesResponseObj.active_changed_goals[prop].object_type+'.png" alt=""/></div> ' +
+                    '<div class="col-md-9"><p class="goal-name">'+ changesResponseObj.active_changed_goals[prop].name +
+                    '</p><p class="goal-priority blue-text">'+ changesResponseObj.active_changed_goals[prop].priority+'</p></div>' +
+                    '</div><div class="goal-date mt-3">Date <span class="blue-text"> '+ dateWithMonth(changesResponseObj.active_changed_goals[prop].date) +'</span></div>' +
+                    '<div class="goal-date">Expected cost <span class="blue-text">$'+changesResponseObj.active_changed_goals[prop].amount+'</span></div><div class="mt-3"></div></div>';
+                modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
+
+
+
+                    '<div class="radialProgressBar left-20 small" style="'+
+                    progrssAchievability(changesResponseObj.active_changed_goals[prop].achievability, changesResponseObj.active_changed_goals[prop].state)+'">' +
+                    '<div class="overlay dart-title"><p>'+
+                    changesResponseObj.active_changed_goals[prop].achievability +'%</p>' +
+                    '<p><small>'+dateWithMonth(changesResponseObj.active_changed_goals[prop].date)+
+                    '</small></p></div></div></div>';
+                modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
+                    '<div class="row justify-content-between"><p class="col-md-6">' +
+                    '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>';
+                modalContent += '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
+                    progrssAchievability(changesResponseObj.active_changed_goals[prop].achievability, changesResponseObj.active_changed_goals[prop].state)+'">' +
+                    '<div class="overlay dart-title"><p>'+
+                    changesResponseObj.active_changed_goals[prop].achievability+
+                    '%</p><p><small>'+ dateWithMonth(changesResponseObj.active_changed_goals[prop].date) +'</small></p></div></div></div></div>';
+                modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
+                    '<small>Goal Achievability</small></p><p class="col-md-6 text-right">' +
+                    '<small>Goal Achievability</small></p></div></div></div></div></div>';
+            }
+
+        }
+
+        // Changed Goals list
+        if (changesResponseObj.changed_goals && changesResponseObj.initial_goals) {
+
+            modalContent += ' <div class="col-md-12"><div class="row"><div class="col-md-8">' +
+                '<p class="dart-title mt-2 mb-2">Impact on other goals</p></div></div></div>';
+
+            for (var prop2 in changesResponseObj.changed_goals) {
+                modalContent += '<div class="card"><div class="card-body"><div class="row">' +
+                    '<div class="col-md-5"><div class="row"><div class="col-md-3">' +
+                    '<img src="css/img/small-icon-'+ changesResponseObj.initial_goals[prop2].goal_type +'.png" alt=""/></div>' +
+                    '<div class="col-md-9"><p class="goal-name">'+changesResponseObj.initial_goals[prop2].name+'</p>' +
+                    '<p class="goal-priority blue-text">High</p></div></div>' +
+                    '<div class="goal-date mt-3">Date  <span class="blue-text">'+ dateWithMonth(changesResponseObj.initial_goals[prop2].date)+'</span></div>' +
+                    '<div class="goal-date">Left to heirs  <span class="blue-text"> '+changesResponseObj.initial_goals[prop2].amount +'</span></div>' +
+                    '<div class="mt-3"></div></div><div class="col-md-7"><div class="row">' +
+
+                    '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
+                    progrssAchievability(changesResponseObj.initial_goals[prop2].achievability, changesResponseObj.initial_goals[prop2].state) +'">' +
+                    '<div class="overlay dart-title"><p>'+
+                    changesResponseObj.initial_goals[prop2].achievability+'%</p><p>' +
+                    '<small>'+ dateWithMonth(changesResponseObj.initial_goals[prop2].date)+'</small></p></div></div></div>';
+
+                modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
+                    '<div class="row justify-content-between"><p class="col-md-6">' +
+                    '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>' +
+
+                    '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
+                    progrssAchievability(changesResponseObj.changed_goals[prop2].achievability, changesResponseObj.changed_goals[prop2].state)+'">' +
+                    '<div class="overlay dart-title"><p>'+
+                    changesResponseObj.changed_goals[prop2].achievability+
+                    '%</p><p><small>'+ dateWithMonth(changesResponseObj.changed_goals[prop2].date) +'</small></p></div></div></div></div>';
+                modalContent += '<div class="row justify-content-between mt-2">' +
+                    '<p class="col-md-6"><small>Goal Achievability</small></p>' +
+                    '<p class="col-md-6 text-right"><small>Goal Achievability</small></p>' +
+                    '</div></div></div> </div> </div>';
+            }
+        }
+        modalContent += '<div class="row"><div class="col-md-6 offset-6"><div class="row">' +
+            '<div class="btn-group col-md-6"><button type="button" class="btn btn-grey" onclick="discardChanges()">Discard</button></div>' +
+            '<div class="btn-group col-md-6"><button type="button" class="btn btn-blue" onclick="saveChanges()">Save</button></div></div></div></div>';
+        modalContent += '</div>';
+
+    }
+    $('#changesModal').append(modalContent);
+
+}
+
+//TODO modal's buttons actions
+function discardChanges(){
+    $("#effect-of-changes").modal("hide");
+    drawTable();
+}
+function saveChanges(){}

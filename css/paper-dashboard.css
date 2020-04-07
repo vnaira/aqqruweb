@@ -48,7 +48,8 @@ a:hover {
 }
 .nb-call{background: url("img/playzone/phone-icon.png") no-repeat;background-position: left bottom;}
 .nb-user{background: url("img/playzone/user.png") no-repeat;background-position: left bottom;}
-.btn-blue{background: #499DF2; color:#fff}
+.btn-blue{background: #499DF2; color:#fff; font-family: Avenir-black}
+.btn-grey{background: #DBE6F2; color:#7D91AD; font-family: Avenir-black}
 
 .nc-icon{
   display: block;
@@ -744,7 +745,7 @@ input:checked + .slider:before {
 }
 
 .btn-group .btn:focus {
-  background-color: transparent;
+  /*background-color: transparent;*/
 }
 
 .btn-round {
