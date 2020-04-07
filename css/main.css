@@ -562,6 +562,7 @@ input:focus, input:active {
     background: #fff;
     width: 200px;
     margin-left: 15px;
+    height: 54px;
 }
 .add-goal-btn span {
     font-size: 25px;
@@ -623,3 +624,5 @@ td[data-style='leftBorder'] {
 .years{font-size: 12px}
 
 #grid-labels{margin-left: 30px}
+.goal-name-overlay{font-size: 15px; font-family: Avenir-black;color:#000000}
+.grid-labels td {padding: 12px!important;}
