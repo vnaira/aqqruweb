@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.bootstrap-v4.min.css" />
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.bootstrap-v4.min.css">
 
     <script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
 
     <!-- custom CSS -->
-    <link rel="stylesheet" href="css/demo.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    <link rel="stylesheet" type="text/css" href="css/jQuery-plugin-progressbar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/paper-dashboard.css">
+
 
 </head>
 <body class="">
@@ -196,63 +201,7 @@
                             <div id="grid-labels"></div>
 
                             <script>
-                                let receivedData = {
-                                    "profile": {
-                                        "birthdate": "1955-04-02T07:35:53",
-                                    },
-                                    "goals": [
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "date": "2064-04-01T00:00:00",
-                                            "goal_type": "retirement_goal",
-                                            "name": "Car",
-                                            "amount": 20972.0,
-                                            "priority": "Low",
-                                            "achievability": 58.0,
-                                            "state": [ 1.0, 0.0, 0.0 ],
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "date": "2036-04-01T00:00:00",
-                                            "goal_type": "retirement_goal",
-                                            "name": "Wedding",
-                                            "amount": 267072.0,
-                                            "priority": "Medium",
-                                            "achievability": 60.0,
-                                            "state": [ 0.0, 1.0, 0.0 ],
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "date": "2045-04-01T00:00:00",
-                                            "goal_type": "retirement_goal",
-                                            "name": "Collage",
-                                            "amount": 0.0,
-                                            "priority": "Low",
-                                            "achievability": 84.0,
-                                            "state": [ 0.0, 0.1, 0.0 ],
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "date": "2042-04-01T00:00:00",
-                                            "goal_type": "retirement_goal",
-                                            "name": "Retirement",
-                                            "amount": 0.0,
-                                            "priority": "Medium",
-                                            "achievability": 84.0,
-                                            "state": [ 0.0, 0.998, 0.002 ],
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "date": "2028-04-01T00:00:00",
-                                            "goal_type": "house_goal",
-                                            "name": "House",
-                                            "amount":267072.0,
-                                            "priority": "High",
-                                            "achievability": 20.0,
-                                            "state": [ 1.0, 0.0, 0.0 ],
-                                        }
-                                    ]
-                                };
+
 
                                 // object for effect of changes modal
                                 changedObj = {
@@ -270,34 +219,15 @@
                                             "birthdate": "2017-04-02T07:35:53"
                                         }
                                     ],
-                                    "active_changed_goals":[
+                                    "active_changed_goals": [
                                         {
                                             "id": "968f6828-a81a-4cfc-9b94-d2f343157822",
                                             "date": "2021-08-01T00:00:00",
-                                            "object_type": "car_goal",
-                                            "name": "Car",
-                                            "amount": 20972.0,
-                                            "priority": "Low",
-                                            "achievability": 58.0,
-                                            "state": [
-                                                0.0,
-                                                1.0,
-                                                0.0
-                                            ]
                                         },
                                         {
                                             "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
                                             "date": "2024-02-01T00:00:00",
-                                            "object_type": "house_goal",
-                                            "name": "House",
-                                            "amount": 20972.0,
-                                            "priority": "Low",
-                                            "achievability": 58.0,
-                                            "state": [
-                                                0.0,
-                                                1.0,
-                                                0.0
-                                            ]
+
                                         }
                                     ],
                                     "initial_avatar_result": {
@@ -310,9 +240,9 @@
                                     },
                                     "initial_goals":[
                                         {
-                                            "id": "968f6828-a81a-4cfc-9b94-d2f343157822",
+                                            "id": "968f6828-a81a-4cfc-9b94-d2f34315782",
                                             "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-                                            "date": "2021-04-01T00:00:00",
+                                            "date": "2030-04-01T00:00:00",
                                             "goal_type": "wedding_goal",
                                             "name": "Wedding",
                                             "amount": 20972.0,
@@ -365,7 +295,7 @@
                                     },
                                     "changed_goals":[
                                         {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
+                                            "id": "968f6828-a81a-4cfc-9b94-d2f343157822",
                                             "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
                                             "date": "2021-04-01T00:00:00",
                                             "goal_type": "wedding_goal",
@@ -412,14 +342,28 @@
                                     ]
                                 };
 
-                                if (typeof(Storage) !== "undefined") {
-                                    localStorage.setItem('goalObject', JSON.stringify(receivedData));
+                                if( typeof( window.localStorage) !== "undefined" ){
+                                    window.localStorage.setItem('goalObject', JSON.stringify(changedObj.initial_goals));
                                 }
                                 window.addEventListener("load", function () {
                                     // give priority array as a param to function if needed
-                                    drawTable();
+                                    drawTable(changedObj.profiles);
                                     goalClick();
                                 });
+
+
+                                document.addEventListener("drop", function (event) {
+                                    event.preventDefault();
+                                    dropp(changedObj);
+                                }, false);
+
+
+                                //TODO modal's buttons actions
+                                function discardChanges(){
+                                    $("#effect-of-changes").modal("hide");
+                                    drawTable(changedObj.profiles);
+                                }
+                                function saveChanges(){}
                             </script>
                         </div>
                     </div>
@@ -527,8 +471,14 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script src="js/bootstrap.js"></script>
-<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<!--<script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>-->
+<script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
+<script src="js/jQuery-plugin-progressbar.js"></script>
+<script src="js/rpie.js"></script>
 <script src="js/func.js"></script>
 <script src="js/draw-table.js"></script>
 
