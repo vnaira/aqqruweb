@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playzone</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.bootstrap-v4.min.css">
+
+    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
+
+    <!-- custom CSS -->
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    <link rel="stylesheet" type="text/css" href="css/jQuery-plugin-progressbar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link rel="stylesheet" href="css/circle.css">
+    <link rel="stylesheet" href="css/paper-dashboard.css">
+
+</head>
+<body class="">
+<div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+        <div class="logo">
+                <div class="logo-image-small text-center">
+                    <img src="css/img/playzone/hamburg-menu.png"/>
+                </div>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="">
+                    <a href="">
+                        <i class="nc-icon nc-playzone"></i>
+                        <p>Playzone</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="nc-icon nc-guide"></i>
+                        <p>Guidance</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="nc-icon nc-summary"></i>
+                        <p>Summary</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav border-top vheight-50 pt-4">
+                <li class="">
+                    <a href="">
+                        <i class="nc-icon nc-retirement"></i>
+                        <p>Retirement</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="">
+                        <i class="nc-icon nc-house"></i>
+                        <p>House</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="">
+                        <i class="nc-icon nc-edu"></i>
+                        <p>Education</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="">
+                        <i class="nc-icon nc-car"></i>
+                        <p>Car</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-blue">
+            <div class="container-fluid pr-0">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href="">Aqqru<i class="tm"></i>
+                    </a>
+                </div>
+                <div class="col-md-6 pr-0 nav-panel">
+                    <div class="row justify-content-end align-items-center">
+                        <div class="col border-right text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked/>
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="nb-icon pl-2">Plan Locked</span>
+                        </div>
+                        <div class="col text-center">
+                            <span class="nb-icon nb-user">Johnny Appleseed</span>
+                        </div>
+                        <div class="col">
+                            <div class="score-show text-center row">
+                                <div class="col-md-4 col-lg-3">
+                                    <p class="big-title-big">75</p>
+                                </div>
+                                <div class="col-md-8 col-lg-9 text-left">
+                                <h6 class="mt-3 ml-1 col-md-12">Financial</h6>
+                                <h6 class="ml-1 col-md-12">Wellness Score</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-light pb-5">
+                        <div class="card-header pb-3">
+                            <div class="row justify-content-between">
+                                <div>
+                                </div>
+                                <div class="col">
+                                    <div class="btn-toolbar justify-content-end" role="toolbar">
+                                        <div class="btn-group btn-goal">
+                                            <button type="button" class="">Initial Assessment</button>
+                                            <button class=""><span class="success"><i class="check-icon"
+                                                                                      aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>
+                                        <div class="btn-group btn-goal">
+                                            <button type="button" class="">Profile Completion</button>
+                                            <button class=""><span class="success"><i class="check-icon"
+                                                                                      aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>
+                                        <div class="btn-group btn-goal">
+                                            <button type="button" class="">Goals Detail</button>
+                                            <button class=""><span class="question"><i class="question-icon"
+                                                                                       aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>
+                                        <div class="btn-group btn-goal">
+                                            <button type="button" class="">Planning</button>
+                                            <button class=""><span class="question"><i class="question-icon"
+                                                                                       aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>
+                                        <div class="btn-group btn-goal">
+                                            <button type="button" class="">Lock</button>
+                                            <button class=""><span class="question"><i class="question-icon"
+                                                                                       aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>
+                                        <div class="btn-group btn-goal">
+                                            <button type="button" class="">Plan</button>
+                                            <button class=""><span class="question"><i class="question-icon"
+                                                                                       aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="">
+                                                    <img src="css/img/small-icon-kids-education_goal.png" alt=""/>
+                                                    <p class="goal-name-title d-inline-block">Education</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Left section-->
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="card card-user pb-3">
+                                            <div class="card-body">
+                                                <div class="col-md-12 mt-2">
+                                                    <p class="dart-title">Give us more info on your goals to see how
+                                                        they impact your chance of success.</p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="radio-toolbar w-100 mt-3">
+                                                            <input type="radio" id="" name="child" value="Sally" checked class="k-button"/>
+                                                            <label for="radioApple">Sally</label>
+
+                                                            <input type="radio" id="" name="child" value="Dave" class="k-button"/>
+                                                            <label for="radioBanana">Dave</label>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <form action="">
+                                                        <ul class="fieldlist">
+
+                                                            <li>
+                                                                <label for="">Goal name</label>
+                                                                <input type="text" class="k-textbox w-100 shadowed-input" placeholder="Continued Education"/>
+                                                            </li>
+                                                            <li>
+                                                                <div class="form-group mb-0">
+                                                                    <label for="" class="col-form-label">
+                                                                        How important this
+                                                                        goal?
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="radio-toolbar w-100">
+                                                                            <input type="radio" id="radioApple" name="priority" value="Low" checked class="k-button"/>
+                                                                            <label for="radioApple">Low</label>
+
+                                                                            <input type="radio" id="radioBanana" name="priority" value="Medium" class="k-button"/>
+                                                                            <label for="radioBanana">Medium</label>
+
+                                                                            <input type="radio" id="radioOrange" name="priority" value="High" class="k-button"/>
+                                                                            <label for="radioOrange">High</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="form-group mb-0">
+                                                                    <label for="" class="d-inline">
+                                                                        Target start date
+                                                                    </label>
+                                                                    <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip"
+                                                                            data-placement="right" title="Target start date description">?
+                                                                    </button>
+                                                                    <div class="row">
+                                                                        <div class="radio-toolbar w-100">
+                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" />
+                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" />
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <small>Years from now</small>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label for="">Do you know the college name?</label>
+                                                                <div class="custom-control custom-radio custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input" id="" name="radio2"/>
+                                                                    <label class="custom-control-label" for="">Yes</label>
+                                                                </div>
+                                                                <div class="custom-control custom-radio custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input" id="" name="radio2"/>
+                                                                    <label class="custom-control-label" for="">No</label>
+                                                                </div>
+                                                                <select class="browser-default custom-select w-100 shadowed-input" id="select-car">
+                                                                    <option>In state</option>
+                                                                </select>
+                                                            </li>
+                                                            <li>
+                                                                <div class="demo-section k-content">
+                                                                    <label for="">Duration of Education</label>
+                                                                    <input id="slider" class="balSlider" value="0" title="slider" />
+                                                                </div>
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-4"><small>0 months</small></div>
+                                                                    <div class="col-md-4 text-right"><small>48 months</small></div>
+                                                                </div>
+                                                                <small>You have selected 4 Year</small>
+                                                            </li>
+                                                            <li>
+                                                                <label for="" class="d-inline">Estimated Total Cost</label>
+                                                                <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip"
+                                                                        data-placement="right" title="Target start date description">?
+                                                                </button>
+                                                                <input type="text" class="k-textbox w-100 number shadowed-input" placeholder="$"/>
+                                                            </li>
+
+                                                        </ul>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!--right section-->
+                                    <div class="col-md-8 col-lg-8">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-user">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="row">
+                                                                    <div class="col-md-12 col-lg-12 text-center" id="bar">
+                                                                        <!--progress bar place-->
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="grey-block p-2">
+                                                                    <p class="block-title">Expected Car Price</p>
+                                                                    <p class="block-value">$50,000</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="grey-block p-2">
+                                                                    <p class="block-title">Target Purchase Date</p>
+                                                                    <p class="block-value">6 Years</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="grey-block p-2">
+                                                                    <p class="block-title">Bankruptcy Score</p>
+                                                                    <p class="block-value">3%</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-5 col-lg-5">
+                                                                <div class="">
+                                                                    <img src="css/img/small-icon-car_goal.png" alt=""
+                                                                         width="20"/>
+                                                                    <p class="goal-name-title d-inline-block">
+                                                                        <small>Goal Success
+                                                                            Probability
+                                                                        </small>
+                                                                    </p>
+                                                                    <p class="col-md-12">Car Goal
+                                                                        <span>Status: On-Track</span></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card card-user right-bottom">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="col-md-12">
+                                                                    <p class="dart-title mt-2 mb-2">What if?</p>
+                                                                    <p>Pick a scenario to see how your goal is impacted
+                                                                        by a bump in the road or an unexpected event</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <p class="text-right text-bold">Goal Success
+                                                                    Probability</p>
+                                                                <div class="col-md-12">
+                                                                <div class="case-plus w-100" style="border-color:#B9C6D4">
+                                                                    <div class="row justify-content-between">
+                                                                        <div class="col-md-9 mt-3">
+                                                                            <div class="row">
+                                                                                <div class="col-md-1"><span class="circle" style="border-color: #B9C6D4"></span></div>
+                                                                                <div class="col-md-11"><p class="">What if you consider an in-state college?</p></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3 text-right"><img
+                                                                                src="css/img/icon_education_goal.png" alt=""
+                                                                                class="svg-im" width="25" style="margin-top: -10px; background:#68D12F "/>
+                                                                            <span class="text-35-bold" style="color:#68D12F">95%</span></div>
+                                                                    </div>
+                                                                </div>
+                                                                    <div class="case-plus w-100">
+                                                                        <div class="row justify-content-between">
+                                                                            <div class="col-md-9 mt-3">
+                                                                                <div class="row">
+                                                                                <div class="col-md-1"><span class="circle" style="border-color: #B9C6D4"></span></div>
+                                                                                <div class="col-md-11"><p class="">What if you were to partially fund college?</p></div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-3 text-right"><img
+                                                                                    src="css/img/icon_education_goal.png" alt=""
+                                                                                    class="svg-im" width="25" style="margin-top: -10px; background:#68D12F"/>
+                                                                                <span class="text-35-bold" style="color:#68D12F">95%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="case-plus w-100">
+                                                                        <div class="row justify-content-between">
+                                                                            <div class="col-md-9 mt-3">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-1"><span class="circle" style="border-color: #B9C6D4"></span></div>
+                                                                                    <div class="col-md-11"><p class="">What if you added a 529 College Savings Account?</p></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-3 text-right"><img
+                                                                                    src="css/img/icon_education_goal.png" alt=""
+                                                                                    class="svg-im" width="25" style="margin-top: -10px; background:#68D12F"/>
+                                                                                <span class="text-35-bold" style="color:#68D12F">95%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--Effect of changes modal-->
+<div class="modal fade" id="effect-of-changes" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="changesModal">
+            <!-- modal body container -->
+        </div>
+
+    </div>
+</div>
+</div>
+<!--End effect of changes modal-->
+
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<!--<script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>-->
+<script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
+<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<script src="js/jQuery-plugin-progressbar.js"></script>
+<script src="js/rpie.js"></script>
+<script src="js/func.js"></script>
+<script src="js/draw-table.js"></script>
+<script>
+    $(".progress-bar").loading();
+    $(document).ready(function () {
+        var slider = $("#slider").kendoSlider({
+            increaseButtonTitle: "Right",
+            decreaseButtonTitle: "Left",
+            min: -10,
+            max: 10,
+            smallStep: 2,
+            largeStep: 1
+        }).data("kendoSlider");
+        $(".datepicker").kendoDatePicker();
+
+
+        var newStyle = progrssAchievability(85, [1.0, 0.0, 0.0]);
+        var bar = '<div class="radialProgressBar l-obj" style="';
+        bar += newStyle;
+        bar += '"><div class="overlay">' + 85 + '%</div></div>';
+        $('#bar').append(bar);
+    })
+</script>
+
+</body>
+</html>

@@ -1,24 +1,21 @@
 
 let priority = ['High', 'Medium', 'Low'];
 
-function drawTable(prior = priority) {
+function drawTable(profile, prior = priority) {
+    goals = JSON.parse(window.localStorage.getItem('goalObject'));
 
-    goalsObj = JSON.parse(localStorage.getItem('goalObject'));
-
-    if(goalsObj) {
-        goals = goalsObj.goals;
-        console.log(reorderGoals(goalsObj.goals));
-    } else {
+    var withtVal = generateWidthOfChart(goals);
+    if(!goals)  {
         alert("Server error, the page will be reloaded");
         setTimeout(function () {
             window.location.reload(1);
-        }, 2000);
+        }, 1000);
     }
-    years = calculateYearGrid(goalsObj.profile.birthdate);
+    years = calculateYearGrid(profile);
 
     // create table left side priority
     document.getElementById('priority_labels').innerHTML = '';
-    priorityContent = '<div class="row">';
+    priorityContent = '<div class="row pr">';
     for(var p = 0; p < prior.length; p++){
         priorityContent += '<div class="col-md-4 text-center">'+ prior[p]+'</div>';
     }
@@ -32,13 +29,7 @@ function drawTable(prior = priority) {
     table.className = "table goals-table table-responsive";
     row = table.insertRow();
 
-    var percentage = 80/(goals.length - 1);
-
-    var calcWidth;
-    var calcHeight;
-
     canvasWidth = $('#table-canvas').width();
-
 
     for (var count = 0; count < prior.length; count++) {
         // cell loop
@@ -62,8 +53,8 @@ function drawTable(prior = priority) {
 
                     if ( goalDate.year == years[i] && goals[goalItem].priority === prior[count]) {
 
-                    calcWidth = 120 + (percentage * goalItem);
-                    calcHeight = calcWidth - 38;
+                    var calcWidth = 130 + caefecentOfWidth(withtVal,goals[goalItem].amount);
+                    var calcHeight = calcWidth - 38;
                         cellContent += "<div draggable='true' class='draggable radialProgressBar ";
                         cellContent += "\' id=\'" + goals[goalItem].id + "\'" + " data-status-year='" + goalDate.year + "\'" +
                             "data-status-priority='" + goals[goalItem].priority + "\'" + "style='width: "+
@@ -91,6 +82,36 @@ function drawTable(prior = priority) {
 
 }
 
+
+/**
+ * calculation of charts with coefficient
+ * @param goalsObjs
+ * @returns {Array}
+ */
+var generateWidthOfChart = function (goalsObjs) {
+    var newObj = [];
+    for (var it = 0; it < goalsObjs.length; it++) {
+        newObj.push(goalsObjs[it].amount);
+    }
+    var ammountArr = newObj.filter((a, b) => newObj.indexOf(a) === b);
+    ammountArr = reorderGoals(ammountArr);
+    var percentage = 80 / (ammountArr.length - 1);
+    var arrayOfWidths = [];
+    for (var arr = 0; arr < ammountArr.length; arr++) {
+        var newArr = {};
+        newArr.amount = ammountArr[arr];
+        newArr.coefficient = arr * percentage;
+        arrayOfWidths.push(newArr);
+    }
+   return arrayOfWidths;
+}
+
+var caefecentOfWidth = function (o, val) {
+    for(var prop in o) {
+        if(o[prop].amount == val)
+        return o[prop].coefficient;
+    }
+}
 /**
  * create years labels for table
  * @param years
@@ -124,6 +145,7 @@ var old_state;
 
   document.addEventListener("dragstart", function (event) {
     dragged = event.target;
+    console.log(dragged)
     old_state = {
         priority: dragged.getAttribute("data-status-priority"),
         year: dragged.getAttribute('data-status-year'),
@@ -154,19 +176,18 @@ var old_state;
     }
   }, false);
 
-  document.addEventListener("drop", function (event) {
-    event.preventDefault();
-    if (event.target.className == "dropzone") {
-      dragged.parentNode.removeChild(dragged);
-      event.target.appendChild(dragged);
-    }
+  function dropp(wholeObj){
+      if (event.target.className == "dropzone") {
+          dragged.parentNode.removeChild(dragged);
+          event.target.appendChild(dragged);
+          createEffectOfChangesModal(wholeObj);
+          $('#effect-of-changes').modal('show');
+      }
+      dragged.setAttribute('data-status-priority', event.target.getAttribute('data-priority'));
+      dragged.setAttribute('data-status-year', event.target.getAttribute('data-target'));
+      dragged.setAttribute('data-status-month', event.target.getAttribute('data-target-month'));
+  }
 
-    dragged.setAttribute('data-status-priority', event.target.getAttribute('data-priority'));
-    dragged.setAttribute('data-status-year', event.target.getAttribute('data-target'));
-    dragged.setAttribute('data-status-month', event.target.getAttribute('data-target-month'));
-
-
-  }, false);
 
 
 /**
@@ -204,8 +225,7 @@ function goalClick() {
     if(objects){
         [].forEach.call(objects, function (el) {
             el.addEventListener("click", function () {
-                createEffectOfChangesModal(changedObj);
-                $('#effect-of-changes').modal('show');
+               //TODO open edit
             }, false);
         });
     }
@@ -217,9 +237,12 @@ function goalClick() {
  * @returns {Array}
  */
 function calculateYearGrid(dateBirth) {
+    var max = dateBirth.reduce(function (prev, current) {
+        return (prev.birthdate < current.birthdate) ? prev : current
+    });
     years = [];
     var nowYear = (new Date()).getFullYear();
-    var retirementYear = (new Date(dateBirth)).getFullYear() + 118;
+    var retirementYear = (new Date(max.birthdate)).getFullYear() + 118;
     for (var i = nowYear; i <= retirementYear; i++ ){
         years.push(i);
     }
@@ -323,6 +346,20 @@ function reorderGoals(goalsObject) {
 }
 
 
+function returnObj(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
+
+function findObjectByKey(array, key, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            return array[i];
+        }
+    }
+    return null;
+}
+
+
 /**
  * create effect of changes modal
  * @param changesResponseObj
@@ -332,7 +369,7 @@ function createEffectOfChangesModal(changesResponseObj) {
     document.getElementById('changesModal').innerHTML = '';
     var modalContent = '';
     modalContent += '<div class="modal-header"><h5 class="modal-title">Is this correct?</h5>' +
-        '<button type="button" class="close p-2" data-dismiss="modal" aria-label="Close">' +
+        '<button type="button" class="close p-2" data-dismiss="modal" aria-label="Close" onclick="discardChanges()">' +
         '<span aria-hidden="true">&times;</span></button></div>';
 
     if (changesResponseObj) {
@@ -342,51 +379,174 @@ function createEffectOfChangesModal(changesResponseObj) {
         modalContent += '<div class="row">';
 
         modalContent += '<div class="score-text white-title col-md-12" style="background:' + generateColor(changesResponseObj.changed_avatar_result.state) + '">';
-        modalContent += '<div class="row"><div class="status-icon col-md-1 col-lg-1 pt-3">';
-        modalContent += '<img src="css/img/playzone/down.png" alt="" class="m-auto"/></div>';
+        modalContent += '<div class="row"><div class="status-icon col-md-1 col-lg-1 pt-2">';
+        if(changesResponseObj.changed_avatar_result.wellnesscore > changesResponseObj.initial_avatar_result.wellnesscore){
+            modalContent += '<img src="css/img/playzone/up.png" alt="" class="m-auto"/></div>';
+        } else {
+            modalContent += '<img src="css/img/playzone/down.png" alt="" class="m-auto"/></div>';
+        }
         modalContent += '<div class="col-md-2 col-lg-1"><p class="big-title-big text-bold">' + changesResponseObj.changed_avatar_result.wellnesscore + '</p></div>';
         modalContent += '<div class="col-md-8 col-lg-9 text-left"><p class="mt-3 ml-1 text-bold" style="color: #fff">' +
             'Financial</p><p class="ml-1 text-bold" style="color: #fff">Wellness Score</p></div></div></div></div>';
 
         // Active Goals list
         if (changesResponseObj.active_changed_goals) {
-            modalContent += '<div class="col-md-12"><p class="dart-title mt-2 mb-2">Active Goal</p></div>';
+
+
 
             for (var prop in changesResponseObj.active_changed_goals) {
 
+                var initObject = findObjectByKey(changesResponseObj.initial_goals,"id",changesResponseObj.active_changed_goals[prop].id);
+                var changedObject = findObjectByKey(changesResponseObj.changed_goals,"id",changesResponseObj.active_changed_goals[prop].id);
+
+
+
+                if(initObject === null){
+
+                    modalContent += '<div class="col-md-12"><p class="dart-title mt-2 mb-2">Added '+ changedObject.name +' Goal</p></div>';
+
+                    var scoreProc = changedObject.achievability ;
+
+                    modalContent += '<div class="card"><div class="card-header row"><div class="col-md-12"><p class="card-title-text">';
+
+                    modalContent += 'This goal seems <span class="';
+                    if(scoreProc > 0){
+                        modalContent += 'shtriched_green">'+ Math.abs(scoreProc)+'%</span> more likely. '
+                    }else {  modalContent += 'shtriched">'+ Math.abs(scoreProc)+'%</span> less likely. '}
+
+                    modalContent += 'This change has also reduced your financial wellness score to ';
+
+                    if(changesResponseObj.changed_avatar_result.wellnesscore > changesResponseObj.initial_avatar_result.wellnesscore){
+                        modalContent += '<span class="shtriched_green">'+ changesResponseObj.changed_avatar_result.wellnesscore +'</span>. ';
+                    } else {
+                        modalContent += '<span class="shtriched">'+ changesResponseObj.changed_avatar_result.wellnesscore +'</span>. ';
+                    }
+
+                    modalContent += 'Are you sure you would like to continue?</p></div></div>';
+                    modalContent += '<div class="card-body"><div class="row"><div class="col-md-5"><div class="row">' +
+                        '<div class="col-md-3"> <img src="css/img/small-icon-'+ changedObject.goal_type+'.png" alt=""/></div> ' +
+                        '<div class="col-md-9"><p class="goal-name">'+ changedObject.name +
+                        '</p><p class="goal-priority blue-text">'+ changedObject.priority+'</p></div>' +
+                        '</div><div class="goal-date mt-3">Date  &nbsp;<span class="blue-text"> '+ dateWithMonth(changedObject.date) +'</span></div>' +
+                        '<div class="goal-date">Expected cost  &nbsp;<span class="blue-text">$'+ changedObject.amount + '</span></div><div class="mt-3"></div></div>';
+                    modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
+
+
+
+                        '<div class="radialProgressBar left-20 small" style="'+
+                        progrssAchievability(0, [0.9,0.2,0.5])+'">' +
+                        '<div class="overlay dart-title"><p class="mt-2">0%</p>' +
+                        '<p><small></small></p></div></div></div>';
+                    modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
+                        '<div class="row justify-content-between"><p class="col-md-6">' +
+                        '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>';
+                    modalContent += '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
+                        progrssAchievability(changedObject.achievability, changedObject.state)+'">' +
+                        '<div class="overlay dart-title"><p>'+
+                        changedObject.achievability+
+                        '%</p><p><small>'+ dateWithMonth(changedObject.date) +'</small></p></div></div></div></div>';
+                    modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
+                        '<small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p><p class="col-md-6 text-right">' +
+                        '<small>Goal Achievability</small></p></div></div></div></div></div>';
+
+                }
+
+                else if(changedObject === null){
+
+                scoreProc = initObject.achievability;
+
+                    modalContent += '<div class="col-md-12"><p class="dart-title mt-2 mb-2">Impact on Removed '+ initObject.name +' Goal</p></div>';
+
                 modalContent += '<div class="card"><div class="card-header row"><div class="col-md-12"><p class="card-title-text">';
-                modalContent += 'This goal seems <span class="shtriched">24%</span> less likely. ' +
-                    'This change has also reduced your financial wellness score to <span class="shtriched">39</span>. ' +
-                    'Are you sure you would like to continue?</p></div></div>';
+
+                modalContent += 'This goal seems <span class="';
+                if(scoreProc > 0){
+                    modalContent += 'shtriched_green">'+ Math.abs(scoreProc)+'%</span> more likely. '
+                }else {  modalContent += 'shtriched">'+ Math.abs(scoreProc)+'%</span> less likely. '}
+
+                modalContent += 'This change has also reduced your financial wellness score to ';
+
+                if(changesResponseObj.changed_avatar_result.wellnesscore > changesResponseObj.initial_avatar_result.wellnesscore){
+                    modalContent += '<span class="shtriched_green">'+ changesResponseObj.changed_avatar_result.wellnesscore +'</span>. ';
+                } else {
+                    modalContent += '<span class="shtriched">'+ changesResponseObj.changed_avatar_result.wellnesscore +'</span>. ';
+                }
+
+                modalContent += 'Are you sure you would like to continue?</p></div></div>';
                 modalContent += '<div class="card-body"><div class="row"><div class="col-md-5"><div class="row">' +
-                    '<div class="col-md-3"> <img src="css/img/small-icon-'+changesResponseObj.active_changed_goals[prop].object_type+'.png" alt=""/></div> ' +
-                    '<div class="col-md-9"><p class="goal-name">'+ changesResponseObj.active_changed_goals[prop].name +
-                    '</p><p class="goal-priority blue-text">'+ changesResponseObj.active_changed_goals[prop].priority+'</p></div>' +
-                    '</div><div class="goal-date mt-3">Date <span class="blue-text"> '+ dateWithMonth(changesResponseObj.active_changed_goals[prop].date) +'</span></div>' +
-                    '<div class="goal-date">Expected cost <span class="blue-text">$'+changesResponseObj.active_changed_goals[prop].amount+'</span></div><div class="mt-3"></div></div>';
+                    '<div class="col-md-3"> <img src="css/img/small-icon-'+ initObject.goal_type+'.png" alt=""/></div> ' +
+                    '<div class="col-md-9"><p class="goal-name">'+ initObject.name +
+                    '</p><p class="goal-priority blue-text">'+ initObject.priority+'</p></div>' +
+                    '</div><div class="goal-date mt-3">Date &nbsp;<span class="blue-text"> '+ dateWithMonth(initObject.date) +'</span></div>' +
+                    '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$'+ initObject.amount + '</span></div><div class="mt-3"></div></div>';
                 modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
 
 
 
                     '<div class="radialProgressBar left-20 small" style="'+
-                    progrssAchievability(changesResponseObj.active_changed_goals[prop].achievability, changesResponseObj.active_changed_goals[prop].state)+'">' +
+                    progrssAchievability(initObject.achievability, initObject.state)+'">' +
                     '<div class="overlay dart-title"><p>'+
-                    changesResponseObj.active_changed_goals[prop].achievability +'%</p>' +
-                    '<p><small>'+dateWithMonth(changesResponseObj.active_changed_goals[prop].date)+
+                    initObject.achievability +'%</p>' +
+                    '<p><small>'+dateWithMonth(initObject.date)+
                     '</small></p></div></div></div>';
                 modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
                     '<div class="row justify-content-between"><p class="col-md-6">' +
                     '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>';
                 modalContent += '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
-                    progrssAchievability(changesResponseObj.active_changed_goals[prop].achievability, changesResponseObj.active_changed_goals[prop].state)+'">' +
-                    '<div class="overlay dart-title"><p>'+
-                    changesResponseObj.active_changed_goals[prop].achievability+
-                    '%</p><p><small>'+ dateWithMonth(changesResponseObj.active_changed_goals[prop].date) +'</small></p></div></div></div></div>';
+                    progrssAchievability(0, [0.9,0.2,0.5])+'">' +
+                    '<div class="overlay dart-title"><p class="mt-2">0%</p><p><small></small></p></div></div></div></div>';
                 modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
-                    '<small>Goal Achievability</small></p><p class="col-md-6 text-right">' +
+                    '<small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p><p class="col-md-6 text-right">' +
                     '<small>Goal Achievability</small></p></div></div></div></div></div>';
-            }
+            } else{
+                    modalContent += '<div class="col-md-12"><p class="dart-title mt-2 mb-2">Impact on '+ initObject.name +' Goal</p></div>';
+                     scoreProc = changedObject.achievability - initObject.achievability;
 
+                    modalContent += '<div class="card"><div class="card-header row"><div class="col-md-12"><p class="card-title-text">';
+
+                    modalContent += 'This goal seems <span class="';
+                    if(scoreProc > 0){
+                        modalContent += 'shtriched_green">'+ Math.abs(scoreProc)+'%</span> more likely. '
+                    }else {  modalContent += 'shtriched">'+ Math.abs(scoreProc)+'%</span> less likely. '}
+
+                    modalContent += 'This change has also reduced your financial wellness score to ';
+
+                    if(changesResponseObj.changed_avatar_result.wellnesscore > changesResponseObj.initial_avatar_result.wellnesscore){
+                        modalContent += '<span class="shtriched_green">'+ changesResponseObj.changed_avatar_result.wellnesscore +'</span>. ';
+                    } else {
+                        modalContent += '<span class="shtriched">'+ changesResponseObj.changed_avatar_result.wellnesscore +'</span>. ';
+                    }
+
+                    modalContent += 'Are you sure you would like to continue?</p></div></div>';
+                    modalContent += '<div class="card-body"><div class="row"><div class="col-md-5"><div class="row">' +
+                        '<div class="col-md-3"> <img src="css/img/small-icon-'+ initObject.goal_type+'.png" alt=""/></div> ' +
+                        '<div class="col-md-9"><p class="goal-name">'+ initObject.name +
+                        '</p><p class="goal-priority blue-text">'+ initObject.priority+'</p></div>' +
+                        '</div><div class="goal-date mt-3">Date &nbsp;<span class="blue-text"> '+ dateWithMonth(initObject.date) +'</span></div>' +
+                        '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$'+ initObject.amount + '</span></div><div class="mt-3"></div></div>';
+                    modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
+
+
+
+                        '<div class="radialProgressBar left-20 small" style="'+
+                        progrssAchievability(initObject.achievability, initObject.state)+'">' +
+                        '<div class="overlay dart-title"><p>'+
+                        initObject.achievability +'%</p>' +
+                        '<p><small>'+dateWithMonth(initObject.date)+
+                        '</small></p></div></div></div>';
+                    modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
+                        '<div class="row justify-content-between"><p class="col-md-6">' +
+                        '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>';
+                    modalContent += '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
+                        progrssAchievability(changedObject.achievability, changedObject.state)+'">' +
+                        '<div class="overlay dart-title"><p>'+
+                        changedObject.achievability+
+                        '%</p><p><small>'+ dateWithMonth(changedObject.date) +'</small></p></div></div></div></div>';
+                    modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
+                        '<small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p><p class="col-md-6 text-right">' +
+                        '<small>Goal Achievability</small></p></div></div></div></div></div>';
+                }
+            }
         }
 
         // Changed Goals list
@@ -396,32 +556,37 @@ function createEffectOfChangesModal(changesResponseObj) {
                 '<p class="dart-title mt-2 mb-2">Impact on other goals</p></div></div></div>';
 
             for (var prop2 in changesResponseObj.changed_goals) {
+
+                var initObject2 = findObjectByKey(changesResponseObj.initial_goals,"id",changesResponseObj.initial_goals[prop2].id);
+                var changedObject2 = findObjectByKey(changesResponseObj.changed_goals,"id",changesResponseObj.changed_goals[prop2].id);
+
+
                 modalContent += '<div class="card"><div class="card-body"><div class="row">' +
                     '<div class="col-md-5"><div class="row"><div class="col-md-3">' +
-                    '<img src="css/img/small-icon-'+ changesResponseObj.initial_goals[prop2].goal_type +'.png" alt=""/></div>' +
-                    '<div class="col-md-9"><p class="goal-name">'+changesResponseObj.initial_goals[prop2].name+'</p>' +
+                    '<img src="css/img/small-icon-'+ initObject2.goal_type +'.png" alt=""/></div>' +
+                    '<div class="col-md-9"><p class="goal-name">'+ initObject2.name +'</p>' +
                     '<p class="goal-priority blue-text">High</p></div></div>' +
-                    '<div class="goal-date mt-3">Date  <span class="blue-text">'+ dateWithMonth(changesResponseObj.initial_goals[prop2].date)+'</span></div>' +
-                    '<div class="goal-date">Left to heirs  <span class="blue-text"> '+changesResponseObj.initial_goals[prop2].amount +'</span></div>' +
+                    '<div class="goal-date mt-3">Date  &nbsp;<span class="blue-text">'+ dateWithMonth(initObject2.date)+'</span></div>' +
+                    '<div class="goal-date">Left to heirs &nbsp;<span class="blue-text"> '+ initObject2.amount +'</span></div>' +
                     '<div class="mt-3"></div></div><div class="col-md-7"><div class="row">' +
 
                     '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
-                    progrssAchievability(changesResponseObj.initial_goals[prop2].achievability, changesResponseObj.initial_goals[prop2].state) +'">' +
+                    progrssAchievability(initObject2.achievability, initObject2.state) +'">' +
                     '<div class="overlay dart-title"><p>'+
-                    changesResponseObj.initial_goals[prop2].achievability+'%</p><p>' +
-                    '<small>'+ dateWithMonth(changesResponseObj.initial_goals[prop2].date)+'</small></p></div></div></div>';
+                    initObject2.achievability+'%</p><p>' +
+                    '<small>'+ dateWithMonth(initObject2.date)+'</small></p></div></div></div>';
 
                 modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
                     '<div class="row justify-content-between"><p class="col-md-6">' +
                     '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>' +
 
                     '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="'+
-                    progrssAchievability(changesResponseObj.changed_goals[prop2].achievability, changesResponseObj.changed_goals[prop2].state)+'">' +
+                    progrssAchievability(changedObject2.achievability, changedObject2.state)+'">' +
                     '<div class="overlay dart-title"><p>'+
-                    changesResponseObj.changed_goals[prop2].achievability+
-                    '%</p><p><small>'+ dateWithMonth(changesResponseObj.changed_goals[prop2].date) +'</small></p></div></div></div></div>';
+                    changedObject2.achievability+
+                    '%</p><p><small>'+ dateWithMonth(changedObject2.date) +'</small></p></div></div></div></div>';
                 modalContent += '<div class="row justify-content-between mt-2">' +
-                    '<p class="col-md-6"><small>Goal Achievability</small></p>' +
+                    '<p class="col-md-6"><small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p>' +
                     '<p class="col-md-6 text-right"><small>Goal Achievability</small></p>' +
                     '</div></div></div> </div> </div>';
             }
@@ -436,9 +601,3 @@ function createEffectOfChangesModal(changesResponseObj) {
 
 }
 
-//TODO modal's buttons actions
-function discardChanges(){
-    $("#effect-of-changes").modal("hide");
-    drawTable();
-}
-function saveChanges(){}
