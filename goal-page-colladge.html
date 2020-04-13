@@ -35,7 +35,7 @@
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="">
-                    <a href="">
+                    <a href="playzone.html">
                         <i class="nc-icon nc-playzone"></i>
                         <p>Playzone</p>
                     </a>
@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="">
+                    <a href="goal-page-colladge.html">
                         <i class="nc-icon nc-house"></i>
                         <p>House</p>
                     </a>
@@ -73,7 +73,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="">
+                    <a href="goal-page-car.html">
                         <i class="nc-icon nc-car"></i>
                         <p>Car</p>
                     </a>
@@ -102,7 +102,7 @@
                             <span class="nb-icon nb-user">Johnny Appleseed</span>
                         </div>
                         <div class="col">
-                            <div class="score-show text-center row">
+                            <div class="score-show text-center row" style="background: #68D12F;">
                                 <div class="col-md-4 col-lg-3">
                                     <p class="big-title-big">75</p>
                                 </div>
@@ -191,10 +191,10 @@
                                                 <div class="col-md-12">
                                                     <div class="row">
                                                         <div class="radio-toolbar w-100 mt-3">
-                                                            <input type="radio" id="" name="child" value="Sally" checked class="k-button"/>
+                                                            <input type="radio" id="" name="child" value="Sally" checked class="k-button" disabled/>
                                                             <label for="radioApple">Sally</label>
 
-                                                            <input type="radio" id="" name="child" value="Dave" class="k-button"/>
+                                                            <input type="radio" id="" name="child" value="Dave" class="k-button" disabled/>
                                                             <label for="radioBanana">Dave</label>
 
                                                         </div>
@@ -206,7 +206,7 @@
 
                                                             <li>
                                                                 <label for="">Goal name</label>
-                                                                <input type="text" class="k-textbox w-100 shadowed-input" placeholder="Continued Education"/>
+                                                                <input type="text" class="k-textbox w-100 shadowed-input" placeholder="Continued Education" readonly/>
                                                             </li>
                                                             <li>
                                                                 <div class="form-group mb-0">
@@ -216,13 +216,13 @@
                                                                     </label>
                                                                     <div class="row">
                                                                         <div class="radio-toolbar w-100">
-                                                                            <input type="radio" id="radioApple" name="priority" value="Low" checked class="k-button"/>
+                                                                            <input type="radio" id="radioApple" name="priority" value="Low" checked class="k-button" disabled/>
                                                                             <label for="radioApple">Low</label>
 
-                                                                            <input type="radio" id="radioBanana" name="priority" value="Medium" class="k-button"/>
+                                                                            <input type="radio" id="radioBanana" name="priority" value="Medium" class="k-button" disabled/>
                                                                             <label for="radioBanana">Medium</label>
 
-                                                                            <input type="radio" id="radioOrange" name="priority" value="High" class="k-button"/>
+                                                                            <input type="radio" id="radioOrange" name="priority" value="High" class="k-button" disabled/>
                                                                             <label for="radioOrange">High</label>
                                                                         </div>
                                                                     </div>
@@ -238,8 +238,8 @@
                                                                     </button>
                                                                     <div class="row">
                                                                         <div class="radio-toolbar w-100">
-                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" />
-                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" />
+                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" disabled placeholder="From"/>
+                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" disabled placeholder="To"/>
 
                                                                         </div>
                                                                     </div>
@@ -249,11 +249,11 @@
                                                             <li>
                                                                 <label for="">Do you know the college name?</label>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="" name="radio2"/>
+                                                                    <input type="radio" class="custom-control-input" id="" name="radio2" checked disabled/>
                                                                     <label class="custom-control-label" for="">Yes</label>
                                                                 </div>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="" name="radio2"/>
+                                                                    <input type="radio" class="custom-control-input" id="" name="radio2" disabled/>
                                                                     <label class="custom-control-label" for="">No</label>
                                                                 </div>
                                                                 <select class="browser-default custom-select w-100 shadowed-input" id="select-car">
@@ -263,7 +263,7 @@
                                                             <li>
                                                                 <div class="demo-section k-content">
                                                                     <label for="">Duration of Education</label>
-                                                                    <input id="slider" class="balSlider" value="0" title="slider" />
+                                                                    <input id="slider" class="balSlider" value="0" title="slider" disabled/>
                                                                 </div>
                                                                 <div class="row justify-content-between">
                                                                     <div class="col-md-4"><small>0 months</small></div>
@@ -276,7 +276,7 @@
                                                                 <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip"
                                                                         data-placement="right" title="Target start date description">?
                                                                 </button>
-                                                                <input type="text" class="k-textbox w-100 number shadowed-input" placeholder="$"/>
+                                                                <input type="text" class="k-textbox w-100 number shadowed-input" placeholder="$" readonly/>
                                                             </li>
 
                                                         </ul>
@@ -325,14 +325,14 @@
                                                         <div class="row">
                                                             <div class="col-md-5 col-lg-5">
                                                                 <div class="">
-                                                                    <img src="css/img/small-icon-car_goal.png" alt=""
+                                                                    <img src="css/img/small-icon-kids-education_goal.png" alt=""
                                                                          width="20"/>
                                                                     <p class="goal-name-title d-inline-block">
                                                                         <small>Goal Success
                                                                             Probability
                                                                         </small>
                                                                     </p>
-                                                                    <p class="col-md-12">Car Goal
+                                                                    <p class="col-md-12">Education Goal
                                                                         <span>Status: On-Track</span></p>
                                                                 </div>
                                                             </div>

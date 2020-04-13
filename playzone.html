@@ -36,7 +36,7 @@
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="">
-                    <a href="">
+                    <a href="playzone.html">
                         <i class="nc-icon nc-playzone"></i>
                         <p>Playzone</p>
                     </a>
@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="">
+                    <a href="goal-page-colladge.html">
                         <i class="nc-icon nc-house"></i>
                         <p>House</p>
                     </a>
@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="">
+                    <a href="goal-page-car.html">
                         <i class="nc-icon nc-car"></i>
                         <p>Car</p>
                     </a>
@@ -103,7 +103,7 @@
                             <span class="nb-icon nb-user">Johnny Appleseed</span>
                         </div>
                         <div class="col">
-                            <div class="score-show text-center row">
+                            <div class="score-show text-center row" style="background: #68D12F">
                                 <div class="col-md-4 col-lg-3">
                                     <p class="big-title-big">75</p>
                                 </div>
@@ -136,10 +136,24 @@
                                                 <div class="goal-name"><p>Add a Goal</p></div>
                                             </div>
                                             <div class="col-4">
-                                                <button class="small ml-1 mt-3">
+                                                <button class="small ml-1 mt-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="fa fa-plus-circle"></span>
                                                 </button>
+                                                <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="#">Emergency goal</a>
+                                                    <a class="dropdown-item" href="#">Retirement goal</a>
+                                                    <a class="dropdown-item" href="#">Wealth goal</a>
+                                                    <a class="dropdown-item" href="#">House goal</a>
+                                                    <a class="dropdown-item" href="#">Collage goal</a>
+                                                    <a class="dropdown-item" href="#">Car goal</a>
+                                                    <a class="dropdown-item" href="#">Wedding goal</a>
+                                                    <a class="dropdown-item" href="#">Continued Education goal</a>
+                                                    <a class="dropdown-item" href="#">Vacation goal</a>
+                                                    <a class="dropdown-item" href="#">Major Purchase goal</a>
+                                                    <a class="dropdown-item" href="#">Other spending goal</a>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -414,8 +428,35 @@
                                             <p class="card-text mt-3">Consider delaying retirement by 3 years to increase achievability of your House goal from 45% to 70%</p>
                                             <div class="row justify-content-end">
                                                 <div class="col-md-9"></div>
+
+                                                <script>
+                                                    // Animate goal object with give id, priority and date
+
+                                                    function animateGoal(goal_id, priorityValue, dateValue) {
+                                                        var draggedElement = document.getElementById(goal_id);
+
+                                                        var targetSection = document.getElementsByClassName('dropzone');
+                                                        draggedElement.parentNode.removeChild(draggedElement);
+
+                                                        for (var i=0; i< targetSection.length; i++){
+                                                            if(targetSection[i].getAttribute('data-priority') == priorityValue &&
+                                                                targetSection[i].getAttribute('data-target') == dateValue){
+                                                                targetSection[i].appendChild(draggedElement);
+
+                                                                draggedElement.setAttribute('data-status-priority', priorityValue);
+                                                                draggedElement.setAttribute('data-status-year', dateValue);
+
+                                                                // After animation open effect of changes modal with a new goals
+                                                                createEffectOfChangesModal(changedObj);
+                                                                $('#effect-of-changes').modal('show');
+                                                            }
+                                                        }
+
+                                                    }
+                                                </script>
+
                                                 <div class="text-right col-md-3">
-                                                    <button class="btn btn-blue w-100">Try It</button>
+                                                    <button class="btn btn-blue w-100" onclick="animateGoal('968f6828-a81a-4cfc-9b94-d2f34315782','Low','2048')">Try It</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -481,6 +522,7 @@
 <script src="js/rpie.js"></script>
 <script src="js/func.js"></script>
 <script src="js/draw-table.js"></script>
+
 
 </body>
 </html>

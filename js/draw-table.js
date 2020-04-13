@@ -49,14 +49,14 @@ function drawTable(profile, prior = priority) {
 
                     var goalDate = newFormatDate(goals[goalItem].date);
 
-                    cell.setAttribute('data-type', goals[goalItem].goal_type);
+                   // cell.setAttribute('data-type', goals[goalItem].goal_type);
 
                     if ( goalDate.year == years[i] && goals[goalItem].priority === prior[count]) {
 
                     var calcWidth = 130 + caefecentOfWidth(withtVal,goals[goalItem].amount);
                     var calcHeight = calcWidth - 38;
-                        cellContent += "<div draggable='true' class='draggable radialProgressBar ";
-                        cellContent += "\' id=\'" + goals[goalItem].id + "\'" + " data-status-year='" + goalDate.year + "\'" +
+                        cellContent += "<div draggable='true' class='draggable radialProgressBar";
+                        cellContent += "\'id=\'" + goals[goalItem].id + "\'" + " data-status-year='" + goalDate.year + "\'" +
                             "data-status-priority='" + goals[goalItem].priority + "\'" + "style='width: "+
                             calcWidth+ "px; " + " height:"+ calcWidth +
                             "px; margin-top: "+"-"+calcWidth+ "px; margin-left: "+"-"+
@@ -145,7 +145,6 @@ var old_state;
 
   document.addEventListener("dragstart", function (event) {
     dragged = event.target;
-    console.log(dragged)
     old_state = {
         priority: dragged.getAttribute("data-status-priority"),
         year: dragged.getAttribute('data-status-year'),
@@ -242,7 +241,7 @@ function calculateYearGrid(dateBirth) {
     });
     years = [];
     var nowYear = (new Date()).getFullYear();
-    var retirementYear = (new Date(max.birthdate)).getFullYear() + 118;
+    var retirementYear = (new Date(max.birthdate)).getFullYear() + 100;
     for (var i = nowYear; i <= retirementYear; i++ ){
         years.push(i);
     }
