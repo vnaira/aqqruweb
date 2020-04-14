@@ -4,8 +4,8 @@ body, p{
 }
 .radialProgressBar {
   border-radius: 50%;
-  -webkit-transform: translate(50%, 50%);
-  transform: translate(50%, 50%);
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
   width: 120px;
   height: 120px;
   display: -webkit-box;
@@ -28,11 +28,13 @@ body, p{
   margin: auto;
   background: #fff;
   text-align: center;
-  padding-top: 12%;
+  padding-top: 7%;
   font-size: 14px;
   font-weight: 700;
 }
-
+.radialProgressBar .overlay .line-1{
+  line-height: 1;
+}
 .mid .overlay{
   width: 142px;
   height: 142px;

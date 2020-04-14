@@ -29,9 +29,9 @@
 <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
         <div class="logo">
-                <div class="logo-image-small text-center">
-                    <img src="css/img/playzone/hamburg-menu.png"/>
-                </div>
+            <div class="logo-image-small text-center">
+                <img src="css/img/playzone/hamburg-menu.png"/>
+            </div>
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
@@ -108,8 +108,8 @@
                                     <p class="big-title-big">75</p>
                                 </div>
                                 <div class="col-md-8 col-lg-9 text-left">
-                                <h6 class="mt-3 ml-1 col-md-12">Financial</h6>
-                                <h6 class="ml-1 col-md-12">Wellness Score</h6>
+                                    <h6 class="mt-3 ml-1 col-md-12">Financial</h6>
+                                    <h6 class="ml-1 col-md-12">Wellness Score</h6>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +153,6 @@
                                                     <a class="dropdown-item" href="#">Other spending goal</a>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -214,149 +213,35 @@
 
                             <div id="grid-labels"></div>
 
+                            <form name="form_aaff11dd_bf31_4331_9f02_e51f7badbab0" id="form_aaff11dd_bf31_4331_9f02_e51f7badbab0" method="post" action="/Main/SaveChanges">
+                                <input type="hidden" id="ChangesInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0" name="ChangesInfo" value="00000000-0000-0000-0000-000000000000" />
+                                <input type="hidden" id="AvatarFullInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0" name="AvatarFullInfo" value="00000000-0000-0000-0000-000000000000" />
+                                <input type="hidden" id="RedirectURL_aaff11dd_bf31_4331_9f02_e51f7badbab0" name="RedirectURL" />
+                                <input name="_AntiforgeryToken" type="hidden" value="CfDJ8EFY60LBDvVKtB5W5nGCzNhAhrZX_MtOOubMteS-RQphjj3kEZXBYGR2f7i05fse6D1zAAOu0m3ymjUBVDeX4FKDHbwJFVW-g3rFztm4WDMoHLjsinxtT8txPT51MUyYSp5faaRnFNVGcuzHB0qSUe4AbyPTkpsSQLJJ6BK55uuKJvv54DOB_Z2b6X2KEAmnxQ" />
+                            </form>
+
                             <script>
-
-
                                 // object for effect of changes modal
-                                changedObj = {
-                                    "profiles": [
-                                        {
-                                            "id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-                                            "birthdate": "1955-04-02T07:35:53"
-                                        },
-                                        {
-                                            "id": "b70ce029-88d8-4598-a467-01c8c180d7b8",
-                                            "birthdate": "2014-04-02T07:35:53"
-                                        },
-                                        {
-                                            "id": "04b1d362-fd18-4849-9ee4-5b764e0b9f80",
-                                            "birthdate": "2017-04-02T07:35:53"
-                                        }
-                                    ],
-                                    "active_changed_goals": [
-                                        {
-                                            "id": "968f6828-a81a-4cfc-9b94-d2f343157822",
-                                            "date": "2021-08-01T00:00:00",
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "date": "2024-02-01T00:00:00",
+                                var profiles = [{ "name": "qwerty asdfg", "birthdate": "1976-04-13T18:38:57Z", "gender": "Undefined", "household_member": "HeadOfHousehold", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Married", "zip_code": "32124", "profile_type": "person_headofhousehold", "id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9" }, { "name": "Child 3", "birthdate": "2014-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "275bb19c-571e-492b-8d1a-3d758137599b" }, { "name": "Child 2", "birthdate": "2015-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "985d4277-ecda-45ff-b18c-81ea6d7bd520" }, { "name": "Child 1", "birthdate": "2016-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "08b1b2c0-2e6a-4244-8c9d-9ad6bb84cda2" }];
+                                var initialAvatarResult = { "score": 69.0, "state": [0.0, 1.0, 0.0], "weight": 61.0 };
+                                var initial_goals = [{ "goal_data": { "id": "9c2165c9-e757-4d71-bef7-e655ca92491a", "goal_type": "car_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Car", "amount": 35000.0, "percentExpenses": null, "priority": "Medium", "start_date": "2021-04-01T00:00:00Z", "end_date": "2022-04-01T00:00:00Z", "date": "2021-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 59.0, "state": [0.0, 1.0, 0.0], "weight": 3.667818225415405 } },
+                                    { "goal_data": { "id": "355cd57b-27b8-401f-bd49-e0860022808d", "goal_type": "college_education_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "275bb19c-571e-492b-8d1a-3d758137599b", "name": "College Education", "amount": 240000.0, "percentExpenses": null, "priority": "Medium", "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2032-04-01T00:00:00Z", "icon_path": null, "css_class": null },
+                                        "calc_goal_result": { "score": 51.0, "state": [0.269, 0.731, 0.0], "weight": 21.740481878491309 } }, { "goal_data": { "id": "701b6957-a0bd-48aa-9e50-6392e6da90b6", "goal_type": "emergency_fund", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Emergency Fund", "amount": 0.0, "percentExpenses": null, "priority": null, "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2020-04-13T18:39:35.9716137Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 98.0, "state": [0.0, 0.0, 1.0], "weight": 0.0 } }, { "goal_data": { "id": "7c950c1a-8df4-4717-a3a3-22084da27d92", "goal_type": "house_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "House", "amount": 267072.0, "percentExpenses": null, "priority": "Medium", "start_date": "2023-04-01T00:00:00Z", "end_date": "2025-04-01T00:00:00Z", "date": "2023-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 70.0, "state": [0.0, 0.993, 0.007], "weight": 33.205815223665866 } }, { "goal_data": { "id": "5acfe5ac-988f-4bc7-828f-561d23e3c7af", "goal_type": "retirement_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Retirement", "amount": 0.0, "percentExpenses": null, "priority": "Medium", "start_date": "2083-04-13T18:39:35.9728813Z", "end_date": "2087-04-13T18:39:35.9729008Z", "date": "2083-04-13T18:39:35.9729015Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 91.0, "state": [0.0, 0.269, 0.731], "weight": 0.0 } }, { "goal_data": { "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47", "goal_type": "wedding_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Wedding", "amount": 20933.0, "percentExpenses": null, "priority": "Medium", "start_date": "2023-04-01T00:00:00Z", "end_date": "2025-04-01T00:00:00Z", "date": "2023-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 68.0, "state": [0.0, 0.999, 0.001], "weight": 2.528297262013659 } }];
 
-                                        }
-                                    ],
-                                    "initial_avatar_result": {
-                                        "state": [
-                                            0.0,
-                                            1.0,
-                                            0.0
-                                        ],
-                                        "wellnesscore": 14
-                                    },
-                                    "initial_goals":[
-                                        {
-                                            "id": "968f6828-a81a-4cfc-9b94-d2f34315782",
-                                            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-                                            "date": "2030-04-01T00:00:00",
-                                            "goal_type": "wedding_goal",
-                                            "name": "Wedding",
-                                            "amount": 20972.0,
-                                            "priority": "Low",
-                                            "achievability": 28.0,
-                                            "state": [
-                                                0.0,
-                                                1.0,
-                                                0.0
-                                            ]
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "person_id": "b70ce029-88d8-4598-a467-01c8c180d7b8",
-                                            "date": "2022-04-01T00:00:00",
-                                            "goal_type": "retirement_goal",
-                                            "name": "retirement",
-                                            "amount": 267072.0,
-                                            "priority": "Medium",
-                                            "achievability": 60.0,
-                                            "state": [
-                                                0.0,
-                                                1.0,
-                                                0.0
-                                            ]
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-                                            "date": "2028-04-01T00:00:00",
-                                            "goal_type": "house_goal",
-                                            "name": "House",
-                                            "amount": 267072.0,
-                                            "priority": "High",
-                                            "achievability": 60.0,
-                                            "state": [
-                                                0.0,
-                                                0.998,
-                                                0.002
-                                            ]
-                                        }
-                                    ],
-                                    "changed_avatar_result": {
-                                        "state": [
-                                            0.0,
-                                            1.0,
-                                            0.0
-                                        ],
-                                        "wellnesscore": 34
-                                    },
-                                    "changed_goals":[
-                                        {
-                                            "id": "968f6828-a81a-4cfc-9b94-d2f343157822",
-                                            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-                                            "date": "2021-04-01T00:00:00",
-                                            "goal_type": "wedding_goal",
-                                            "name": "Wedding",
-                                            "amount": 20972.0,
-                                            "priority": "Low",
-                                            "achievability": 58.0,
-                                            "state": [
-                                                0.0,
-                                                1.0,
-                                                0.0
-                                            ]
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "person_id": "b70ce029-88d8-4598-a467-01c8c180d7b8",
-                                            "date": "2022-04-01T00:00:00",
-                                            "goal_type": "retirement_goal",
-                                            "name": "retirement",
-                                            "amount": 267072.0,
-                                            "priority": "Medium",
-                                            "achievability": 60.0,
-                                            "state": [
-                                                0.0,
-                                                1.0,
-                                                0.0
-                                            ]
-                                        },
-                                        {
-                                            "id": "ce35ce1b-3056-4c13-9bc8-4fdc6e1da0d0",
-                                            "person_id": "8a423708-0e70-4302-9bd8-7b67fa749151",
-                                            "date": "2028-04-01T00:00:00",
-                                            "goal_type": "house_goal",
-                                            "name": "House",
-                                            "amount": 267072.0,
-                                            "priority": "High",
-                                            "achievability": 80.0,
-                                            "state": [
-                                                0.0,
-                                                0.998,
-                                                0.002
-                                            ]
-                                        }
-                                    ]
+                                var changedObj = {
+                                    "profiles": profiles,
+                                    "initial_avatar_result": initialAvatarResult,
+                                    "initial_goals": initial_goals,
+
+                                    "active_changed_goals": null,
+                                    "changed_avatar_result": null,
+                                    "changed_goals": null,
+                                    "changed_info": null,
+                                    "changed_avatar_full_info": null,
+                                    "redirect_url": null
                                 };
 
-                                if( typeof( window.localStorage) !== "undefined" ){
+                                if (typeof (window.localStorage) !== "undefined") {
                                     window.localStorage.setItem('goalObject', JSON.stringify(changedObj.initial_goals));
                                 }
                                 window.addEventListener("load", function () {
@@ -365,19 +250,73 @@
                                     goalClick();
                                 });
 
-
                                 document.addEventListener("drop", function (event) {
-                                    event.preventDefault();
-                                    dropp(changedObj);
+                                    //console.log(currGoalInfo);
+                                    kendo.ui.progress($("#table-canvas"), true);
+
+                                    var newPriority = event.target.getAttribute('data-priority');
+                                    var newTargetYear = event.target.getAttribute('data-target');
+                                    var newTargetMonth = event.target.getAttribute('data-target-month');
+                                    if (newTargetMonth === undefined || newTargetMonth === null)
+                                        newTargetMonth = 1;
+                                    //var newTargetDate = Date.parse('' + newTargetYear + '-' + newTargetMonth + '-01');
+                                    var newTargetDate = new Date(newTargetYear, newTargetMonth, 1);
+                                    var parentEvent = event;
+
+                                    //$.ajax({
+                                    //    type: "POST",
+                                    //    url: "/api/MainAPI/GetChangingAvatar",
+                                    //    beforeSend: function (xhr) {
+                                    //        xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                                    //    },
+                                    //    data: JSON.stringify({ id: currGoalInfo.id, goaltype: currGoalInfo.goal_type, priority: newPriority, date: newTargetDate /*toISOString()*/ }),
+                                    //    contentType: "application/json; charset=utf-8",
+                                    //    dataType: "json",
+                                    //    //async: false,
+                                    //    success: function (msg) {
+                                    //        var changedObjectData = msg;
+                                    //changedObj.active_changed_goals = changedObjectData.changed_objects;
+                                    //changedObj.changed_avatar_result = changedObjectData.avatar_result;
+                                    //changedObj.changed_goals = changedObjectData.goals;
+                                    //changedObj.changed_info = changedObjectData.changes_info;
+                                    //changedObj.changed_avatar_full_info = changedObjectData.avatar_full_info;
+                                    //changedObj.redirect_url = changedObjectData.redirect_url;
+
+                                    changedObj.active_changed_goals = [{ "start_date": "2023-01-01T00:00:00Z", "end_date": "2023-01-01T00:00:00Z", "goal_type": "wedding_goal", "name": "Wedding", "amount": 20933, "image_id": null, "priority": "Low", "created_date": "2020-04-13T18:38:58Z", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "avatar_id": "00000000-0000-0000-0000-000000000000", "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47" }];
+                                    changedObj.changed_avatar_result = { "score": 68, "state": [0, 1, 0], "weight": 61 };
+                                    changedObj.changed_goals = [{ "goal_data": { "id": "9c2165c9-e757-4d71-bef7-e655ca92491a", "goal_type": "car_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Car", "amount": 35000, "percentExpenses": null, "priority": "Medium", "start_date": "2021-04-01T00:00:00Z", "end_date": "2022-04-01T00:00:00Z", "date": "2021-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 59, "state": [0, 1, 0], "weight": 3.761044082836465 } }, { "goal_data": { "id": "355cd57b-27b8-401f-bd49-e0860022808d", "goal_type": "college_education_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "275bb19c-571e-492b-8d1a-3d758137599b", "name": "College Education", "amount": 240000, "percentExpenses": null, "priority": "Medium", "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2032-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 52, "state": [0.119, 0.881, 0], "weight": 22.730184093849434 } }, { "goal_data": { "id": "701b6957-a0bd-48aa-9e50-6392e6da90b6", "goal_type": "emergency_fund", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Emergency Fund", "amount": 0, "percentExpenses": null, "priority": "High", "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2020-04-13T18:40:30.518924Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 98, "state": [0, 0, 1], "weight": 0 } }, { "goal_data": { "id": "7c950c1a-8df4-4717-a3a3-22084da27d92", "goal_type": "house_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "House", "amount": 267072, "percentExpenses": null, "priority": "Medium", "start_date": "2023-04-01T00:00:00Z", "end_date": "2025-04-01T00:00:00Z", "date": "2023-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 70, "state": [0, 0.993, 0.007], "weight": 34.04981577258645 } }, { "goal_data": { "id": "5acfe5ac-988f-4bc7-828f-561d23e3c7af", "goal_type": "retirement_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Retirement", "amount": 0, "percentExpenses": null, "priority": "Medium", "start_date": "2083-04-13T18:40:30.5189656Z", "end_date": "2087-04-13T18:40:30.5189803Z", "date": "2083-04-13T18:40:30.5189806Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 91, "state": [0, 0.269, 0.731], "weight": 0 } }, { "goal_data": { "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47", "goal_type": "wedding_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Wedding", "amount": 20933, "percentExpenses": null, "priority": "Low", "start_date": "2023-01-01T00:00:00Z", "end_date": "2023-01-01T00:00:00Z", "date": "2023-01-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 52, "state": [0, 0.119, 0.881], "weight": 0.660848532828542 } }];
+                                    changedObj.changed_info = "860dd838_6a2e_47aa_935f_0e8ee127740e_637224000304505835";
+                                    changedObj.changed_avatar_full_info = "ee42007f_8b40_42b3_82d7_f75d4ff165a8_637224000304875296";
+                                    changedObj.redirect_url = null;
+
+                                    parentEvent.preventDefault();
+                                    dropp(changedObj, parentEvent);
+                                    //        kendo.ui.progress($("#table-canvas"), false);
+                                    //    },
+                                    //    error: function (req, status, error) {
+                                    //        kendo.ui.progress($("#table-canvas"), false);
+                                    //        kendo.alert("Something went wrong. Could not open Effect of Changes window.");
+
+                                    //        discardChanges();
+                                    //    }
+                                    //});
                                 }, false);
 
 
                                 //TODO modal's buttons actions
-                                function discardChanges(){
+                                function discardChanges() {
                                     $("#effect-of-changes").modal("hide");
                                     drawTable(changedObj.profiles);
                                 }
-                                function saveChanges(){}
+
+                                function saveChanges() {
+                                    kendo.ui.progress($("#table-canvas"), true);
+                                    $('#ChangesInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0').val(changedObj.changed_info);
+                                    $('#AvatarFullInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0').val(changedObj.changed_avatar_full_info);
+                                    $('#RedirectURL_aaff11dd_bf31_4331_9f02_e51f7badbab0').val(changedObj.redirect_url);
+                                    //$('#effectsOfChangesForm').submit();
+                                    $('#form_aaff11dd_bf31_4331_9f02_e51f7badbab0').submit();
+                                }
                             </script>
                         </div>
                     </div>
@@ -394,15 +333,15 @@
                             </div>
                             <div class="col-md-5">
                                 <div class="row justify-content-between mt-3">
-                                        <div class="col-md-4" role="group">
-                                            <button type="button" class="btn btn-blue w-100">Plan</button>
-                                        </div>
-                                        <div class="col-md-4" role="group">
-                                            <button type="button" class="btn btn-light w-100">Tradeoffs</button>
-                                        </div>
-                                        <div class="col-md-4" role="group">
-                                            <button type="button" class="btn btn-light w-100">Scenarios</button>
-                                        </div>
+                                    <div class="col-md-4" role="group">
+                                        <button type="button" class="btn btn-blue w-100">Plan</button>
+                                    </div>
+                                    <div class="col-md-4" role="group">
+                                        <button type="button" class="btn btn-light w-100">Tradeoffs</button>
+                                    </div>
+                                    <div class="col-md-4" role="group">
+                                        <button type="button" class="btn btn-light w-100">Scenarios</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-12 pb-1">
@@ -486,7 +425,7 @@
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
             </div>
         </div>
     </div>
@@ -502,7 +441,7 @@
 
     </div>
 </div>
-</div>
+
 <!--End effect of changes modal-->
 
 <!-- jQuery, Popper.js, Bootstrap JS -->
@@ -522,7 +461,6 @@
 <script src="js/rpie.js"></script>
 <script src="js/func.js"></script>
 <script src="js/draw-table.js"></script>
-
 
 </body>
 </html>
