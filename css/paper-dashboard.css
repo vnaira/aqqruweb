@@ -161,7 +161,7 @@ font-size: 24px}
 }
 .vheight-50{height: 50vh}
 .left-70{
-  left: -210px;
+  left: -228px;
 }
 
 
@@ -528,161 +528,6 @@ input:checked + .slider:before {
 .grey-body{background: #F4F9FF}
 
 
-
-
-
-
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-  .ps-container {
-    overflow: auto !important;
-  }
-}
-
-.ps-container.ps-active-x>.ps-scrollbar-x-rail,
-.ps-container.ps-active-y>.ps-scrollbar-y-rail {
-  display: block;
-  background-color: transparent;
-}
-
-.ps-container.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail {
-  background-color: #eee;
-  opacity: 0.9;
-}
-
-.ps-container.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail>.ps-scrollbar-x {
-  background-color: #999;
-  height: 11px;
-}
-
-.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail {
-  background-color: #eee;
-  opacity: 0.9;
-}
-
-.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {
-  background-color: #999;
-  width: 11px;
-}
-
-.ps-container>.ps-scrollbar-x-rail {
-  display: none;
-  position: absolute;
-  /* please don't change 'position' */
-  opacity: 0;
-  -webkit-transition: background-color .2s linear, opacity .2s linear;
-  -o-transition: background-color .2s linear, opacity .2s linear;
-  -moz-transition: background-color .2s linear, opacity .2s linear;
-  transition: background-color .2s linear, opacity .2s linear;
-  bottom: 0px;
-  /* there must be 'bottom' for ps-scrollbar-x-rail */
-  height: 15px;
-}
-
-.ps-container>.ps-scrollbar-x-rail>.ps-scrollbar-x {
-  position: absolute;
-  /* please don't change 'position' */
-  background-color: #aaa;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  -webkit-transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, -webkit-border-radius .2s ease-in-out;
-  transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, -webkit-border-radius .2s ease-in-out;
-  -o-transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out;
-  -moz-transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out, -moz-border-radius .2s ease-in-out;
-  transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out;
-  transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out, -webkit-border-radius .2s ease-in-out, -moz-border-radius .2s ease-in-out;
-  bottom: 2px;
-  /* there must be 'bottom' for ps-scrollbar-x */
-  height: 6px;
-}
-
-.ps-container>.ps-scrollbar-x-rail:hover>.ps-scrollbar-x,
-.ps-container>.ps-scrollbar-x-rail:active>.ps-scrollbar-x {
-  height: 11px;
-}
-
-.ps-container>.ps-scrollbar-y-rail {
-  display: none;
-  position: absolute;
-  /* please don't change 'position' */
-  opacity: 0;
-  -webkit-transition: background-color .2s linear, opacity .2s linear;
-  -o-transition: background-color .2s linear, opacity .2s linear;
-  -moz-transition: background-color .2s linear, opacity .2s linear;
-  transition: background-color .2s linear, opacity .2s linear;
-  right: 0;
-  /* there must be 'right' for ps-scrollbar-y-rail */
-  width: 15px;
-}
-
-.ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y {
-  position: absolute;
-  /* please don't change 'position' */
-  background-color: #aaa;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  -webkit-transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, -webkit-border-radius .2s ease-in-out;
-  transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, -webkit-border-radius .2s ease-in-out;
-  -o-transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out;
-  -moz-transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out, -moz-border-radius .2s ease-in-out;
-  transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out;
-  transition: background-color .2s linear, height .2s linear, width .2s ease-in-out, border-radius .2s ease-in-out, -webkit-border-radius .2s ease-in-out, -moz-border-radius .2s ease-in-out;
-  right: 2px;
-  /* there must be 'right' for ps-scrollbar-y */
-  width: 6px;
-}
-
-.ps-container>.ps-scrollbar-y-rail:hover>.ps-scrollbar-y,
-.ps-container>.ps-scrollbar-y-rail:active>.ps-scrollbar-y {
-  width: 11px;
-}
-
-.ps-container:hover.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail {
-  background-color: #eee;
-  opacity: 0.9;
-}
-
-.ps-container:hover.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail>.ps-scrollbar-x {
-  background-color: #999;
-  height: 11px;
-}
-
-.ps-container:hover.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail {
-  background-color: #eee;
-  opacity: 0.9;
-}
-
-.ps-container:hover.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {
-  background-color: #999;
-  width: 11px;
-}
-
-.ps-container:hover>.ps-scrollbar-x-rail,
-.ps-container:hover>.ps-scrollbar-y-rail {
-  opacity: 0.6;
-}
-
-.ps-container:hover>.ps-scrollbar-x-rail:hover {
-  background-color: #eee;
-  opacity: 0.9;
-}
-
-.ps-container:hover>.ps-scrollbar-x-rail:hover>.ps-scrollbar-x {
-  background-color: #999;
-}
-
-.ps-container:hover>.ps-scrollbar-y-rail:hover {
-  background-color: #eee;
-  opacity: 0.9;
-}
-
-.ps-container:hover>.ps-scrollbar-y-rail:hover>.ps-scrollbar-y {
-  background-color: #999;
-}
-
-
 .btn.btn-icon.btn-simple,
 .navbar .navbar-nav>a.btn.btn-icon.btn-simple {
   padding: 0;
@@ -696,7 +541,6 @@ input:checked + .slider:before {
 }
 
 .btn-primary {
-  background-color: #51cbce;
   color: #FFFFFF;
 }
 
@@ -844,30 +688,6 @@ input:checked + .slider:before {
   color: #6bd098;
 }
 
-.has-danger .form-control {
-  background-color: #FFC0A4;
-  border: 1px solid #ef8157;
-  color: #ef8157;
-}
-
-.has-danger .form-control.form-control-danger {
-  padding-right: 2.5em !important;
-}
-
-.has-danger .form-control:focus {
-  background-color: #FFFFFF;
-  border: 1px solid #ef8157;
-}
-
-.form-control+.form-control-feedback {
-  border-radius: 6px;
-  font-size: 14px;
-  margin-top: -7px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  vertical-align: middle;
-}
 
 .open .form-control {
   border-radius: 6px 6px 0 0;
@@ -951,24 +771,6 @@ input:checked + .slider:before {
 .input-group .form-control+.input-group-prepend .input-group-text,
 .input-group .form-control+.input-group-append .input-group-text {
   padding: 10px 10px 10px 0;
-}
-
-.form-group .input-group-prepend .input-group-text,
-.form-group .input-group-append .input-group-text,
-.input-group .input-group-prepend .input-group-text,
-.input-group .input-group-append .input-group-text {
-  padding: 10px 0 10px 10px;
-}
-
-.form-group .input-group-prepend .input-group-text+.form-control,
-.form-group .input-group-prepend .input-group-text~.form-control,
-.form-group .input-group-append .input-group-text+.form-control,
-.form-group .input-group-append .input-group-text~.form-control,
-.input-group .input-group-prepend .input-group-text+.form-control,
-.input-group .input-group-prepend .input-group-text~.form-control,
-.input-group .input-group-append .input-group-text+.form-control,
-.input-group .input-group-append .input-group-text~.form-control {
-  padding: 10px 11px 11px 8px;
 }
 
 .input-group.has-success .input-group-prepend .input-group-text,
@@ -1295,7 +1097,7 @@ h6,
 .h6 {
   font-size: 1em;
   font-weight: 700;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 p.description {
@@ -1339,41 +1141,6 @@ p.description {
   font-size: 1em;
 }
 
-.text-primary,
-a.text-primary:focus,
-a.text-primary:hover {
-  color: #51cbce !important;
-}
-
-.text-info,
-a.text-info:focus,
-a.text-info:hover {
-  color: #51bcda !important;
-}
-
-.text-success,
-a.text-success:focus,
-a.text-success:hover {
-  color: #6bd098 !important;
-}
-
-.text-warning,
-a.text-warning:focus,
-a.text-warning:hover {
-  color: #fbc658 !important;
-}
-
-.text-danger,
-a.text-danger:focus,
-a.text-danger:hover {
-  color: #ef8157 !important;
-}
-
-.text-gray,
-a.text-gray:focus,
-a.text-gray:hover {
-  color: #E3E3E3 !important;
-}
 
 .blockquote {
   border-left: none;

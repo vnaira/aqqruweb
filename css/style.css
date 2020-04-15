@@ -535,6 +535,7 @@ h6{font-size: 14px}
   padding: 7px 10px 0 7px;
   border: 1px solid #ced4da;
   border-left: 0 none!important;
+  height: 38px;
 }
 .no-right-border{border-right: 0 none!important;}
 .pwd:focus, .pwd-confirm:focus{box-shadow: none;border:1px solid #ced4da}
@@ -768,6 +769,11 @@ div.balSlider {
   width: 100%;
 }
 
+.k-textbox:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+
 
 
 /**
@@ -881,8 +887,19 @@ personal information pages
   background-color: #0069d9;
 
 }
-
-
+.select_suggestion{
+  background: transparent;
+  border: 0 none;
+  margin-top: -5px;
+}
+.select_suggestion.active .circle{
+  border-color:#B9C6D4;
+  background: #B9C6D4;
+}
+.select_suggestion:focus{
+  outline: 0 none;
+  box-shadow: none;
+}
 
 
 

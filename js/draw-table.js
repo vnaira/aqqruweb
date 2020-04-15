@@ -13,6 +13,7 @@ function drawTable(profile, prior = priority) {
 
     var withtVal = generateWidthOfChart(goals);
     years = calculateYearGrid(profile);
+    console.log(years)
 
     // create table left side priority
     document.getElementById('priority_labels').innerHTML = '';
@@ -34,7 +35,8 @@ function drawTable(profile, prior = priority) {
 
     for (var count = (prior.length - 1); count >= 0; count--) {
         // cell loop
-        var stepCell = Math.floor(years.length / 10);
+        var  stepCell = Math.floor(years.length / 10);
+
         tdWidth = canvasWidth / 10 / stepCell;
         for (let i = 0; i < years.length; i++) {
 
@@ -60,7 +62,14 @@ function drawTable(profile, prior = priority) {
                     var calcWidth = 130 + caefecentOfWidth(withtVal, goals[goalItem].goal_data.amount);
                     var position = -( calcWidth / 2);
                     var calcHeight = calcWidth - 38;
-                    cellContent += "<div draggable='true' class='draggable radialProgressBar";
+
+                    // make no draggable emergency fund
+                    if(goals[goalItem].goal_data.goal_type === "emergency_fund"){
+                        cellContent += "<div draggable='false' class='radialProgressBar";
+                    }else {
+                        cellContent += "<div draggable='true' class='draggable radialProgressBar";
+                    }
+
                     cellContent += "\' id=\'" + goals[goalItem].goal_data.id + "\'" + " data-status-year='" + goalDate.year + "\'" +
                         "data-status-goal-type='" + goals[goalItem].goal_data.goal_type + "\'" +
                         "data-status-priority='" + goals[goalItem].goal_data.priority + "\'" + "style='width: " +
@@ -98,7 +107,6 @@ function drawTable(profile, prior = priority) {
  */
 var generateWidthOfChart = function (goalsObjs) {
     var newObj = [];
-    console.log(goalsObjs)
     for (var it = 0; it < goalsObjs.length; it++) {
         newObj.push(goalsObjs[it].goal_data.amount);
     }
@@ -132,7 +140,7 @@ function drawGridLabels(years) {
     table.className = "table grid-labels table-responsive ml-4";
     row = table.insertRow();
 
-    var stepCell = Math.floor(years.length / 11);
+    var stepCell = Math.floor(years.length / 10);
     for (let i = 0; i < years.length; i++) {
         var cellLabel = "";
         if (i % stepCell === 0) {
@@ -140,7 +148,7 @@ function drawGridLabels(years) {
 
             cellLabel += "<span class='years'>" + years[i] + "</span>";
             cell.innerHTML = cellLabel;
-            cell.setAttribute('width', Math.floor(canvasWidth / 11) + 'px');
+            cell.setAttribute('width', Math.ceil(canvasWidth / 10) + 'px');
         }
     }
     document.getElementById("grid-labels").appendChild(table);
