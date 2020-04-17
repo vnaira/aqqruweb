@@ -774,6 +774,14 @@ div.balSlider {
   box-shadow: none;
 }
 
+.custom-checkbox .k-tooltip-validation {
+  border-color: #ffeeba;
+  color: #856404;
+  background-color: #fff3cd;
+  margin-top: -22px;
+  margin-left: -27px;
+  position: absolute!important;
+}
 
 
 /**
@@ -815,7 +823,7 @@ personal information pages
   background-repeat: no-repeat;
   background-position: bottom 0 right 0;
   width: 390px;
-  min-height: 260px;
+  min-height: 300px;
 }
 .title3 {
   color: #fff;
@@ -890,7 +898,7 @@ personal information pages
 .select_suggestion{
   background: transparent;
   border: 0 none;
-  margin-top: -5px;
+  margin-top: -2px;
 }
 .select_suggestion.active .circle{
   border-color:#B9C6D4;

@@ -13,12 +13,14 @@ body, p{
   display: flex;
   background: #D9F7DC;
   margin-bottom: 56px;
- /* margin-left: -100px;
-  margin-top: -55px;*/
-    margin-left: -70px;
-    margin-top: -150px;
+  margin-left: -70px;
+  margin-top: -150px;
   float: left;
-    position: absolute;
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+
 }
 
 .radialProgressBar .overlay {

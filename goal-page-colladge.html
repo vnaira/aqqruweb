@@ -238,9 +238,7 @@
                                                                     </button>
                                                                     <div class="row">
                                                                         <div class="radio-toolbar w-100">
-                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" disabled placeholder="From"/>
-                                                                            <input class="datepicker" value="" title="datepicker" style="width: 49%" disabled placeholder="To"/>
-
+                                                                            <input class="datepicker w-100" value="" title="datepicker" disabled placeholder="Years from now"/>
                                                                         </div>
                                                                     </div>
                                                                     <small>Years from now</small>
@@ -249,16 +247,33 @@
                                                             <li>
                                                                 <label for="">Do you know the college name?</label>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="" name="radio2" checked disabled/>
-                                                                    <label class="custom-control-label" for="">Yes</label>
+                                                                    <input type="radio" class="custom-control-input" id="yes" name="radio2"/>
+                                                                    <label class="custom-control-label" for="yes">Yes</label>
                                                                 </div>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="" name="radio2" disabled/>
-                                                                    <label class="custom-control-label" for="">No</label>
+                                                                    <input type="radio" class="custom-control-input" id="no" name="radio2"/>
+                                                                    <label class="custom-control-label" for="no">No</label>
                                                                 </div>
-                                                                <select class="browser-default custom-select w-100 shadowed-input" id="select-car">
-                                                                    <option>In state</option>
-                                                                </select>
+
+                                                                <div class="collapse" id="collapse-name-area-no">
+                                                                    <select class="browser-default custom-select w-100 shadowed-input"
+                                                                            id="select-car">
+                                                                        <option>In state</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div id="collapse-name-area" class="collapse">
+                                                                    <div class="form-group mt-3">
+                                                                        <label for="" class="col-form-label">Goal
+                                                                            name</label>
+                                                                        <input type="text" class="k-textbox w-100 shadowed-input"
+                                                                               value="Princeton University" readonly/>
+                                                                    </div>
+
+                                                                    <select class="browser-default custom-select w-100 shadowed-input"
+                                                                            id="select-collage">
+                                                                        <option>Include Living Expenses: $61,675</option>
+                                                                    </select>
+                                                                </div>
                                                             </li>
                                                             <li>
                                                                 <div class="demo-section k-content">
@@ -362,7 +377,7 @@
                                                                     <div class="row justify-content-between">
                                                                         <div class="col-md-9 mt-3">
                                                                             <div class="row">
-                                                                                <div class="col-md-1"> <button class="select_suggestion"><span class="circle"></span></button></div>
+                                                                                <div class="col-md-1" style="float:left"> <button class="select_suggestion"><span class="circle"></span></button></div>
                                                                                 <div class="col-md-11"><p class="">What if you consider an in-state college?</p></div>
                                                                             </div>
                                                                         </div>
@@ -376,7 +391,7 @@
                                                                         <div class="row justify-content-between">
                                                                             <div class="col-md-9 mt-3">
                                                                                 <div class="row">
-                                                                                <div class="col-md-1"> <button class="select_suggestion"><span class="circle"></span></button></div>
+                                                                                <div class="col-md-1" style="float:left"> <button class="select_suggestion"><span class="circle"></span></button></div>
                                                                                 <div class="col-md-11"><p class="">What if you were to partially fund college?</p></div>
                                                                                 </div>
 
@@ -391,7 +406,7 @@
                                                                         <div class="row justify-content-between">
                                                                             <div class="col-md-9 mt-3">
                                                                                 <div class="row">
-                                                                                    <div class="col-md-1"> <button class="select_suggestion"><span class="circle"></span></button></div>
+                                                                                    <div class="col-md-1" style="float:left"> <button class="select_suggestion"><span class="circle"></span></button></div>
                                                                                     <div class="col-md-11"><p class="">What if you added a 529 College Savings Account?</p></div>
                                                                                 </div>
                                                                             </div>
@@ -514,6 +529,15 @@
             $('#effect-of-changes').modal('show');
         });
 
+
+        $('#yes').click(function(){
+            $('#collapse-name-area-no').hide();
+            $('#collapse-name-area').show();
+        });
+        $('#no').click(function(){
+            $('#collapse-name-area').hide();
+            $('#collapse-name-area-no').show();
+        });
     })
 </script>
 

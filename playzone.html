@@ -140,17 +140,17 @@
                                                     <span class="fa fa-plus-circle"></span>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                                                    <a class="dropdown-item" href="#">Emergency goal</a>
-                                                    <a class="dropdown-item" href="#">Retirement goal</a>
-                                                    <a class="dropdown-item" href="#">Wealth goal</a>
-                                                    <a class="dropdown-item" href="#">House goal</a>
-                                                    <a class="dropdown-item" href="#">Collage goal</a>
-                                                    <a class="dropdown-item" href="#">Car goal</a>
-                                                    <a class="dropdown-item" href="#">Wedding goal</a>
-                                                    <a class="dropdown-item" href="#">Continued Education goal</a>
-                                                    <a class="dropdown-item" href="#">Vacation goal</a>
-                                                    <a class="dropdown-item" href="#">Major Purchase goal</a>
-                                                    <a class="dropdown-item" href="#">Other spending goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-emergency.png" width="25" alt=""/> Emergency goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-retirement.png" width="25" alt=""/> Retirement goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-wealth.png" width="25" alt=""/> Wealth goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-house.png" width="25" alt=""/> House goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-kids-edu.png" width="25" alt=""/> Collage goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-car.png" width="25" alt=""/> Car goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-wedding.png" width="25" alt=""/> Wedding goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-education.png" width="25" alt=""/> Continued Education goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-vacation.png" width="25" alt=""/> Vacation goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-purchase.png" width="25" alt=""/> Major Purchase goal</a>
+                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-other.png" width="25" alt=""/> Other spending goal</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -374,12 +374,19 @@
                                                         var draggedElement = document.getElementById(goal_id);
 
                                                         var targetSection = document.getElementsByClassName('dropzone');
+                                                        draggedElement.style.opacity = '0';
+                                                        setTimeout(function(){
                                                         draggedElement.parentNode.removeChild(draggedElement);
+                                                        },2000);
 
                                                         for (var i=0; i< targetSection.length; i++){
                                                             if(targetSection[i].getAttribute('data-priority') == priorityValue &&
                                                                 targetSection[i].getAttribute('data-target') == dateValue){
-                                                                targetSection[i].appendChild(draggedElement);
+                                                                setTimeout(function(){
+                                                                    targetSection[i].appendChild(draggedElement);
+                                                                    },3000);
+                                                                draggedElement.style.opacity = '1';
+
 
                                                                 draggedElement.setAttribute('data-status-priority', priorityValue);
                                                                 draggedElement.setAttribute('data-status-year', dateValue);
@@ -394,7 +401,7 @@
                                                 </script>
 
                                                 <div class="text-right col-md-3">
-                                                    <button class="btn btn-blue w-100" onclick="animateGoal('968f6828-a81a-4cfc-9b94-d2f34315782','Low','2048')">Try It</button>
+                                                    <button class="btn btn-blue w-100" onclick="animateGoal('355cd57b-27b8-401f-bd49-e0860022808d','Low','2048')">Try It</button>
                                                 </div>
                                             </div>
                                         </div>

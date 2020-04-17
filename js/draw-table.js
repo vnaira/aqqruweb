@@ -1,5 +1,5 @@
 
-let priority = ['High', 'Medium', 'Low'];
+let priority = ['Low', 'Medium', 'High'];
 
 function drawTable(profile, prior = priority) {
     goals = JSON.parse(window.localStorage.getItem('goalObject'));
@@ -13,7 +13,6 @@ function drawTable(profile, prior = priority) {
 
     var withtVal = generateWidthOfChart(goals);
     years = calculateYearGrid(profile);
-    console.log(years)
 
     // create table left side priority
     document.getElementById('priority_labels').innerHTML = '';
@@ -526,11 +525,11 @@ function createEffectOfChangesModal(changesResponseObj) {
 
                     modalContent += 'Are you sure you would like to continue?</p></div></div>';
                     modalContent += '<div class="card-body"><div class="row"><div class="col-md-5"><div class="row">' +
-                        '<div class="col-md-3"> <img src="/img/small-icon-' + initObject.goal_data.goal_type + '.png" alt=""/></div> ' +
-                        '<div class="col-md-9"><p class="goal-name">' + initObject.goal_data.name +
-                        '</p><p class="goal-priority blue-text">' + initObject.goal_data.priority + '</p></div>' +
-                        '</div><div class="goal-date mt-3">Date &nbsp;<span class="blue-text"> ' + dateWithMonth(initObject.goal_data.date) + '</span></div>' +
-                        '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$' + initObject.goal_data.amount + '</span></div><div class="mt-3"></div></div>';
+                        '<div class="col-md-3"> <img src="/img/small-icon-' + changedObject.goal_data.goal_type + '.png" alt=""/></div> ' +
+                        '<div class="col-md-9"><p class="goal-name">' + changedObject.goal_data.name +
+                        '</p><p class="goal-priority blue-text">' + changedObject.goal_data.priority + '</p></div>' +
+                        '</div><div class="goal-date mt-3">Date &nbsp;<span class="blue-text"> ' + dateWithMonth(changedObject.goal_data.date) + '</span></div>' +
+                        '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$' + changedObject.goal_data.amount + '</span></div><div class="mt-3"></div></div>';
                     modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
                         '<div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(initObject.calc_goal_result.score, initObject.calc_goal_result.state) + '">' +
