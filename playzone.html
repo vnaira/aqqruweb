@@ -374,7 +374,6 @@
                                                         var draggedElement = document.getElementById(goal_id);
 
                                                         var targetSection = document.getElementsByClassName('dropzone');
-                                                        draggedElement.style.opacity = '0';
                                                         setTimeout(function(){
                                                         draggedElement.parentNode.removeChild(draggedElement);
                                                         },2000);
@@ -384,10 +383,7 @@
                                                                 targetSection[i].getAttribute('data-target') == dateValue){
                                                                 setTimeout(function(){
                                                                     targetSection[i].appendChild(draggedElement);
-                                                                    },3000);
-                                                                draggedElement.style.opacity = '1';
-
-
+                                                                },2000);
                                                                 draggedElement.setAttribute('data-status-priority', priorityValue);
                                                                 draggedElement.setAttribute('data-status-year', dateValue);
 

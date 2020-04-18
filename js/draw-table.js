@@ -78,8 +78,8 @@ function drawTable(profile, prior = priority) {
                         "'><div class='overlay' style='width:" + calcHeight + "px; height:" + calcHeight +
                         "px'><p class='line-1' style='color:" + generateColor(goals[goalItem].calc_goal_result.state) + "'>" + goals[goalItem].calc_goal_result.score +
                         "%</p><p style='font-size:12px; color: " + generateColor(goals[goalItem].calc_goal_result.state) +
-                        "'>Achievability</p><p class='goal-name-overlay'>" + goals[goalItem].goal_data.name +
-                        "</p><p><small>" + "$" + goals[goalItem].goal_data.amount + "</small></p></div></div>";
+                        "'>Achievability</p><p class='goal-name-overlay line-1'>" + goals[goalItem].goal_data.name +
+                        "</p><p><small>" + "$" + goals[goalItem].goal_data.amount.toLocaleString() + "</small></p></div></div>";
                 }
             }
             cell.className = "dropzone";
@@ -439,7 +439,7 @@ function createEffectOfChangesModal(changesResponseObj) {
                         '<div class="col-md-9"><p class="goal-name">' + changedObject.goal_data.name +
                         '</p><p class="goal-priority blue-text">' + changedObject.goal_data.priority + '</p></div>' +
                         '</div><div class="goal-date mt-3">Date  &nbsp;<span class="blue-text"> ' + dateWithMonth(changedObject.goal_data.date) + '</span></div>' +
-                        '<div class="goal-date">Expected cost  &nbsp;<span class="blue-text">$' + changedObject.goal_data.amount + '</span></div><div class="mt-3"></div></div>';
+                        '<div class="goal-date">Expected cost  &nbsp;<span class="blue-text">$' + changedObject.goal_data.amount.toLocaleString() + '</span></div><div class="mt-3"></div></div>';
                     modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
                         '<div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(0, [0.9, 0.2, 0.5]) + '">' +
@@ -486,7 +486,7 @@ function createEffectOfChangesModal(changesResponseObj) {
                         '<div class="col-md-9"><p class="goal-name">' + initObject.goal_data.name +
                         '</p><p class="goal-priority blue-text">' + initObject.goal_data.priority + '</p></div>' +
                         '</div><div class="goal-date mt-3">Date &nbsp;<span class="blue-text"> ' + dateWithMonth(initObject.goal_data.date) + '</span></div>' +
-                        '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$' + initObject.goal_data.amount + '</span></div><div class="mt-3"></div></div>';
+                        '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$' + initObject.goal_data.amount.toLocaleString() + '</span></div><div class="mt-3"></div></div>';
                     modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
 
                         '<div class="radialProgressBar left-20 small" style="' +
@@ -529,7 +529,7 @@ function createEffectOfChangesModal(changesResponseObj) {
                         '<div class="col-md-9"><p class="goal-name">' + changedObject.goal_data.name +
                         '</p><p class="goal-priority blue-text">' + changedObject.goal_data.priority + '</p></div>' +
                         '</div><div class="goal-date mt-3">Date &nbsp;<span class="blue-text"> ' + dateWithMonth(changedObject.goal_data.date) + '</span></div>' +
-                        '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$' + changedObject.goal_data.amount + '</span></div><div class="mt-3"></div></div>';
+                        '<div class="goal-date">Expected cost &nbsp;<span class="blue-text">$' + changedObject.goal_data.amount.toLocaleString() + '</span></div><div class="mt-3"></div></div>';
                     modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
                         '<div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(initObject.calc_goal_result.score, initObject.calc_goal_result.state) + '">' +
@@ -570,7 +570,7 @@ function createEffectOfChangesModal(changesResponseObj) {
                         '<div class="col-md-9"><p class="goal-name">' + initObject2.goal_data.name + '</p>' +
                         '<p class="goal-priority blue-text">High</p></div></div>' +
                         '<div class="goal-date mt-3">Date  &nbsp;<span class="blue-text">' + dateWithMonth(initObject2.goal_data.date) + '</span></div>' +
-                        '<div class="goal-date">Left to heirs &nbsp;<span class="blue-text"> ' + initObject2.goal_data.amount + '</span></div>' +
+                        '<div class="goal-date">Left to heirs &nbsp;<span class="blue-text"> $' + initObject2.goal_data.amount.toLocaleString() + '</span></div>' +
                         '<div class="mt-3"></div></div><div class="col-md-7"><div class="row">' +
 
                         '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="' +
