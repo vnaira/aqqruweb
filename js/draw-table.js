@@ -195,9 +195,13 @@ function dropp(wholeObj, event) {
     if (event.target.className === "dropzone") {
         dragged.parentNode.removeChild(dragged);
         event.target.appendChild(dragged);
-        createEffectOfChangesModal(wholeObj);
-        $('#effect-of-changes').modal('show');
+    }else {
+        var ns = dragged.parentNode.nextSibling;
+        dragged.parentNode.removeChild(dragged);
+        ns.appendChild(dragged);
     }
+    createEffectOfChangesModal(wholeObj);
+    $('#effect-of-changes').modal('show');
     dragged.setAttribute('data-status-priority', event.target.getAttribute('data-priority'));
     dragged.setAttribute('data-status-year', event.target.getAttribute('data-target'));
     dragged.setAttribute('data-status-month', event.target.getAttribute('data-target-month'));

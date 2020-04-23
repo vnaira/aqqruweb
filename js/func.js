@@ -148,9 +148,12 @@ $(document).ready(function () {
     // Form Age field validate
     $(".number-age").keyup(function () {
         if ($(this).val() < 18 || $(this).val() > 120) {
+            $("#button-send").attr("disabled", true);
             $('.error').show();
+
         } else {
             $('.error').hide();
+            $("#button-send").removeAttr("disabled");
         }
     });
 

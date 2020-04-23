@@ -17,6 +17,7 @@
     <script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
 
+    <!-- custom CSS -->
     <!--<link rel="stylesheet" href="css/main.css">-->
     <link rel="stylesheet" type="text/css" href="css/jQuery-plugin-progressbar.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -51,26 +52,35 @@
                 <div class="carousel-inner" role="listbox">
                     <!-- lifeobjects -->
                     <div class="carousel-item active">
-                        <div class="modal-header border-0 pb-0">
-                            <!-- Percentage circle -->
-                            <div class="col-md-6 col-lg-4 col-sm-6">
-                                <section>
-                                    <div class="progress-bar position" data-percent="60" data-duration="1"
-                                         data-color="#ccc,#6AE273">
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="text-center">
-                                            <p style="color:#66CC66; font-weight: bold; margin-left: -15px">Status: <span>On-Track</span></p>
+                        <div class="row justify-content-between" style="background: #68D12F">
+                            <div class="col-lg-7 m-auto">
+                                <div class="col-md-12">
+                                <p class="white-text">Initial Assessment: On-Track</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="col-md-12">
+                                <div class="score-show text-center row">
+                                    <div class="col-md-6 col-lg-6 text-right">
+                                        <div class="row justify-content-end">
+                                        <p class="big-title-big">83</p>
                                         </div>
                                     </div>
-                                </section>
+                                    <div class="col-md-6 col-lg-6 text-left">
+                                        <h6 class="mt-3 ml-1 ">Financial</h6>
+                                        <h6 class="ml-1 ">Wellness Score</h6>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
-                            <div class="col-sm-12 col-md-6 col-lg-8 mt-3">
-                                <h5 class="modal-title" style="font-size: 26px">Let's check your financials</h5>
+                        </div>
+                        <div class="modal-header border-0 pb-0">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                <h5 class="modal-title text-bold" style="font-size: 26px">Let's check your financials</h5>
                                 <p style="font-size: 18px">This is your financial wellness score. It is based on your
-                                    income, expenses, assets, liabilities and your goals. Please update the estimations
-                                    we have made if they are not accurate.
+                                    income, expenses, assets, liabilities and your goals.
                                 </p>
+                                <p class="mt-3 mb-3"><span class="text-bold">Have changes? </span>Please update the estimations to create an even more accurate view.</p>
                             </div>
                         </div>
                         <div class="modal-body text-center pt-0">
@@ -154,149 +164,165 @@
 
                     <!--Retirement goal-->
                     <div class="carousel-item">
-                        <div class="modal-header border-0">
-                            <div class="col-md-12 col-lg-7 col-sm-12">
-                                <!--charts: all and individual-->
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="row">
-                                            <div class="fullChart">
-
-                                                <div class="demo-section k-content wide">
-                                                    <div id="chart"></div>
-                                                </div>
-                                                <div class="canvas-value">68%</div>
-
-                                            </div>
-
-                                            <div class="goal-av">
-                                                <p>Overall Financial</p>
-                                                <p>Wellness Score</p>
-                                                <p class="" style="color:#E2CB6A" class="text-bold">Status: <span>Needs Work</span>
-                                                </p>
-                                            </div>
-                                            <div class="small-hr">
+                        <!--status header-->
+                        <div class="row justify-content-between" style="background: #68D12F">
+                            <div class="col-lg-7 m-auto">
+                                <div class="col-md-12">
+                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="col-md-12">
+                                    <div class="score-show text-center row">
+                                        <div class="col-md-6 col-lg-6 text-right">
+                                            <div class="row justify-content-end">
+                                                <p class="big-title-big">83</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="goal-av">
-                                            <p class="text-bold">Retirement Goal</p>
-                                            <p style="color:#66CC66" class="text-bold">Status: <span>On-Track</span></p>
+                                        <div class="col-md-6 col-lg-6 text-left">
+                                            <h6 class="mt-3 ml-1 ">Financial</h6>
+                                            <h6 class="ml-1 ">Wellness Score</h6>
                                         </div>
-                                        <div class="progress-bar progress-bar-small position" data-percent="85"
-                                             data-duration="1" data-color="#ccc,#6AE273"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-5 mt-3 text-right">
-                                <img src="css/img/save-retirement.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Save for Retirement</span>
+                        </div>
+                        <div class="modal-header border-0">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <!--charts: all and individual-->
                                 <div class="row">
-                                    <div class="col-md-12 col-lg-12 text-right mt-4">
-                                        <h6 class="text-bold">We’ve assumed the following</h6>
-                                        <p class="text1 mt-3">
-                                            <span>Target age: </span>
-                                            <span>65</span>
-                                        </p>
-                                        <p class="text1">
-                                            <span>Priority of goal: </span>
-                                            <span>High</span>
-                                        </p>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                            <img src="css/img/small-icon-retirement.png" alt="" width="34"
+                                                 style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Save for Retirement</span>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
                                         <div class="row">
-                                            <h6 class="mt-3 text-bold mt-4 col-md-12 col-lg-10 offset-2">Based on these
-                                                assumptions, we’ve
-                                                estimated the probability of
-                                                achieving this goal to be 89%</h6>
+                                            <div class="col-md-4 offset-4">
+                                                <div class="fullChart">
+
+                                                    <div class="demo-section k-content wide">
+                                                        <div id="chart"></div>
+                                                    </div>
+                                                    <div class="canvas-value">68%</div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p class="text-bold">Retirement</p>
+                                                <p><span style="color:#68D12F">92% </span>Achievability</p>
+                                                <p>Status <span style="color:#68D12F">On-Track</span></p>
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-body text-center pt-0">
                             <div class="container">
-                                <form class="text-left row">
-                                    <div class="col-md-12 col-lg-5">
-                                        <div class="row retirement-row">
+                                <form class="text-left">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="row retirement-row">
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label for="" class="col-form-label">How important this
+                                                        goal?</label>
 
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label for="" class="col-form-label">How important this
-                                                    goal?</label>
+                                                    <div class="btn-toolbar justify-content-between" role="toolbar">
+                                                        <div class="" role="group">
+                                                            <input type="radio"
+                                                                   class="btn answer-btn btn-block opacity priority_"
+                                                                   id=""
+                                                                   name="priority"/>
+                                                            <label for="">Low</label>
+                                                        </div>
+                                                        <div class="" role="group">
+                                                            <input type="radio"
+                                                                   class="btn answer-btn btn-block opacity priority_"
+                                                                   id=""
+                                                                   name="priority"/>
+                                                            <label for="">Medium</label>
+                                                        </div>
+                                                        <div class="" role="group">
+                                                            <input type="radio"
+                                                                   class="btn answer-btn btn-block opacity priority_"
+                                                                   id=""
+                                                                   name="priority"/>
+                                                            <label for="">High</label>
 
-                                                <div class="btn-toolbar justify-content-between" role="toolbar">
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id=""
-                                                               name="priority"/>
-                                                        <label for="">Low</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id=""
-                                                               name="priority"/>
-                                                        <label for="">Medium</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id=""
-                                                               name="priority"/>
-                                                        <label for="">High</label>
-
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label for="" class="col-form-label">Goal name</label>
-                                                <input type="text" class="form-control shadowed-input" placeholder=""
-                                                       id=""/>
-                                            </div>
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label for="" class="col-form-label">Goal name</label>
+                                                    <input type="text" class="form-control shadowed-input"
+                                                           placeholder=""
+                                                           id=""/>
+                                                </div>
 
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label class="col-form-label">Target age</label>
-                                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                        data-placement="right" title="Target start date description">?
-                                                </button>
-                                                <div class="row">
-                                                    <div class="form-inline dual">
-                                                        <div class="form-group col-md-12 col-lg-6">
-                                                            <input type="text"
-                                                                   class="form-control shadowed-input text-center"
-                                                                   id="from-age"
-                                                                   placeholder="From"/>
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label class="col-form-label">Target age</label>
+                                                    <button type="button" class="btn tooltip-badge"
+                                                            data-toggle="tooltip"
+                                                            data-placement="right"
+                                                            title="Target start date description">?
+                                                    </button>
+                                                    <div class="row">
+                                                        <div class="form-inline dual">
+                                                            <div class="form-group col-md-12 col-lg-6">
+                                                                <input type="text"
+                                                                       class="form-control shadowed-input text-center"
+                                                                       id="from-age"
+                                                                       placeholder="From"/>
+                                                            </div>
+                                                            <div class="form-group col-md-12 col-lg-6">
+                                                                <input type="text"
+                                                                       class="form-control shadowed-input text-center"
+                                                                       id="to-age"
+                                                                       placeholder="To"/>
+                                                            </div>
+
                                                         </div>
-                                                        <div class="form-group col-md-12 col-lg-6">
-                                                            <input type="text"
-                                                                   class="form-control shadowed-input text-center"
-                                                                   id="to-age"
-                                                                   placeholder="To"/>
-                                                        </div>
-
                                                     </div>
                                                 </div>
-                                            </div>
 
 
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label class="col-form-label">How much retirement income do you need
-                                                    compared to your existing expenses?</label>
-                                                <input type="text" class="form-control shadowed-input" placeholder="%"/>
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label class="col-form-label">How much retirement income do you need
+                                                        compared to your existing expenses?</label>
+                                                    <input type="text" class="form-control shadowed-input"
+                                                           placeholder="%"/>
+                                                </div>
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label for="" class="col-form-label">How much would you like to
+                                                        leave your heirs?</label>
+                                                    <input type="text" class="form-control shadowed-input number"
+                                                           placeholder=""/>
+                                                </div>
                                             </div>
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label for="" class="col-form-label">How much would you like to leave
-                                                    your heirs?</label>
-                                                <input type="text" class="form-control shadowed-input number"
-                                                       placeholder=""/>
+                                        </div>
+                                        <div class="col-md-6 col-lg-7 text-right">
+                                            <div class="row justify-content-end">
+                                            <div class="col-md-9 pt-5">
+                                                <p class="text-bold mb-3">We’ve assumed the following</p>
+                                                <p>Target age: 65</p>
+                                                <p>Priority of this goal: High
+                                                </p>
+                                                <p class="mt-3">Based on these assumptions, we’ve
+                                                    estimated the probability of
+                                                    achieving this goal to be <span style="color: #68D12F">92%</span>
+                                                </p>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-12 col-lg-12">
-                                        <div class="text-right justify-content-end mt-2 mb-3 ">
-                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel" role="button"
-                                               data-slide="next">Save Changes</button>
+                                    <div class="form-group col-md-12 col-lg-12 mb-5">
+                                        <div class="text-right justify-content-end">
+                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel"
+                                                    role="button"
+                                                    data-slide="next">Save Changes
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
@@ -311,64 +337,65 @@
 
                     <!--Car goal-->
                     <div class="carousel-item">
-                        <div class="modal-header border-0">
-                            <div class="col-md-12 col-lg-7 col-sm-12">
-                                <!--charts: all and individual-->
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="fullChart">
-
-                                            <!--<div class="demo-section k-content wide">-->
-                                                <!--<div id="chart"></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="canvas-value">68%</div>-->
+                        <div class="row justify-content-between" style="background: #68D12F">
+                            <div class="col-lg-7 m-auto">
+                                <div class="col-md-12">
+                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="col-md-12">
+                                    <div class="score-show text-center row">
+                                        <div class="col-md-6 col-lg-6 text-right">
+                                            <div class="row justify-content-end">
+                                                <p class="big-title-big">83</p>
+                                            </div>
                                         </div>
-
-                                        <div class="goal-av">
-                                            <p>Overall Financial</p>
-                                            <p>Wellness Score</p>
-                                            <p class="" style="color:#E2CB6A" class="text-bold">Status: <span>Needs Work</span></p>
+                                        <div class="col-md-6 col-lg-6 text-left">
+                                            <h6 class="mt-3 ml-1 ">Financial</h6>
+                                            <h6 class="ml-1 ">Wellness Score</h6>
                                         </div>
-                                        <div class="small-hr">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="goal-av">
-                                            <p class="text-bold">Car Goal</p>
-                                            <p style="color:#F46C6C" class="text-bold">Status: <span>On-Track</span></p>
-                                        </div>
-                                        <div class="progress-bar progress-bar-small position" data-percent="50"
-                                             data-duration="1" data-color="#ccc,#F46C6C"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-5 mt-3 text-right">
-                                <img src="css/img/small-icon-car.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Buy a Car</span>
+                        </div>
+                        <div class="modal-header border-0">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <!--charts: all and individual-->
                                 <div class="row">
-                                    <div class="col-md-12 col-lg-12 text-right mt-4">
-                                        <h6 class="text-bold">We’ve assumed the following</h6>
-                                        <p class="text1 mt-3">
-                                            <span>Target purchase date: </span>
-                                            <span>1-2 years</span>
-                                        </p>
-                                        <p class="text1">
-                                            <span>Expected Cost: </span>
-                                            <span>$35,000</span>
-                                        </p>
-                                        <h6 class="mt-3 text-bold mt-4 pl-2">Based on these assumptions, we’ve
-                                            estimated the probability of
-                                            achieving this goal to be 89%
-                                        </h6>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                        <img src="css/img/small-icon-car.png" alt="" width="34"
+                                             style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Buy a Car</span>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-4 text-right">
+                                                <p class="text-bold">Car</p>
+                                                <p><span style="color:#E84D46">92% </span>Achievability</p>
+                                                <p>Status <span style="color:#E84D46">Off-Track</span></p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="fullChart">
+
+                                                    <div class="demo-section k-content wide">
+                                                        <div id="chart-car"></div>
+                                                    </div>
+                                                    <div class="canvas-value">68%</div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-body text-center">
                             <div class="container">
-                                <form class="text-left row">
-                                    <div class="col-md-12 col-lg-5">
+                                <form class="text-left">
+                                    <div class="row">
+                                    <div class="col-md-6 col-lg-5">
                                         <div class="row">
                                             <div class="form-group col-md-12 col-lg-12">
                                                 <label for="" class="col-form-label">How important this
@@ -399,23 +426,29 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="form-group col-md-12 col-lg-12">
                                                 <label class="col-form-label">Target Purchase Date</label>
-                                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                        data-placement="right" title=" Earliest and latest time, in years from now, when you would like to make a purchase">?
+                                                <button type="button" class="btn tooltip-badge"
+                                                        data-toggle="tooltip"
+                                                        data-placement="right"
+                                                        title="Target start date description">?
                                                 </button>
-                                                <div class="form-inline dual">
-                                                    <div class="form-group col-md-12 col-lg-6">
-                                                        <small>From</small>
-                                                        <input type="text" onfocus="(this.type='date')"
-                                                               class="form-control shadowed-input" id="from-age"
-                                                               placeholder="Years from now"/>
-                                                    </div>
-                                                    <div class="form-group col-md-12 col-lg-6">
-                                                        <small>To</small>
-                                                        <input type="text" onfocus="(this.type='date')"
-                                                               class="form-control shadowed-input" id="to-age"
-                                                               placeholder="Years from now"/>
+                                                <div class="row">
+                                                    <div class="form-inline dual">
+                                                        <div class="form-group col-md-12 col-lg-6">
+                                                            <small>From</small>
+                                                            <input type="text" onfocus="(this.type='date')"
+                                                                   class="form-control shadowed-input text-center"
+                                                                   placeholder="Years from now"/>
+                                                        </div>
+                                                        <div class="form-group col-md-12 col-lg-6">
+                                                            <small>To</small>
+                                                            <input type="text" onfocus="(this.type='date')"
+                                                                   class="form-control shadowed-input text-center"
+                                                                   placeholder="Years from now"/>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -449,15 +482,37 @@
                                     <div class="form-group col-md-12 col-lg-12">
                                         <div class="row">
                                             <div class="col-md-12 col-lg-12">
-                                                <label for="" class="col-form-label">Expected Cost</label>
-                                                <input type="text" class="form-control shadowed-input number"/>
+                                                <label for="" class="col-form-label text-bold">Expected Cost</label>
+                                                <input type="text" class="form_line_bottom number" value="$35,000"/>
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
+
+                                    </div>
+                                        <div class="col-md-6 col-lg-7 text-right">
+                                            <div class="row justify-content-end">
+
+                                                <div class="col-md-9 pt-5">
+                                                        <p class="text-bold">We’ve assumed the following</p>
+                                                        <p class="mt-3">
+                                                            <span>Target purchase date: </span>
+                                                            <span>1-2 years</span>
+                                                        </p>
+                                                        <p class="">
+                                                            <span>Expected Cost: </span>
+                                                            <span>$35,000</span>
+                                                        </p>
+                                                        <p class="mt-3">Based on these assumptions, we’ve
+                                                            estimated the probability of
+                                                            achieving this goal to be <span style="color:#E84D46">89%</span>
+                                                        </p>
+                                                    </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-12 col-lg-12">
-                                        <div class="text-right justify-content-end mt-2 mb-3 ">
+                                    <div class="form-group col-md-12 col-lg-12 mb-5">
+                                        <div class="text-right justify-content-end">
                                             <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel" role="button"
                                                data-slide="next">Save Changes</button>
                                         </div>
@@ -474,63 +529,64 @@
 
                     <!-- Collage goal-->
                     <div class="carousel-item">
-                        <div class="modal-header border-0">
-                            <div class="col-md-12 col-lg-7 col-sm-12">
-                                <!--charts: all and individual-->
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="fullChart">
-
-                                            <!--<div class="demo-section k-content wide">-->
-                                                <!--<div id="chart"></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="canvas-value">68%</div>-->
-                                        </div>
-
-                                        <div class="goal-av">
-                                            <p>Overall Financial</p>
-                                            <p>Wellness Score</p>
-                                            <p class="" style="color:#E2CB6A" class="text-bold">Status: <span>Needs Work</span></p>
-                                        </div>
-                                        <div class="small-hr">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="goal-av">
-                                            <p class="text-bold">College Goal</p>
-                                            <p style="color:#F46C6C" class="text-bold">Status: <span>On-Track</span></p>
-                                        </div>
-                                        <div class="progress-bar progress-bar-small position" data-percent="50"
-                                             data-duration="1" data-color="#ccc,#F46C6C"></div>
-                                    </div>
+                        <div class="row justify-content-between" style="background: #68D12F">
+                            <div class="col-lg-7 m-auto">
+                                <div class="col-md-12">
+                                    <p class="white-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-5 mt-3 text-right">
-                                <img src="css/img/small-icon-kids-edu.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">College</span>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 text-right mt-4">
-                                        <h6 class="text-bold">We’ve assumed the following</h6>
-                                        <p class="text1 mt-3">
-                                            <span>Estimated Total Cost: </span>
-                                            <span>$240,000</span>
-                                        </p>
-                                        <p class="text1">
-                                            <span>Duration of Education: </span>
-                                            <span>4 years</span>
-                                        </p>
-                                        <h6 class="mt-3 text-bold mt-4 pl-3">Based on these assumptions, we’ve
-                                            estimated the probability of
-                                            achieving this goal to be 89%
-                                        </h6>
+                            <div class="col-lg-5">
+                                <div class="col-md-12">
+                                    <div class="score-show text-center row">
+                                        <div class="col-md-6 col-lg-6 text-right">
+                                            <div class="row justify-content-end">
+                                                <p class="big-title-big">83</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6 text-left">
+                                            <h6 class="mt-3 ml-1 ">Financial</h6>
+                                            <h6 class="ml-1 ">Wellness Score</h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-header border-0">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <!--charts: all and individual-->
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                        <img src="css/img/small-icon-education.png" alt="" width="34"
+                                             style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">College</span>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-4 text-right">
+                                                <p class="text-bold">College Goal</p>
+                                                <p><span style="color:#E84D46">92% </span>Achievability</p>
+                                                <p>Status <span style="color:#E84D46">Off-Track</span></p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="fullChart">
+
+                                                    <div class="demo-section k-content wide">
+                                                        <div id="chart-collage"></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="modal-body text-center">
                             <div class="container">
                                 <form class="text-left row">
-                                    <div class="col-md-12 col-lg-5">
+                                    <div class="col-md-6 col-lg-5">
                                         <div class="row retirement-row">
                                             <div class="form-group col-md-12 col-lg-12">
                                                 <label for="" class="col-form-label">How important this
@@ -573,12 +629,31 @@
                                             <div class="form-group col-md-12 col-lg-12">
                                                 <label class="col-form-label">Target Start Date</label>
                                                 <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                        data-placement="right" title="Time in years from now when you need to begin the studies">?
+                                                        data-placement="right"
+                                                        title="Time in years from now when you need to begin the studies">
+                                                    ?
                                                 </button>
                                                 <input type="text" onfocus="(this.type='date')"
                                                        class="form-control shadowed-input" id="from-age"
                                                        placeholder="Years from now"/>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-7">
+                                        <div class="col-md-12 col-lg-12 text-right mt-4">
+                                            <p class="text-bold">We’ve assumed the following</p>
+                                            <p class="mt-3">
+                                                <span>Estimated Total Cost: </span>
+                                                <span>$240,000</span>
+                                            </p>
+                                            <p class="">
+                                                <span>Duration of Education: </span>
+                                                <span>4 years</span>
+                                            </p>
+                                            <p class="mt-4">Based on these assumptions, we’ve
+                                                estimated the probability of
+                                                achieving this goal to be <span style="color: #68D12F">89%</span>
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-lg-10">
@@ -589,15 +664,18 @@
 
                                                 <div class="custom-control custom-radio custom-control-inline">
                                                     <input type="radio" class="custom-control-input" name="customRadio"
-                                                           id="customRadio1_college" data-toggle="collapse" data-target="#name-exist"/>
-                                                    <label class="custom-control-label" for="customRadio1_college">Yes</label>
+                                                           id="customRadio1_college" data-toggle="collapse"
+                                                           data-target="#name-exist"/>
+                                                    <label class="custom-control-label"
+                                                           for="customRadio1_college">Yes</label>
                                                 </div>
 
                                                 <div class="custom-control custom-radio custom-control-inline">
                                                     <input type="radio" class="custom-control-input" name="customRadio"
                                                            data-toggle="collapse" data-target="#no-name"
                                                            id="customRadio2_college"/>
-                                                    <label class="custom-control-label" for="customRadio2_college">No</label>
+                                                    <label class="custom-control-label"
+                                                           for="customRadio2_college">No</label>
                                                 </div>
                                             </div>
 
@@ -618,13 +696,16 @@
                                             <div class="form-group col-md-12 col-lg-12 collapse" id="name-exist">
                                                 <div class="row">
                                                     <div class="col-md-12 col-lg-6">
-                                                        <input type="text" class="form-control shadowed-input" placeholder="Princeton University"/>
+                                                        <input type="text" class="form-control shadowed-input"
+                                                               placeholder="Princeton University"/>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12 col-lg-6">
                                                         <select class="form-control shadowed-input mt-2">
-                                                            <option value="1" selected>Include Living Expenses: $61,675 </option>
+                                                            <option value="1" selected>Include Living Expenses:
+                                                                $61,675
+                                                            </option>
                                                             <option value="2">In state - $34,434</option>
                                                         </select>
                                                     </div>
@@ -657,15 +738,17 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            </div>
-                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-12 col-lg-5">
                                         <div class="row">
                                             <div class="form-group col-md-12 col-lg-12">
                                                 <div class="row">
                                                     <div class="col-md-12 col-lg-12">
-                                                        <label for="" class="col-form-label">Estimated Total Cost</label>
-                                                        <input type="text" class="form-control shadowed-input number" placeholder="$"/>
+                                                        <label for="" class="col-form-label text-bold">Estimated Total
+                                                            Cost</label>
+                                                        <input type="text" class="form_line_bottom number"
+                                                               value="$240,000"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -673,8 +756,10 @@
                                     </div>
                                     <div class="form-group col-md-12 col-lg-12">
                                         <div class="text-right justify-content-end mb-3">
-                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel" role="button"
-                                               data-slide="next">Save Changes</button>
+                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel"
+                                                    role="button"
+                                                    data-slide="next">Save Changes
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
@@ -689,139 +774,182 @@
 
                     <!--House goal-->
                     <div class="carousel-item">
-                        <div class="modal-header border-0">
-                            <div class="col-md-12 col-lg-7 col-sm-12">
-                                <!--charts: all and individual-->
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="fullChart">
-
-                                            <!--<div class="demo-section k-content wide">-->
-                                                <!--<div id="chart"></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="canvas-value">68%</div>-->
-                                        </div>
-
-                                        <div class="goal-av">
-                                            <p>Overall Financial</p>
-                                            <p>Wellness Score</p>
-                                            <p class="" style="color:#E2CB6A" class="text-bold">Status: <span>Needs Work</span></p>
-                                        </div>
-                                        <div class="small-hr">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="goal-av">
-                                            <p class="text-bold">Hause Goal</p>
-                                            <p style="color:#F46C6C" class="text-bold">Status: <span>On-Track</span></p>
-                                        </div>
-                                        <div class="progress-bar progress-bar-small position" data-percent="50"
-                                             data-duration="1" data-color="#ccc,#F46C6C"></div>
-                                    </div>
+                        <div class="row justify-content-between" style="background: #68D12F">
+                            <div class="col-lg-7 m-auto">
+                                <div class="col-md-12">
+                                    <p class="white-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-5 mt-3 text-right">
-                                <img src="css/img/small-icon-house.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">House</span>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 text-right mt-4">
-                                        <h6 class="text-bold">We’ve assumed the following</h6>
-                                        <p class="text1 mt-3">
-                                            <span>Expected House Price: </span>
-                                            <span>$240,000</span>
-                                        </p>
-                                        <p class="text1">
-                                            <span>Target Purchase Date: </span>
-                                            <span>3-5 years</span>
-
-                                        </p>
-                                        <h6 class="mt-3 text-bold mt-4 pl-3">Based on these assumptions, we’ve
-                                            estimated the probability of
-                                            achieving this goal to be 89%
-                                        </h6>
+                            <div class="col-lg-5">
+                                <div class="col-md-12">
+                                    <div class="score-show text-center row">
+                                        <div class="col-md-6 col-lg-6 text-right">
+                                            <div class="row justify-content-end">
+                                                <p class="big-title-big">83</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6 text-left">
+                                            <h6 class="mt-3 ml-1 ">Financial</h6>
+                                            <h6 class="ml-1 ">Wellness Score</h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-header border-0">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <!--charts: all and individual-->
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                        <img src="css/img/small-icon-house.png" alt="" width="34"
+                                             style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">House</span>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="row">
+
+                                            <div class="col-md-4 offset-4">
+                                                <div class="fullChart">
+
+                                                    <div class="demo-section k-content wide">
+                                                        <div id="chart-house"></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                <p class="text-bold">House Goal</p>
+                                                <p><span style="color:#E84D46">92% </span>Achievability</p>
+                                                <p>Status <span style="color:#E84D46">Off-Track</span></p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="modal-body text-center pt-0">
                             <div class="container">
-                                <form class="text-left row">
-                                    <div class="col-md-12 col-lg-5">
-                                        <div class="row">
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label for="" class="col-form-label">How important this
-                                                    goal?</label>
-                                                <div class="row">
+                                <form class="text-left">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="row retirement-row">
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label for="" class="col-form-label">How important this
+                                                        goal?</label>
+
                                                     <div class="btn-toolbar justify-content-between" role="toolbar">
                                                         <div class="" role="group">
                                                             <input type="radio"
                                                                    class="btn answer-btn btn-block opacity priority_"
-                                                                   id="low-house"
+                                                                   id=""
                                                                    name="priority"/>
-                                                            <label for="low-house">Low</label>
+                                                            <label for="">Low</label>
                                                         </div>
                                                         <div class="" role="group">
                                                             <input type="radio"
                                                                    class="btn answer-btn btn-block opacity priority_"
-                                                                   id="medium-house"
+                                                                   id=""
                                                                    name="priority"/>
-                                                            <label for="medium-house">Medium</label>
+                                                            <label for="">Medium</label>
                                                         </div>
                                                         <div class="" role="group">
                                                             <input type="radio"
                                                                    class="btn answer-btn btn-block opacity priority_"
-                                                                   id="height-house"
+                                                                   id=""
                                                                    name="priority"/>
-                                                            <label for="height-house">High</label>
+                                                            <label for="">High</label>
 
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label class="col-form-label">Target Purchase Date</label>
-                                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                        data-placement="right" title="Earliest and latest time, in years from now, when you want to buy a house">?
-                                                </button>
-                                                <div class="form-inline dual">
-                                                    <div class="form-group col-md-12 col-lg-6">
-                                                        <small>From</small>
-                                                        <input type="text" class="form-control shadowed-input"
-                                                               onfocus="(this.type='date')" id="from-age"
-                                                               placeholder=""/>
-                                                    </div>
-                                                    <div class="form-group col-md-12 col-lg-6">
-                                                        <small>To</small>
-                                                        <input type="text" class="form-control shadowed-input"
-                                                               onfocus="(this.type='date')" id="to-age"
-                                                               placeholder="Years from now"/>
+
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label class="col-form-label">Target Purchase Date</label>
+                                                    <button type="button" class="btn tooltip-badge"
+                                                            data-toggle="tooltip"
+                                                            data-placement="right"
+                                                            title="Target start date description">?
+                                                    </button>
+                                                    <div class="row">
+                                                        <div class="form-inline dual">
+                                                            <div class="form-group col-md-12 col-lg-6">
+                                                                <small>From</small>
+                                                                <input type="text" onfocus="(this.type='date')"
+                                                                       class="form-control shadowed-input text-center"
+                                                                       placeholder="Years from now"/>
+                                                            </div>
+                                                            <div class="form-group col-md-12 col-lg-6">
+                                                                <small>To</small>
+                                                                <input type="text" onfocus="(this.type='date')"
+                                                                       class="form-control shadowed-input text-center"
+                                                                       placeholder="Years from now"/>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="mt-4 col-md-12 col-lg-12">
-                                                <div class="">
-                                                    <input type="checkbox" class="" id="residence"/>
-                                                    <label class="" for="residence">Primary
-                                                        Residence?</label>
+
+                                                <div class="mt-4 col-md-12 col-lg-12">
+                                                    <div class="">
+                                                        <input type="checkbox" class="" id="residence"/>
+                                                        <label class="" for="residence">Primary
+                                                            Residence?</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-12 col-lg-12 mt-2">
+                                                    <label class="col-form-label">Desired zip code</label>
+                                                    <div class="form-inline row">
+                                                        <div class="form-group col-md-12 col-lg-12">
+                                                            <input type="text"
+                                                                   class="form-control shadowed-input number"
+                                                                   placeholder=""/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-12 col-lg-12 mt-2">
+                                                    <label class="col-form-label">Expected House Price</label>
+                                                    <div class="form-inline row">
+                                                        <div class="form-group col-md-12 col-lg-12">
+                                                            <input type="text"
+                                                                   class="form-control shadowed-input number"
+                                                                   placeholder=""/>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group col-md-12 col-lg-12 mt-2">
-                                                <label class="col-form-label">Expected House Price</label>
-                                                <div class="form-inline row">
-                                                    <div class="form-group col-md-12 col-lg-12">
-                                                        <input type="text" class="form-control shadowed-input number"
-                                                               placeholder=""/>
-                                                    </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-7 text-right">
+                                            <div class="row justify-content-end">
+                                                <div class="col-md-9 pt-5">
+                                                    <p class="text-bold">We’ve assumed the following</p>
+                                                    <p class="mt-3">
+                                                        <span>Expected House Price: </span>
+                                                        <span>$240,000</span>
+                                                    </p>
+                                                    <p class="">
+                                                        <span>Target Purchase Date: </span>
+                                                        <span>3-5 years</span>
+
+                                                    </p>
+                                                    <p class="mt-4">Based on these assumptions, we’ve
+                                                        estimated the probability of
+                                                        achieving this goal to be <span style="color:#68D12F ">89%</span>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-12 col-lg-12">
-                                        <div class="text-right justify-content-end mt-2 mb-3 ">
-                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel" role="button"
-                                               data-slide="next">Save Changes</button>
+                                    <div class="form-group col-md-12 col-lg-12 mb-5">
+                                        <div class="text-right justify-content-end ">
+                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel"
+                                                    role="button"
+                                                    data-slide="next">Save Changes
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
@@ -836,56 +964,56 @@
 
                     <!-- Wedding goal -->
                     <div class="carousel-item">
-                        <div class="modal-header border-0">
-                            <div class="col-md-12 col-lg-7 col-sm-12">
-                                <!--charts: all and individual-->
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="fullChart">
-
-                                            <!--<div class="demo-section k-content wide">-->
-                                                <!--<div id="chart"></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="canvas-value">68%</div>-->
+                        <div class="row justify-content-between" style="background: #68D12F">
+                            <div class="col-lg-7 m-auto">
+                                <div class="col-md-12">
+                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="col-md-12">
+                                    <div class="score-show text-center row">
+                                        <div class="col-md-6 col-lg-6 text-right">
+                                            <div class="row justify-content-end">
+                                                <p class="big-title-big">83</p>
+                                            </div>
                                         </div>
-
-                                        <div class="goal-av">
-                                            <p>Overall Financial</p>
-                                            <p>Wellness Score</p>
-                                            <p class="" style="color:#E2CB6A" class="text-bold">Status: <span>Needs Work</span></p>
+                                        <div class="col-md-6 col-lg-6 text-left">
+                                            <h6 class="mt-3 ml-1 ">Financial</h6>
+                                            <h6 class="ml-1 ">Wellness Score</h6>
                                         </div>
-                                        <div class="small-hr">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="goal-av">
-                                            <p class="text-bold">Wedding Goal</p>
-                                            <p style="color:#F46C6C" class="text-bold">Status: <span>On-Track</span></p>
-                                        </div>
-                                        <div class="progress-bar progress-bar-small position" data-percent="50"
-                                             data-duration="1" data-color="#ccc,#F46C6C"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-5 mt-3 text-right">
-                                <img src="css/img/small-icon-wedding.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Wedding</span>
+                        </div>
+                        <div class="modal-header border-0">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <!--charts: all and individual-->
                                 <div class="row">
-                                    <div class="col-md-12 col-lg-12 text-right mt-4">
-                                        <h6 class="text-bold">We’ve assumed the following</h6>
-                                        <p class="text1 mt-3">
-                                            <span>Expected Cost: </span>
-                                            <span>$20,000</span>
-                                        </p>
-                                        <p class="text1">
-                                            <span>Target Purchase Date: </span>
-                                            <span>3-5 years</span>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                        <img src="css/img/small-icon-wedding.png" alt="" width="34"
+                                             style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Wedding</span>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="row">
 
-                                        </p>
-                                        <h6 class="text-bold mt-4">Based on these assumptions, we’ve
-                                            estimated the probability of
-                                            achieving this goal to be 81%</h6>
+                                            <div class="col-md-4 offset-4">
+                                                <div class="fullChart">
+
+                                                    <div class="demo-section k-content wide">
+                                                        <div id="chart-wedding"></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                <p class="text-bold">Wedding</p>
+                                                <p><span style="color:#E84D46">92% </span>Achievability</p>
+                                                <p>Status <span style="color:#E84D46">Off-Track</span></p>
+                                            </div>
+
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -893,155 +1021,196 @@
 
                         <div class="modal-body text-center">
                             <div class="container">
-                                <form class="text-left row">
-                                    <div class="col-md-12 col-lg-5">
-                                        <div class="row retirement-row">
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label for="" class="col-form-label">How important this
-                                                    goal?</label>
+                                <form class="text-left">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="row retirement-row">
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label for="" class="col-form-label">How important this
+                                                        goal?</label>
 
-                                                <div class="btn-toolbar justify-content-between" role="toolbar">
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id="low-wedding"
-                                                               name="priority"/>
-                                                        <label for="low-wedding">Low</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id="medium-wedding"
-                                                               name="priority"/>
-                                                        <label for="medium-wedding">Medium</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id="height-wedding"
-                                                               name="priority"/>
-                                                        <label for="height-wedding">High</label>
+                                                    <div class="btn-toolbar justify-content-between" role="toolbar">
+                                                        <div class="" role="group">
+                                                            <input type="radio"
+                                                                   class="btn answer-btn btn-block opacity priority_"
+                                                                   id="low-wedding"
+                                                                   name="priority"/>
+                                                            <label for="low-wedding">Low</label>
+                                                        </div>
+                                                        <div class="" role="group">
+                                                            <input type="radio"
+                                                                   class="btn answer-btn btn-block opacity priority_"
+                                                                   id="medium-wedding"
+                                                                   name="priority"/>
+                                                            <label for="medium-wedding">Medium</label>
+                                                        </div>
+                                                        <div class="" role="group">
+                                                            <input type="radio"
+                                                                   class="btn answer-btn btn-block opacity priority_"
+                                                                   id="height-wedding"
+                                                                   name="priority"/>
+                                                            <label for="height-wedding">High</label>
 
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group col-md-12 col-lg-12">
-                                                <label class="col-form-label">Planned wedding date</label>
-                                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                        data-placement="right"
-                                                        title="Earliest and latest time, in years from, when you want to get married">?
-                                                </button>
-                                                <div class="row">
-                                                    <div class="col-lg-5">
-
+                                                <div class="form-group col-md-12 col-lg-12">
+                                                    <label class="col-form-label">Planned wedding date</label>
+                                                    <button type="button" class="btn tooltip-badge"
+                                                            data-toggle="tooltip"
+                                                            data-placement="right"
+                                                            title="Earliest and latest time, in years from, when you want to get married">
+                                                        ?
+                                                    </button>
+                                                    <div class="row">
                                                         <div class="form-inline dual">
-                                                            <div class="">
+                                                            <div class="form-group col-md-12 col-lg-6">
                                                                 <small>From</small>
                                                                 <input type="text" onfocus="(this.type='date')"
-                                                                       class="form-control shadowed-input" id="from-age"
+                                                                       class="form-control shadowed-input text-center"
                                                                        placeholder="Years from now"/>
                                                             </div>
                                                             <div class="form-group col-md-12 col-lg-6">
                                                                 <small>To</small>
                                                                 <input type="text" onfocus="(this.type='date')"
-                                                                       class="form-control shadowed-input" id="to-age"
+                                                                       class="form-control shadowed-input text-center"
                                                                        placeholder="Years from now"/>
                                                             </div>
-                                                        </div>
 
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group col-md-12 col-lg-5">
-                                                <label class="col-form-label">Expected total cost</label>
-                                                <input type="text" class="form-control shadowed-input number"
-                                                       placeholder="$"/>
+                                                <div class="col-md-12 col-lg-12">
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 col-lg-12">
+                                                            <div class="row">
+                                                                <div class="col-md-12 col-lg-12">
+                                                                    <label for="" class="col-form-label text-bold">Estimated
+                                                                        Total
+                                                                        Cost</label>
+                                                                    <input type="text" class="form_line_bottom number"
+                                                                           value="$20,000"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group col-md-12 col-lg-12">
-                                        <div class="text-right justify-content-end mt-2 mb-3 ">
-                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel" role="button"
-                                               data-slide="next">Save Changes</button>
+
+                                        <div class="col-md-6 col-lg-7 text-right">
+                                            <div class="row justify-content-end">
+                                                <div class="col-md-9 pt-5">
+                                                    <p class="text-bold">We’ve assumed the following</p>
+                                                    <p class="mt-3">
+                                                        <span>Expected Cost: </span>
+                                                        <span>$20,000</span>
+                                                    </p>
+
+                                                    <p class="mt-4">Based on these assumptions, we’ve
+                                                        estimated the probability of
+                                                        achieving this goal to be <span style="color:#68D12F ">89%</span>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
+
+
+                                        <div class="form-group col-md-12 col-lg-12">
+                                            <div class="text-right justify-content-end mt-2 mb-3 ">
+                                                <button class="btn btn-primary pl-5 pr-5 pull-right"
+                                                        href="#goals-carousel" role="button"
+                                                        data-slide="next">Save Changes
+                                                </button>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </form>
                             </div>
-                        </div>
-                        <div class="left-side-text">
-                            <h5>Not sure if this is correct?</h5>
-                            <p>No problem. You will have a chance to change this later if needed.</p>
-                            <img src="css/img/from-left.png" alt="" width="110"/>
+                            <div class="left-side-text">
+                                <h5>Not sure if this is correct?</h5>
+                                <p>No problem. You will have a chance to change this later if needed.</p>
+                                <img src="css/img/from-left.png" alt="" width="110"/>
+                            </div>
                         </div>
                     </div>
 
+
                     <!--   Emergency Goal -->
                     <div class="carousel-item">
-                        <div class="modal-header border-0">
-                            <div class="col-md-12 col-lg-7 col-sm-12">
-                                <!--charts: all and individual-->
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="fullChart">
-
-                                            <!--<div class="demo-section k-content wide">-->
-                                                <!--<div id="chart"></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="canvas-value">68%</div>-->
-                                        </div>
-
-                                        <div class="goal-av">
-                                            <p>Overall Financial</p>
-                                            <p>Wellness Score</p>
-                                            <p class="" style="color:#E2CB6A" class="text-bold">Status: <span>Needs Work</span></p>
-                                        </div>
-                                        <div class="small-hr">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="goal-av">
-                                            <p class="text-bold">Emergency Goal</p>
-                                            <p style="color:#F46C6C"class="text-bold">Status: <span>On-Track</span></p>
-                                        </div>
-                                        <div class="progress-bar progress-bar-small position" data-percent="50"
-                                             data-duration="1" data-color="#ccc,#F46C6C"></div>
-                                    </div>
+                        <div class="row justify-content-between" style="background: #68D12F">
+                            <div class="col-lg-7 m-auto">
+                                <div class="col-md-12">
+                                    <p class="white-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-5 mt-3 text-right">
-                                <img src="css/img/small-icon-emergency.png" alt="" width="34"
-                                     style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Save for Emergency</span>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 text-right mt-4">
-                                        <h6 class="text-bold">We’ve assumed the following</h6>
-                                        <p class="text1 mt-3">
-                                            <span style="font-size: 18px">Months of living expenses to cover: </span>
-                                            <span style="font-size: 18px">6</span>
-                                        </p>
-                                        <h6 class="text-bold mt-4 pl-3">Based on these assumptions, we’ve
-                                            estimated the probability of
-                                            achieving this goal to be 81%</h6>
+                            <div class="col-lg-5">
+                                <div class="col-md-12">
+                                    <div class="score-show text-center row">
+                                        <div class="col-md-6 col-lg-6 text-right">
+                                            <div class="row justify-content-end">
+                                                <p class="big-title-big">83</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6 text-left">
+                                            <h6 class="mt-3 ml-1 ">Financial</h6>
+                                            <h6 class="ml-1 ">Wellness Score</h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-header border-0">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <!--charts: all and individual-->
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                        <img src="css/img/small-icon-emergency.png" alt="" width="34"
+                                             style="margin-top: -10px; margin-right: 6px"/><span class="goal-name-bold">Save for Emergency</span>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-4 text-right">
+                                                <p class="text-bold">Emergency Goal</p>
+                                                <p><span style="color:#E84D46">92% </span>Achievability</p>
+                                                <p>Status <span style="color:#E84D46">Off-Track</span></p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="fullChart">
+
+                                                    <div class="demo-section k-content wide">
+                                                        <div id="chart-emergency"></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="modal-body text-center">
                             <div class="container">
                                 <form class="text-left row">
-                                    <div class="col-md-12 col-lg-10">
+                                    <div class="col-md-7 col-lg-7">
                                         <div class="row">
                                             <div class="form-group col-md-12 col-lg-12">
 
                                                 <label class="col-form-label">Months of living expenses to cover</label>
                                                 <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                                        data-placement="right" title="Assuming all of the current expenses cannot be reduced, determines how much money you would need to last that many months if you lost your income.">?
+                                                        data-placement="right"
+                                                        title="Assuming all of the current expenses cannot be reduced, determines how much money you would need to last that many months if you lost your income.">
+                                                    ?
                                                 </button>
                                                 <div class="form-inline row">
-                                                    <div class="form-group col-md-8 col-lg-5">
+                                                    <div class="form-group col-md-8 col-lg-8">
                                                         <input type="range" class="custom-range" min="0" max="12"
                                                                id="months" value="6"/>
                                                         <div class="col-md-12 col-lg-12">
@@ -1063,10 +1232,28 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-12 text-right mb-5">
+                                                <p class="text-bold">We’ve assumed the following</p>
+                                                <p class="text1 mt-3">
+                                                    <span style="font-size: 18px">Months of living expenses to cover: </span>
+                                                    <span style="font-size: 18px">6</span>
+                                                </p>
+                                                <p class="text-bold mt-4 pl-3">Based on these assumptions, we’ve
+                                                    estimated the probability of
+                                                    achieving this goal to be <span style="color:#68D12F ">81%</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group col-md-12 col-lg-12">
                                         <div class="text-right justify-content-end mt-2 mb-3">
                                             <button class="btn btn-primary pl-5 pr-5 pull-right" role="button"
-                                               id="save-emergency">Save and Continue</button>
+                                                    id="save-emergency">Save and Continue
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
@@ -1095,285 +1282,349 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
+            <div class="col-md-12">
+                <div class="row justify-content-between" style="background: #68D12F">
+                    <div class="col-lg-7 m-auto">
+                        <div class="col-md-12">
+                            <p class="white-text">Initial Assessment: On-Track</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="col-md-12">
+                            <div class="score-show text-center row">
+                                <div class="col-md-6 col-lg-6 text-right">
+                                    <div class="row justify-content-end">
+                                        <p class="big-title-big">83</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 text-left">
+                                    <h6 class="mt-3 ml-1 ">Financial</h6>
+                                    <h6 class="ml-1 ">Wellness Score</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="modal-header border-0 pb-0">
                 <!-- Percentage circle -->
-                <div class="col-md-12 col-lg-5">
-                    <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1"
-                             data-color="#D9F7DC,#6AE273"></div>
-                    </section>
-                </div>
-                <div class="col-md-6 col-lg-7 text-right">
-                    <h2 class="modal-title text-bold">Expenses</h2>
-                    <p class="income-value">$3,000/mo</p>
-                    <p style="font-size: 18px">You entered $3,000 for monthly expenses. Let’s
-                        break that down a bit more by sharing how
-                        much of this total is in each category below.</p>
-                </div>
             </div>
 
             <div class="modal-body text-center pt-0">
                 <div class="container">
-                        <div class="row justify-content-between">
-                            <p style="color:#66CC66;" class="col-md-3 col-lg-3 text-bold text-right">Status: <span>On-Track</span></p>
-                            <p class="text-primary col-md-12 col-lg-6 text-right">What do these categories mean?</p>
-                        </div>
-                        <hr/>
-                        <form action="">
-                            <div class="mb-5">
+                    <form action="">
+                        <div class="row">
+
+                            <div class="col-md-6 col-lg-6 col-sm-12">
+
+                                <div class="mt-4">
                                     <div class="form-group row">
-                                        <div class="col-md-12 col-lg-7 col-sm-12">
-                                            <label for="" class="col-lg-12 col-form-label text-left">
-                                            <span class="">
+
+                                        <label for="" class="col-lg-12 col-form-label text-left">
+                                            <span class="text-bold">
                                                  Monthly Rent Expenses
                                                 <i class="fa fa-question-circle invisible" aria-hidden="true"></i>
                                             </span>
-                                            </label>
-                                            <div class="col-lg-12">
-                                                <input type="text"
-                                                       class="form-control form-control-sm number expense-part"
-                                                       name="expense-part" value="" placeholder="$"/>
-                                            </div>
+                                            <p class="text13">Aqqru looks at your rent expense as a non-flexible
+                                                expense.</p>
+                                        </label>
+
+                                        <div class="col-lg-10">
+                                            <input type="text"
+                                                   class="form-control form-control-sm number expense-part"
+                                                   name="expense-part" value="" placeholder="$"/>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-12 col-lg-7 col-sm-12">
-                                            <label for="" class="col-lg-12 col-form-label text-left">
-								<span class="">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+                                        <span class="text-bold">
 									 Flexible Monthly Expenses
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
-								</span>
-                                            </label>
-                                            <div class="col-lg-12">
-                                                <input type="text"
-                                                       class="form-control form-control-sm number expense-part"
-                                                       name="expense-part" value="" placeholder=""/>
-                                            </div>
-                                        </div>
+								        </span>
+                                        <p class="text13">Expenses like reading or personal care products are
+                                            flexible.</p>
+                                    </label>
+                                    <div class="col-lg-10">
+                                        <input type="text"
+                                               class="form-control form-control-sm number expense-part"
+                                               name="expense-part" value="" placeholder=""/>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-12 col-lg-7 col-sm-12">
-                                            <label for="" class="col-lg-12 col-form-label text-left">
-								<span class="">
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="text-bold">
 									 Very Flexible Monthly Expenses
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                            </label>
-                                            <div class="col-lg-12">
-                                                <input type="text"
-                                                       class="form-control form-control-sm number expense-part"
-                                                       name="expense-part" value="" placeholder="$"/>
-                                            </div>
-                                        </div>
+                                        <p class="text13">Some expenses like alcohol, entertainment, and apparel are
+                                            very flexible.
+                                        </p>
+                                    </label>
+                                    <div class="col-lg-10">
+                                        <input type="text"
+                                               class="form-control form-control-sm number expense-part"
+                                               name="expense-part" value="" placeholder="$"/>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-12 col-lg-7 col-sm-12">
-                                            <label for="" class="col-lg-12 col-form-label text-left">
-								<span class="">
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+								<span class="text-bold">
 									 Non-Flexible Monthly Expenses
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                            </label>
-                                            <div class="col-lg-12">
-                                                <input type="text"
-                                                       class="form-control form-control-sm number expense-part"
-                                                       name="expense-part" value="" placeholder="$"/>
-                                            </div>
-                                        </div>
+                                        <p class="text13">Expenses like healthcare and education are not flexible.</p>
+                                    </label>
+                                    <div class="col-lg-10">
+                                        <input type="text"
+                                               class="form-control form-control-sm number expense-part"
+                                               name="expense-part" value="" placeholder="$"/>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-12 col-lg-7 col-sm-12">
-                                            <label for="" class="col-lg-12 col-form-label text-left">
-                                                <span class="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 text-right">
+                                <h2 class="modal-title text-bold">Expenses</h2>
+                                <p class="income-value">$3,034/mo</p>
+                                <p style="font-size: 16px" class="mt-4">We’ve made the following assumptions.<br/>
+                                    You can make changes at any time by choosing<br/>
+                                    <span class="checking">summary in the left menu.</span></p>
+                                <p class="text20-black mt-4">Assumptions</p>
+                                <p>We’ve made assumptions to your
+                                    expenses based on your zip code of
+                                    [zipcode].
+                                </p>
+                            </div>
+                            <div class="col-md-10 col-lg-10">
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+                                                <span class="text-bold">
                                                      Somewhat Flexible Monthly Expenses
                                                     <i class="fa fa-question-circle invisible" aria-hidden="true"></i>
                                                 </span>
-                                            </label>
-                                            <div class="col-lg-12">
-                                                <input type="text" id="somewhat-expense"
-                                                       class="form-control form-control-sm number expense-part"
-                                                       name="" value="" placeholder=""/>
+                                        <p class="text13">Somewhat flexible expenses like food and transportation can
+                                            still be trimmed if needed.</p>
+                                    </label>
+                                    <div class="col-lg-7">
+                                        <input type="text" id="somewhat-expense"
+                                               class="form-control form-control-sm number expense-part"
+                                               name="" value="" placeholder=""/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="form-group col-md-12 col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6 text-left">
+                                                <label for="" class="col-form-label text-bold">Total Expenses</label>
+                                                <input type="text" class="form_line_bottom number" value="$3,034"/>
                                             </div>
                                         </div>
                                     </div>
 
-                                <div class="form-group row">
-                                    <div class="col-md-12 col-lg-7 col-sm-12">
-                                        <label for="" class="col-lg-12 col-form-label text-left">
-                                                <span class="">
-                                                     Total Expenses
-                                                    <i class="fa fa-question-circle invisible" aria-hidden="true"></i>
-                                                </span>
-                                        </label>
-                                        <div class="col-lg-12">
-                                            <input type="text" id="total-expense"
-                                                   class="form-control form-control-sm number"
-                                                   name="" value="" placeholder=""/>
-                                        </div>
-                                    </div>
                                 </div>
-                                </div>
-                            <div class="text-right mt-4 mb-4 pt-4 col-md-12 col-lg-12">
-                                <div class="border-top pt-5">
-                                    <p class="text-bold text-right">Total: $3,000</p>
-                                    <button class="btn btn-primary pl-5 pr-5 text-bold" id="save-changes">Save Changes
+                            </div>
+                            <div class="text-right col-md-12 col-lg-12">
+                                <div class="">
+                                    <button class="btn btn-primary pl-5 pr-5 text-bold" id="save-changes">Save
+                                        Changes
                                     </button>
                                 </div>
                             </div>
-                        </form>
-
+                        </div>
+                    </form>
                 </div>
             </div>
+            <!-- Modal content-->
         </div>
-        <!-- Modal content-->
     </div>
 </div>
 
-<!-- Real estate edit modal-->
+    <!-- Real estate edit modal-->
 <div id="editModalRealEstate" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header border-0 pb-0">
-                <!-- Percentage circle -->
-                <div class="col-md-12 col-lg-5">
-                    <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1"
-                             data-color="#D9F7DC,#6AE273"></div>
-                    </section>
-                </div>
-                <div class="col-md-6 col-lg-7 text-right">
-                    <h2 class="modal-title text-bold">Real estate</h2>
-                    <p class="income-value">$200,000/mo</p>
-                    <p>You entered $3,000 for monthly expenses. Let’s
-                        break that down a bit more by sharing how
-                        much of this total is in each category below.</p>
+            <div class="col-md-12">
+                <div class="row justify-content-between" style="background: #68D12F">
+                    <div class="col-lg-7 m-auto">
+                        <div class="">
+                            <p class="white-text">Initial Assessment: On-Track</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="">
+                            <div class="score-show text-center row">
+                                <div class="col-md-6 col-lg-6 text-right">
+                                    <div class="row justify-content-end">
+                                        <p class="big-title-big">83</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 text-left">
+                                    <h6 class="mt-3 ml-1 ">Financial</h6>
+                                    <h6 class="ml-1 ">Wellness Score</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="modal-body text-center pt-0">
+            <div class="modal-header border-0 pb-0">
+                <!-- Percentage circle -->
+            </div>
+            <div class="modal-body text-center pt-4">
                 <div class="container">
-                    <div class="row justify-content-between">
-                        <p style="color:#66CC66;" class="col-md-3 col-lg-3 text-bold text-right">Status: <span>On-Track</span></p>
-                        <p class="text-primary col-md-12 col-lg-6 text-right">What do these categories mean?</p>
-                    </div>
-                    <hr/>
                     <form action="">
-                        <div class="mb-5">
-                            <div class="form-group row">
-                                <label for="" class="col-lg-12 col-form-label text-left">
+                        <div class="row">
+                            <div class="mb-5 col-md-6 col-lg-6">
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
 									 Current home value
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <input type="text"
-                                           class="form-control form-control-sm number"
-                                           name="" value="" placeholder="$1,500"/>
+                                    </label>
+                                    <div class="col-lg-11">
+                                        <input type="text"
+                                               class="form-control form-control-sm number"
+                                               name="" value="" placeholder="$1,500"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row green-slider">
+                                    <div class="custom-control col-lg-12 text-left">
+                                        <div class="row mt-3">
+                                            <p class="col-md-9 col-lg-9">Primary residence</p>
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="custom-control col-lg-12 text-left mt-3">
+                                        <div class="row">
+                                            <p class="col-md-9 col-lg-9">I have a mortgage on this property</p>
+                                            <label class="switch">
+                                                <input type="checkbox" data-toggle="collapse"
+                                                       data-target="#mortgage-collapse" aria-expanded="false"
+                                                       aria-controls="mortgage-collapse"/>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <div class="custom-control col-lg-7 text-left">
-                                    <div class="row mt-3">
-                                        <p class="col-md-8 col-lg-8">Primary residence</p>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"/>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="custom-control col-lg-7 text-left mt-3">
-                                    <div class="row">
-                                        <p class="col-md-8 col-lg-8">I have a mortgage on this property</p>
-                                        <label class="switch">
-                                            <input type="checkbox" data-toggle="collapse"
-                                                   data-target="#mortgage-collapse" aria-expanded="false"
-                                                   aria-controls="mortgage-collapse"/>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
+                            <div class="col-md-6 col-lg-6 text-right">
+                                <h2 class="modal-title text-bold">Real estate</h2>
+                                <p class="income-value">$200,000/mo</p>
+                                <p>You entered $3,000 for monthly expenses. Let’s
+                                    break that down a bit more by sharing how
+                                    much of this total is in each category below.</p>
                             </div>
+                        </div>
 
-                            <div class="collapse" id="mortgage-collapse">
-                                <h5 class="text-bold text-left">Mortgage</h5>
-                                <div class="form-group row">
-                                    <label for="" class="col-lg-7 col-form-label text-left">
+                        <div class="collapse border-top" id="mortgage-collapse">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="text-bold text-left">Mortgage</h5>
+                                    <div class="form-group row">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
 									 Lender
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input type="text"
-                                               class="form-control form-control-sm shadowed-input" value="Mortgage"/>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm shadowed-input"
+                                                   value="Mortgage"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-lg-7 col-form-label text-left">
+                                    <div class="form-group row">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
                                         <span class="">
                                              Mortgage type
                                             <i class="fa fa-question-circle invisible" aria-hidden="true"></i>
                                         </span>
-                                    </label>
-                                    <div class="col-md-12 col-lg-6 col-sm-12">
-                                    <div class="btn-toolbar row justify-content-between" role="toolbar">
-                                        <div class="col-md-12 col-lg-6" role="group">
-                                            <input type="radio" class="btn answer-btn btn-block opacity priority_2" id="years-fix1" name="years-fixes"/>
-                                            <label for="years-fix1" class="w-100">15 Year Fixes</label>
-                                        </div>
-                                        <div class="col-md-12 col-lg-6" role="group">
-                                            <input type="radio" class="btn answer-btn btn-block opacity priority_2" id="years-fix2" name="years-fixes"/>
-                                            <label for="years-fix2" class="w-100">30 Years Fixed</label>
+                                        </label>
+                                        <div class="col-md-12 col-lg-12 col-sm-12">
+                                            <div class="btn-toolbar row justify-content-between" role="toolbar">
+                                                <div class="col-md-12 col-lg-6" role="group">
+                                                    <input type="radio"
+                                                           class="btn answer-btn btn-block opacity priority_2"
+                                                           id="years-fix1" name="years-fixes"/>
+                                                    <label for="years-fix1" class="w-100">15 Year Fixes</label>
+                                                </div>
+                                                <div class="col-md-12 col-lg-6" role="group">
+                                                    <input type="radio"
+                                                           class="btn answer-btn btn-block opacity priority_2"
+                                                           id="years-fix2" name="years-fixes"/>
+                                                    <label for="years-fix2" class="w-100">30 Years Fixed</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-lg-7 col-form-label text-left">
+                                    <div class="form-group row">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
 									 Current balance
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input type="text"
-                                               class="form-control form-control-sm number"
-                                               name="" value="" placeholder=""/>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm number shadowed-input"
+                                                   name="" value="" placeholder=""/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-lg-7 col-form-label text-left">
+                                    <div class="form-group row">
+                                        <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
-									 Interest rate
+									 Interest Rate
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input type="text"
-                                               class="form-control form-control-sm number"
-                                               name="" value="" placeholder=""/>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm number shadowed-input"
+                                                   name="" value="" placeholder=""/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-lg-7 col-form-label text-left">
+                                    <div class="form-group row">
+                                        <label for="" class="col-lg-7 col-form-label text-left">
 								<span class="">
-									 Loan inception date
+									 Loan Inception Date
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input type="text"
-                                               class="form-control form-control-sm number"
-                                               name="" value="" placeholder=""/>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <input type="text"
+                                                   class="form-control form-control-sm shadowed-input"
+                                                   name="" value="" placeholder=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="text20-black-light mt-4 text-right">Assumptions</p>
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-2 text-right">
+                                            <p class="">You mentioned you had a mortgage.
+                                                We’ve assumed your current home value
+                                                based on your response.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
-                        <div class="text-right mb-4 border-top">
-                            <button class="btn btn-primary pl-5 pr-5 mt-5 mb-4 mb-2 text-bold pull-right" id="save-changes-saving">Save Changes</button>
+                        <div class="text-right mb-4 mt-4 border-top">
+                            <button class="btn btn-primary pl-5 pr-5 mt-5 mb-4 mb-2 text-bold pull-right"
+                                    id="save-changes-saving">Save Changes
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -1388,73 +1639,104 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header border-0 pb-0">
-                <!-- Percentage circle -->
-                <div class="col-md-12 col-lg-5">
-                    <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1"
-                             data-color="#D9F7DC,#6AE273"></div>
-                    </section>
+            <div class="col-md-12">
+                <div class="row justify-content-between" style="background: #68D12F">
+                    <div class="col-lg-7 m-auto">
+                        <div class="">
+                            <p class="white-text">Initial Assessment: On-Track</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="">
+                            <div class="score-show text-center row">
+                                <div class="col-md-6 col-lg-6 text-right">
+                                    <div class="row justify-content-end">
+                                        <p class="big-title-big">83</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 text-left">
+                                    <h6 class="mt-3 ml-1 ">Financial</h6>
+                                    <h6 class="ml-1 ">Wellness Score</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-7 text-right">
-                    <h2 class="modal-title text-bold">Saving</h2>
-                    <p class="income-value">$3,000</p>
-                    <p>We have estimated $3,000 for monthly expenses. Let’s
-                        break that down a bit more by sharing how
-                        much of this total is in each category below.</p>
+            </div>
+            <div class="modal-header border-0 pb-4 pt-3">
+                <!-- Percentage circle -->
+                <div class="col-md-6 col-lg-6 text-left">
+                    <p style="font-size: 16px" class="mt-4">We’ve made the following assumptions.<br/>
+                        You can make changes at any time by choosing<br/>
+                        <span class="checking">summary in the left menu.</span></p>
+                </div>
+                <div class="col-md-6 col-lg-6 text-right mt-3">
+                    <h2 class="modal-title text-bold">Savings</h2>
+                    <p class="income-value">$20,123</p>
+
                 </div>
             </div>
             <div class="modal-body text-center pt-4">
                 <div class="container">
-                    <div class="row justify-content-between">
-                        <p style="color:#66CC66;" class="col-md-3 col-lg-3 text-bold text-right">Status: <span>On-Track</span></p>
-                        <p class="text-primary col-md-12 col-lg-6 text-right">What do these categories mean?</p>
-                    </div>
-                    <hr/>
                     <form action="">
-                        <div class="mb-5 mt-5">
-                        <div class="form-group row">
-                            <label for="" class="col-lg-7 col-form-label text-left">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
 									 Investment Account
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                            </label>
-                            <div class="col-lg-6">
-                                <input type="text"
-                                       class="form-control form-control-sm shadowed-input number"
-                                       name="" value="" placeholder=""/>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-lg-7 col-form-label text-left">
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input number"
+                                               name="" value="" placeholder=""/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
 									 Cash Account
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                            </label>
-                            <div class="col-lg-6">
-                                <input type="text"
-                                       class="form-control form-control-sm shadowed-input number"
-                                       name="" value="" placeholder=""/>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-lg-7 col-form-label text-left">
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input number"
+                                               name="" value="" placeholder=""/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
 									 Retirement Account
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                            </label>
-                            <div class="col-lg-6">
-                                <input type="text"
-                                       class="form-control form-control-sm shadowed-input number"
-                                       name="" value="" placeholder=""/>
+                                    </label>
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input number"
+                                               name="" value="" placeholder=""/>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="text-right mb-4 mt-5 border-top">
-                            <button class="btn btn-primary pl-5 pr-5 mt-4 text-bold" id="saving-changes">Save Changes</button>
-                        </div>
+                            <div class="col-md-6 text-right">
+                                <p class="text20-black-light">Assumptions</p>
+                                <p>We’ve made assumptions to your savings
+                                    based on your age of <span>[current_age]</span>, your
+                                    expenses of <span>[current_expenses]</span> and a
+                                    growth rate of 5%.
+
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="text-right mb-4 mt-5 border-top">
+                                    <button class="btn btn-primary pl-5 pr-5 mt-4 text-bold" id="saving-changes">Save
+                                        Changes
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -1469,62 +1751,104 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header border-0 pb-0 pt-5">
+            <div class="col-md-12">
+                <div class="row justify-content-between" style="background: #68D12F">
+                    <div class="col-lg-7 m-auto">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="white-text">Initial Assessment: On-Track</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="score-show text-center row">
+                                    <div class="col-md-6 col-lg-6 text-right">
+                                        <div class="row justify-content-end">
+                                            <p class="big-title-big">83</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 text-left">
+                                        <h6 class="mt-3 ml-1 ">Financial</h6>
+                                        <h6 class="ml-1 ">Wellness Score</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-header border-0 pb-0 pt-3">
                 <!-- Percentage circle -->
-                <div class="col-md-12 col-lg-5">
-                    <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1"
-                             data-color="#D9F7DC,#6AE273"></div>
-                    </section>
-                </div>
-                <div class="col-md-6 col-lg-7 text-right">
-                    <h2 class="modal-title text-bold">Liabilities</h2>
-                    <p class="income-value">$20,000</p>
-                    <p>You entered $3,000 for monthly expenses. Let’s
-                        break that down a bit more by sharing how
-                        much of this total is in each category below.</p>
-                </div>
             </div>
             <div class="modal-body text-center pt-0">
                 <div class="container">
-                    <div class="row justify-content-between">
-                        <p style="color:#66CC66;" class="col-md-3 col-lg-3 text-bold text-right">Status: <span>On-Track</span></p>
-                        <p class="text-primary col-md-12 col-lg-6 text-right">What do these categories mean?</p>
-                    </div>
-                    <hr/>
                     <form action="">
-                        <div class="mb-3">
-                            <div class="form-group row">
-                                <label for="" class="col-lg-7 col-form-label text-left">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row justify-content-end">
+                                    <div>
+                                        <h2 class="modal-title text-bold">Liabilities</h2>
+                                        <p class="income-value">$50,412</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
 									 Personal Loan
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control form-control-sm shadowed-input"/>
+                                    </label>
+                                    <div class="col-lg-11">
+                                        <input type="text" class="form-control form-control-sm shadowed-input"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-lg-7 col-form-label text-left">
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
 								<span class="">
-									 Beach House Mortgage
+									 Credit Card
 									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
 								</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <input type="text"
-                                           class="form-control form-control-sm shadowed-input"
-                                           name="" value="" placeholder=""/>
+                                    </label>
+                                    <div class="col-lg-11">
+                                        <input type="text"
+                                               class="form-control form-control-sm shadowed-input"
+                                               name="" value="" placeholder=""/>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="" class="col-lg-7 col-form-label text-left">
-                                </label>
+                            <div class="col-md-6 col-lg-6 text-right">
+                                <p style="font-size: 16px" class="mt-4">We’ve made the following assumptions.<br/>
+                                    You can make changes at any time by choosing<br/>
+                                    <span class="checking">summary in the left menu.</span></p>
+
+
+                                <p class="text20-black-light mt-4">Assumptions</p>
+                                <div class="row">
+                                    <div class="col-md-10 offset-md-2 text-right">
+                                        <p class="">We’ve assumed a 15% interest rate
+                                            on your credit card.</p>
+
+                                        <p class="mt-3">We’ve assumed a term of 7 years
+                                            with interest for your personal loan. </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text-right mb-4 mt-5 border-top">
-                                <button class="btn btn-primary pl-5 pr-5 mt-5 text-bold" id="saving-liabilities">Save Changes</button>
-                            </div>
+                        </div>
+
+                        <div class="form-group row mt-2">
+                            <label for="" class="col-lg-7 col-form-label text-left">
+                            </label>
+                        </div>
+                        <div class="text-right mb-4 mt-5">
+                            <button class="btn btn-primary pl-5 pr-5 mt-5 text-bold" id="saving-liabilities">Save
+                                Changes
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -1540,29 +1864,42 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
+            <div class="col-md-12">
+            <div class="row justify-content-between" style="background: #68D12F">
+                <div class="col-lg-7 m-auto">
+                    <div class="col-md-12">
+                        <p class="white-text">Initial Assessment: On-Track</p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="col-md-12">
+                        <div class="score-show text-center row">
+                            <div class="col-md-6 col-lg-6 text-right">
+                                <div class="row justify-content-end">
+                                    <p class="big-title-big">83</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 text-left">
+                                <h6 class="mt-3 ml-1 ">Financial</h6>
+                                <h6 class="ml-1 ">Wellness Score</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
             <div class="modal-header border-0 pb-0">
                 <!-- Percentage circle -->
-                <div class="col-md-12 col-lg-5">
-                    <section>
-                        <div class="progress-bar position" data-percent="85" data-duration="1"
-                             data-color="#D9F7DC,#6AE273"></div>
-                    </section>
-                </div>
-                <div class="col-md-6 col-lg-7 text-right">
+
+                <div class="col-md-7 offset-lg-5 offset-md-5 col-lg-7 text-right mt-4">
                     <h3 class="modal-title text-bold">Income</h3>
                     <p class="income-value">$193,000/mo</p>
-                    <p>You entered $3,000 for monthly expenses. Let’s
-                        break that down a bit more by sharing how
-                        much of this total is in each category below.</p>
+                    <p>You have entered $193,000 for income. You can make
+                        any necessary changes to provide a more accurate result. </p>
                 </div>
             </div>
             <div class="modal-body text-center pt-0">
                 <div class="container">
-                    <div class="row justify-content-between">
-                        <p style="color:#66CC66;" class="col-md-3 col-lg-3 text-bold text-right">Status: <span>On-Track</span></p>
-                        <p class="text-primary col-md-12 col-lg-6 text-right">What do these categories mean?</p>
-                    </div>
-                    <hr/>
                     <form action="">
                         <div class="mb-5">
                             <div class="form-group row">
@@ -1573,7 +1910,7 @@
                                 <div class="col-lg-6">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group row mt-5">
                                 <label for="" class="col-lg-7 col-form-label text-left">
 								<span class="">
 									 Income Main
@@ -1594,7 +1931,7 @@
                                 <div class="col-lg-6">
                                 </div>
                             </div>
-                            <div class="text-right mb-4 mt-5 border-top">
+                            <div class="text-right mb-4 mt-5">
                                 <button class="btn btn-primary pl-5 pr-5 mt-5 mb-5 text-bold" id="saving-income">Save Changes</button>
                             </div>
                         </div>
@@ -1608,16 +1945,17 @@
 
 
 <!-- Congratulation modal-->
-<div id="congrat-modal" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+<div id="congrat-modal" class="modal show" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
         <!-- Modal content-->
         <div class="modal-content">
+            <div class="congrats">
+            </div>
             <div class="modal-body text-center pt-0">
-                <h2 class="title2 text-left">Congratulations!</h2>
-                <p class="text-left text20-black">Your profile is ready, let’s see your results.</p>
-                    <div class="congrats mt-5">
-                    </div>
-                <button class="btn btn-primary btn-lg btn-block mt-5 mb-3 text-bold" role="button">Launch</button>
+                <h2 class="title2 text-left mb-0">Congratulations!</h2>
+                <p class="text-left text20-black-light">Your profile is ready, let’s see your results.</p>
+
+                <button class="btn btn-primary mt-5 mb-3 text-bold pl-5 pr-5" role="button">Launch</button>
             </div>
         </div>
         <!-- Modal content-->
@@ -1660,6 +1998,54 @@
 <script>
     function createChart() {
         $("#chart").kendoChart({
+            chartArea: {
+                width: 220,
+                height: 220
+            },
+            seriesDefaults: {
+                border: {
+                    color: "white",
+                    width: 1
+                },
+                labels: {
+                    template: "#= kendo.format('{0:d}%', percentage*100)#",
+                    position: "outsideEnd",
+                    visible: true,
+                    background: "transparent"
+                }
+            },
+            seriesColors: ["#E2CB6A", "#E2CB6A", "#E2CB6A", "#E2CB6A", "#FFC"],
+            series: [{
+                type: "donut",
+                size: 30,
+                startAngle: 150,
+                data: [{
+                    visibleInLegend: false,
+                    value: 40,
+                }, {
+                    visibleInLegend: false,
+                    category: "Basketball",
+                    value: 25
+                }, {
+                    visibleInLegend: false,
+                    category: "Volleyball",
+                    value: 2
+                }, {
+                    visibleInLegend: false,
+                    category: "Rugby",
+                    value: 5
+                }, {
+                    visibleInLegend: false,
+                    category: "Tennis",
+                    value: 5
+                }]
+            }],
+            tooltip: {
+                visible: true,
+                template: "#= category # - #= kendo.format('{0:P}', percentage) #"
+            }
+        });
+        $("#chart-car").kendoChart({
             chartArea: {
                 width: 220,
                 height: 220

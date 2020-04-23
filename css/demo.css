@@ -144,9 +144,9 @@ body, p{
 .discarded-income{background: #EDDD84}
 .income-value{font-size: 40px}
 .shadowed-input, .k-numerictextbox .k-numeric-wrap {
-  -webkit-box-shadow:0px 2px 5px 0px #c4c4c4;
-  -moz-box-shadow: 0px 2px 5px 0px #c4c4c4;
-  box-shadow: 0px 2px 5px 0px #c4c4c4;
+  -webkit-box-shadow:0px 2px 5px 0px #c4c4c4!important;
+  -moz-box-shadow: 0px 2px 5px 0px #c4c4c4!important;
+  box-shadow: 0px 2px 5px 0px #c4c4c4!important;
 }
 #editModalSavings .k-numerictextbox{ width: 100%}
 .brend{
@@ -193,11 +193,11 @@ body, p{
   transition: .4s;
 }
 
-input:checked + .slider {
+.green-slider input:checked + .slider {
   background-color: #4CD964;
 }
 
-input:focus + .slider {
+.green-slider input:focus + .slider {
   box-shadow: 0 0 1px #4CD964;
 }
 

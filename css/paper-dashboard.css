@@ -31,7 +31,7 @@ a:hover {
   width: 16px;
   height: 16px;
   position: relative;
-  top: -8px;
+  top: -6px;
   left: 2px;
 }
 .score-show{
@@ -170,7 +170,7 @@ svg:hover{fill:#0AA5F3}
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 22px;
+  height: 23px;
 }
 
 .switch input {
@@ -699,79 +699,6 @@ input:checked + .slider:before {
   background-color: #FFFFFF;
 }
 
-.form-group.no-border.form-control-lg .input-group-append .input-group-text,
-.input-group.no-border.form-control-lg .input-group-append .input-group-text {
-  padding: 15px 0 15px 11px;
-}
-
-.form-group.no-border.form-control-lg .form-control,
-.input-group.no-border.form-control-lg .form-control {
-  padding: 15px 11px;
-}
-
-.form-group.no-border.form-control-lg .form-control+.input-group-prepend .input-group-text,
-.form-group.no-border.form-control-lg .form-control+.input-group-append .input-group-text,
-.input-group.no-border.form-control-lg .form-control+.input-group-prepend .input-group-text,
-.input-group.no-border.form-control-lg .form-control+.input-group-append .input-group-text {
-  padding: 15px 11px 15px 0;
-}
-
-.form-group.form-control-lg .form-control,
-.input-group.form-control-lg .form-control {
-  padding: 14px 10px;
-}
-
-.form-group.form-control-lg .form-control+.input-group-prepend .input-group-text,
-.form-group.form-control-lg .form-control+.input-group-append .input-group-text,
-.input-group.form-control-lg .form-control+.input-group-prepend .input-group-text,
-.input-group.form-control-lg .form-control+.input-group-append .input-group-text {
-  padding: 14px 10px 14px 0;
-}
-
-.form-group.form-control-lg .input-group-prepend .input-group-text,
-.form-group.form-control-lg .input-group-append .input-group-text,
-.input-group.form-control-lg .input-group-prepend .input-group-text,
-.input-group.form-control-lg .input-group-append .input-group-text {
-  padding: 14px 0 15px 10px;
-}
-
-.form-group.form-control-lg .input-group-prepend .input-group-text+.form-control,
-.form-group.form-control-lg .input-group-append .input-group-text+.form-control,
-.input-group.form-control-lg .input-group-prepend .input-group-text+.form-control,
-.input-group.form-control-lg .input-group-append .input-group-text+.form-control {
-  padding: 15px 10px 15px 8px;
-}
-
-.form-group.no-border .form-control,
-.input-group.no-border .form-control {
-  padding: 11px 11px;
-}
-
-.form-group.no-border .form-control+.input-group-prepend .input-group-text,
-.form-group.no-border .form-control+.input-group-append .input-group-text,
-.input-group.no-border .form-control+.input-group-prepend .input-group-text,
-.input-group.no-border .form-control+.input-group-append .input-group-text {
-  padding: 11px 11px 11px 0;
-}
-
-.form-group.no-border .input-group-prepend .input-group-text,
-.form-group.no-border .input-group-append .input-group-text,
-.input-group.no-border .input-group-prepend .input-group-text,
-.input-group.no-border .input-group-append .input-group-text {
-  padding: 11px 0 11px 11px;
-}
-
-.form-group .form-control,
-.input-group .form-control {
-  padding: 10px 10px 10px 10px;
-}
-
-.form-group .form-control+.input-group-prepend .input-group-text,
-.form-group .form-control+.input-group-append .input-group-text,
-.input-group .form-control+.input-group-prepend .input-group-text,
-.input-group .form-control+.input-group-append .input-group-text {
-  padding: 10px 10px 10px 0;
-}
 
 .input-group.has-success .input-group-prepend .input-group-text,
 .input-group.has-success .input-group-append .input-group-text {
