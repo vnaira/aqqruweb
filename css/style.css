@@ -376,7 +376,7 @@ h3.section-title{
 
 input.priority_[type=radio]+label {
   background: #DBE6F2;
-  padding: 7px 24px;
+  padding: 9px 28px;
   border-radius: 0.25rem;
 }
 input.priority_[type=radio]:checked+label {
@@ -609,7 +609,10 @@ img.svg-im path{ fill: red; }
   background: #fff;
   width: 200px;
   margin-left: 15px;
-  height: 54px;}
+  height: 54px;
+position: relative;
+  z-index: 1050;
+}
 .add-goal-btn .small {
   background: transparent;
   border: 0 none;
@@ -787,6 +790,19 @@ div.balSlider {
   margin-left: -27px;
   position: absolute!important;
 }
+#add-retirement .modal-body,
+#add-house .modal-body,
+#add-kids-education .modal-body,
+#add-kids-education .modal-body,
+#add-car .modal-body{
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+#goal-navbar .dropdown-item{cursor: pointer}
+.dropdown-item.inactive{opacity: .6; cursor: text!important;}
+
+
 
 
 /**
@@ -873,31 +889,32 @@ personal information pages
 }
 
 .radio-toolbar label {
-  border-color: #e4e7eb;
-  background-color: #e4e7eb;
+  border-color: #DBE6F2;
+  background-color: #DBE6F2;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 6px 20px;
   font-size: 16px;
   border-radius: 4px;
   width: 32%;
   text-align: center;
+  margin-left: 1px;
 }
 
 .radio-toolbar label:hover {
-  border-color: #0062cc;
+  border-color: #499DF2;
   color: #fff;
-  background-color: #0069d9;
+  background-color: #499DF2;
 }
 
 .radio-toolbar input[type="radio"]:focus + label {
-  border-color: #0062cc;
+  border-color: #499DF2;
   color: #fff;
-  background-color: #0069d9;
+  background-color: #499DF2;
 }
 .radio-toolbar input[type="radio"]:checked + label {
-  border-color: #0062cc;
+  border-color: #499DF2;
   color: #fff;
-  background-color: #0069d9;
+  background-color: #499DF2;
 
 }
 .select_suggestion{
@@ -913,14 +930,15 @@ personal information pages
   outline: 0 none;
   box-shadow: none;
 }
-.white-text{color:#fff;}
-.form_line_bottom{
+.white-grey-text{color:#eaf1f3;font-weight: bold}
+.form_line_bottom.k-input{
   font-size: 30px;
   font-weight: bold;
   border: 0 none;
   border-bottom: 1px solid;
   width: 50%;
   display: block;
+  color:#3D4E66
 }
 .checking{
     display: inline-block;
@@ -929,9 +947,137 @@ personal information pages
     padding-left: 30px;
     background: url(img/playzone/summary.png) no-repeat;
 }
+.modal-top-left{
+  left: 0;
+  margin-left: 240px;
+  top: 135px;
+}
+.modal-top-left .modal-content{border-radius: 0.5rem}
+.modal.left.fade.show .modal-dialog {
+  left: 0;
+}
+.caretdown {
+  border-bottom: 25px solid #fff;
+  border-left: 20px solid rgba(0, 0, 0, 0);
+  border-right: 20px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  height: 0;
+  margin-left: 31px;
+  vertical-align: top;
+  width: 0;
+}
+.score-and-value{
+  font-weight: bold;
+  color: #fff;
+}
+.score-and-value h6{
+  margin-bottom: 6px;
+  font-weight: bolder;
+}
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #f8f9fa;
+}
 
 
 
+
+/*styles from main.css*/
+.modal-title {
+  font-family: Avenir-black;
+}
+
+.btn-cancel {
+  background: #DBE6F2;
+  border: 1px solid #DBE6F2;
+  color: #7D91AD
+}
+
+.btn-ok {
+  background: #499DF2;
+  border: 1px solid #499DF2;
+  color: #fff
+}
+
+.right-block {
+  height: 90vh;
+  background: url("css/img/phone.png") no-repeat;
+  background-size: 100%;
+}
+
+.zip-block {
+  height: 100vh;
+  background: url("css/img/imgblank.png") no-repeat;
+  background-size: 105% 100%;
+
+}
+
+.zip-block .right-title, .zip-block p {
+  color: #fff !important;
+}
+
+.marrital-block {
+  height: 100vh;
+  background: #F4F7FB
+}
+
+.vh-30 {
+  height: 35vh
+}
+
+.vh-60 {
+  height: 60vh;
+}
+
+.cache-bg {
+  background: url("css/img/cashflow.png") no-repeat;
+  background-size: 100% 105%
+}
+
+.phone2 {
+  background: url(css/img/phone2.png) no-repeat;
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  height: 81%;
+  background-size: cover;
+}
+.goals-block {
+  background: url("css/img/goals-right.png") no-repeat;
+  background-size: 100% 100%;
+  height: 95vh;
+  width: 100%;
+}
+
+.notify-bubble {
+  position: absolute;
+  top: 7px;
+  right: -17px;
+}
+.notify-container {
+  position: relative;
+  display: inline-block;
+}
+
+.back-btn{
+  position: absolute;
+  top: 33px;
+  z-index: 20000;
+}
+.answer-btn{
+  height: 32px;
+  font-size: 15px;
+  line-height: 1;
+}
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+  background-color: #DBE6F2;
+  color:#4D4F5C;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #499DF2;
+}
 
 
 

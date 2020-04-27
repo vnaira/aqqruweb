@@ -12,7 +12,7 @@ function drawTable(profile, prior = priority) {
     }
 
     var withtVal = generateWidthOfChart(goals);
-    years = calculateYearGrid(profile);
+    years = calculateYearGrid(goals);
 
     // create table left side priority
     document.getElementById('priority_labels').innerHTML = '';
@@ -34,9 +34,9 @@ function drawTable(profile, prior = priority) {
 
     for (var count = (prior.length - 1); count >= 0; count--) {
         // cell loop
-        var  stepCell = Math.floor(years.length / 10);
+        var  stepCell = Math.floor(years.length / 15);
 
-        tdWidth = canvasWidth / 10 / stepCell;
+        tdWidth = canvasWidth / 15 / stepCell;
         for (let i = 0; i < years.length; i++) {
 
             var cell = row.insertCell();
@@ -139,7 +139,7 @@ function drawGridLabels(years) {
     table.className = "table grid-labels table-responsive ml-4";
     row = table.insertRow();
 
-    var stepCell = Math.floor(years.length / 10);
+    var stepCell = Math.floor(years.length / 15);
     for (let i = 0; i < years.length; i++) {
         var cellLabel = "";
         if (i % stepCell === 0) {
@@ -147,7 +147,7 @@ function drawGridLabels(years) {
 
             cellLabel += "<span class='years'>" + years[i] + "</span>";
             cell.innerHTML = cellLabel;
-            cell.setAttribute('width', Math.ceil(canvasWidth / 10) + 'px');
+            cell.setAttribute('width', Math.ceil(canvasWidth / 15) - 1 + 'px');
         }
     }
     document.getElementById("grid-labels").appendChild(table);
@@ -251,22 +251,25 @@ function goalClick() {
 }
 
 /**
- * create years array depend of birth date
- * @param dateBirth
+ * create years array depend of older goal year
+ * @param object
  * @returns {Array}
  */
-function calculateYearGrid(dateBirth) {
-    var max = dateBirth.reduce(function (prev, current) {
-        return (prev.birthdate < current.birthdate) ? prev : current
-    });
-    years = [];
-    var nowYear = (new Date()).getFullYear();
-    var retirementYear = (new Date(max.birthdate)).getFullYear() + 118;
-    for (var i = nowYear; i <= retirementYear; i++) {
-        years.push(i);
-    }
-    return years;
+function calculateYearGrid(obj) {
+    if(obj){
+        var goalArray = [];
+        for (item = 0; item < obj.length; item++) {
+            goalArray.push(new Date(obj[item].goal_data.date).getFullYear());
+        }
+        years = [];
+        var nowYear = (new Date()).getFullYear();
+        var retirementYear = Math.max.apply(Math,goalArray) + 10;
+        for (var i = nowYear; i <= retirementYear; i++) {
+            years.push(i);
+        }
 
+        return years;
+    }
 }
 
 /**

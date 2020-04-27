@@ -55,12 +55,12 @@
                         <div class="row justify-content-between" style="background: #68D12F">
                             <div class="col-lg-7 m-auto">
                                 <div class="col-md-12">
-                                <p class="white-text">Initial Assessment: On-Track</p>
+                                <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="col-md-12">
-                                <div class="score-show text-center row">
+                                <div class="score-and-value text-center row">
                                     <div class="col-md-6 col-lg-6 text-right">
                                         <div class="row justify-content-end">
                                         <p class="big-title-big">83</p>
@@ -148,10 +148,7 @@
                                     <div class="col-md-6 col-lg-1 my-auto btn-edit" data-toggle="modal"
                                          data-target="#editModalLiabilities">Edit</div>
                                 </div>
-                                <div class="row justify-content-between mt-3 mb-2">
-                                    <a class="btn btn-primary pl-5 pr-5 text-bold" href="/Goals/Index">
-                                        Add Goals
-                                    </a>
+                                <div class="row justify-content-end mt-3 mb-2">
                                     <button class="btn btn-primary pl-5 pr-5 text-bold" disabled id="save-btn">
                                         Save Changes
                                     </button>
@@ -168,12 +165,12 @@
                         <div class="row justify-content-between" style="background: #68D12F">
                             <div class="col-lg-7 m-auto">
                                 <div class="col-md-12">
-                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                    <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="col-md-12">
-                                    <div class="score-show text-center row">
+                                    <div class="score-and-value text-center row">
                                         <div class="col-md-6 col-lg-6 text-right">
                                             <div class="row justify-content-end">
                                                 <p class="big-title-big">83</p>
@@ -223,34 +220,20 @@
                                 <form class="text-left">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5">
-                                            <div class="row retirement-row">
+                                            <div class="row">
                                                 <div class="form-group col-md-12 col-lg-12">
                                                     <label for="" class="col-form-label">How important this
                                                         goal?</label>
 
-                                                    <div class="btn-toolbar justify-content-between" role="toolbar">
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id=""
-                                                                   name="priority"/>
-                                                            <label for="">Low</label>
-                                                        </div>
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id=""
-                                                                   name="priority"/>
-                                                            <label for="">Medium</label>
-                                                        </div>
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id=""
-                                                                   name="priority"/>
-                                                            <label for="">High</label>
+                                                    <div class="btn-toolbar row justify-content-start" role="toolbar">
 
-                                                        </div>
+                                                        <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_High" name="Goal.Priority" type="radio" value="High">
+                                                        <label class="k-radio-label" for="Goal_Priority_High">High</label>
+                                                        <input checked="checked" class="k-radio answer-btn opacity priority_" id="Goal_Priority_Medium" name="Goal.Priority" type="radio" value="Medium">
+                                                        <label class="k-radio-label" for="Goal_Priority_Medium">Medium</label>
+                                                        <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_Low" name="Goal.Priority" type="radio" value="Low">
+                                                        <label class="k-radio-label" for="Goal_Priority_Low">Low</label>
+
                                                     </div>
                                                 </div>
 
@@ -270,17 +253,22 @@
                                                     </button>
                                                     <div class="row">
                                                         <div class="form-inline dual">
-                                                            <div class="form-group col-md-12 col-lg-6">
-                                                                <input type="text"
-                                                                       class="form-control shadowed-input text-center"
-                                                                       id="from-age"
-                                                                       placeholder="From"/>
-                                                            </div>
-                                                            <div class="form-group col-md-12 col-lg-6">
-                                                                <input type="text"
-                                                                       class="form-control shadowed-input text-center"
-                                                                       id="to-age"
-                                                                       placeholder="To"/>
+                                                            <div class="col-md-12">
+                                                                <div data-bind="start:Goal.StartDate, end:Goal.EndDate" class="k-widget k-daterangepicker k-state-default" >
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input  name="Goal.StartDate" data-role="dateinput" class="k-textbox" type="text" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                    <span>&nbsp;</span>
+                                                                    <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input data-bind="value: Goal.EndDate" name="Goal.EndDate" data-role="dateinput" class="k-textbox" autocomplete="off" type="text" aria-disabled="false" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                </div>
+
+                                                                <div class="form-group col-md-6">
+                                                                    <small class="text-muted">Years from now</small>
+                                                                </div>
                                                             </div>
 
                                                         </div>
@@ -340,12 +328,12 @@
                         <div class="row justify-content-between" style="background: #68D12F">
                             <div class="col-lg-7 m-auto">
                                 <div class="col-md-12">
-                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                    <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="col-md-12">
-                                    <div class="score-show text-center row">
+                                    <div class="score-and-value text-center row">
                                         <div class="col-md-6 col-lg-6 text-right">
                                             <div class="row justify-content-end">
                                                 <p class="big-title-big">83</p>
@@ -369,7 +357,7 @@
                                     </div>
                                     <div class="col-md-12 col-lg-12">
                                         <div class="row">
-                                            <div class="col-md-4 text-right">
+                                            <div class="col-md-4 mt-5 text-right">
                                                 <p class="text-bold">Car</p>
                                                 <p><span style="color:#E84D46">92% </span>Achievability</p>
                                                 <p>Status <span style="color:#E84D46">Off-Track</span></p>
@@ -401,30 +389,17 @@
                                                 <label for="" class="col-form-label">How important this
                                                     goal?</label>
 
-                                                <div class="btn-toolbar justify-content-between" role="toolbar">
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id=""
-                                                               name="priority"/>
-                                                        <label for="">Low</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id=""
-                                                               name="priority"/>
-                                                        <label for="">Medium</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id=""
-                                                               name="priority"/>
-                                                        <label for="">High</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
 
-                                                    </div>
+                                                    <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_High" name="Goal.Priority" type="radio" value="High">
+                                                    <label class="k-radio-label" for="Goal_Priority_High">High</label>
+                                                    <input checked="checked" class="k-radio answer-btn opacity priority_" id="Goal_Priority_Medium" name="Goal.Priority" type="radio" value="Medium">
+                                                    <label class="k-radio-label" for="Goal_Priority_Medium">Medium</label>
+                                                    <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_Low" name="Goal.Priority" type="radio" value="Low">
+                                                    <label class="k-radio-label" for="Goal_Priority_Low">Low</label>
+
                                                 </div>
+
                                             </div>
 
                                             <div class="form-group col-md-12 col-lg-12">
@@ -436,19 +411,23 @@
                                                 </button>
                                                 <div class="row">
                                                     <div class="form-inline dual">
-                                                        <div class="form-group col-md-12 col-lg-6">
-                                                            <small>From</small>
-                                                            <input type="text" onfocus="(this.type='date')"
-                                                                   class="form-control shadowed-input text-center"
-                                                                   placeholder="Years from now"/>
-                                                        </div>
-                                                        <div class="form-group col-md-12 col-lg-6">
-                                                            <small>To</small>
-                                                            <input type="text" onfocus="(this.type='date')"
-                                                                   class="form-control shadowed-input text-center"
-                                                                   placeholder="Years from now"/>
-                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div data-bind="start:Goal.StartDate, end:Goal.EndDate" class="k-widget k-daterangepicker k-state-default" >
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input  name="Goal.StartDate" data-role="dateinput" class="k-textbox" type="text" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                <span>&nbsp;</span>
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input data-bind="value: Goal.EndDate" name="Goal.EndDate" data-role="dateinput" class="k-textbox" autocomplete="off" type="text" aria-disabled="false" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                            </div>
 
+                                                            <div class="form-group col-md-6">
+                                                                <small class="text-muted">Years from now</small>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -483,7 +462,7 @@
                                         <div class="row">
                                             <div class="col-md-12 col-lg-12">
                                                 <label for="" class="col-form-label text-bold">Expected Cost</label>
-                                                <input type="text" class="form_line_bottom number" value="$35,000"/>
+                                                <input type="text" class="form_line_bottom k-input number" value="$35,000"/>
                                             </div>
                                         </div>
                                     </div>
@@ -513,7 +492,7 @@
                                     </div>
                                     <div class="form-group col-md-12 col-lg-12 mb-5">
                                         <div class="text-right justify-content-end">
-                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel" role="button"
+                                            <button class="btn btn-primary pl-5 pr-5 mb-3 pull-right" href="#goals-carousel" role="button"
                                                data-slide="next">Save Changes</button>
                                         </div>
                                     </div>
@@ -532,12 +511,12 @@
                         <div class="row justify-content-between" style="background: #68D12F">
                             <div class="col-lg-7 m-auto">
                                 <div class="col-md-12">
-                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                    <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="col-md-12">
-                                    <div class="score-show text-center row">
+                                    <div class="score-and-value text-center row">
                                         <div class="col-md-6 col-lg-6 text-right">
                                             <div class="row justify-content-end">
                                                 <p class="big-title-big">83</p>
@@ -587,34 +566,20 @@
                             <div class="container">
                                 <form class="text-left row">
                                     <div class="col-md-6 col-lg-5">
-                                        <div class="row retirement-row">
+                                        <div class="row ">
                                             <div class="form-group col-md-12 col-lg-12">
                                                 <label for="" class="col-form-label">How important this
                                                     goal?</label>
 
-                                                <div class="btn-toolbar justify-content-between" role="toolbar">
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id="low-college"
-                                                               name="priority"/>
-                                                        <label for="low-college">Low</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id="medium-college"
-                                                               name="priority"/>
-                                                        <label for="medium-college">Medium</label>
-                                                    </div>
-                                                    <div class="" role="group">
-                                                        <input type="radio"
-                                                               class="btn answer-btn btn-block opacity priority_"
-                                                               id="height-college"
-                                                               name="priority"/>
-                                                        <label for="height-college">High</label>
+                                                <div class="btn-toolbar row justify-content-start" role="toolbar">
 
-                                                    </div>
+                                                    <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_High" name="Goal.Priority" type="radio" value="High">
+                                                    <label class="k-radio-label" for="Goal_Priority_High">High</label>
+                                                    <input checked="checked" class="k-radio answer-btn opacity priority_" id="Goal_Priority_Medium" name="Goal.Priority" type="radio" value="Medium">
+                                                    <label class="k-radio-label" for="Goal_Priority_Medium">Medium</label>
+                                                    <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_Low" name="Goal.Priority" type="radio" value="Low">
+                                                    <label class="k-radio-label" for="Goal_Priority_Low">Low</label>
+
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-lg-12 edu-for-me">
@@ -747,7 +712,7 @@
                                                     <div class="col-md-12 col-lg-12">
                                                         <label for="" class="col-form-label text-bold">Estimated Total
                                                             Cost</label>
-                                                        <input type="text" class="form_line_bottom number"
+                                                        <input type="text" class="form_line_bottom k-input number"
                                                                value="$240,000"/>
                                                     </div>
                                                 </div>
@@ -777,12 +742,12 @@
                         <div class="row justify-content-between" style="background: #68D12F">
                             <div class="col-lg-7 m-auto">
                                 <div class="col-md-12">
-                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                    <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="col-md-12">
-                                    <div class="score-show text-center row">
+                                    <div class="score-and-value text-center row">
                                         <div class="col-md-6 col-lg-6 text-right">
                                             <div class="row justify-content-end">
                                                 <p class="big-title-big">83</p>
@@ -816,7 +781,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 text-right">
+                                            <div class="col-md-4">
                                                 <p class="text-bold">House Goal</p>
                                                 <p><span style="color:#E84D46">92% </span>Achievability</p>
                                                 <p>Status <span style="color:#E84D46">Off-Track</span></p>
@@ -834,34 +799,20 @@
                                 <form class="text-left">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5">
-                                            <div class="row retirement-row">
+                                            <div class="row ">
                                                 <div class="form-group col-md-12 col-lg-12">
                                                     <label for="" class="col-form-label">How important this
                                                         goal?</label>
 
-                                                    <div class="btn-toolbar justify-content-between" role="toolbar">
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id=""
-                                                                   name="priority"/>
-                                                            <label for="">Low</label>
-                                                        </div>
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id=""
-                                                                   name="priority"/>
-                                                            <label for="">Medium</label>
-                                                        </div>
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id=""
-                                                                   name="priority"/>
-                                                            <label for="">High</label>
+                                                    <div class="btn-toolbar row justify-content-start" role="toolbar">
 
-                                                        </div>
+                                                        <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_High" name="Goal.Priority" type="radio" value="High">
+                                                        <label class="k-radio-label" for="Goal_Priority_High">High</label>
+                                                        <input checked="checked" class="k-radio answer-btn opacity priority_" id="Goal_Priority_Medium" name="Goal.Priority" type="radio" value="Medium">
+                                                        <label class="k-radio-label" for="Goal_Priority_Medium">Medium</label>
+                                                        <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_Low" name="Goal.Priority" type="radio" value="Low">
+                                                        <label class="k-radio-label" for="Goal_Priority_Low">Low</label>
+
                                                     </div>
                                                 </div>
 
@@ -872,23 +823,29 @@
                                                             data-placement="right"
                                                             title="Target start date description">?
                                                     </button>
+
                                                     <div class="row">
                                                         <div class="form-inline dual">
-                                                            <div class="form-group col-md-12 col-lg-6">
-                                                                <small>From</small>
-                                                                <input type="text" onfocus="(this.type='date')"
-                                                                       class="form-control shadowed-input text-center"
-                                                                       placeholder="Years from now"/>
-                                                            </div>
-                                                            <div class="form-group col-md-12 col-lg-6">
-                                                                <small>To</small>
-                                                                <input type="text" onfocus="(this.type='date')"
-                                                                       class="form-control shadowed-input text-center"
-                                                                       placeholder="Years from now"/>
+                                                            <div class="col-md-12">
+                                                            <div data-bind="start:Goal.StartDate, end:Goal.EndDate" class="k-widget k-daterangepicker k-state-default" >
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input  name="Goal.StartDate" data-role="dateinput" class="k-textbox" type="text" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                <span>&nbsp;</span>
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input data-bind="value: Goal.EndDate" name="Goal.EndDate" data-role="dateinput" class="k-textbox" autocomplete="off" type="text" aria-disabled="false" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
                                                             </div>
 
+                                                            <div class="form-group col-md-6">
+                                                                <small class="text-muted">Years from now</small>
+                                                            </div>
+                                                            </div>
                                                         </div>
                                                     </div>
+
                                                 </div>
 
                                                 <div class="mt-4 col-md-12 col-lg-12">
@@ -946,7 +903,7 @@
                                     </div>
                                     <div class="form-group col-md-12 col-lg-12 mb-5">
                                         <div class="text-right justify-content-end ">
-                                            <button class="btn btn-primary pl-5 pr-5 pull-right" href="#goals-carousel"
+                                            <button class="btn btn-primary pl-5 pr-5 pull-right mb-3" href="#goals-carousel"
                                                     role="button"
                                                     data-slide="next">Save Changes
                                             </button>
@@ -967,12 +924,12 @@
                         <div class="row justify-content-between" style="background: #68D12F">
                             <div class="col-lg-7 m-auto">
                                 <div class="col-md-12">
-                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                    <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="col-md-12">
-                                    <div class="score-show text-center row">
+                                    <div class="score-and-value text-center row">
                                         <div class="col-md-6 col-lg-6 text-right">
                                             <div class="row justify-content-end">
                                                 <p class="big-title-big">83</p>
@@ -1006,7 +963,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 text-right">
+                                            <div class="col-md-4">
                                                 <p class="text-bold">Wedding</p>
                                                 <p><span style="color:#E84D46">92% </span>Achievability</p>
                                                 <p>Status <span style="color:#E84D46">Off-Track</span></p>
@@ -1024,34 +981,20 @@
                                 <form class="text-left">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5">
-                                            <div class="row retirement-row">
+                                            <div class="row ">
                                                 <div class="form-group col-md-12 col-lg-12">
                                                     <label for="" class="col-form-label">How important this
                                                         goal?</label>
 
-                                                    <div class="btn-toolbar justify-content-between" role="toolbar">
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id="low-wedding"
-                                                                   name="priority"/>
-                                                            <label for="low-wedding">Low</label>
-                                                        </div>
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id="medium-wedding"
-                                                                   name="priority"/>
-                                                            <label for="medium-wedding">Medium</label>
-                                                        </div>
-                                                        <div class="" role="group">
-                                                            <input type="radio"
-                                                                   class="btn answer-btn btn-block opacity priority_"
-                                                                   id="height-wedding"
-                                                                   name="priority"/>
-                                                            <label for="height-wedding">High</label>
+                                                    <div class="btn-toolbar row justify-content-start" role="toolbar">
 
-                                                        </div>
+                                                        <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_High" name="Goal.Priority" type="radio" value="High">
+                                                        <label class="k-radio-label" for="Goal_Priority_High">High</label>
+                                                        <input checked="checked" class="k-radio answer-btn opacity priority_" id="Goal_Priority_Medium" name="Goal.Priority" type="radio" value="Medium">
+                                                        <label class="k-radio-label" for="Goal_Priority_Medium">Medium</label>
+                                                        <input class="k-radio answer-btn opacity priority_" id="Goal_Priority_Low" name="Goal.Priority" type="radio" value="Low">
+                                                        <label class="k-radio-label" for="Goal_Priority_Low">Low</label>
+
                                                     </div>
                                                 </div>
 
@@ -1065,19 +1008,23 @@
                                                     </button>
                                                     <div class="row">
                                                         <div class="form-inline dual">
-                                                            <div class="form-group col-md-12 col-lg-6">
-                                                                <small>From</small>
-                                                                <input type="text" onfocus="(this.type='date')"
-                                                                       class="form-control shadowed-input text-center"
-                                                                       placeholder="Years from now"/>
-                                                            </div>
-                                                            <div class="form-group col-md-12 col-lg-6">
-                                                                <small>To</small>
-                                                                <input type="text" onfocus="(this.type='date')"
-                                                                       class="form-control shadowed-input text-center"
-                                                                       placeholder="Years from now"/>
-                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div data-bind="start:Goal.StartDate, end:Goal.EndDate" class="k-widget k-daterangepicker k-state-default" >
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input  name="Goal.StartDate" data-role="dateinput" class="k-textbox" type="text" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                    <span>&nbsp;</span>
+                                                                    <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input data-bind="value: Goal.EndDate" name="Goal.EndDate" data-role="dateinput" class="k-textbox" autocomplete="off" type="text" aria-disabled="false" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                </div>
 
+                                                                <div class="form-group col-md-6">
+                                                                    <small class="text-muted">Years from now</small>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1090,7 +1037,7 @@
                                                                     <label for="" class="col-form-label text-bold">Estimated
                                                                         Total
                                                                         Cost</label>
-                                                                    <input type="text" class="form_line_bottom number"
+                                                                    <input type="text" class="form_line_bottom k-input number"
                                                                            value="$20,000"/>
                                                                 </div>
                                                             </div>
@@ -1146,12 +1093,12 @@
                         <div class="row justify-content-between" style="background: #68D12F">
                             <div class="col-lg-7 m-auto">
                                 <div class="col-md-12">
-                                    <p class="white-text">Initial Assessment: On-Track</p>
+                                    <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="col-md-12">
-                                    <div class="score-show text-center row">
+                                    <div class="score-and-value text-center row">
                                         <div class="col-md-6 col-lg-6 text-right">
                                             <div class="row justify-content-end">
                                                 <p class="big-title-big">83</p>
@@ -1175,7 +1122,7 @@
                                     </div>
                                     <div class="col-md-12 col-lg-12">
                                         <div class="row">
-                                            <div class="col-md-4 text-right">
+                                            <div class="col-md-4 mt-5 text-right">
                                                 <p class="text-bold">Emergency Goal</p>
                                                 <p><span style="color:#E84D46">92% </span>Achievability</p>
                                                 <p>Status <span style="color:#E84D46">Off-Track</span></p>
@@ -1224,7 +1171,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group col-md-4 col-lg-4 mb-4">
+                                                    <div class="form-group col-md-4 col-lg-4">
                                                         <small>You have selected 6 Months</small>
                                                         <div class="row"></div>
                                                     </div>
@@ -1286,12 +1233,12 @@
                 <div class="row justify-content-between" style="background: #68D12F">
                     <div class="col-lg-7 m-auto">
                         <div class="col-md-12">
-                            <p class="white-text">Initial Assessment: On-Track</p>
+                            <p class="white-grey-text">Initial Assessment: On-Track</p>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="col-md-12">
-                            <div class="score-show text-center row">
+                            <div class="score-and-value text-center row">
                                 <div class="col-md-6 col-lg-6 text-right">
                                     <div class="row justify-content-end">
                                         <p class="big-title-big">83</p>
@@ -1407,7 +1354,7 @@
                                         <p class="text13">Somewhat flexible expenses like food and transportation can
                                             still be trimmed if needed.</p>
                                     </label>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-6">
                                         <input type="text" id="somewhat-expense"
                                                class="form-control form-control-sm number expense-part"
                                                name="" value="" placeholder=""/>
@@ -1419,7 +1366,7 @@
                                         <div class="row">
                                             <div class="col-md-6 col-lg-6 text-left">
                                                 <label for="" class="col-form-label text-bold">Total Expenses</label>
-                                                <input type="text" class="form_line_bottom number" value="$3,034"/>
+                                                <input type="text" class="form_line_bottom k-input number" value="$3,034"/>
                                             </div>
                                         </div>
                                     </div>
@@ -1451,12 +1398,12 @@
                 <div class="row justify-content-between" style="background: #68D12F">
                     <div class="col-lg-7 m-auto">
                         <div class="">
-                            <p class="white-text">Initial Assessment: On-Track</p>
+                            <p class="white-grey-text">Initial Assessment: On-Track</p>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="">
-                            <div class="score-show text-center row">
+                            <div class="score-and-value text-center row">
                                 <div class="col-md-6 col-lg-6 text-right">
                                     <div class="row justify-content-end">
                                         <p class="big-title-big">83</p>
@@ -1643,12 +1590,12 @@
                 <div class="row justify-content-between" style="background: #68D12F">
                     <div class="col-lg-7 m-auto">
                         <div class="">
-                            <p class="white-text">Initial Assessment: On-Track</p>
+                            <p class="white-grey-text">Initial Assessment: On-Track</p>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="">
-                            <div class="score-show text-center row">
+                            <div class="score-and-value text-center row">
                                 <div class="col-md-6 col-lg-6 text-right">
                                     <div class="row justify-content-end">
                                         <p class="big-title-big">83</p>
@@ -1756,14 +1703,14 @@
                     <div class="col-lg-7 m-auto">
                         <div class="row">
                             <div class="col-md-12">
-                                <p class="white-text">Initial Assessment: On-Track</p>
+                                <p class="white-grey-text">Initial Assessment: On-Track</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="score-show text-center row">
+                                <div class="score-and-value text-center row">
                                     <div class="col-md-6 col-lg-6 text-right">
                                         <div class="row justify-content-end">
                                             <p class="big-title-big">83</p>
@@ -1868,12 +1815,12 @@
             <div class="row justify-content-between" style="background: #68D12F">
                 <div class="col-lg-7 m-auto">
                     <div class="col-md-12">
-                        <p class="white-text">Initial Assessment: On-Track</p>
+                        <p class="white-grey-text">Initial Assessment: On-Track</p>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="col-md-12">
-                        <div class="score-show text-center row">
+                        <div class="score-and-value text-center row">
                             <div class="col-md-6 col-lg-6 text-right">
                                 <div class="row justify-content-end">
                                     <p class="big-title-big">83</p>

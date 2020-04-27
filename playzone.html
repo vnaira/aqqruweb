@@ -12,8 +12,8 @@
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.bootstrap-v4.min.css">
 
-    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
+    <!--<script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>-->
+    <!--<script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>-->
 
     <!-- custom CSS -->
     <!--<link rel="stylesheet" href="css/main.css">-->
@@ -23,7 +23,14 @@
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/paper-dashboard.css">
 
-
+    <style>
+        div.balSlider {
+            width: 100%;
+        }
+        .k-slider-horizontal .k-slider-buttons .k-slider-track{
+            width: 85%!important;
+        }
+    </style>
 </head>
 <body class="">
 <div class="wrapper ">
@@ -125,7 +132,7 @@
                         <div class="card-header border-bottom pb-3">
                             <div class="row justify-content-between">
                                 <div class="add-goal-btn">
-                                    <div class="" data-toggle="modal">
+
                                         <div class="row justify-content-between">
                                             <div class="col-4">
                                                 <div class="mt-2 pl-2">
@@ -136,25 +143,11 @@
                                                 <div class="goal-name"><p>Add a Goal</p></div>
                                             </div>
                                             <div class="col-4">
-                                                <button class="small ml-1 mt-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button class="small ml-1 mt-3" data-toggle="modal" data-dismiss="modal" data-target="#centralModalSm">
                                                     <span class="fa fa-plus-circle"></span>
                                                 </button>
-                                                <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-emergency.png" width="25" alt=""/> Emergency goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-retirement.png" width="25" alt=""/> Retirement goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-wealth.png" width="25" alt=""/> Wealth goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-house.png" width="25" alt=""/> House goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-kids-edu.png" width="25" alt=""/> Collage goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-car.png" width="25" alt=""/> Car goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-wedding.png" width="25" alt=""/> Wedding goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-education.png" width="25" alt=""/> Continued Education goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-vacation.png" width="25" alt=""/> Vacation goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-purchase.png" width="25" alt=""/> Major Purchase goal</a>
-                                                    <a class="dropdown-item" href="#"><img src="css/img/small-icon-other.png" width="25" alt=""/> Other spending goal</a>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="col">
                                     <div class="btn-toolbar justify-content-end" role="toolbar">
@@ -224,9 +217,173 @@
                                 // object for effect of changes modal
                                 var profiles = [{ "name": "qwerty asdfg", "birthdate": "1976-04-13T18:38:57Z", "gender": "Undefined", "household_member": "HeadOfHousehold", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Married", "zip_code": "32124", "profile_type": "person_headofhousehold", "id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9" }, { "name": "Child 3", "birthdate": "2014-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "275bb19c-571e-492b-8d1a-3d758137599b" }, { "name": "Child 2", "birthdate": "2015-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "985d4277-ecda-45ff-b18c-81ea6d7bd520" }, { "name": "Child 1", "birthdate": "2016-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "08b1b2c0-2e6a-4244-8c9d-9ad6bb84cda2" }];
                                 var initialAvatarResult = { "score": 69.0, "state": [0.0, 1.0, 0.0], "weight": 61.0 };
-                                var initial_goals = [{ "goal_data": { "id": "9c2165c9-e757-4d71-bef7-e655ca92491a", "goal_type": "car_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Car", "amount": 35000.0, "percentExpenses": null, "priority": "Medium", "start_date": "2021-04-01T00:00:00Z", "end_date": "2022-04-01T00:00:00Z", "date": "2021-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 59.0, "state": [0.0, 1.0, 0.0], "weight": 3.667818225415405 } },
-                                    { "goal_data": { "id": "355cd57b-27b8-401f-bd49-e0860022808d", "goal_type": "college_education_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "275bb19c-571e-492b-8d1a-3d758137599b", "name": "College Education", "amount": 240000.0, "percentExpenses": null, "priority": "Medium", "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2032-04-01T00:00:00Z", "icon_path": null, "css_class": null },
-                                        "calc_goal_result": { "score": 51.0, "state": [0.269, 0.731, 0.0], "weight": 21.740481878491309 } }, { "goal_data": { "id": "701b6957-a0bd-48aa-9e50-6392e6da90b6", "goal_type": "emergency_fund", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Emergency Fund", "amount": 0.0, "percentExpenses": null, "priority": null, "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2020-04-13T18:39:35.9716137Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 98.0, "state": [0.0, 0.0, 1.0], "weight": 0.0 } }, { "goal_data": { "id": "7c950c1a-8df4-4717-a3a3-22084da27d92", "goal_type": "house_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "House", "amount": 267072.0, "percentExpenses": null, "priority": "Medium", "start_date": "2023-04-01T00:00:00Z", "end_date": "2025-04-01T00:00:00Z", "date": "2023-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 70.0, "state": [0.0, 0.993, 0.007], "weight": 33.205815223665866 } }, { "goal_data": { "id": "5acfe5ac-988f-4bc7-828f-561d23e3c7af", "goal_type": "retirement_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Retirement", "amount": 0.0, "percentExpenses": null, "priority": "Medium", "start_date": "2083-04-13T18:39:35.9728813Z", "end_date": "2087-04-13T18:39:35.9729008Z", "date": "2083-04-13T18:39:35.9729015Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 91.0, "state": [0.0, 0.269, 0.731], "weight": 0.0 } }, { "goal_data": { "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47", "goal_type": "wedding_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Wedding", "amount": 20933.0, "percentExpenses": null, "priority": "Medium", "start_date": "2023-04-01T00:00:00Z", "end_date": "2025-04-01T00:00:00Z", "date": "2023-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 68.0, "state": [0.0, 0.999, 0.001], "weight": 2.528297262013659 } }];
+                                var initial_goals = [{
+                                    "goal_data": {
+                                        "id": "9c2165c9-e757-4d71-bef7-e655ca92491a",
+                                        "goal_type": "car_goal",
+                                        "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                        "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                        "name": "Car",
+                                        "amount": 35000.0,
+                                        "percentExpenses": null,
+                                        "priority": "Medium",
+                                        "start_date": "2021-04-01T00:00:00Z",
+                                        "end_date": "2022-04-01T00:00:00Z",
+                                        "date": "2021-04-01T00:00:00Z",
+                                        "icon_path": null,
+                                        "css_class": null
+                                    },
+                                    "calc_goal_result": {
+                                        "score": 59.0,
+                                        "state": [0.0, 1.0, 0.0],
+                                        "weight": 3.667818225415405
+                                    }
+                                },
+                                    {
+                                        "goal_data": {
+                                            "id": "355cd57b-27b8-401f-bd49-e0860022808d",
+                                            "goal_type": "college_education_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "275bb19c-571e-492b-8d1a-3d758137599b",
+                                            "name": "College Education",
+                                            "amount": 240000.0,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "0001-01-01T00:00:00",
+                                            "end_date": "0001-01-01T00:00:00",
+                                            "date": "2032-04-01T00:00:00Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {
+                                            "score": 51.0,
+                                            "state": [0.269, 0.731, 0.0],
+                                            "weight": 21.740481878491309
+                                        }
+                                    }, {
+                                        "goal_data": {
+                                            "id": "701b6957-a0bd-48aa-9e50-6392e6da90b6",
+                                            "goal_type": "emergency_fund",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "Emergency Fund",
+                                            "amount": 0.0,
+                                            "percentExpenses": null,
+                                            "priority": null,
+                                            "start_date": "0001-01-01T00:00:00",
+                                            "end_date": "0001-01-01T00:00:00",
+                                            "date": "2020-04-13T18:39:35.9716137Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        }, "calc_goal_result": {"score": 98.0, "state": [0.0, 0.0, 1.0], "weight": 0.0}
+                                    }, {
+                                        "goal_data": {
+                                            "id": "7c950c1a-8df4-4717-a3a3-22084da27d92",
+                                            "goal_type": "house_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "House",
+                                            "amount": 267072.0,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "2023-04-01T00:00:00Z",
+                                            "end_date": "2025-04-01T00:00:00Z",
+                                            "date": "2023-04-01T00:00:00Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {
+                                            "score": 70.0,
+                                            "state": [0.0, 0.993, 0.007],
+                                            "weight": 33.205815223665866
+                                        }
+                                    }, {
+                                        "goal_data": {
+                                            "id": "5acfe5ac-988f-4bc7-828f-561d23e3c7af",
+                                            "goal_type": "retirement_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "Retirement",
+                                            "amount": 0.0,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "2083-04-13T18:39:35.9728813Z",
+                                            "end_date": "2087-04-13T18:39:35.9729008Z",
+                                            "date": "2083-04-13T18:39:35.9729015Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {"score": 91.0, "state": [0.0, 0.269, 0.731], "weight": 0.0}
+                                    }, {
+                                        "goal_data": {
+                                            "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47",
+                                            "goal_type": "wedding_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "Wedding",
+                                            "amount": 20933.0,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "2023-04-01T00:00:00Z",
+                                            "end_date": "2025-04-01T00:00:00Z",
+                                            "date": "2023-04-01T00:00:00Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {
+                                            "score": 68.0,
+                                            "state": [0.0, 0.999, 0.001],
+                                            "weight": 2.528297262013659
+                                        }
+                                    }];
+
+                                var navBaractivity = [
+                                    {
+                                        "goal_type": "car_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "college_education_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "emergency_fund",
+                                        "enable": false
+                                    },
+                                    {
+                                        "goal_type": "house_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "retirement_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "wedding_goal",
+                                        "enable": false
+                                    },
+                                    {
+                                        "goal_type": "vacation_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "continued_education_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "purchase_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "college_education_goal",
+                                        "enable": true
+                                    },
+                                    {
+                                        "goal_type": "wealth_goal",
+                                        "enable": true
+                                    },
+                                ];
+
 
                                 var changedObj = {
                                     "profiles": profiles,
@@ -238,7 +395,8 @@
                                     "changed_goals": null,
                                     "changed_info": null,
                                     "changed_avatar_full_info": null,
-                                    "redirect_url": null
+                                    "redirect_url": null,
+                                    "available_new_goal_items": navBaractivity
                                 };
 
                                 if (typeof (window.localStorage) !== "undefined") {
@@ -446,6 +604,1159 @@
 
 <!--End effect of changes modal-->
 
+
+<!--Add goal modals-->
+<!-- Central Modal Small -->
+<div class="modal left fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="addGoalNavbar"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-sm modal-side modal-top-left" role="document">
+        <span class="caretdown"></span>
+        <div class="modal-content">
+            <div class="modal-body" id="goal-navbar">
+                <div class="col-md-12">
+                    <p class="text-bold">Add a Goal</p>
+                    <small>Select a Goal Type</small>
+                </div>
+                <div class="row">
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-emergency_fund" data-type="emergency_fund">
+                        <img src="css/img/emergency_goal.png" width="25" alt=""/> Rainy Day Fund</a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-retirement_goal" data-type="retirement_goal">
+                        <img src="css/img/retirement_goal.png" width="25" alt=""/> Save for retirement</a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-wealthy_goal" data-type="wealthy_goal">
+                        <img src="css/img/wealth_goal.png" width="25" alt=""/> Target wealth</a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-house_goal" data-type="house_goal">
+                        <img src="css/img/house_goal.png" width="25" alt=""/> House</a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-college_education_goal" data-type="college_education_goal">
+                        <img src="css/img/collage_goal.png" width="25" alt=""/> Kids
+                        Education</a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-car_goal" data-type="car_goal">
+                        <img src="css/img/car_goal.png" width="25" alt=""/> Car </a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-wedding_goal" data-type="wedding_goal">
+                        <img src="css/img/wedding_goal.png" width="25" alt=""/> Wedding
+                    </a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-vacation_goal" data-type="vacation_goal">
+                        <img src="css/img/vacation_goal.png" width="25" alt=""/> Vacation</a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-continued_education_goal" data-type="continued_education_goal">
+                        <img src="css/img/continued_education_goal.png" width="25"
+                                                           alt=""/> Continued Education</a>
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#add-purchase_goal" data-type="purchase_goal">
+                        <img src="css/img/purchase_goal.png" width="25" alt=""/> Major Purchase</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Central Modal Small -->
+
+<!--Add Wealth goal modal-->
+<div class="modal fade" id="add-wealthy_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="goal-name" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="goal-name" placeholder="Target Wealth">
+                            </div>
+                            <div class="form-group">
+                                    <label for="" class="col-form-label">
+                                        How important this
+                                        goal?
+                                    </label>
+                                    <div class="row">
+                                        <div class="radio-toolbar w-100">
+                                            <input type="radio" id="radioApple" name="priority" value="Low" class="k-button" />
+                                            <label for="radioApple">Low</label>
+
+                                            <input type="radio" id="radioBanana" name="priority" value="Medium" class="k-button" />
+                                            <label for="radioBanana">Medium</label>
+
+                                            <input type="radio" id="radioOrange" name="priority" value="High" class="k-button" />
+                                            <label for="radioOrange">High</label>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-age" class="col-form-label">Target age</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title="Target age description">?</button>
+                                <input type="text" class="form-control shadowed-input" id="goal-age" placeholder="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-price" class="col-form-label">Target Wealth</label>
+                                <input type="text" class="form-control shadowed-input" id="goal-price" placeholder="$50,000">
+                            </div>
+                            <div class="form-group mt-5">
+                                <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Add Wealth goal modal-->
+
+<!--Add Retirement Goal modal-->
+<div class="modal fade" id="add-retirement_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="goal-name-retirement" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="goal-name-retirement"
+                                       placeholder="" value="Johnny’s Retirement">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">Which spouse does this goal apply
+                                    to?</label>
+
+
+                                <ul class="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
+                                    <li class="nav-item col-md-6 text-center">
+                                        <a class="nav-link active" id="pills-me-tab" data-toggle="pill"
+                                           href="#pills-me" role="tab"
+                                           aria-controls="pills-me" aria-selected="true">Johnny</a>
+                                    </li>
+                                    <li class="nav-item col-md-6 text-center">
+                                        <a class="nav-link" id="pills-husband-tab" data-toggle="pill"
+                                           href="#pills-husband" role="tab"
+                                           aria-controls="pills-husband" aria-selected="false">Jenifer</a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-me" role="tabpanel"
+                                         aria-labelledby="pills-me-tab">
+                                        <div class="form-group">
+                                            <label for="" class="col-form-label">
+                                                How important this
+                                                goal?
+                                            </label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="m4" name="priority" value="Low"
+                                                           class="k-button"/>
+                                                    <label for="m4">Low</label>
+
+                                                    <input type="radio" id="m3" name="priority" value="Medium"
+                                                           class="k-button"/>
+                                                    <label for="m3">Medium</label>
+
+                                                    <input type="radio" id="m2" name="priority" value="High"
+                                                           class="k-button"/>
+                                                    <label for="m2">High</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="demo-section k-content">
+                                                <label for="" class="col-form-label">Target start date</label>
+                                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                        data-placement="right" title="Target start date description">?
+                                                </button>
+                                                <input id="slider" class="balSlider" value="0" title="slider"/>
+                                            </div>
+                                            <small class="text-muted">Years from now 30 (Age 67)</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="demo-section k-content">
+                                                <label class="col-form-label">How much retirement income do you need
+                                                    compared to your existing expenses?</label>
+                                                <input id="slider-income" class="balSlider" value="5" title="slider"/>
+                                            </div>
+                                            <small>You have selected $4,000,000</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="demo-section k-content">
+                                                <label for="" class="col-form-label">How much would you like to leave
+                                                    your heirs?</label>
+                                                <input id="slider-heirs" class="balSlider" value="30" title="slider"/>
+                                            </div>
+                                            <small>You have selected 30%</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="pills-husband" role="tabpanel"
+                                         aria-labelledby="pills-husband-tab">
+                                        <div class="form-group">
+                                            <label for="" class="col-form-label">
+                                                How important this
+                                                goal?
+                                            </label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="m5" name="priority" value="Low"
+                                                           class="k-button"/>
+                                                    <label for="m5">Low</label>
+
+                                                    <input type="radio" id="m6" name="priority" value="Medium"
+                                                           class="k-button"/>
+                                                    <label for="m6">Medium</label>
+
+                                                    <input type="radio" id="m7" name="priority" value="High"
+                                                           class="k-button"/>
+                                                    <label for="m7">High</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="demo-section k-content">
+                                                <label for="" class="col-form-label">Target start date</label>
+                                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                        data-placement="right" title="Target start date description">?
+                                                </button>
+                                                <input id="tab2-slider" class="balSlider" value="0" title="slider"/>
+                                            </div>
+                                            <small class="text-muted">Years from now 30 (Age 67)</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="demo-section k-content">
+                                                <label class="col-form-label">How much retirement income do you need
+                                                    compared to your existing expenses?</label>
+                                                <input id="tab2-slider-income" class="balSlider" value="5" title="slider"/>
+                                            </div>
+                                            <small>You have selected $4,000,000</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="demo-section k-content">
+                                                <label for="" class="col-form-label">How much would you like to leave
+                                                    your heirs?</label>
+                                                <input id="tab2-slider-heirs" class="balSlider" value="30" title="slider"/>
+                                            </div>
+                                            <small>You have selected 30%</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-5">
+                                <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Add Wealth goal modal-->
+
+
+<!--Add Car Goal modal-->
+<div class="modal fade" id="add-car_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <form class="">
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="form-group mt-3">
+                                <label for="car-goal-name" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="car-goal-name" value="Car">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                                <div class="row">
+                                    <div class="radio-toolbar w-100">
+                                        <input type="radio" id="car1" name="priority-house" value="Low"
+                                               class="k-button"/>
+                                        <label for="car1">Low</label>
+
+                                        <input type="radio" id="car2" name="priority-house" value="Medium"
+                                               class="k-button"/>
+                                        <label for="car2">Medium</label>
+
+                                        <input type="radio" id="car3" name="priority-house" value="High"
+                                               class="k-button"/>
+                                        <label for="car3">High</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Target purchase date</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                        data-placement="right" title="Target start date description">?
+                                </button>
+                                <div class="demo-section k-content">
+                                    <input id="slider-car" class="house" value="10"/>
+                                </div>
+                                <small class="text-muted">You have selected 6</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-form-label">Expected Car Price</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                        data-placement="right" title="Expected Car Price">?
+                                </button>
+                                <input type="text" class="form-control shadowed-input number" value="$50,000">
+                            </div>
+
+                            <p class="text-bold mt-5">What type of car are you looking for?</p>
+
+                            <div class="form-group">
+                                <p class="col-form-label">Condition</p>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="condition"
+                                           id="customRadio1"/>
+                                    <label class="custom-control-label" for="customRadio1">New</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" name="condition"
+                                           id="customRadio2"/>
+                                    <label class="custom-control-label" for="customRadio2">Used</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12">
+                                        <label class="col-form-label">Car Size</label>
+                                        <select class="form-control shadowed-input">
+                                            <option selected>Sedan</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 mt-3">
+                                        <p class="col-form-label">Car Type</p>
+
+                                        <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="car-type1"
+                                                   name="car-type">
+                                            <label class="custom-control-label" for="car-type1">Luxury</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="car-type2"
+                                                   name="car-type">
+                                            <label class="custom-control-label" for="car-type2">Sporty</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="car-type3"
+                                                   name="car-type">
+                                            <label class="custom-control-label" for="car-type3">Economy</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-bold mt-3">Financing</p>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12">
+                                        <p class="col-form-label">Purchase Type</p>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="pur-type1"
+                                                   name="size1">
+                                            <label class="custom-control-label" for="pur-type1">Cach</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="pur-type2"
+                                                   name="size1">
+                                            <label class="custom-control-label" for="pur-type2">Finance</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="col-form-label">Downpayment Needed</label>
+                                <input type="text" class="form-control shadowed-input" id="" placeholder="0%">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-form-label">Loan Term</label>
+                                <select class="form-control shadowed-input">
+                                    <option selected>3 Years</option>
+                                    <option value="">3D Years</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3 col-md-6 offset-6">
+                            <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Add Car goal modal-->
+
+<!--Add House Goal modal-->
+<div class="modal fade" id="add-house_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                                <div class="form-group mt-3">
+                                    <label for="house-goal-name" class="col-form-label">Goal name</label>
+                                    <input type="text" class="form-control shadowed-input" id="house-goal-name" value="House">
+                                </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                                <div class="row">
+                                    <div class="radio-toolbar w-100">
+                                        <input type="radio" id="h1" name="priority-house" value="Low"
+                                               class="k-button"/>
+                                        <label for="h1">Low</label>
+
+                                        <input type="radio" id="h2" name="priority-house" value="Medium"
+                                               class="k-button"/>
+                                        <label for="h2">Medium</label>
+
+                                        <input type="radio" id="h3" name="priority-house" value="High"
+                                               class="k-button"/>
+                                        <label for="h3">High</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Target purchase date</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                        data-placement="right" title="Target start date description">?
+                                </button>
+                                <div class="demo-section k-content">
+                                <input id="slider-house" class="house" value="20" />
+                                </div>
+                                <small class="text-muted">You have selected 6</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Desired Zip Code</label>
+                                <input type="text" class="form-control shadowed-input"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Expected House Price</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                        data-placement="right" title="Expected House Price">?
+                                </button>
+                                <input type="text" class="form-control shadowed-input number" id="" value="$50,000">
+                            </div>
+                            <div class="custom-control custom-checkbox mt-4">
+                                <input type="checkbox" class="custom-control-input" id="residence">
+                                <label class="custom-control-label" for="residence">Primary Residence?</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-form-label">Downpayment Needed</label>
+                                <input type="text" class="form-control shadowed-input" id="" placeholder="0%">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-form-label">Mortgage Type</label>
+                                <select class="form-control shadowed-input">
+                                    <option selected>3D Years Fixed</option>
+                                    <option value="1">3D Years Fixed</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mt-5">
+                                <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Add House goal modal-->
+
+<!--Add Continued Education Goal modal-->
+<div class="modal fade" id="add-continued_education_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="con-goal-name" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="con-goal-name" placeholder="Continued Education">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                                <div class="row">
+                                    <div class="radio-toolbar w-100">
+                                        <input type="radio" id="c1" name="priority-edu" value="Low"
+                                               class="k-button"/>
+                                        <label for="c1">Low</label>
+
+                                        <input type="radio" id="c2" name="priority-edu" value="Medium"
+                                               class="k-button"/>
+                                        <label for="c2">Medium</label>
+
+                                        <input type="radio" id="c3" name="priority-edu" value="High"
+                                               class="k-button"/>
+                                        <label for="c3">High</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Target start date</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                        data-placement="right" title="Target start date description">?
+                                </button>
+                                <div class="form-inline row">
+                                    <div class="form-group col-md-6">
+                                        <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input" id="from-date"
+                                               placeholder="From">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input" id="to-date"
+                                               placeholder="To">
+                                    </div>
+                                </div>
+                                <small class="text-muted">Years from now</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Duration of education</label>
+                                <input type="text" class="form-control shadowed-input" id="" placeholder="0 month">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Expected total cost</label>
+                                <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                            </div>
+
+                            <div class="form-group mt-5">
+                                <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Continued Education goal modal-->
+
+<!--Add Kids Education Goal modal-->
+<div class="modal fade" id="add-college_education_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goaln</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="kid-goal-name" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="kid-goal-name" placeholder=""
+                                       value="Kids Education">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">Which child does this goal apply
+                                    to?</label>
+                                <ul class="nav nav-pills mb-3 row" id="pills-tab-kids" role="tablist">
+                                    <li class="nav-item col-3 text-center mt-1">
+                                        <a class="nav-link active" data-toggle="tab" id="tab-kid1"
+                                           href="#pills-tab-kid1" role="tab"
+                                           aria-controls="pills-me" aria-selected="true">Erica</a>
+                                    </li>
+                                    <li class="nav-item col-3 text-center mt-1">
+                                        <a class="nav-link" data-toggle="pill" id="tab-kid2"
+                                           href="#pills-tab-kid2" role="tab"
+                                           aria-controls="pills-tab-kid2" aria-selected="false">Sally</a>
+                                    </li>
+                                    <li class="nav-item col-3 text-center mt-1">
+                                        <a class="nav-link" data-toggle="pill" id="tab-kid3"
+                                           href="#pills-tab-kid3" role="tab"
+                                           aria-controls="pills-tab-kid3" aria-selected="false">Jack</a>
+                                    </li>
+                                    <li class="nav-item col-3 text-center mt-1">
+                                        <a class="nav-link" data-toggle="pill" id="tab-kid4"
+                                           href="#pills-tab-kid4" role="tab"
+                                           aria-controls="pills-tab-kid4" aria-selected="false">Other</a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content pt-2 pl-1">
+                                    <div class="tab-pane fade show active" id="pills-tab-kid1" role="tabpanel"
+                                         aria-labelledby="tab-kid1">
+                                        <div class="form-group">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="k1" name="priority-kids-p1" value="Low"
+                                                           class="k-button"/>
+                                                    <label for="k1">Low</label>
+
+                                                    <input type="radio" id="k2" name="priority-kids-p1" value="Medium"
+                                                           class="k-button"/>
+                                                    <label for="k2">Medium</label>
+
+                                                    <input type="radio" id="k3" name="priority-kids-p1" value="High"
+                                                           class="k-button"/>
+                                                    <label for="k3">High</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Target start date</label>
+                                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                    data-placement="right" title="Target start date description">?
+                                            </button>
+                                            <div class="form-inline row">
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" onfocus="(this.type='date')"
+                                                           class="form-control shadowed-input" id="from-date"
+                                                           placeholder="Years from now">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Duration of education</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="y2" name="priority-kids1" value="2 Year"
+                                                           class="k-button"/>
+                                                    <label for="y2">2 Year</label>
+
+                                                    <input type="radio" id="y4" name="priority-kids1" value="4 Year"
+                                                           class="k-button"/>
+                                                    <label for="y4">4 Year</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Do you know the college name?</label>
+                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-tab-kid2" role="tabpanel"
+                                         aria-labelledby="tab-kid2">
+                                        <div class="form-group">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="k4" name="priority-kids-p2" value="Low"
+                                                           class="k-button"/>
+                                                    <label for="k4">Low</label>
+
+                                                    <input type="radio" id="k5" name="priority-kids-p2" value="Medium"
+                                                           class="k-button"/>
+                                                    <label for="k5">Medium</label>
+
+                                                    <input type="radio" id="k6" name="priority-kids-p2" value="High"
+                                                           class="k-button"/>
+                                                    <label for="k6">High</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Target start date</label>
+                                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                    data-placement="right" title="Target start date description">?
+                                            </button>
+                                            <div class="form-inline row">
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" onfocus="(this.type='date')"
+                                                           class="form-control shadowed-input" id=""
+                                                           placeholder="Years from now">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Duration of education</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="y2-2" name="priority-kids2" value="2 Year"
+                                                           class="k-button"/>
+                                                    <label for="y2-2">2 Year</label>
+
+                                                    <input type="radio" id="y4-2" name="priority-kids2" value="4 Year"
+                                                           class="k-button"/>
+                                                    <label for="y4-2">4 Year</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Do you know the college name?</label>
+                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-tab-kid3" role="tabpanel"
+                                         aria-labelledby="tab-kid3">
+                                        <div class="form-group">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="k7" name="priority-kids-p3" value="Low"
+                                                           class="k-button"/>
+                                                    <label for="k7">Low</label>
+
+                                                    <input type="radio" id="k8" name="priority-kids-p3" value="Medium"
+                                                           class="k-button"/>
+                                                    <label for="k8">Medium</label>
+
+                                                    <input type="radio" id="k9" name="priority-kids-p3" value="High"
+                                                           class="k-button"/>
+                                                    <label for="k9">High</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Target start date</label>
+                                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                    data-placement="right" title="Target start date description">?
+                                            </button>
+                                            <div class="form-inline row">
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" onfocus="(this.type='date')"
+                                                           class="form-control shadowed-input" id=""
+                                                           placeholder="Years from now">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Duration of education</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="y2-3" name="priority-kids3" value="2 Year"
+                                                           class="k-button"/>
+                                                    <label for="y2-3">2 Year</label>
+
+                                                    <input type="radio" id="y4-3" name="priority-kids3" value="4 Year"
+                                                           class="k-button"/>
+                                                    <label for="y4-3">4 Year</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Do you know the college name?</label>
+                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-tab-kid4" role="tabpanel"
+                                         aria-labelledby="tab-kid4">
+                                        <div class="form-group">
+                                            <label for="goal-name" class="col-form-label">How important this
+                                                goal?</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="k10" name="priority-kids-p4" value="Low"
+                                                           class="k-button"/>
+                                                    <label for="k10">Low</label>
+
+                                                    <input type="radio" id="k11" name="priority-kids-p4" value="Medium"
+                                                           class="k-button"/>
+                                                    <label for="k11">Medium</label>
+
+                                                    <input type="radio" id="k12" name="priority-kids-p4" value="High"
+                                                           class="k-button"/>
+                                                    <label for="k12">High</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Target start date</label>
+                                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                                    data-placement="right" title="Target start date description">?
+                                            </button>
+                                            <div class="form-inline row">
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" onfocus="(this.type='date')"
+                                                           class="form-control shadowed-input" id=""
+                                                           placeholder="Years from now">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Duration of education</label>
+                                            <div class="row">
+                                                <div class="radio-toolbar w-100">
+                                                    <input type="radio" id="y2-4" name="priority-kids4" value="2 Year"
+                                                           class="k-button"/>
+                                                    <label for="y2-4">2 Year</label>
+
+                                                    <input type="radio" id="y4-4" name="priority-kids4" value="4 Year"
+                                                           class="k-button"/>
+                                                    <label for="y4-4">4 Year</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Do you know the college name?</label>
+                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group mt-5">
+                                <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Kids Education goal modal-->
+
+<!--Add Major Purchase modal-->
+<div class="modal fade" id="add-purchase_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="goal-name-pur" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="goal-name-pur" placeholder=""value="Major Purchase">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                                <div class="row">
+                                    <div class="radio-toolbar w-100">
+                                        <input type="radio" id="p1" name="priority-purchase" value="Low"
+                                               class="k-button"/>
+                                        <label for="p1">Low</label>
+
+                                        <input type="radio" id="p2" name="priority-purchase" value="Medium"
+                                               class="k-button"/>
+                                        <label for="p2">Medium</label>
+
+                                        <input type="radio" id="p3" name="priority-purchase" value="High"
+                                               class="k-button"/>
+                                        <label for="p3">High</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Target purchase date</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                        data-placement="right" title="Target start date description">?
+                                </button>
+                                <div class="form-inline row">
+                                    <div class="form-group col-md-12">
+                                        <input type="text" class="form-control shadowed-input" id=""
+                                               placeholder="Years from now" onfocus="(this.type='date')">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Expected total cost</label>
+                                <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                            </div>
+
+                            <div class="form-group mt-5">
+                                <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Major Purchase modal-->
+
+<!--Add Wedding goal modal-->
+<div class="modal fade" id="add-wedding_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="goal-name-wed" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="goal-name-wed"
+                                       value="Wedding">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                                <div class="row">
+                                    <div class="radio-toolbar w-100">
+                                        <input type="radio" id="w1" name="priority-wedding" value="Low"
+                                               class="k-button"/>
+                                        <label for="w1">Low</label>
+
+                                        <input type="radio" id="w2" name="priority-wedding" value="Medium"
+                                               class="k-button"/>
+                                        <label for="w2">Medium</label>
+
+                                        <input type="radio" id="w3" name="priority-wedding" value="High"
+                                               class="k-button"/>
+                                        <label for="w3">High</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Planned wedding date</label>
+                                    <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                            data-placement="right" title="Target start date description">?
+                                    </button>
+                                    <div class="form-inline row">
+                                        <div class="form-group col-md-6">
+                                            <input type="text" onfocus="(this.type='date')"
+                                                   class="form-control shadowed-input" id=""
+                                                   placeholder="From">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="text" onfocus="(this.type='date')"
+                                                   class="form-control shadowed-input" id=""
+                                                   placeholder="To">
+                                        </div>
+                                    </div>
+                                    <small class="text-muted">Years from now</small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Expected total cost</label>
+                                    <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                                </div>
+
+                                <div class="form-group mt-5">
+                                    <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--End Wedding modal-->
+
+<!--Add Emergency goal modal-->
+<div class="modal fade" id="add-emergency_fund" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="goal-name-emergency" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="goal-name-emergency"
+                                       value="Wedding">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                                <div class="row">
+                                    <div class="radio-toolbar w-100">
+                                        <input type="radio" id="e1" name="priority-wedding" value="Low"
+                                               class="k-button"/>
+                                        <label for="e1">Low</label>
+
+                                        <input type="radio" id="e2" name="priority-wedding" value="Medium"
+                                               class="k-button"/>
+                                        <label for="e2">Medium</label>
+
+                                        <input type="radio" id="e3" name="priority-wedding" value="High"
+                                               class="k-button"/>
+                                        <label for="e3">High</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+
+                                            <label class="col-form-label">Months of living expenses to cover</label>
+                                            <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title="" data-original-title="Assuming all of the current expenses cannot be reduced, determines how much money you would need to last that many months if you lost your income.">
+                                                ?
+                                            </button>
+                                            <div class="form-inline row">
+                                                <div class="form-group col-md-8 col-lg-8">
+                                                    <input type="range" class="custom-range" min="0" max="12" id="months" value="6">
+                                                    <div class="col-md-12 col-lg-12">
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-md-12 col-lg-6">
+                                                                <small>0 month</small>
+                                                            </div>
+                                                            <div class="col-md-12 col-lg-6 text-right">
+                                                                <small>12 months</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-4 col-lg-4 mb-4">
+                                                    <small>You have selected 6 Months</small>
+                                                    <div class="row"></div>
+                                                </div>
+                                            </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Expected total cost</label>
+                                    <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                                </div>
+
+                                <div class="form-group mt-5">
+                                    <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--End Emergency modal-->
+
+<!--Add Vacation goal modal-->
+<div class="modal fade" id="add-vacation_goal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--goal icon and title -->
+                <div class="row">
+                    <div class="col-9">
+                        <div class="goal-name mt-2"><p class="text-bold">Add a Goal</p></div>
+                    </div>
+                </div>
+                <!-- end of goal icon and title -->
+                <div class="row">
+                    <div class="col">
+                        <form class="">
+                            <div class="form-group mt-3">
+                                <label for="goal-name-vac" class="col-form-label">Goal name</label>
+                                <input type="text" class="form-control shadowed-input" id="goal-name-vac" value="Vacation">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                                <div class="row">
+                                    <div class="radio-toolbar w-100">
+                                        <input type="radio" id="v1" name="priority-vacation" value="Low"
+                                               class="k-button"/>
+                                        <label for="v1">Low</label>
+
+                                        <input type="radio" id="v2" name="priority-vacation" value="Medium"
+                                               class="k-button"/>
+                                        <label for="v2">Medium</label>
+
+                                        <input type="radio" id="v3" name="priority-vacation" value="High"
+                                               class="k-button"/>
+                                        <label for="v3">High</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Target date</label>
+                                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                                        data-placement="right" title="Target start date description">?
+                                </button>
+                                <div class="form-inline row">
+                                    <div class="form-group col-md-6">
+                                        <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input"
+                                               placeholder="From">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input"
+                                               placeholder="To">
+                                    </div>
+                                </div>
+                                <small class="text-muted">Years from now</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Expected total cost</label>
+                                <input type="text" class="form-control shadowed-input" placeholder="$">
+                            </div>
+
+                            <div class="form-group mt-5">
+                                <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!--End Vacation modal-->
+
+
+
 <!-- jQuery, Popper.js, Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -463,6 +1774,104 @@
 <script src="js/rpie.js"></script>
 <script src="js/func.js"></script>
 <script src="js/draw-table.js"></script>
+<script>
+    $(document).ready(function () {
+        var slider = $("#slider").kendoSlider({
+            increaseButtonTitle: "Right",
+            decreaseButtonTitle: "Left",
+            min: -10,
+            max: 10,
+            smallStep: 2,
+            largeStep: 1
+        }).data("kendoSlider");
+        var sliderIncome = $("#slider-income").kendoSlider({
+            increaseButtonTitle: "Right",
+            decreaseButtonTitle: "Left",
+            min: 0,
+            max: 10,
+            smallStep: 2,
+            largeStep: 1
+        }).data("kendoSlider");
+        var sliderHeirs = $("#slider-heirs").kendoSlider({
+            increaseButtonTitle: "Right",
+            decreaseButtonTitle: "Left",
+            min: 0,
+            max: 100,
+            smallStep: 2,
+            largeStep: 1
+        }).data("kendoSlider");
+        var tab2slider = $("#tab2-slider").kendoSlider({
+            increaseButtonTitle: "Right",
+            decreaseButtonTitle: "Left",
+            min: -10,
+            max: 10,
+            smallStep: 2,
+            largeStep: 1
+        }).data("kendoSlider");
+        var tab2sliderIncome = $("#tab2-slider-income").kendoSlider({
+            increaseButtonTitle: "Right",
+            decreaseButtonTitle: "Left",
+            min: 0,
+            max: 10,
+            smallStep: 2,
+            largeStep: 1
+        }).data("kendoSlider");
+        var tab2sliderHeirs = $("#tab2-slider-heirs").kendoSlider({
+            increaseButtonTitle: "Right",
+            decreaseButtonTitle: "Left",
+            min: 0,
+            max: 100,
+            smallStep: 2,
+            largeStep: 1
+        }).data("kendoSlider");
+        var sliderHouse = $("#slider-house").kendoSlider({
+            min: 0,
+            max: 10,
+            smallStep: 1,
+            largeStep: 2,
+            tickPlacement: "both"
+        }).data("kendoSlider");
+        var sliderCar = $("#slider-car").kendoSlider({
+            min: -10,
+            max: 10,
+            smallStep: 2,
+            largeStep: 1,
+            tickPlacement: "both"
+        }).data("kendoSlider");
+
+        // var sliders = $("#slider-house").getKendoSlider();
+        sliderHouse.wrapper.css("width", "100%");
+        sliderHouse.resize();
+        sliderCar.wrapper.css("width", "100%");
+        sliderCar.resize();
+
+
+
+
+        // navbar active and inactive links
+        var activeNavbar = changedObj.available_new_goal_items;
+            const navItems = document.querySelectorAll('#goal-navbar a');
+            for(let items of navItems){
+                for(var i = 0; i < activeNavbar.length; i++) {
+                    if (activeNavbar[i].goal_type === items.getAttribute('data-type')) {
+                        var g_type = activeNavbar[i].goal_type;
+                        if (activeNavbar[i].enable === false) {
+                            document.querySelector("[data-type='" + g_type + "']").removeAttribute('data-target');
+                            document.querySelector("[data-type='" + g_type + "']").removeAttribute('data-dismiss');
+                            document.querySelector("[data-type='" + g_type + "']").classList.add('inactive');
+                        } else {
+                            document.querySelector("[data-type='" + g_type + "']").setAttribute('data-target', '#add-'+g_type );
+                            document.querySelector("[data-type='" + g_type + "']").setAttribute('data-dismiss', 'modal');
+                        }
+                    }
+                }
+            }
+
+
+
+
+    });
+</script>
 
 </body>
 </html>
