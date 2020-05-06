@@ -200,7 +200,7 @@ function dropp(wholeObj, event) {
         dragged.parentNode.removeChild(dragged);
         ns.appendChild(dragged);
     }
-    createEffectOfChangesModal(wholeObj);
+    createEffectOfChangesModal(wholeObj, true);
     $('#effect-of-changes').modal('show');
     dragged.setAttribute('data-status-priority', event.target.getAttribute('data-priority'));
     dragged.setAttribute('data-status-year', event.target.getAttribute('data-target'));
@@ -386,7 +386,7 @@ function findObjectByKey(array, key, value) {
  * create effect of changes modal
  * @param changesResponseObj
  */
-function createEffectOfChangesModal(changesResponseObj) {
+function createEffectOfChangesModal(changesResponseObj, is_informational) {
 
     document.getElementById('changesModal').innerHTML = '';
     var modalContent = '';
@@ -603,6 +603,11 @@ function createEffectOfChangesModal(changesResponseObj) {
             }
         }
 
+        if(is_informational) {
+            modalContent += '<div class="row"><div class="col-md-6 offset-6"><div class="row justify-content-end">' +
+                '<div class="btn-group col-md-6"><button type="button" class="btn btn-blue" data-dismiss="modal" >Ok</button></div></div></div></div>';
+            modalContent += '</div>';
+        }else
         modalContent += '<div class="row"><div class="col-md-6 offset-6"><div class="row">' +
             '<div class="btn-group col-md-6"><button type="button" class="btn btn-grey" onclick="discardChanges()">Discard</button></div>' +
             '<div class="btn-group col-md-6"><button type="button" class="btn btn-blue" onclick="saveChanges()">Save</button></div></div></div></div>';

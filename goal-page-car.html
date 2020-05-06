@@ -257,6 +257,11 @@
                                                             </li>
 
                                                         </ul>
+                                                        <div class="row justify-content-center mt-5">
+                                                            <div class="col-md-6">
+                                                                <button class="btn btn-blue w-100">Save Changes</button>
+                                                            </div>
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>
@@ -495,7 +500,7 @@
 
             kendo.ui.progress($("#table-canvas"), true);
 
-            createEffectOfChangesModal(changedObj);
+            createEffectOfChangesModal(changedObj, true);
             $('#effect-of-changes').modal('show');
         });
 

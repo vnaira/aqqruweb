@@ -546,7 +546,7 @@
                                                                 draggedElement.setAttribute('data-status-year', dateValue);
 
                                                                 // After animation open effect of changes modal with a new goals
-                                                                createEffectOfChangesModal(changedObj);
+                                                                createEffectOfChangesModal(changedObj, true);
                                                                 $('#effect-of-changes').modal('show');
                                                             }
                                                         }
@@ -1849,7 +1849,7 @@
 
 
         // navbar active and inactive links
-        var activeNavbar = changedObj.available_new_goal_items;
+            var activeNavbar = changedObj.available_new_goal_items;
             const navItems = document.querySelectorAll('#goal-navbar a');
             for(let items of navItems){
                 for(var i = 0; i < activeNavbar.length; i++) {

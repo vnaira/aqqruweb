@@ -2485,7 +2485,7 @@ img {
 .off-canvas-sidebar {
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 125vh;
   bottom: 0;
   width: 72px;
   left: 0;
