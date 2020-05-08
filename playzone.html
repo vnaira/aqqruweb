@@ -63,19 +63,19 @@
             </ul>
             <ul class="nav border-top vheight-50 pt-4">
                 <li class="">
-                    <a href="">
+                    <a href="goal-page-retirement.html">
                         <i class="nc-icon nc-retirement"></i>
                         <p>Retirement</p>
                     </a>
                 </li>
                 <li class="">
-                    <a href="goal-page-colladge.html">
+                    <a href="goal-page-house.html">
                         <i class="nc-icon nc-house"></i>
                         <p>House</p>
                     </a>
                 </li>
                 <li class="">
-                    <a href="">
+                    <a href="goal-page-colladge.html">
                         <i class="nc-icon nc-edu"></i>
                         <p>Education</p>
                     </a>
@@ -405,7 +405,7 @@
                                 window.addEventListener("load", function () {
                                     // give priority array as a param to function if needed
                                     drawTable(changedObj.profiles);
-                                    goalClick();
+                                    //goalClick();
                                 });
 
                                 document.addEventListener("drop", function (event) {
@@ -731,12 +731,12 @@
 
 
                                 <ul class="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
-                                    <li class="nav-item col-md-6 text-center">
+                                    <li class="nav-item col-md-6 text-center" ondragstart="return false;">
                                         <a class="nav-link active" id="pills-me-tab" data-toggle="pill"
                                            href="#pills-me" role="tab"
                                            aria-controls="pills-me" aria-selected="true">Johnny</a>
                                     </li>
-                                    <li class="nav-item col-md-6 text-center">
+                                    <li class="nav-item col-md-6 text-center" ondragstart="return false;">
                                         <a class="nav-link" id="pills-husband-tab" data-toggle="pill"
                                            href="#pills-husband" role="tab"
                                            aria-controls="pills-husband" aria-selected="false">Jenifer</a>
@@ -997,7 +997,7 @@
 
                             <div class="form-group">
                                 <label for="" class="col-form-label">Downpayment Needed</label>
-                                <input type="text" class="form-control shadowed-input" id="" placeholder="0%">
+                                <input type="text" class="form-control shadowed-input"   placeholder="0%">
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-form-label">Loan Term</label>
@@ -1076,7 +1076,7 @@
                                 <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                                         data-placement="right" title="Expected House Price">?
                                 </button>
-                                <input type="text" class="form-control shadowed-input number" id="" value="$50,000">
+                                <input type="text" class="form-control shadowed-input number"   value="$50,000">
                             </div>
                             <div class="custom-control custom-checkbox mt-4">
                                 <input type="checkbox" class="custom-control-input" id="residence">
@@ -1084,7 +1084,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-form-label">Downpayment Needed</label>
-                                <input type="text" class="form-control shadowed-input" id="" placeholder="0%">
+                                <input type="text" class="form-control shadowed-input"   placeholder="0%">
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-form-label">Mortgage Type</label>
@@ -1150,7 +1150,7 @@
                                 </button>
                                 <div class="form-inline row">
                                     <div class="form-group col-md-6">
-                                        <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input" id="from-date"
+                                        <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input" id="from-date1"
                                                placeholder="From">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -1162,11 +1162,11 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Duration of education</label>
-                                <input type="text" class="form-control shadowed-input" id="" placeholder="0 month">
+                                <input type="text" class="form-control shadowed-input"   placeholder="0 month">
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Expected total cost</label>
-                                <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                                <input type="text" class="form-control shadowed-input"   placeholder="$">
                             </div>
 
                             <div class="form-group mt-5">
@@ -1205,25 +1205,25 @@
                                 <label for="goal-name" class="col-form-label">Which child does this goal apply
                                     to?</label>
                                 <ul class="nav nav-pills mb-3 row" id="pills-tab-kids" role="tablist">
-                                    <li class="nav-item col-3 text-center mt-1">
+                                    <li class="nav-item col-3 text-center mt-1" ondragstart="return false;">
                                         <a class="nav-link active" data-toggle="tab" id="tab-kid1"
                                            href="#pills-tab-kid1" role="tab"
-                                           aria-controls="pills-me" aria-selected="true">Erica</a>
+                                           aria-controls="pills-me" aria-selected="true" ondragstart="return false;">Erica</a>
                                     </li>
                                     <li class="nav-item col-3 text-center mt-1">
                                         <a class="nav-link" data-toggle="pill" id="tab-kid2"
                                            href="#pills-tab-kid2" role="tab"
-                                           aria-controls="pills-tab-kid2" aria-selected="false">Sally</a>
+                                           aria-controls="pills-tab-kid2" aria-selected="false" ondragstart="return false;">Sally</a>
                                     </li>
                                     <li class="nav-item col-3 text-center mt-1">
                                         <a class="nav-link" data-toggle="pill" id="tab-kid3"
                                            href="#pills-tab-kid3" role="tab"
-                                           aria-controls="pills-tab-kid3" aria-selected="false">Jack</a>
+                                           aria-controls="pills-tab-kid3" aria-selected="false" ondragstart="return false;">Jack</a>
                                     </li>
                                     <li class="nav-item col-3 text-center mt-1">
                                         <a class="nav-link" data-toggle="pill" id="tab-kid4"
                                            href="#pills-tab-kid4" role="tab"
-                                           aria-controls="pills-tab-kid4" aria-selected="false">Other</a>
+                                           aria-controls="pills-tab-kid4" aria-selected="false" ondragstart="return false;">Other</a>
                                     </li>
 
                                 </ul>
@@ -1257,7 +1257,7 @@
                                             <div class="form-inline row">
                                                 <div class="form-group col-md-12">
                                                     <input type="text" onfocus="(this.type='date')"
-                                                           class="form-control shadowed-input" id="from-date"
+                                                           class="form-control shadowed-input" id="from-date2"
                                                            placeholder="Years from now">
                                                 </div>
                                             </div>
@@ -1279,7 +1279,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Do you know the college name?</label>
-                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                            <input type="text" class="form-control shadowed-input" placeholder="">
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="pills-tab-kid2" role="tabpanel"
@@ -1311,7 +1311,7 @@
                                             <div class="form-inline row">
                                                 <div class="form-group col-md-12">
                                                     <input type="text" onfocus="(this.type='date')"
-                                                           class="form-control shadowed-input" id=""
+                                                           class="form-control shadowed-input"  
                                                            placeholder="Years from now">
                                                 </div>
                                             </div>
@@ -1333,7 +1333,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Do you know the college name?</label>
-                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                            <input type="text" class="form-control shadowed-input"   placeholder="">
                                         </div>
 
                                     </div>
@@ -1366,7 +1366,7 @@
                                             <div class="form-inline row">
                                                 <div class="form-group col-md-12">
                                                     <input type="text" onfocus="(this.type='date')"
-                                                           class="form-control shadowed-input" id=""
+                                                           class="form-control shadowed-input"  
                                                            placeholder="Years from now">
                                                 </div>
                                             </div>
@@ -1388,7 +1388,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Do you know the college name?</label>
-                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                            <input type="text" class="form-control shadowed-input"   placeholder="">
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="pills-tab-kid4" role="tabpanel"
@@ -1420,7 +1420,7 @@
                                             <div class="form-inline row">
                                                 <div class="form-group col-md-12">
                                                     <input type="text" onfocus="(this.type='date')"
-                                                           class="form-control shadowed-input" id=""
+                                                           class="form-control shadowed-input"  
                                                            placeholder="Years from now">
                                                 </div>
                                             </div>
@@ -1442,7 +1442,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Do you know the college name?</label>
-                                            <input type="text" class="form-control shadowed-input" id="" placeholder="">
+                                            <input type="text" class="form-control shadowed-input"   placeholder="">
                                         </div>
                                     </div>
 
@@ -1507,14 +1507,14 @@
                                 </button>
                                 <div class="form-inline row">
                                     <div class="form-group col-md-12">
-                                        <input type="text" class="form-control shadowed-input" id=""
+                                        <input type="text" class="form-control shadowed-input"  
                                                placeholder="Years from now" onfocus="(this.type='date')">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Expected total cost</label>
-                                <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                                <input type="text" class="form-control shadowed-input"   placeholder="$">
                             </div>
 
                             <div class="form-group mt-5">
@@ -1574,12 +1574,12 @@
                                     <div class="form-inline row">
                                         <div class="form-group col-md-6">
                                             <input type="text" onfocus="(this.type='date')"
-                                                   class="form-control shadowed-input" id=""
+                                                   class="form-control shadowed-input"  
                                                    placeholder="From">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <input type="text" onfocus="(this.type='date')"
-                                                   class="form-control shadowed-input" id=""
+                                                   class="form-control shadowed-input"  
                                                    placeholder="To">
                                         </div>
                                     </div>
@@ -1587,7 +1587,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Expected total cost</label>
-                                    <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                                    <input type="text" class="form-control shadowed-input"   placeholder="$">
                                 </div>
 
                                 <div class="form-group mt-5">
@@ -1669,7 +1669,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Expected total cost</label>
-                                    <input type="text" class="form-control shadowed-input" id="" placeholder="$">
+                                    <input type="text" class="form-control shadowed-input"   placeholder="$">
                                 </div>
 
                                 <div class="form-group mt-5">
@@ -1756,6 +1756,10 @@
 </div><!--End Vacation modal-->
 
 
+<!--tradeoff modal-->
+<div class="modal fade" id="tradeoffModal_" tabindex="-1" role="dialog" aria-hidden="true">
+</div>
+<!-- Tradeoff Modal -->
 
 <!-- jQuery, Popper.js, Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -1838,12 +1842,20 @@
             largeStep: 1,
             tickPlacement: "both"
         }).data("kendoSlider");
+        var sliderCarGoal = $("#slider-car_goal").kendoSlider({
+            min: -10,
+            max: 10,
+            smallStep: 2,
+            largeStep: 1,
+            tickPlacement: "both"
+        }).data("kendoSlider");
 
-        // var sliders = $("#slider-house").getKendoSlider();
-        sliderHouse.wrapper.css("width", "100%");
-        sliderHouse.resize();
-        sliderCar.wrapper.css("width", "100%");
-        sliderCar.resize();
+        var sliders = $("#slider-house").getKendoSlider();
+        // sliderHouse.wrapper.css("width", "100%");
+        // sliderHouse.resize();
+        // sliderCar.wrapper.css("width", "100%");
+        // sliderCar.resize();
+
 
 
 
@@ -1868,7 +1880,9 @@
             }
 
 
-
+        $('#tradeoffModal_').on('hidden.bs.modal', function () {
+            $('.radialProgressBar').css('z-index',1);
+        });
 
     });
 </script>

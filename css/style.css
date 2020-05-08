@@ -611,7 +611,10 @@ img.svg-im path{ fill: red; }
   margin-left: 15px;
   height: 54px;
 position: relative;
-  z-index: 1050;
+  z-index: 1041;
+}
+#tradeoffModal_{
+    z-index: 1260!important;
 }
 .add-goal-btn .small {
   background: transparent;
@@ -1078,6 +1081,24 @@ personal information pages
   color: #fff;
   background-color: #499DF2;
 }
+
+/**
+tradeoff modals
+ */
+.tradeoff_tab .nav-link{
+    color:#fff;
+    background: #499DF2;
+}
+.right-transparent{
+    position: absolute;
+    width: 300px;
+    height: 130px;
+    background: url(img/right-left-arrow.png) no-repeat;
+    background-position: bottom center;
+    right: -66%;
+    top: 50%;
+}
+.right-transparent p{color:#fff}
 
 
 

@@ -64,9 +64,9 @@ function drawTable(profile, prior = priority) {
 
                     // make no draggable emergency fund
                     if(goals[goalItem].goal_data.goal_type === "emergency_fund"){
-                        cellContent += "<div draggable='false' class='radialProgressBar";
+                        cellContent += "<div draggable='false' class='radialProgressBar item";
                     }else {
-                        cellContent += "<div draggable='true' class='draggable radialProgressBar";
+                        cellContent += "<div draggable='true' data-toggle='modal' data-dismiss='modal' data-target='#tradeoffModal' class='draggable radialProgressBar item";
                     }
 
                     cellContent += "\' id=\'" + goals[goalItem].goal_data.id + "\'" + " data-status-year='" + goalDate.year + "\'" +
@@ -97,7 +97,6 @@ function drawTable(profile, prior = priority) {
     drawGridLabels(years);
 
 }
-
 
 /**
  * calculation of charts with coefficient
@@ -191,6 +190,169 @@ document.addEventListener("dragleave", function (event) {
     }
 }, false);
 
+// goals click open tradeoff modal
+document.addEventListener("click", function (event) {
+    var el = $(event.target).closest('.radialProgressBar');
+    if(el.hasClass('item')){
+        var id = el.attr('id');
+        var goal_type = el.data('status-goal-type');
+
+        // $.ajax({
+        //     type: "POST",
+        //     url: "",
+        //     data: JSON.stringify({id: id, goaltype: goal_type}),
+        //     contentType: "application/json; charset=utf-8",
+        //     dataType: "json",
+        //     success: function () {
+
+        var obj = {
+            "goal_type": "car_goal",
+            "goal_name": "car",
+            "priority": "Low",
+            "target": "6",
+            "expectedPrice": "$5000",
+            "tradeoff": {
+                "conclusion": "If you delay your car and/or buy a less expensive car, you may be in a\n" +
+                    "better position to meet your goals.",
+                "amountAxisDescription": "Car Price",
+                "timeAxisDescription": "CAR PURCHASE YEARS FROM NOW",
+                "ages": ['4 Years', '5 Years', '6 Years'],
+                "amount": [50000, 40000, 35000],
+                "state": [
+                    [
+                        {"color": [0.0, 1.0, 0.0], "value": 70,},
+                        {"color": [0.0, 1.0, 0.0], "value": 75,},
+                        {"color": [0.0, 1.0, 0.0], "value": 40,},
+                        ],
+                    [
+                        {"color": [0.0, 1.0, 0.0], "value": 78,},
+                        {"color":[0.0, 1.0, 0.0], "value": 78,},
+                        {"color": [0.0, 1.0, 0.0], "value": 78,},
+                    ],
+                    [
+                        {"color":[0.0, 1.0, 0.0], "value": 78,},
+                        {"color":[0.0, 1.0, 0.0], "value": 78,},
+                        {"color":[0.0, 1.0, 0.0], "value": 78,},
+                    ]
+                ]
+            }
+        };
+
+        // actions after ajax success
+        $('.radialProgressBar').css('z-index',1);
+        el.css('z-index',1045);
+        createTradeOffModal(obj);
+        $("#tradeoffModal_").modal('show');
+
+
+        //     }
+        // });
+
+
+
+    }
+});
+
+
+function createTradeOffModal(goalObject) {
+    var trmodal = '';
+trmodal += '<div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content">' +
+    '<div class="modal-body" id=""><div class="col-md-12"><img src="css/img/small-icon-'+ goalObject.goal_type +'.png" width="25" alt=""/>' +
+    '<p class="text-bold d-inline-block text-capitalize">'+goalObject.goal_name +' Goal</p></div><ul class="nav nav-tabs tradeoff_tab mt-4">' +
+    '<li class="nav-item" ondragstart="return false;"><a class="nav-link" data-toggle="tab" href="#goal_info_tab">Goal Information</a></li>' +
+    '<li class="nav-item" ondragstart="return false;"><a class="nav-link active" data-toggle="tab" href="#tradeoff_tab">Tradeoffs</a></li></ul>' +
+    '<div class="tab-content"><div id="goal_info_tab" class="container tab-pane"><br>';
+    trmodal += '<form class=""><div class="row"><div class="col-md-12"><div class="form-group mt-3">' +
+    '<label for="car-goal-name" class="col-form-label">Goal name</label>' +
+    '<input type="text" class="form-control shadowed-input" id="'+ goalObject.goal_type +'-name" value="'+ goalObject.goal_name +'"></div>' +
+        '<div class="form-group"><label for="goal-name" class="col-form-label">How important this goal?</label>' +
+        '<div class="row"><div class="radio-toolbar w-100">';
+
+// goal priority row
+    trmodal += '<input type="radio" id="priority_low_'+goalObject.goal_type+'" name="priority_low_'+goalObject.goal_type+
+        '" value="Low" class="k-button" /><label for="priority_low_'+goalObject.goal_type+'">Low</label>' +
+        '<input type="radio" id="priority_medium_'+goalObject.goal_type+'" name="priority_medium_'+goalObject.goal_type+
+        '" value="Medium" class="k-button"/><label for="priority_medium_'+goalObject.goal_type+'">Medium</label>\n' +
+        '<input type="radio" id="priority_high_'+goalObject.goal_type+'" name="priority_high_'+goalObject.goal_type+
+        '" value="High" class="k-button"/><label for="priority_high_'+goalObject.goal_type+'">High</label></div></div></div>';
+
+    trmodal += ' <div class="form-group"><label class="col-form-label">Target purchase date</label>' +
+        '<button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" ' +
+        'title="Target start date description">?</button><div class="demo-section k-content">' +
+        '<input type="range" class="custom-range" id="customRange" value="'+goalObject.target+'" max="50"></div>'+
+        '<small id="result" class="text-muted">You have selected <b></b></small></div>';
+
+
+    trmodal += '<div class="form-group"><label class="col-form-label">Expected '+ goalObject.goal_name +' Price</label>' +
+        '<button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title="Expected '
+        +goalObject.goal_name+' Price">?</button><input type="text" class="form-control shadowed-input number"' +
+        ' value="'+goalObject.expectedPrice+'"></div>';
+
+    trmodal += '</div><div class="form-group mt-3 col-md-12 mt-5"><div class="row justify-content-center">' +
+        '<div class="col-md-6"><button type="button" class="btn btn-ok btn-block">Save And Continue</button>\n' +
+        '</div></div></div></div></form></div>';
+
+    // second tab content
+    if (typeof goalObject.tradeoff !== "undefined") {
+        trmodal += '<div id="tradeoff_tab" class="container tab-pane active"><br>' +
+            '<p>' + goalObject.tradeoff.conclusion + '</p><div class="card mb-4 card-border-radius mt-3"><div class="card-block p-3">';
+        trmodal += '<div class="table-card"><div class="verticaltext_content_tab card-title-uppercase">' +
+            goalObject.tradeoff.amountAxisDescription + '</div><div><p class="card-title-uppercase">' +
+            goalObject.tradeoff.timeAxisDescription + '</p><div class="table-responsive">' +
+            '<table class="tabl">';
+        if (goalObject.tradeoff.ages) {
+            trmodal += '<tr><th></th>';
+            for (var i = 0; i < goalObject.tradeoff.ages.length; i++) {
+                trmodal += '<th class="text-center">' + goalObject.tradeoff.ages[i] + '</th>'
+            }
+            trmodal += '</tr>';
+        }
+        if (goalObject.tradeoff.amount) {
+
+            for (var j = 0; j < goalObject.tradeoff.amount.length; j++) {
+                trmodal += '<tr>';
+                trmodal += '<th>' + goalObject.tradeoff.amount[j] + '</th>';
+                for (var it = 0; it < goalObject.tradeoff.state.length; it++) {
+                    trmodal += '<td><div class="card-value"  style="background:' +
+                        generateColor(goalObject.tradeoff.state[j][it].color) + '">' +
+                        goalObject.tradeoff.state[j][it].value + '%</div></td>';
+                }
+                trmodal += '</tr>';
+            }
+
+        }
+        trmodal += '</table></div></div></div></div></div>';
+    }
+    trmodal += '<div class="right-transparent"><p class="text-bold">Select a tradeoff </p>' +
+        '<p>Click on a tradeoff to see how it changes your goal.</p></div></div></div></div></div></div>';
+
+    $('#tradeoffModal_').append(trmodal);
+    //changeSlider();
+    tradeoffItemClick(changedObj);
+
+}
+
+
+// click on tradeoff item
+function tradeoffItemClick(obj) {
+    var cards = document.querySelectorAll(".card-value");
+    for (var i = 0; i< cards.length; i++){
+        cards[i].addEventListener("click", function () {
+            createEffectOfChangesModal(obj, true);
+            $('#effect-of-changes').modal('show');
+        });
+    }
+}
+
+function changeSlider(){
+    $("#result b").html($("#customRange").val());
+
+    // Read value on change
+    $("#customRange").change(function(){
+        $("#result b").html($(this).val());
+
+    });
+}
 function dropp(wholeObj, event) {
     if (event.target.className === "dropzone") {
         dragged.parentNode.removeChild(dragged);
@@ -235,20 +397,6 @@ function dateWithMonth(date) {
     return monthNames[d.getMonth()] + " " + d.getFullYear();
 }
 
-/**
- * Goal chart click handler
- */
-function goalClick() {
-    var objects = document.querySelectorAll('.radialProgressBar');
-
-    if (objects) {
-        [].forEach.call(objects, function (el) {
-            el.addEventListener("click", function () {
-                //TODO open edit
-            }, false);
-        });
-    }
-}
 
 /**
  * create years array depend of older goal year
