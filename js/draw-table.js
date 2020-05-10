@@ -75,11 +75,11 @@ function drawTable(profile, prior = priority) {
                         calcWidth + "px; " + " height:" + calcWidth +
                         "px; margin-top: " + position + "px; margin-left: " + position + "px;" +
                         progrssAchievability(goals[goalItem].calc_goal_result.score, goals[goalItem].calc_goal_result.state) +
-                        "'><div class='overlay' style='width:" + calcHeight + "px; height:" + calcHeight +
-                        "px'><p class='line-1' style='color:" + generateColor(goals[goalItem].calc_goal_result.state) + "'>" + goals[goalItem].calc_goal_result.score +
+                        "'><div class='overlay row' style='width:" + calcHeight + "px; height:" + calcHeight +
+                        "px'><div class='my-auto mx-auto'><p class='line-1' style='color:" + generateColor(goals[goalItem].calc_goal_result.state) + "'>" + goals[goalItem].calc_goal_result.score +
                         "%</p><p style='font-size:12px; color: " + generateColor(goals[goalItem].calc_goal_result.state) +
                         "'>Achievability</p><p class='goal-name-overlay line-1'>" + goals[goalItem].goal_data.name +
-                        "</p><p><small>" + "$" + goals[goalItem].goal_data.amount.toLocaleString() + "</small></p></div></div>";
+                        "</p><p><small>" + "$" + goals[goalItem].goal_data.amount.toLocaleString() + "</small></p></div></div></div>";
                 }
             }
             cell.className = "dropzone";
@@ -309,7 +309,7 @@ trmodal += '<div class="modal-dialog modal-dialog-centered" role="document"><div
         }
         if (goalObject.tradeoff.amount) {
 
-            for (var j = 0; j < goalObject.tradeoff.amount.length; j++) {
+            for (var j = goalObject.tradeoff.amount.length -1; j >= 0 ; j--) {
                 trmodal += '<tr>';
                 trmodal += '<th>' + goalObject.tradeoff.amount[j] + '</th>';
                 for (var it = 0; it < goalObject.tradeoff.state.length; it++) {
@@ -555,8 +555,8 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
         } else {
             modalContent += '<img src="/img/playzone/down.png" alt="" class="m-auto"/></div>';
         }
-        modalContent += '<div class="col-md-2 col-lg-1"><p class="big-title-big text-bold">' + changesResponseObj.changed_avatar_result.score + '</p></div>';
-        modalContent += '<div class="col-md-8 col-lg-9 text-left"><p class="mt-3 ml-1 text-bold" style="color: #fff">' +
+        modalContent += '<div class="col-md-2 col-lg-2"><p class="big-title-big text-bold">' + changesResponseObj.changed_avatar_result.score + '</p></div>';
+        modalContent += '<div class="col-md-8 col-lg-8 text-left"><p class="mt-3 ml-1 text-bold" style="color: #fff">' +
             'Financial</p><p class="ml-1 text-bold" style="color: #fff">Wellness Score</p></div></div></div></div>';
 
         // Active Goals list

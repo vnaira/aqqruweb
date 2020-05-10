@@ -537,11 +537,15 @@
                                                         },2000);
 
                                                         for (var i=0; i< targetSection.length; i++){
+
                                                             if(targetSection[i].getAttribute('data-priority') == priorityValue &&
                                                                 targetSection[i].getAttribute('data-target') == dateValue){
-                                                                setTimeout(function(){
+
+                                                                console.log(targetSection[i].getAttribute('data-priority'));
+
+                                                               // setTimeout(function(){
                                                                     targetSection[i].appendChild(draggedElement);
-                                                                },2000);
+                                                               // },2000);
                                                                 draggedElement.setAttribute('data-status-priority', priorityValue);
                                                                 draggedElement.setAttribute('data-status-year', dateValue);
 
@@ -555,7 +559,7 @@
                                                 </script>
 
                                                 <div class="text-right col-md-3">
-                                                    <button class="btn btn-blue w-100" onclick="animateGoal('355cd57b-27b8-401f-bd49-e0860022808d','Low','2048')">Try It</button>
+                                                    <button class="btn btn-blue w-100" onclick="animateGoal('355cd57b-27b8-401f-bd49-e0860022808d','Medium','2048')">Try It</button>
                                                 </div>
                                             </div>
                                         </div>

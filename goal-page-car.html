@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Playzone</title>
+    <title>Car</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
@@ -190,72 +190,254 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <form action="">
+                                                        <!--<ul class="fieldlist">-->
+                                                            <!--<li>-->
+                                                                <!--<label for="select-car">Select a Goal Type</label>-->
+                                                                <!--<select class="browser-default custom-select w-100 shadowed-input" id="select-car" disabled>-->
+                                                                    <!--<option>Car</option>-->
+                                                                <!--</select>-->
+                                                            <!--</li>-->
+                                                            <!--<li>-->
+                                                                <!--<label for="">Goal name</label>-->
+                                                                <!--<input type="text" class="k-textbox w-100 shadowed-input" placeholder="Vacation" readonly/>-->
+                                                            <!--</li>-->
+                                                            <!--<li>-->
+                                                                <!--<div class="form-group mb-0">-->
+                                                                    <!--<label for="" class="col-form-label">-->
+                                                                        <!--How important this-->
+                                                                        <!--goal?-->
+                                                                    <!--</label>-->
+                                                                    <!--<div class="row">-->
+                                                                        <!--<div class="radio-toolbar w-100">-->
+                                                                            <!--<input type="radio" id="radioApple" name="priority" value="Low" checked class="k-button" disabled/>-->
+                                                                            <!--<label for="radioApple">Low</label>-->
+
+                                                                            <!--<input type="radio" id="radioBanana" name="priority" value="Medium" class="k-button" disabled/>-->
+                                                                            <!--<label for="radioBanana">Medium</label>-->
+
+                                                                            <!--<input type="radio" id="radioOrange" name="priority" value="High" class="k-button" disabled/>-->
+                                                                            <!--<label for="radioOrange">High</label>-->
+                                                                        <!--</div>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                            <!--</li>-->
+                                                            <!--<li>-->
+                                                                <!--<div class="demo-section k-content">-->
+                                                                    <!--<label for="">Target purchase date</label>-->
+                                                                    <!--<input id="slider" class="balSlider" value="0" title="slider" disabled/>-->
+                                                                <!--</div>-->
+                                                            <!--</li>-->
+                                                            <!--<li>-->
+                                                                <!--<label for="" class="d-inline">Expected Car Price</label>-->
+                                                                <!--<button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip"-->
+                                                                        <!--data-placement="right" title="Target start date description">?-->
+                                                                <!--</button>-->
+                                                                <!--<input type="text" class="k-textbox w-100 number shadowed-input" placeholder="$" readonly/>-->
+                                                            <!--</li>-->
+                                                            <!--<li>-->
+                                                                <!--<p class="text-bold">What type of car are you looking for?</p>-->
+                                                                <!--<label for="">Condition</label>-->
+                                                                <!--<div class="custom-control custom-radio custom-control-inline">-->
+                                                                    <!--<input type="radio" class="custom-control-input"  id="no" name="used" checked disabled/>-->
+                                                                    <!--<label class="custom-control-label" for="">New</label>-->
+                                                                <!--</div>-->
+
+                                                                <!--&lt;!&ndash; Default inline 2&ndash;&gt;-->
+                                                                <!--<div class="custom-control custom-radio custom-control-inline">-->
+                                                                    <!--<input type="radio" class="custom-control-input" id="yes" name="used" disabled/>-->
+                                                                    <!--<label class="custom-control-label" for="">Used</label>-->
+                                                                <!--</div>-->
+
+                                                            <!--</li>-->
+                                                            <!--<li>-->
+                                                                <!--<label for="select-car">Goal Type</label>-->
+                                                                <!--<select class="browser-default custom-select w-100 shadowed-input" id="s" disabled>-->
+                                                                    <!--<option>Luxary SUV</option>-->
+                                                                <!--</select>-->
+                                                            <!--</li>-->
+
+                                                        <!--</ul>-->
                                                         <ul class="fieldlist">
                                                             <li>
-                                                                <label for="select-car">Select a Goal Type</label>
-                                                                <select class="browser-default custom-select w-100 shadowed-input" id="select-car" disabled>
-                                                                    <option>Car</option>
-                                                                </select>
-                                                            </li>
-                                                            <li>
                                                                 <label for="">Goal name</label>
-                                                                <input type="text" class="k-textbox w-100 shadowed-input" placeholder="Vacation" readonly/>
+                                                                <input type="text" class="k-textbox w-100 shadowed-input" placeholder="Car" readonly="">
                                                             </li>
                                                             <li>
                                                                 <div class="form-group mb-0">
                                                                     <label for="" class="col-form-label">
-                                                                        How important this
-                                                                        goal?
+                                                                        How important this goal?
                                                                     </label>
                                                                     <div class="row">
                                                                         <div class="radio-toolbar w-100">
-                                                                            <input type="radio" id="radioApple" name="priority" value="Low" checked class="k-button" disabled/>
+                                                                            <input type="radio" id="radioApple" name="Goal.Priority" value="Low" class="k-button">
                                                                             <label for="radioApple">Low</label>
 
-                                                                            <input type="radio" id="radioBanana" name="priority" value="Medium" class="k-button" disabled/>
+                                                                            <input type="radio" id="radioBanana" name="Goal.Priority" value="Medium" class="k-button" checked="">
                                                                             <label for="radioBanana">Medium</label>
 
-                                                                            <input type="radio" id="radioOrange" name="priority" value="High" class="k-button" disabled/>
+                                                                            <input type="radio" id="radioOrange" name="Goal.Priority" value="High" class="k-button">
                                                                             <label for="radioOrange">High</label>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div class="demo-section k-content">
-                                                                    <label for="">Target purchase date</label>
-                                                                    <input id="slider" class="balSlider" value="0" title="slider" disabled/>
+                                                                <div class="row">
+                                                                    <div class="form-inline dual">
+                                                                        <div class="col-md-12">
+                                                                            <div class="demo-section k-content">
+                                                                                <label for="">Target purchase date</label>
+
+                                                                            <div data-bind="start:Goal.StartDate, end:Goal.EndDate" class="k-widget k-daterangepicker k-state-default">
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input name="Goal.StartDate" data-role="dateinput" class="k-textbox" type="text" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                                <span>&nbsp;</span>
+                                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input data-bind="value: Goal.EndDate" name="Goal.EndDate" data-role="dateinput" class="k-textbox" autocomplete="off" type="text" aria-disabled="false" style="width: 100%;">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                            </div>
+
+                                                                            <div class="form-group col-md-6">
+                                                                                <small class="text-muted">You have selected 1 year</small>
+                                                                            </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
                                                                 </div>
+
                                                             </li>
                                                             <li>
                                                                 <label for="" class="d-inline">Expected Car Price</label>
-                                                                <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip"
-                                                                        data-placement="right" title="Target start date description">?
+                                                                <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip" data-placement="right" title="" data-original-title="Target start date description">
+                                                                    ?
                                                                 </button>
-                                                                <input type="text" class="k-textbox w-100 number shadowed-input" placeholder="$" readonly/>
+                                                                <div class="row">
+                                                                <span class="k-widget k-numerictextbox k-textbox w-100" style=""><span class="k-numeric-wrap k-state-default"><input type="text" class="k-formatted-value k-textbox w-100 k-input" title="$20,972" tabindex="0" placeholder="$" role="spinbutton" autocomplete="off" aria-valuenow="20972" aria-disabled="false" style=""><input id="Amount_52f73fb0_7ade_46be_b0ae_e02c51bbd8d4" class="k-textbox w-100 k-input" name="Goal.Amount" type="text" value="20972" data-role="numerictextbox" role="spinbutton" aria-valuenow="20972" aria-disabled="false" style="display: none;"><span class="k-icon k-i-warning" style="display: none;"></span><span class="k-select"><span unselectable="on" class="k-link k-link-increase" aria-label="Increase value" title="Increase value"><span unselectable="on" class="k-icon k-i-arrow-60-up"></span></span><span unselectable="on" class="k-link k-link-decrease" aria-label="Decrease value" title="Decrease value"><span unselectable="on" class="k-icon k-i-arrow-60-down"></span></span></span></span></span><script>kendo.syncReady(function(){jQuery("#Amount_52f73fb0_7ade_46be_b0ae_e02c51bbd8d4").kendoNumericTextBox({"decimals":0,"format":"c0","placeholder":"$"});});</script>
+                                                                </div>
                                                             </li>
                                                             <li>
                                                                 <p class="text-bold">What type of car are you looking for?</p>
                                                                 <label for="">Condition</label>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input"  id="no" name="used" checked disabled/>
-                                                                    <label class="custom-control-label" for="">New</label>
+                                                                    <input type="radio" class="custom-control-input" name="GoalInfo.GoalItem.CarCondition" id="customRadio1" value="1" checked="checked">
+                                                                    <label class="custom-control-label" for="customRadio1">New</label>
                                                                 </div>
 
-                                                                <!-- Default inline 2-->
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="yes" name="used" disabled/>
-                                                                    <label class="custom-control-label" for="">Used</label>
+                                                                    <input type="radio" class="custom-control-input" name="GoalInfo.GoalItem.CarCondition" id="customRadio2" value="2">
+                                                                    <label class="custom-control-label" for="customRadio2">Used</label>
                                                                 </div>
-
                                                             </li>
                                                             <li>
-                                                                <label for="select-car">Goal Type</label>
-                                                                <select class="browser-default custom-select w-100 shadowed-input" id="s" disabled>
-                                                                    <option>Luxary SUV</option>
-                                                                </select>
-                                                            </li>
+                                                                <label for="select-car">Car Type</label>
+                                                                <span title="" id="select-car" class="k-widget k-dropdown browser-default w-100" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="GoalInfo_GoalItem_CarType_52f73fb0_7ade_46be_b0ae_e02c51bbd8d4_listbox" aria-live="polite" aria-disabled="false" aria-busy="false" aria-activedescendant="12d3d794-6079-4b91-ab2a-61654ec974c9" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input">Compact Car</span><span unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><input class="browser-default custom-select w-100" id="GoalInfo_GoalItem_CarType_52f73fb0_7ade_46be_b0ae_e02c51bbd8d4" name="GoalInfo.GoalItem.CarType" type="text" value="Compact Car" data-role="dropdownlist" style="display: none;"></span>
+                                                                <script>kendo.syncReady(function () {
+                                                                    jQuery("#GoalInfo_GoalItem_CarType_52f73fb0_7ade_46be_b0ae_e02c51bbd8d4").kendoDropDownList({
+                                                                        "select": ddlCarTypeOnChange,
+                                                                        "dataTextField": "Text",
+                                                                        "dataValueField": "Value",
+                                                                        "value": "Compact Car",
+                                                                        "dataSource": [{
+                                                                            "Text": "Compact Car",
+                                                                            "Value": "1",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Hybrid",
+                                                                            "Value": "2",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Electric",
+                                                                            "Value": "3",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Subcompact SUV",
+                                                                            "Value": "4",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Mid-size Car",
+                                                                            "Value": "5",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Mid-size SUV",
+                                                                            "Value": "6",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Full-size Car",
+                                                                            "Value": "7",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Mid-size Pickup Truck",
+                                                                            "Value": "8",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Compact SUV",
+                                                                            "Value": "9",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Entry-level Luxury Car",
+                                                                            "Value": "10",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Full-size Pickup Truck",
+                                                                            "Value": "11",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Full-size SUV",
+                                                                            "Value": "12",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "High Performance Car",
+                                                                            "Value": "13",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "High-end Luxury Car",
+                                                                            "Value": "14",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Luxury Car",
+                                                                            "Value": "15",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Luxury Compact SUV",
+                                                                            "Value": "16",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Luxury Full-size SUV",
+                                                                            "Value": "17",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Luxury Mid-size SUV",
+                                                                            "Value": "18",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Luxury Subcompact SUV",
+                                                                            "Value": "19",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Minivan",
+                                                                            "Value": "20",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Sports Car",
+                                                                            "Value": "21",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Subcompact Car",
+                                                                            "Value": "22",
+                                                                            "Selected": false
+                                                                        }, {
+                                                                            "Text": "Van",
+                                                                            "Value": "23",
+                                                                            "Selected": false
+                                                                        }]
+                                                                    });
+                                                                });</script>
 
+                                                            </li>
                                                         </ul>
                                                         <div class="row justify-content-center mt-5">
                                                             <div class="col-md-6">
@@ -316,7 +498,7 @@
                                                                         </small>
                                                                     </p>
                                                                     <p class="col-md-12">Car Goal
-                                                                        <span>Status: On-Track</span></p>
+                                                                        <span> Status:<span style="color:#e74e4e"> On-Track</span></span></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -341,52 +523,49 @@
                                                             <div class="col-md-12 suggestion">
                                                                 <p class="text-right text-bold">Goal Success
                                                                     Probability</p>
-                                                                <div class="col-md-12">
-                                                                <div class="case-plus w-100">
-                                                                    <div class="row justify-content-between">
-                                                                        <div class="col-md-9 mt-3">
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-1">
-                                                                                        <button class="select_suggestion">
-                                                                                            <span class="circle"></span>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                    <div class="col-md-11"><p class="">
-                                                                                        What if you were
-                                                                                        to lease the car instead of
-                                                                                        buying?</p></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-3 text-right"><img
-                                                                                src="css/img/icon-car_goal.png" alt=""
-                                                                                class="svg-im" width="25" style="margin-top: -10px; background:#68D12F"/>
-                                                                            <span class="text-35-bold" style="color:#68D12F">95%</span></div>
-                                                                    </div>
-                                                                </div>
+                                                                <div class="col-md-12" id="scenariosContainer">
                                                                     <div class="case-plus w-100">
                                                                         <div class="row justify-content-between">
                                                                             <div class="col-md-9 mt-3">
-                                                                                <div class="col-md-12">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-1">
-                                                                                            <button class="select_suggestion">
+
+                                                                                            <button onclick="PrepareToApplyScenario('c62c75f9-4d0b-4918-b6c1-2d7fea2309aa')"
+                                                                                                    class="select_suggestion">
                                                                                                 <span class="circle"></span>
                                                                                             </button>
-                                                                                        </div>
-                                                                                        <div class="col-md-11"><p
-                                                                                                class="">What if you
+                                                                                      <p class="d-inline-block">What if you
                                                                                             considered buying a used car
                                                                                             rather than a new car?</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+
                                                                             </div>
                                                                             <div class="col-md-3 text-right"><img
-                                                                                    src="css/img/icon-car_goal.png" alt=""
-                                                                                    class="svg-im" width="25" style="margin-top: -10px; background:#68D12F "/>
-                                                                                <span class="text-35-bold" style="color:#68D12F">95%</span></div>
+                                                                                    src="../img/icon-car_goal.png"
+                                                                                    alt="" class="svg-im" width="25"
+                                                                                    style="margin-top: -10px; background:#68D12F"><span
+                                                                                    class="text-35-bold"
+                                                                                    style="color:#68D12F">99%</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="case-plus w-100">
+                                                                        <div class="row justify-content-between">
+                                                                            <div class="col-md-9 mt-3">
+
+                                                                                            <button onclick="PrepareToApplyScenario('75e703b2-39d1-4253-952a-817e7e0d4a65')"
+                                                                                                    class="select_suggestion">
+                                                                                                <span class="circle"></span>
+                                                                                            </button>
+                                                                                        <p class="d-inline-block">What if you
+                                                                                            were to lease the car
+                                                                                            instead of buying?</p>
+
+                                                                            </div>
+                                                                            <div class="col-md-3 text-right"><img
+                                                                                    src="../img/icon-car_goal.png"
+                                                                                    alt="" class="svg-im" width="25"
+                                                                                    style="margin-top: -10px; background:#68D12F"><span
+                                                                                    class="text-35-bold"
+                                                                                    style="color:#68D12F">222%</span>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>

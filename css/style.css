@@ -496,8 +496,8 @@ h6{font-size: 14px}
 .canvas-value{
   position: absolute;
   font-size: 20px;
-  left: 70px;
-  top: 94px;
+  left: 100px;
+  top: 124px;
   width: 113px;
   text-align: center;
   color: #3D4E66;
@@ -594,6 +594,7 @@ span.circle{
   height: 22px;
   border: 2px solid #B9C6D4;
   border-radius: 15px;
+  margin-bottom: -4px;
 }
 img.svg-im path{ fill: red; }
 .svg-im{
@@ -923,7 +924,7 @@ personal information pages
 .select_suggestion{
   background: transparent;
   border: 0 none;
-  margin-top: -2px;
+  margin-top: -5px;
 }
 .select_suggestion.active .circle{
   border-color:#B9C6D4;
@@ -935,7 +936,7 @@ personal information pages
 }
 .white-grey-text{color:#eaf1f3;font-weight: bold}
 .form_line_bottom.k-input{
-  font-size: 30px;
+  font-size: 26px!important;
   font-weight: bold;
   border: 0 none;
   border-bottom: 1px solid;
@@ -1229,3 +1230,11 @@ responsiveness
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   }
 }
+.modal{overflow-y: auto}
+.fieldlist .k-numerictextbox .k-numeric-wrap, .fieldlist .k-dropdown-wrap{
+  height: 36px;
+}
+.fieldlist .dual .k-dateinput {
+  width: 48%!important;
+}
+.custom-control-label{font-size: 15px}

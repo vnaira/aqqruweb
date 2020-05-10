@@ -208,26 +208,24 @@
 
                                                             <form action="">
                                                                 <ul class="fieldlist">
-
                                                                     <li>
                                                                         <label for="">Goal name</label>
-                                                                        <input type="text" class="k-textbox w-100 shadowed-input" placeholder="Johnny’s Retirement"/>
+                                                                        <input type="text" class="k-textbox w-100 shadowed-input" placeholder="Retirement" readonly="">
                                                                     </li>
                                                                     <li>
                                                                         <div class="form-group mb-0">
                                                                             <label for="" class="col-form-label">
-                                                                                How important this
-                                                                                goal?
+                                                                                How important this goal?
                                                                             </label>
                                                                             <div class="row">
                                                                                 <div class="radio-toolbar w-100">
-                                                                                    <input type="radio" id="radioApple" name="priority" value="Low" checked class="k-button" />
+                                                                                    <input type="radio" id="radioApple" name="Goal.Priority" value="Low" class="k-button">
                                                                                     <label for="radioApple">Low</label>
 
-                                                                                    <input type="radio" id="radioBanana" name="priority" value="Medium" class="k-button"/>
+                                                                                    <input type="radio" id="radioBanana" name="Goal.Priority" value="Medium" class="k-button" checked="">
                                                                                     <label for="radioBanana">Medium</label>
 
-                                                                                    <input type="radio" id="radioOrange" name="priority" value="High" class="k-button"/>
+                                                                                    <input type="radio" id="radioOrange" name="Goal.Priority" value="High" class="k-button">
                                                                                     <label for="radioOrange">High</label>
                                                                                 </div>
                                                                             </div>
@@ -235,34 +233,66 @@
                                                                     </li>
                                                                     <li>
                                                                         <div class="form-group">
-                                                                            <label class="d-inline">Target start date</label>
-                                                                            <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip"
-                                                                                    data-placement="right" title="Target start date description">?
+                                                                            <label class="d-inline">
+                                                                                Target start date
+                                                                            </label>
+                                                                            <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip" data-placement="right" title="" data-original-title="Target start date description">
+                                                                                ?
                                                                             </button>
                                                                             <div class="form-inline row">
                                                                                 <div class="form-group col-md-6 mb-0">
-                                                                                    <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input w-100"
-                                                                                           placeholder="From">
+
+                                                                                    <div data-bind="start:Goal.StartDate, end:Goal.EndDate" class="k-widget k-daterangepicker k-state-default">
+                                                                <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input name="Goal.StartDate" data-role="dateinput" class="k-textbox w-100" type="text" >
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                                        <span>&nbsp;</span>
+                                                                                        <span class="k-widget k-dateinput k-state-default" style="">
+                                                                    <input data-bind="value: Goal.EndDate" name="Goal.EndDate" data-role="dateinput" class="k-textbox w-100" autocomplete="off" type="text" aria-disabled="false">
+                                                                    <span class="k-icon k-i-warning"></span>
+                                                                </span>
+                                                                                    </div>
+
+                                                                                    <script type="text/javascript">
+                                                                                        function change_goalItemModel_GoalItem_StartAge_7b081c4d_98d8_4906_a899_c006cd4d034d() {
+                                                                                            var numerictextbox = $("#goalItemModel_GoalItem_EndAge_7b081c4d_98d8_4906_a899_c006cd4d034d").data("kendoNumericTextBox");
+                                                                                            numerictextbox.min(this.value());
+                                                                                        }
+
+                                                                                        function change_goalItemModel_GoalItem_EndAge_7b081c4d_98d8_4906_a899_c006cd4d034d() {
+                                                                                            var numerictextbox = $("#goalItemModel_GoalItem_StartAge_7b081c4d_98d8_4906_a899_c006cd4d034d").data("kendoNumericTextBox");
+                                                                                            numerictextbox.max(this.value());
+                                                                                        }
+                                                                                    </script>
+
                                                                                 </div>
-                                                                                <div class="form-group col-md-6 mb-0">
-                                                                                    <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input w-100"
-                                                                                           placeholder="To">
-                                                                                </div>
+
                                                                             </div>
-                                                                            <small class="text-muted">Years from now</small>
+                                                                            <small>Years from now 27 years</small>
                                                                         </div>
                                                                     </li>
                                                                     <li>
-                                                                        <label for="" class="d-inline">How much retirement income do you need compared to your existing expenses?</label>
-
-                                                                        <input type="text" class="k-textbox w-100 number shadowed-input" placeholder="%" />
-                                                                    </li>
+                                                                        <label for="PercentExpenses_7b081c4d_98d8_4906_a899_c006cd4d034d" class="d-inline">
+                                                                            How much retirement income do you need compared to your existing expenses?
+                                                                        </label>
+                                                                        <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip" data-placement="right" title="" data-original-title="Target start date description">
+                                                                            ?
+                                                                        </button>
+                                                                        <div class="row">
+                                                                            <span class="k-widget k-numerictextbox k-textbox w-100" style=""><span class="k-numeric-wrap k-state-default"><input type="text" class="k-formatted-value k-textbox w-100 k-input" title="94 %" tabindex="0" placeholder="0 %" role="spinbutton" aria-valuemin="0" aria-valuemax="200" autocomplete="off" aria-valuenow="94" aria-disabled="false" style=""><input id="PercentExpenses_7b081c4d_98d8_4906_a899_c006cd4d034d" class="k-textbox w-100 number shadowed-input k-input" max="200" min="0" name="Goal.PercentExpenses" step="1" type="text" value="94" data-role="numerictextbox" role="spinbutton" aria-valuemin="0" aria-valuemax="200" aria-valuenow="94" aria-disabled="false" style="display: none;"><span class="k-icon k-i-warning" style="display: none;"></span></span></span>
+                                                                        </div>
+                                                                       </li>
                                                                     <li>
-                                                                        <label for="" class="d-inline">What percentage of your income would you like to leave your heirs?</label>
-
-                                                                        <input id="slider" class="balSlider" value="80" title="slider"/>
-                                                                        <small class="text-muted">You have selected 80%</small>
+                                                                        <label for="Amount_7b081c4d_98d8_4906_a899_c006cd4d034d" class="d-inline">
+                                                                            How much would you like to leave your heirs?
+                                                                        </label>
+                                                                        <button type="button" class="btn tooltip-badge d-inline" data-toggle="tooltip" data-placement="right" title="" data-original-title="Target start date description">
+                                                                            ?
+                                                                        </button>
+                                                                        <span class="k-widget k-numerictextbox k-input w-100 number shadowed-input" style=""><span class="k-numeric-wrap k-state-default"><input type="text" class="k-formatted-value k-input w-100 number shadowed-input" title="$0" tabindex="0" placeholder="$" role="spinbutton" autocomplete="off" aria-valuenow="0" aria-disabled="false" style=""><input id="Amount_7b081c4d_98d8_4906_a899_c006cd4d034d" class="k-input w-100 number shadowed-input" name="Goal.Amount" type="text" value="0" data-role="numerictextbox" role="spinbutton" aria-valuenow="0" aria-disabled="false" style="display: none;"><span class="k-icon k-i-warning" style="display: none;"></span><span class="k-select"><span unselectable="on" class="k-link k-link-increase" aria-label="Increase value" title="Increase value"><span unselectable="on" class="k-icon k-i-arrow-60-up"></span></span><span unselectable="on" class="k-link k-link-decrease" aria-label="Decrease value" title="Decrease value"><span unselectable="on" class="k-icon k-i-arrow-60-down"></span></span></span></span></span><script>kendo.syncReady(function(){jQuery("#Amount_7b081c4d_98d8_4906_a899_c006cd4d034d").kendoNumericTextBox({"decimals":0,"format":"c0","placeholder":"$"});});</script>
                                                                     </li>
+
 
                                                                 </ul>
                                                                 <div class="row justify-content-center mt-5">
@@ -327,7 +357,7 @@
                                                                         </small>
                                                                     </p>
                                                                     <p class="col-md-12">Johnny’s Retirement
-                                                                        <span>Status: On-Track</span></p>
+                                                                        <span>Status: <span style="color:#e74e4e">On-Track</span></span></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -356,18 +386,13 @@
                                                                 <div class="case-plus w-100" style="border-color: #68D12F">
                                                                     <div class="row justify-content-between">
                                                                         <div class="col-md-9 mt-3">
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-1">
+
                                                                                         <button class="select_suggestion">
                                                                                             <span class="circle" style="border-color: #68D12F"></span>
                                                                                         </button>
-                                                                                    </div>
-                                                                                    <div class="col-md-11"><p class="">
+                                                                                   <p class="d-inline-block">
                                                                                         What if you downsized your home at retirement?
-                                                                                    </p></div>
-                                                                                </div>
-                                                                            </div>
+                                                                                    </p>
                                                                         </div>
                                                                         <div class="col-md-3 text-right"><img
                                                                                 src="css/img/icon-retirement_goal.png" alt=""
@@ -378,15 +403,12 @@
                                                                     <div class="case-plus w-100" style="border-color: #E84D46">
                                                                         <div class="row justify-content-between">
                                                                             <div class="col-md-9 mt-3">
-                                                                                <div class="col-md-12">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-1">
+
                                                                                             <button class="select_suggestion">
                                                                                                 <span class="circle" style="border-color: #E84D46"></span>
                                                                                             </button>
-                                                                                        </div>
-                                                                                        <div class="col-md-11">
-                                                                                            <p class="">What if the actual inflation rate is
+
+                                                                                            <p class="d-inline-block">What if the actual inflation rate is
                                                                                                 <span>
                                                                                                 <select name=""
                                                                                                         id="">
@@ -396,9 +418,7 @@
                                                                                                     <option value="">4%</option>
                                                                                                 </select>
                                                                                             </span> ?</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+
                                                                             </div>
                                                                             <div class="col-md-3 text-right"><img
                                                                                     src="css/img/icon-retirement_goal.png" alt=""
@@ -409,15 +429,11 @@
                                                                     <div class="case-plus w-100" style="border-color: #E84D46">
                                                                         <div class="row justify-content-between">
                                                                             <div class="col-md-9 mt-3">
-                                                                                <div class="col-md-12">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-1">
+
                                                                                             <button class="select_suggestion">
                                                                                                 <span class="circle" style="border-color: #E84D46"></span>
                                                                                             </button>
-                                                                                        </div>
-                                                                                        <div class="col-md-11"><p
-                                                                                                class="">What if your expected lifespan is
+                                                                                       <p class="d-inline-block">What if your expected lifespan is
                                                                                             <span>
                                                                                                 <select name=""
                                                                                                         id="">
@@ -431,9 +447,7 @@
                                                                                                     <option value="">92%</option>
                                                                                                 </select>
                                                                                             </span> ?</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+
                                                                             </div>
                                                                             <div class="col-md-3 text-right"><img
                                                                                     src="css/img/icon-retirement_goal.png" alt=""
@@ -444,18 +458,12 @@
                                                                     <div class="case-plus w-100" style="border-color: #E84D46">
                                                                         <div class="row justify-content-between">
                                                                             <div class="col-md-9 mt-3">
-                                                                                <div class="col-md-12">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-1">
+
                                                                                             <button class="select_suggestion">
                                                                                                 <span class="circle" style="border-color: #E84D46"></span>
                                                                                             </button>
-                                                                                        </div>
-                                                                                        <div class="col-md-11"><p
-                                                                                                class="">What if there is an unexpected medical expense after you retire? </p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                                                       <p class="d-inline-block">What if there is an unexpected medical expense after you retire? </p>
+
                                                                             </div>
                                                                             <div class="col-md-3 text-right"><img
                                                                                     src="css/img/icon-retirement_goal.png" alt=""
