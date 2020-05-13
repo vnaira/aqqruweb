@@ -71,6 +71,7 @@ function drawTable(profile, prior = priority) {
 
                     cellContent += "\' id=\'" + goals[goalItem].goal_data.id + "\'" + " data-status-year='" + goalDate.year + "\'" +
                         "data-status-goal-type='" + goals[goalItem].goal_data.goal_type + "\'" +
+                        "data-status-goal-name='" + goals[goalItem].goal_data.name + "\'" +
                         "data-status-priority='" + goals[goalItem].goal_data.priority + "\'" + "style='width: " +
                         calcWidth + "px; " + " height:" + calcWidth +
                         "px; margin-top: " + position + "px; margin-left: " + position + "px;" +
@@ -362,7 +363,7 @@ function dropp(wholeObj, event) {
         dragged.parentNode.removeChild(dragged);
         ns.appendChild(dragged);
     }
-    createEffectOfChangesModal(wholeObj, true);
+    createEffectOfChangesModal(wholeObj, false);
     $('#effect-of-changes').modal('show');
     dragged.setAttribute('data-status-priority', event.target.getAttribute('data-priority'));
     dragged.setAttribute('data-status-year', event.target.getAttribute('data-target'));
@@ -411,7 +412,7 @@ function calculateYearGrid(obj) {
         }
         years = [];
         var nowYear = (new Date()).getFullYear();
-        var retirementYear = Math.max.apply(Math,goalArray) + 10;
+        var retirementYear = Math.max.apply(Math,goalArray) + 15;
         for (var i = nowYear; i <= retirementYear; i++) {
             years.push(i);
         }
@@ -521,11 +522,14 @@ function returnObj(object, value) {
 }
 
 function findObjectByKey(array, key, value) {
-    for (var i = 0; i < array.length; i++) {
-        if (array[i]["goal_data"][key] === value) {
-            return array[i];
+    if(value !== null){
+        for (var i = 0; i < array.length; i++) {
+            if (array[i]["goal_data"][key] === value) {
+                return array[i];
+            }
         }
     }
+
     return null;
 }
 
@@ -559,15 +563,23 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
         modalContent += '<div class="col-md-8 col-lg-8 text-left"><p class="mt-3 ml-1 text-bold" style="color: #fff">' +
             'Financial</p><p class="ml-1 text-bold" style="color: #fff">Wellness Score</p></div></div></div></div>';
 
+
         // Active Goals list
         if (changesResponseObj.active_changed_goals) {
 
             for (var prop in changesResponseObj.active_changed_goals) {
 
-                var initObject = findObjectByKey(changesResponseObj.initial_goals, "id", changesResponseObj.active_changed_goals[prop].id);
-                var changedObject = findObjectByKey(changesResponseObj.changed_goals, "id", changesResponseObj.active_changed_goals[prop].id);
+                var initObject = null, changedObject = null;
 
-                if (initObject === null) {
+                if (changesResponseObj.active_changed_goals[prop] !== null){
+
+                    initObject = findObjectByKey(changesResponseObj.initial_goals, "id", changesResponseObj.active_changed_goals[prop].id);
+
+                    changedObject = findObjectByKey(changesResponseObj.changed_goals, "id", changesResponseObj.active_changed_goals[prop].id);
+                }
+
+                // for a goal new added
+                if (initObject === null && changedObject !== null) {
 
                     modalContent += '<div class="col-md-12"><p class="dart-title mt-2 mb-2">Added ' + changedObject.goal_data.name + ' Goal</p></div>';
 
@@ -613,8 +625,8 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
                         '<small>Goal Achievability</small></p></div></div></div></div></div>';
 
                 }
-
-                else if (changedObject === null) {
+                // for a removed goal
+                else if (changedObject === null && initObject !== null) {
 
                     scoreProc = initObject.calc_goal_result.score;
 
@@ -659,7 +671,9 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
                     modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
                         '<small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p><p class="col-md-6 text-right">' +
                         '<small>Goal Achievability</small></p></div></div></div></div></div>';
-                } else {
+
+                } else if (initObject !== null && changedObject !== null) {
+
                     modalContent += '<div class="col-md-12"><p class="dart-title mt-2 mb-2">Impact on ' + initObject.goal_data.name + ' Goal</p></div>';
                     scoreProc = changedObject.calc_goal_result.score - initObject.calc_goal_result.score;
 
@@ -708,16 +722,17 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
         }
 
         // Changed Goals list
-        if (changesResponseObj.changed_goals && changesResponseObj.initial_goals) {
+        if (typeof changesResponseObj.changed_goals !== "undefined" && typeof changesResponseObj.initial_goals !== "undefined") {
 
             modalContent += ' <div class="col-md-12"><div class="row"><div class="col-md-8">' +
                 '<p class="dart-title mt-2 mb-2">Impact on other goals</p></div></div></div>';
 
             for (var prop2 in changesResponseObj.changed_goals) {
+                // active goal should not be in changed list
                 if (changesResponseObj.active_changed_goals.findIndex(x => x.id === changesResponseObj.changed_goals[prop2].goal_data.id) === -1) {
+
                     var initObject2 = findObjectByKey(changesResponseObj.initial_goals, "id", changesResponseObj.changed_goals[prop2].goal_data.id);
                     var changedObject2 = findObjectByKey(changesResponseObj.changed_goals, "id", changesResponseObj.changed_goals[prop2].goal_data.id);
-
 
                     modalContent += '<div class="card"><div class="card-body"><div class="row">' +
                         '<div class="col-md-5"><div class="row"><div class="col-md-3">' +
@@ -755,11 +770,12 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
             modalContent += '<div class="row"><div class="col-md-6 offset-6"><div class="row justify-content-end">' +
                 '<div class="btn-group col-md-6"><button type="button" class="btn btn-blue" data-dismiss="modal" >Ok</button></div></div></div></div>';
             modalContent += '</div>';
-        }else
-        modalContent += '<div class="row"><div class="col-md-6 offset-6"><div class="row">' +
-            '<div class="btn-group col-md-6"><button type="button" class="btn btn-grey" onclick="discardChanges()">Discard</button></div>' +
-            '<div class="btn-group col-md-6"><button type="button" class="btn btn-blue" onclick="saveChanges()">Save</button></div></div></div></div>';
-        modalContent += '</div>';
+        } else {
+            modalContent += '<div class="row"><div class="col-md-6 offset-6"><div class="row">' +
+                '<div class="btn-group col-md-6"><button type="button" class="btn btn-grey" onclick="discardChanges()">Discard</button></div>' +
+                '<div class="btn-group col-md-6"><button type="button" class="btn btn-blue" onclick="saveChanges()">Save</button></div></div></div></div>';
+            modalContent += '</div>';
+        }
 
     }
     $('#changesModal').append(modalContent);
