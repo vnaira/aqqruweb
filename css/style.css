@@ -873,7 +873,7 @@ personal information pages
   color: #DBE6F2;
   font-size: 35px;
 }
-.shadowed-input {
+.shadowed-input, .k-dateinput {
   -webkit-box-shadow: 0px 0px 5px -1px #4C9BF2;
   -moz-box-shadow: 0px 0px 5px -1px #4C9BF2;
   box-shadow: 0px 0px 5px -1px #4C9BF2;
@@ -1241,3 +1241,5 @@ responsiveness
 #editModalRealEstate .modal-content{min-height: 670px}
 .score-and-value h6{color:#fff;}
 .k-textbox-container{width: 49%}
+.k-numerictextbox .k-numeric-wrap .k-select{display: none!important;}
+.k-dropdown .k-dropdown-wrap{background: #fff!important;}

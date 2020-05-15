@@ -23,6 +23,14 @@
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/paper-dashboard.css">
 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.bootstrap-v4.min.css" />
+    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.aspnetmvc.min.js"></script>
+
     <style>
         div.balSlider {
             width: 100%;
@@ -133,21 +141,21 @@
                             <div class="row justify-content-between">
                                 <div class="add-goal-btn">
 
-                                        <div class="row justify-content-between">
-                                            <div class="col-4">
-                                                <div class="mt-2 pl-2">
-                                                    <img src="css/img/small-icon-emergency.png" alt=""/>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="goal-name"><p>Add a Goal</p></div>
-                                            </div>
-                                            <div class="col-4">
-                                                <button class="small ml-1 mt-3" data-toggle="modal" data-dismiss="modal" data-target="#centralModalSm">
-                                                    <span class="fa fa-plus-circle"></span>
-                                                </button>
+                                    <div class="row justify-content-between">
+                                        <div class="col-4">
+                                            <div class="mt-2 pl-2">
+                                                <img src="css/img/small-icon-emergency.png" alt=""/>
                                             </div>
                                         </div>
+                                        <div class="row mt-3">
+                                            <div class="goal-name"><p>Add a Goal</p></div>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="small ml-1 mt-3" data-toggle="modal" data-dismiss="modal" data-target="#centralModalSm">
+                                                <span class="fa fa-plus-circle"></span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <div class="btn-toolbar justify-content-end" role="toolbar">
@@ -697,7 +705,7 @@
                         <img src="css/img/vacation_goal.png" width="25" alt=""/> Vacation</a>
                     <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="continued_education_goal">
                         <img src="css/img/continued_education_goal.png" width="25"
-                                                           alt=""/> Continued Education</a>
+                             alt=""/> Continued Education</a>
                     <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="purchase_goal">
                         <img src="css/img/purchase_goal.png" width="25" alt=""/> Major Purchase</a>
                 </div>
@@ -737,7 +745,13 @@
         <div class="col-md-12">
             <div class="form-group mt-3">
                 <label for="car-goal-name" class="col-form-label">Goal name</label>
-                <input type="text" class="form-control shadowed-input" id="car-goal-name" value="Car">
+                <input class="form-control shadowed-input" id="car-goal-name" value="Car">
+
+                <script>
+                    kendo.syncReady(function () {
+                    $("#car-goal-name").kendoMaskedTextBox();
+                    });
+                </script>
             </div>
             <div class="form-group">
                 <label for="goal-name" class="col-form-label">How important this goal?</label>
@@ -770,14 +784,32 @@
                     <div id="daterangepicker" class="daterangepicker" title="daterangepicker"></div>
                 </div>
                 <small class="text-muted">You have selected 6</small>
+                <script>
+                    kendo.syncReady(function () {
+                        $("#daterangepicker").kendoDateRangePicker({
+                            labels: false
+                        });
+                    });
+                </script>
             </div>
 
             <div class="form-group">
+
                 <label class="col-form-label">Expected Car Price</label>
                 <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                         data-placement="right" title="Expected Car Price">?
                 </button>
-                <input type="text" class="form-control shadowed-input number" value="$50,000">
+                    <input id="currency" type="number" class="form-control shadowed-input w-100" />
+                </label>
+
+                <script>
+                    kendo.syncReady(function () {
+                        $("#currency").kendoNumericTextBox({
+                            format: "c",
+                            decimals: 3
+                        });
+                    });
+                </script>
             </div>
 
             <div class="form-group">
@@ -797,13 +829,37 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <label class="col-form-label">Car Size</label>
-                        <select class="form-control shadowed-input">
-                            <option selected>Sedan</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <label for="Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a">Car Size</label>
+                        <input class="browser-default w-100 shadowed-input" id="Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a" name="Goal.CarType" type="text" value="1" data-role="dropdownlist">
+                        <script>
+                            kendo.syncReady(function () {
+                                jQuery("#Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a").kendoDropDownList({
+                                    "dataTextField": "Text", "dataValueField": "Value", "value": "1", "dataSource":
+                                        [{ "Text": "Compact Car", "Value": "1", "Selected": false },
+                                            { "Text": "Hybrid", "Value": "2", "Selected": false },
+                                            { "Text": "Electric", "Value": "3", "Selected": false },
+                                            { "Text": "Subcompact SUV", "Value": "4", "Selected": false },
+                                            { "Text": "Mid-size Car", "Value": "5", "Selected": false },
+                                            { "Text": "Mid-size SUV", "Value": "6", "Selected": false },
+                                            { "Text": "Full-size Car", "Value": "7", "Selected": false },
+                                            { "Text": "Mid-size Pickup Truck", "Value": "8", "Selected": false },
+                                            { "Text": "Compact SUV", "Value": "9", "Selected": false },
+                                            { "Text": "Entry-level Luxury Car", "Value": "10", "Selected": false },
+                                            { "Text": "Full-size Pickup Truck", "Value": "11", "Selected": false },
+                                            { "Text": "Full-size SUV", "Value": "12", "Selected": false },
+                                            { "Text": "High Performance Car", "Value": "13", "Selected": false },
+                                            { "Text": "High-end Luxury Car", "Value": "14", "Selected": false },
+                                            { "Text": "Luxury Car", "Value": "15", "Selected": false },
+                                            { "Text": "Luxury Compact SUV", "Value": "16", "Selected": false },
+                                            { "Text": "Luxury Full-size SUV", "Value": "17", "Selected": false },
+                                            { "Text": "Luxury Mid-size SUV", "Value": "18", "Selected": false },
+                                            { "Text": "Luxury Subcompact SUV", "Value": "19", "Selected": false },
+                                            { "Text": "Minivan", "Value": "20", "Selected": false },
+                                            { "Text": "Sports Car", "Value": "21", "Selected": false },
+                                            { "Text": "Subcompact Car", "Value": "22", "Selected": false },
+                                            { "Text": "Van", "Value": "23", "Selected": false }] });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -820,7 +876,12 @@
 <form class="" id="form-house_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="house-goal-name" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="house-goal-name" value="House">
+        <input class="form-control shadowed-input textbox" id="house-goal-name" value="House"/>
+        <script>
+            kendo.syncReady(function () {
+                $("#house-goal-name").kendoMaskedTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
         <label for="goal-name" class="col-form-label">How important this goal?</label>
@@ -850,35 +911,79 @@
                 data-placement="right" title="Target start date description">?
         </button>
         <div class="demo-section k-content">
-            <div id="" class="daterangepicker" title="daterangepicker"></div>
+            <div id="house-target-date" class="daterangepicker w-100" title="daterangepicker"></div>
         </div>
         <small class="text-muted">You have selected 6</small>
+        <script>
+            kendo.syncReady(function () {
+                $("#house-target-date").kendoSlider({
+                    increaseButtonTitle: "Right",
+                    decreaseButtonTitle: "Left",
+                    min: -10,
+                    max: 10,
+                    smallStep: 2,
+                    largeStep: 1
+                }).data("kendoSlider");
+            });
+        </script>
     </div>
     <div class="form-group">
         <label class="col-form-label">Desired Zip Code</label>
-        <input type="text" class="form-control shadowed-input"/>
+        <input id="zip-code" class="form-control shadowed-input textbox"/>
+
+        <script>
+            kendo.syncReady(function () {
+                $("#zip-code").kendoMaskedTextBox({
+                    mask: "00000"
+                });
+            });
+        </script>
+
     </div>
     <div class="form-group">
         <label class="col-form-label">Expected House Price</label>
         <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                 data-placement="right" title="Expected House Price">?
         </button>
-        <input type="text" class="form-control shadowed-input number"   value="$50,000">
+        <input id="house-price" type="number" class="form-control shadowed-input" title="expected price">
+        <script>
+            kendo.syncReady(function () {
+                $("#house-price").kendoNumericTextBox({
+                    format: "c",
+                    decimals: 3
+                });
+            });
+        </script>
     </div>
-    <div class="custom-control custom-checkbox mt-4">
-        <input type="checkbox" class="custom-control-input" id="residence">
-        <label class="custom-control-label" for="residence">Primary Residence?</label>
+    <div class="form-group mt-4">
+        <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
+        <label class="k-checkbox-label" for="eq1">Primary Residence?</label>
     </div>
     <div class="form-group">
         <label for="" class="col-form-label">Downpayment Needed</label>
-        <input type="text" class="form-control shadowed-input"   placeholder="0%">
+        <input id="percentage" class="form-control shadowed-input w-100" title="percentage" placeholder="0%"/>
+        <script>
+            kendo.syncReady(function () {
+                $("#percentage").kendoNumericTextBox({
+                    format: "#'%'",
+                });
+            });
+        </script>
     </div>
     <div class="form-group">
-        <label for="" class="col-form-label">Mortgage Type</label>
-        <select class="form-control shadowed-input">
-            <option selected>3D Years Fixed</option>
-            <option value="1">3D Years Fixed</option>
-        </select>
+        <label for="mortgage_type" class="col-form-label">Mortgage Type</label>
+        <input class="browser-default w-100 shadowed-input" id="mortgage_type" name="Goal.HouseGoal" type="text" value="1" data-role="dropdownlist">
+        <script>
+            kendo.syncReady(function () {
+                jQuery("#mortgage_type").kendoDropDownList({
+                    "dataTextField": "Text", "dataValueField": "Value", "value": "1", "dataSource":
+                        [{ "Text": "3D Years Fixed", "Value": "1", "Selected": false },
+                            { "Text": "3D Years Fixed", "Value": "2", "Selected": false },
+
+                        ]
+                });
+            });
+        </script>
     </div>
 
     <div class="form-group mt-5">
@@ -890,10 +995,15 @@
 <form class="" id="form-continued_education_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="con-goal-name" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="con-goal-name" placeholder="Continued Education">
+        <input class="form-control shadowed-input" id="con-goal-name" placeholder="Continued Education">
+        <script>
+            kendo.syncReady(function () {
+                $("#con-goal-name").kendoMaskedTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">How important this goal?</label>
+        <label for="" class="col-form-label">How important this goal?</label>
         <div class="row">
             <div class="radio-toolbar row w-100">
                 <div class="col-md-4">
@@ -920,17 +1030,40 @@
                 data-placement="right" title="Target start date description">?
         </button>
         <div class="demo-section k-content">
-            <div id="" class="daterangepicker" title="daterangepicker"></div>
+            <div id="daterangepicker-edu" class="daterangepicker" title="daterangepicker"></div>
         </div>
         <small class="text-muted">Years from now</small>
+
+        <script>
+            kendo.syncReady(function () {
+                $("#daterangepicker-edu").kendoDateRangePicker({
+                    labels: false
+                });
+            });
+        </script>
+
     </div>
     <div class="form-group">
         <label class="col-form-label">Duration of education</label>
-        <input type="text" class="form-control shadowed-input"   placeholder="0 month">
+        <input class="form-control shadowed-input" id="education-duration" placeholder="0 month">
+        <script>
+            kendo.syncReady(function () {
+                $("#education-duration").kendoMaskedTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
-        <input type="text" class="form-control shadowed-input"   placeholder="$">
+        <input id="currency-edu" type="number" class="form-control shadowed-input w-100" />
+
+        <script>
+            kendo.syncReady(function () {
+                $("#currency-edu").kendoNumericTextBox({
+                    format: "c",
+                    decimals: 3
+                });
+            });
+        </script>
     </div>
 
     <div class="form-group mt-5">
@@ -943,8 +1076,12 @@
 <form class="" id="form-college_education_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="kid-goal-name" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="kid-goal-name" placeholder=""
-               value="Kids Education">
+        <input class="form-control shadowed-input" id="kid-goal-name" value="Kids Education"/>
+        <script>
+            kendo.syncReady(function () {
+                $("#kid-goal-name").kendoMaskedTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
         <label for="goal-name" class="col-form-label">Which child does this goal apply
@@ -981,19 +1118,19 @@
                     <div class="row">
                         <div class="radio-toolbar row w-100">
                             <div class="col-md-4">
-                                <input type="radio" id="k1" name="priority-kids-edu" value="Low"
+                                <input type="radio" id="kid1" name="priority-kids-edu" value="Low"
                                        class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="k1">Low</label>
+                                <label class="k-radio-label w-100" for="kid1">Low</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="radio" id="k2" name="priority-kids-edu" value="Medium"
+                                <input type="radio" id="kid2" name="priority-kids-edu" value="Medium"
                                        class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="k2">Medium</label>
+                                <label class="k-radio-label w-100" for="kid2">Medium</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="radio" id="k3" name="priority-kids-edu" value="High"
+                                <input type="radio" id="kid3" name="priority-kids-edu" value="High"
                                        class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="k3">High</label>
+                                <label class="k-radio-label w-100" for="kid3">High</label>
                             </div>
                         </div>
                     </div>
@@ -1005,155 +1142,44 @@
                     </button>
                     <div class="form-inline row">
                         <div class="form-group col-md-12">
-                            <input type="text" onfocus="(this.type='date')"
-                                   class="form-control shadowed-input" id="from-date2"
-                                   placeholder="Years from now">
+                            <input id="datepicker-kids-edu2" class="shadowed-input w-100"  placeholder="Years from now"/>
+
+                            <script>
+                                kendo.syncReady(function () {
+                                    $("#datepicker-kids-edu2").kendoDatePicker();
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label">Duration of education</label>
                     <div class="col-md-12">
-                    <div class="row">
-                        <div class="radio-toolbar w-100">
-                            <input type="radio" id="y2" name="priority-kids1" value="2 Year"
-                                   class="k-button"/>
-                            <label for="y2">2 Year</label>
+                        <div class="row">
+                            <div class="radio-toolbar w-100">
+                                <input type="radio" id="y11" name="priority-kids2" value="2 Year"
+                                       class="k-button"/>
+                                <label for="y11">2 Year</label>
 
-                            <input type="radio" id="y4" name="priority-kids1" value="4 Year"
-                                   class="k-button"/>
-                            <label for="y4">4 Year</label>
+                                <input type="radio" id="y41" name="priority-kids2" value="4 Year"
+                                       class="k-button"/>
+                                <label for="y41">4 Year</label>
 
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Do you know the college name?</label>
-                    <input type="text" class="form-control shadowed-input" placeholder="">
-                </div>
-            </div>
-            <div class="tab-pane fade" id="pills-tab-kid2" role="tabpanel"
-                 aria-labelledby="tab-kid2">
-                <div class="form-group">
-                    <label for="goal-name" class="col-form-label">How important this
-                        goal?</label>
-                    <div class="row">
-                        <div class="radio-toolbar row w-100">
-                            <div class="col-md-4">
-                                <input type="radio" id="d1" name="priority-kids-2" value="Low"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="d1">Low</label>
                             </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="d2" name="priority-kids-2" value="Medium"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="d2">Medium</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="d3" name="priority-kids-2" value="High"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="d3">High</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Target start date</label>
-                    <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                            data-placement="right" title="Target start date description">?
-                    </button>
-                    <div class="form-inline row">
-                        <div class="form-group col-md-12">
-                            <input type="text" onfocus="(this.type='date')"
-                                   class="form-control shadowed-input"
-                                   placeholder="Years from now">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Duration of education</label>
-                    <div class="row">
-                        <div class="radio-toolbar w-100">
-                            <input type="radio" id="y2-2" name="priority-kids2" value="2 Year"
-                                   class="k-button"/>
-                            <label for="y2-2">2 Year</label>
-
-                            <input type="radio" id="y4-2" name="priority-kids2" value="4 Year"
-                                   class="k-button"/>
-                            <label for="y4-2">4 Year</label>
-
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label">Do you know the college name?</label>
-                    <input type="text" class="form-control shadowed-input"   placeholder="">
-                </div>
-
-            </div>
-            <div class="tab-pane fade" id="pills-tab-kid3" role="tabpanel"
-                 aria-labelledby="tab-kid3">
-                <div class="form-group">
-                    <label for="goal-name" class="col-form-label">How important this
-                        goal?</label>
-                    <div class="row">
-                        <div class="radio-toolbar row w-100">
-                            <div class="col-md-4">
-                                <input type="radio" id="k4" name="priority-kids-3" value="Low"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="k4">Low</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="k5" name="priority-kids-3" value="Medium"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="k5">Medium</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="k6" name="priority-kids-3" value="High"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="k6">High</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Target start date</label>
-                    <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                            data-placement="right" title="Target start date description">?
-                    </button>
-                    <div class="form-inline row">
-                        <div class="form-group col-md-12">
-                            <input type="text" onfocus="(this.type='date')"
-                                   class="form-control shadowed-input"
-                                   placeholder="Years from now">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Duration of education</label>
-                    <div class="row">
-                        <div class="radio-toolbar w-100">
-                            <input type="radio" id="y2-3" name="priority-kids3" value="2 Year"
-                                   class="k-button"/>
-                            <label for="y2-3">2 Year</label>
-
-                            <input type="radio" id="y4-3" name="priority-kids3" value="4 Year"
-                                   class="k-button"/>
-                            <label for="y4-3">4 Year</label>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Do you know the college name?</label>
-                    <input type="text" class="form-control shadowed-input"   placeholder="">
+                    <input class="form-control shadowed-input" id="college-name" value="">
+                    <script>
+                        kendo.syncReady(function () {
+                            $("#college-name").kendoMaskedTextBox();
+                        });
+                    </script>
                 </div>
             </div>
-            <div class="tab-pane fade" id="pills-tab-kid4" role="tabpanel"
-                 aria-labelledby="tab-kid4">
-               <!--hear copy-past other kids education form if need-->
-            </div>
+
         </div>
     </div>
 
@@ -1167,7 +1193,13 @@
 <form class="" id="form-purchase_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-pur" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="goal-name-pur" placeholder=""value="Major Purchase">
+        <input class="form-control shadowed-input" id="goal-name-pur" value="Major Purchase">
+        <script>
+            kendo.syncReady(function () {
+                $("#goal-name-pur").kendoMaskedTextBox();
+            });
+        </script>
+
     </div>
     <div class="form-group">
         <label for="goal-name" class="col-form-label">How important this goal?</label>
@@ -1191,21 +1223,36 @@
             </div>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group mt-3">
         <label class="col-form-label">Target purchase date</label>
         <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                 data-placement="right" title="Target start date description">?
         </button>
-        <div class="form-inline row">
-            <div class="form-group col-md-12">
-                <input type="text" class="form-control shadowed-input"
-                       placeholder="Years from now" onfocus="(this.type='date')">
-            </div>
-        </div>
+        <div id="daterangepicker-purchase" class="daterangepicker" title="daterangepicker"></div>
+    </div>
+    <small class="text-muted">Years from now</small>
+
+    <script>
+        kendo.syncReady(function () {
+            $("#daterangepicker-purchase").kendoDateRangePicker({
+                labels: false
+            });
+        });
+    </script>
+
     </div>
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
-        <input type="text" class="form-control shadowed-input"   placeholder="$">
+        <input id="currency-purchase" type="number" class="form-control shadowed-input w-100" title="wedding" />
+
+        <script>
+            kendo.syncReady(function () {
+                $("#currency-purchase").kendoNumericTextBox({
+                    format: "c",
+                    decimals: 0
+                });
+            });
+        </script>
     </div>
 
     <div class="form-group mt-5">
@@ -1217,8 +1264,13 @@
 <form class="" id="form-wedding_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-wed" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="goal-name-wed"
-               value="Wedding">
+        <input class="form-control shadowed-input textbox" id="goal-name-wed" placeholder="Wedding">
+        <script>
+            kendo.syncReady(function () {
+                $("#goal-name-wed").kendoMaskedTextBox();
+            });
+        </script>
+
     </div>
     <div class="form-group">
         <label for="goal-name" class="col-form-label">How important this goal?</label>
@@ -1241,18 +1293,38 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group mt-3">
             <label class="col-form-label">Planned wedding date</label>
             <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                     data-placement="right" title="Target start date description">?
             </button>
 
-            <div id="" class="daterangepicker" title="daterangepicker"></div>
-            <small class="text-muted">Years from now</small>
+            <div id="daterangepicker-wedding" class="daterangepicker" title="daterangepicker"></div>
         </div>
+        <small class="text-muted">Years from now</small>
+
+        <script>
+            kendo.syncReady(function () {
+                $("#daterangepicker-wedding").kendoDateRangePicker({
+                    labels: false
+                });
+            });
+        </script>
+
+    </div>
         <div class="form-group">
-            <label class="col-form-label">Expected total cost</label>
-            <input type="text" class="form-control shadowed-input"   placeholder="$">
+            <label class="col-form-label">Expected total cost </label>
+                <input id="currency-wedding" type="number" class="form-control shadowed-input w-100" title="wedding" />
+
+            <script>
+                kendo.syncReady(function () {
+                    $("#currency-wedding").kendoNumericTextBox({
+                        format: "c",
+                        decimals: 0
+                    });
+                });
+            </script>
+
         </div>
 
         <div class="form-group mt-5">
@@ -1265,11 +1337,16 @@
 <form class="" id="form-emergency_fund" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-emergency" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="goal-name-emergency"
-               value="Wedding">
+        <input class="form-control shadowed-input"  id="goal-name-emergency" value="Rainy Day Fund">
+        <script>
+            kendo.syncReady(function () {
+                $("#goal-name-emergency").kendoMaskedTextBox();
+            });
+        </script>
+
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">How important this goal?</label>
+        <label class="col-form-label">How important this goal?</label>
         <div class="row">
             <div class="radio-toolbar row w-100">
                 <div class="col-md-4">
@@ -1296,30 +1373,36 @@
             <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title="" data-original-title="Assuming all of the current expenses cannot be reduced, determines how much money you would need to last that many months if you lost your income.">
                 ?
             </button>
-            <div class="form-inline row">
-                <div class="form-group col-md-8 col-lg-8">
-                    <input type="range" class="custom-range" min="0" max="12" id="months" value="6">
-                    <div class="col-md-12 col-lg-12">
-                        <div class="row justify-content-between">
-                            <div class="col-md-12 col-lg-6">
-                                <small>0 month</small>
-                            </div>
-                            <div class="col-md-12 col-lg-6 text-right">
-                                <small>12 months</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-md-4 col-lg-4 mb-4">
-                    <small>You have selected 6 Months</small>
-                    <div class="row"></div>
-                </div>
+            <div class="form-group">
+                <input id="slider-fund" class="balSlider" value="0" title="Rainy Day Fund" />
+            </div>
+            <small>You have selected 6 Months</small>
+            <script>
+                kendo.syncReady(function () {
+                    $("#slider-fund").kendoSlider({
+                        min: -10,
+                        max: 10,
+                        smallStep: 2,
+                        largeStep: 1,
+                    }).data("kendoSlider");
+                });
+            </script>
+
             </div>
 
         </div>
         <div class="form-group">
             <label class="col-form-label">Expected total cost</label>
-            <input type="text" class="form-control shadowed-input"   placeholder="$">
+            <input id="currency-fund" type="number" class="form-control shadowed-input w-100" />
+
+            <script>
+                kendo.syncReady(function () {
+                    $("#currency-fund").kendoNumericTextBox({
+                        format: "c"
+                    });
+                });
+            </script>
+
         </div>
 
         <div class="form-group mt-5">
@@ -1332,7 +1415,12 @@
 <form class="" id="form-vacation_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-vac" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="goal-name-vac" value="Vacation">
+        <input class="form-control shadowed-input" id="goal-name-vac" value="Vacation">
+        <script>
+            kendo.syncReady(function () {
+                $("#goal-name-vac").kendoMaskedTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
         <label for="goal-name" class="col-form-label">How important this goal?</label>
@@ -1361,21 +1449,33 @@
         <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                 data-placement="right" title="Target start date description">?
         </button>
-        <div class="form-inline row">
-            <div class="form-group col-md-6">
-                <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input"
-                       placeholder="From">
-            </div>
-            <div class="form-group col-md-6">
-                <input type="text" onfocus="(this.type='date')" class="form-control shadowed-input"
-                       placeholder="To">
-            </div>
+        <div class="demo-section k-content">
+            <div id="daterangepicker-vacation" class="daterangepicker" title="daterangepicker"></div>
         </div>
         <small class="text-muted">Years from now</small>
+
+        <script>
+            kendo.syncReady(function () {
+                $("#daterangepicker-vacation").kendoDateRangePicker({
+                    labels: false
+                });
+            });
+        </script>
+
     </div>
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
-        <input type="text" class="form-control shadowed-input" placeholder="$">
+        <input id="currency-vacation" type="number" class="form-control shadowed-input" title="co education" style="width: 100%;" />
+        </label>
+
+        <script>
+            kendo.syncReady(function () {
+                $("#currency-vacation").kendoNumericTextBox({
+                    format: "c",
+                    decimals: 3
+                });
+            });
+        </script>
     </div>
 
     <div class="form-group mt-5">
@@ -1386,13 +1486,17 @@
 <!--Form Wealth goal modal-->
 <form class="" id="form-wealthy_goal" style="display: none">
     <div class="form-group mt-3">
-        <label for="goal-name" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="goal-name" placeholder="Target Wealth">
+        <label for="wealth-goal" class="col-form-label">Goal name</label>
+        <input class="form-control shadowed-input" id="wealth-goal" placeholder="Target Wealth">
+        <script>
+            kendo.syncReady(function () {
+                $("#wealth-goal").kendoMaskedTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
         <label for="" class="col-form-label">
-            How important this
-            goal?
+            How important this goal?
         </label>
         <div class="row">
             <div class="radio-toolbar row w-100">
@@ -1417,11 +1521,26 @@
     <div class="form-group">
         <label for="goal-age" class="col-form-label">Target age</label>
         <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title="Target age description">?</button>
-        <input type="text" class="form-control shadowed-input" id="goal-age" placeholder="5">
+        <input id="goal-age" type="number" class="form-control shadowed-input w-100" />
+
+        <script>
+            kendo.syncReady(function () {
+                $("#goal-age").kendoNumericTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
         <label for="goal-price" class="col-form-label">Target Wealth</label>
-        <input type="text" class="form-control shadowed-input" id="goal-price" placeholder="$50,000">
+        <input id="goal-price" type="number" class="form-control shadowed-input w-100" />
+
+        <script>
+            kendo.syncReady(function () {
+                $("#goal-price").kendoNumericTextBox({
+                    format: "c",
+                    decimals: 3
+                });
+            });
+        </script>
     </div>
     <div class="form-group mt-5">
         <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
@@ -1434,6 +1553,12 @@
         <label for="goal-name-retirement" class="col-form-label">Goal name</label>
         <input type="text" class="form-control shadowed-input" id="goal-name-retirement"
                placeholder="" value="Johnny’s Retirement">
+
+        <script>
+            kendo.syncReady(function () {
+                $("#goal-name-retirement").kendoMaskedTextBox();
+            });
+        </script>
     </div>
     <div class="form-group">
         <label for="goal-name" class="col-form-label">Which spouse does this goal apply
@@ -1487,9 +1612,16 @@
                         <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                                 data-placement="right" title="Target start date description">?
                         </button>
-                        <div id="" class="daterangepicker" title="daterangepicker"></div>
+                        <div id="retirement-date" class="daterangepicker" title="daterangepicker"></div>
                     </div>
                     <small class="text-muted">Years from now 30 (Age 67)</small>
+                    <script>
+                        kendo.syncReady(function () {
+                            $("#retirement-date").kendoDateRangePicker({
+                                labels: false
+                            });
+                        });
+                    </script>
                 </div>
                 <div class="form-group">
                     <div class="demo-section k-content">
@@ -1498,6 +1630,18 @@
                         <input id="slider-income" class="balSlider" value="5" title="slider"/>
                     </div>
                     <small>You have selected $4,000,000</small>
+                    <script>
+                        kendo.syncReady(function () {
+                            $("#slider-income").kendoSlider({
+                                increaseButtonTitle: "Right",
+                                decreaseButtonTitle: "Left",
+                                min: -10,
+                                max: 10,
+                                smallStep: 2,
+                                largeStep: 1
+                            }).data("kendoSlider");
+                        });
+                    </script>
                 </div>
                 <div class="form-group">
                     <div class="demo-section k-content">
@@ -1506,58 +1650,24 @@
                         <input id="slider-heirs" class="balSlider" value="30" title="slider"/>
                     </div>
                     <small>You have selected 30%</small>
+                    <script>
+                        kendo.syncReady(function () {
+                            $("#slider-heirs").kendoSlider({
+                                increaseButtonTitle: "Right",
+                                decreaseButtonTitle: "Left",
+                                min: -10,
+                                max: 10,
+                                smallStep: 2,
+                                largeStep: 1
+                            }).data("kendoSlider");
+                        });
+                    </script>
                 </div>
             </div>
 
             <div class="tab-pane fade" id="pills-husband" role="tabpanel"
                  aria-labelledby="pills-husband-tab">
-                <div class="form-group">
-                    <label for="" class="col-form-label">
-                        How important this
-                        goal?
-                    </label>
-                    <div class="row">
-                        <div class="radio-toolbar w-100">
-                            <input type="radio" id="m5" name="priority" value="Low"
-                                   class="k-button"/>
-                            <label for="m5">Low</label>
 
-                            <input type="radio" id="m6" name="priority" value="Medium"
-                                   class="k-button"/>
-                            <label for="m6">Medium</label>
-
-                            <input type="radio" id="m7" name="priority" value="High"
-                                   class="k-button"/>
-                            <label for="m7">High</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="demo-section k-content">
-                        <label for="" class="col-form-label">Target start date</label>
-                        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                                data-placement="right" title="Target start date description">?
-                        </button>
-                        <input id="tab2-slider" class="balSlider" value="0" title="slider"/>
-                    </div>
-                    <small class="text-muted">Years from now 30 (Age 67)</small>
-                </div>
-                <div class="form-group">
-                    <div class="demo-section k-content">
-                        <label class="col-form-label">How much retirement income do you need
-                            compared to your existing expenses?</label>
-                        <input id="tab2-slider-income" class="balSlider" value="5" title="slider"/>
-                    </div>
-                    <small>You have selected $4,000,000</small>
-                </div>
-                <div class="form-group">
-                    <div class="demo-section k-content">
-                        <label for="" class="col-form-label">How much would you like to leave
-                            your heirs?</label>
-                        <input id="tab2-slider-heirs" class="balSlider" value="30" title="slider"/>
-                    </div>
-                    <small>You have selected 30%</small>
-                </div>
             </div>
 
         </div>
@@ -1581,9 +1691,9 @@
 
 
 <!-- jQuery, Popper.js, Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+<!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -1591,8 +1701,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<!--<script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>-->
-<script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
+
 <script src="js/jQuery-plugin-progressbar.js"></script>
 <script src="js/rpie.js"></script>
 <script src="js/func.js"></script>
@@ -1602,23 +1711,23 @@
 
 
         // navbar active and inactive links
-            var activeNavbar = changedObj.available_new_goal_items;
-            const navItems = document.querySelectorAll('#goal-navbar a');
-            for(let items of navItems){
-                for(var i = 0; i < activeNavbar.length; i++) {
-                    if (activeNavbar[i].goal_type === items.getAttribute('data-type')) {
-                        var g_type = activeNavbar[i].goal_type;
-                        if (activeNavbar[i].enable === false) {
-                            document.querySelector("[data-type='" + g_type + "']").removeAttribute('data-target');
-                            document.querySelector("[data-type='" + g_type + "']").removeAttribute('data-dismiss');
-                            document.querySelector("[data-type='" + g_type + "']").classList.add('inactive');
-                        } else {
-                            document.querySelector("[data-type='" + g_type + "']").setAttribute('data-target', '#add-'+g_type );
-                            document.querySelector("[data-type='" + g_type + "']").setAttribute('data-dismiss', 'modal');
-                        }
+        var activeNavbar = changedObj.available_new_goal_items;
+        const navItems = document.querySelectorAll('#goal-navbar a');
+        for(let items of navItems){
+            for(var i = 0; i < activeNavbar.length; i++) {
+                if (activeNavbar[i].goal_type === items.getAttribute('data-type')) {
+                    var g_type = activeNavbar[i].goal_type;
+                    if (activeNavbar[i].enable === false) {
+                        document.querySelector("[data-type='" + g_type + "']").removeAttribute('data-target');
+                        document.querySelector("[data-type='" + g_type + "']").removeAttribute('data-dismiss');
+                        document.querySelector("[data-type='" + g_type + "']").classList.add('inactive');
+                    } else {
+                        document.querySelector("[data-type='" + g_type + "']").setAttribute('data-target', '#add-'+g_type );
+                        document.querySelector("[data-type='" + g_type + "']").setAttribute('data-dismiss', 'modal');
                     }
                 }
             }
+        }
 
         $('#goal-navbar a').on('click', function () {
             var goal_type = $(this).attr('data-type');
@@ -1634,7 +1743,12 @@
             $('.radialProgressBar').css('z-index',1);
         });
 
-        $(".daterangepicker").kendoDateRangePicker();
+
+        //$(".textbox").kendoTextBox({
+        //});
+
+        //$("#mortgage").kendoComboBox();
+        //$("#car-size").kendoComboBox();
 
     });
 </script>
