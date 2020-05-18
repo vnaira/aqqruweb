@@ -159,7 +159,8 @@ body, p{
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 23px;
+  padding-top: 5px;
 }
 
 .switch input {

@@ -109,7 +109,7 @@
                     <div class="row justify-content-end align-items-center">
                         <div class="col border-right text-center mt-2">
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" checked/>
                                 <span class="slider round"></span>
                             </label>
                             <span class="nb-icon pl-2">Plan Locked</span>
@@ -264,7 +264,7 @@
                                             "css_class": null
                                         },
                                         "calc_goal_result": {
-                                            "score": 51.0,
+                                            "score": 15.0,
                                             "state": [0.269, 0.731, 0.0],
                                             "weight": 21.740481878491309
                                         }
@@ -717,10 +717,15 @@
 
 
 <!-- Modal for Goal adding-->
-<div class="modal fade for-add-goal" id="add-form" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade for-add-goal" id="add-form" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+
         <div class="modal-content">
+
             <div class="modal-body">
+                <button type="button" class="close p-2 text-right"  >
+                    <span aria-hidden="true" data-dismiss="modal" aria-label="Close">×</span>
+                </button>
                 <!--goal icon and title -->
                 <div class="row">
                     <div class="col-9">
@@ -741,8 +746,6 @@
 
 <!-- Forms for Car goal-->
 <form class="" id="form-car_goal" style="display: none">
-    <div class="row">
-        <div class="col-md-12">
             <div class="form-group mt-3">
                 <label for="car-goal-name" class="col-form-label">Goal name</label>
                 <input class="form-control shadowed-input" id="car-goal-name" value="Car">
@@ -754,7 +757,7 @@
                 </script>
             </div>
             <div class="form-group">
-                <label for="goal-name" class="col-form-label">How important this goal?</label>
+                <label class="col-form-label">How important this goal?</label>
                 <div class="row">
                     <div class="radio-toolbar row w-100">
                         <div class="col-md-4">
@@ -800,7 +803,6 @@
                         data-placement="right" title="Expected Car Price">?
                 </button>
                     <input id="currency" type="number" class="form-control shadowed-input w-100" />
-                </label>
 
                 <script>
                     kendo.syncReady(function () {
@@ -863,12 +865,9 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="form-group mt-3 col-md-6 offset-6">
-            <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
-        </div>
-
+    <div class="form-group mt-5">
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form>
 
@@ -884,7 +883,7 @@
         </script>
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">How important this goal?</label>
+        <label class="col-form-label">How important this goal?</label>
         <div class="row">
             <div class="radio-toolbar row w-100">
                 <div class="col-md-4">
@@ -929,7 +928,7 @@
     </div>
     <div class="form-group">
         <label class="col-form-label">Desired Zip Code</label>
-        <input id="zip-code" class="form-control shadowed-input textbox"/>
+        <input id="zip-code" class="form-control shadowed-input"/>
 
         <script>
             kendo.syncReady(function () {
@@ -945,7 +944,7 @@
         <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                 data-placement="right" title="Expected House Price">?
         </button>
-        <input id="house-price" type="number" class="form-control shadowed-input" title="expected price">
+        <input id="house-price" type="number" class="form-control shadowed-input" title="expected price"/>
         <script>
             kendo.syncReady(function () {
                 $("#house-price").kendoNumericTextBox({
@@ -956,7 +955,7 @@
         </script>
     </div>
     <div class="form-group mt-4">
-        <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
+        <input type="checkbox" id="eq1" class="k-checkbox" checked="checked"/>
         <label class="k-checkbox-label" for="eq1">Primary Residence?</label>
     </div>
     <div class="form-group">
@@ -972,7 +971,7 @@
     </div>
     <div class="form-group">
         <label for="mortgage_type" class="col-form-label">Mortgage Type</label>
-        <input class="browser-default w-100 shadowed-input" id="mortgage_type" name="Goal.HouseGoal" type="text" value="1" data-role="dropdownlist">
+        <input class="browser-default w-100 shadowed-input" id="mortgage_type" name="Goal.HouseGoal" type="text" value="1" data-role="dropdownlist"/>
         <script>
             kendo.syncReady(function () {
                 jQuery("#mortgage_type").kendoDropDownList({
@@ -987,7 +986,7 @@
     </div>
 
     <div class="form-group mt-5">
-        <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form><!--End form House goal -->
 
@@ -995,7 +994,7 @@
 <form class="" id="form-continued_education_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="con-goal-name" class="col-form-label">Goal name</label>
-        <input class="form-control shadowed-input" id="con-goal-name" placeholder="Continued Education">
+        <input class="form-control shadowed-input" id="con-goal-name" placeholder="Continued Education"/>
         <script>
             kendo.syncReady(function () {
                 $("#con-goal-name").kendoMaskedTextBox();
@@ -1004,23 +1003,16 @@
     </div>
     <div class="form-group">
         <label for="" class="col-form-label">How important this goal?</label>
-        <div class="row">
-            <div class="radio-toolbar row w-100">
-                <div class="col-md-4">
-                    <input type="radio" id="c1" name="priority-edu" value="Low"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="c1">Low</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="c2" name="priority-edu" value="Medium"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="c2">Medium</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="c3" name="priority-edu" value="High"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="c3">High</label>
-                </div>
+        <div class="col-md-12">
+            <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
             </div>
         </div>
     </div>
@@ -1045,7 +1037,7 @@
     </div>
     <div class="form-group">
         <label class="col-form-label">Duration of education</label>
-        <input class="form-control shadowed-input" id="education-duration" placeholder="0 month">
+        <input class="form-control shadowed-input" id="education-duration" placeholder="0 month"/>
         <script>
             kendo.syncReady(function () {
                 $("#education-duration").kendoMaskedTextBox();
@@ -1067,7 +1059,7 @@
     </div>
 
     <div class="form-group mt-5">
-        <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form>
 <!--End Form Continued Education Goal-->
@@ -1084,7 +1076,7 @@
         </script>
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">Which child does this goal apply
+        <label class="col-form-label">Which child does this goal apply
             to?</label>
         <ul class="nav nav-pills mb-3 row" id="pills-tab-kids" role="tablist">
             <li class="nav-item col-3 text-center mt-1" ondragstart="return false;">
@@ -1113,25 +1105,18 @@
             <div class="tab-pane fade show active" id="pills-tab-kid1" role="tabpanel"
                  aria-labelledby="tab-kid1">
                 <div class="form-group">
-                    <label for="goal-name" class="col-form-label">How important this
+                    <label class="col-form-label">How important this
                         goal?</label>
-                    <div class="row">
-                        <div class="radio-toolbar row w-100">
-                            <div class="col-md-4">
-                                <input type="radio" id="kid1" name="priority-kids-edu" value="Low"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="kid1">Low</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="kid2" name="priority-kids-edu" value="Medium"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="kid2">Medium</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="kid3" name="priority-kids-edu" value="High"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="kid3">High</label>
-                            </div>
+                    <div class="col-md-12">
+                        <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                            <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
                         </div>
                     </div>
                 </div>
@@ -1185,7 +1170,7 @@
 
 
     <div class="form-group mt-5">
-        <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form>
 
@@ -1202,24 +1187,17 @@
 
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">How important this goal?</label>
-        <div class="row">
-            <div class="radio-toolbar row w-100">
-                <div class="col-md-4">
-                    <input type="radio" id="p1" name="priority-purchase" value="Low"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="p1">Low</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="p2" name="priority-purchase" value="Medium"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="p2">Medium</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="p3" name="priority-purchase" value="High"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="p3">High</label>
-                </div>
+        <label class="col-form-label">How important this goal?</label>
+        <div class="col-md-12">
+            <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
             </div>
         </div>
     </div>
@@ -1240,7 +1218,6 @@
         });
     </script>
 
-    </div>
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
         <input id="currency-purchase" type="number" class="form-control shadowed-input w-100" title="wedding" />
@@ -1256,7 +1233,7 @@
     </div>
 
     <div class="form-group mt-5">
-        <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form>
 
@@ -1264,7 +1241,7 @@
 <form class="" id="form-wedding_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-wed" class="col-form-label">Goal name</label>
-        <input class="form-control shadowed-input textbox" id="goal-name-wed" placeholder="Wedding">
+        <input class="form-control shadowed-input textbox" id="goal-name-wed" placeholder="Wedding"/>
         <script>
             kendo.syncReady(function () {
                 $("#goal-name-wed").kendoMaskedTextBox();
@@ -1273,24 +1250,17 @@
 
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">How important this goal?</label>
-        <div class="row">
-            <div class="radio-toolbar row w-100">
-                <div class="col-md-4">
-                    <input type="radio" id="w1" name="priority-wedding" value="Low"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="h1">Low</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="w2" name="priority-wedding" value="Medium"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="w2">Medium</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="w3" name="priority-wedding" value="High"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="w3">High</label>
-                </div>
+        <label class="col-form-label">How important this goal?</label>
+        <div class="col-md-12">
+            <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
             </div>
         </div>
         <div class="form-group mt-3">
@@ -1328,16 +1298,16 @@
         </div>
 
         <div class="form-group mt-5">
-            <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+            <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
         </div>
-    </div>
+
 </form>
 
 <!--Add Emergency goal modal-->
 <form class="" id="form-emergency_fund" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-emergency" class="col-form-label">Goal name</label>
-        <input class="form-control shadowed-input"  id="goal-name-emergency" value="Rainy Day Fund">
+        <input class="form-control shadowed-input"  id="goal-name-emergency" value="Rainy Day Fund"/>
         <script>
             kendo.syncReady(function () {
                 $("#goal-name-emergency").kendoMaskedTextBox();
@@ -1347,23 +1317,16 @@
     </div>
     <div class="form-group">
         <label class="col-form-label">How important this goal?</label>
-        <div class="row">
-            <div class="radio-toolbar row w-100">
-                <div class="col-md-4">
-                    <input type="radio" id="e1" name="priority-emergency" value="Low"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="e1">Low</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="e2" name="priority-emergency" value="Medium"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="e2">Medium</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="e3" name="priority-emergency" value="High"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="e3">High</label>
-                </div>
+        <div class="col-md-12">
+            <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
             </div>
         </div>
         <div class="form-group">
@@ -1406,16 +1369,15 @@
         </div>
 
         <div class="form-group mt-5">
-            <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+            <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
         </div>
-    </div>
 </form>
 
 <!--Add Vacation goal modal-->
 <form class="" id="form-vacation_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-vac" class="col-form-label">Goal name</label>
-        <input class="form-control shadowed-input" id="goal-name-vac" value="Vacation">
+        <input class="form-control shadowed-input" id="goal-name-vac" value="Vacation"/>
         <script>
             kendo.syncReady(function () {
                 $("#goal-name-vac").kendoMaskedTextBox();
@@ -1423,24 +1385,17 @@
         </script>
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">How important this goal?</label>
-        <div class="row">
-            <div class="radio-toolbar row w-100">
-                <div class="col-md-4">
-                    <input type="radio" id="v1" name="priority-vacation" value="Low"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="v1">Low</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="v2" name="priority-vacation" value="Medium"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="v2">Medium</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="v3" name="priority-vacation" value="High"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="v3">High</label>
-                </div>
+        <label class="col-form-label">How important this goal?</label>
+        <div class="col-md-12">
+            <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
             </div>
         </div>
     </div>
@@ -1466,7 +1421,6 @@
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
         <input id="currency-vacation" type="number" class="form-control shadowed-input" title="co education" style="width: 100%;" />
-        </label>
 
         <script>
             kendo.syncReady(function () {
@@ -1479,7 +1433,7 @@
     </div>
 
     <div class="form-group mt-5">
-        <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form>
 
@@ -1487,7 +1441,7 @@
 <form class="" id="form-wealthy_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="wealth-goal" class="col-form-label">Goal name</label>
-        <input class="form-control shadowed-input" id="wealth-goal" placeholder="Target Wealth">
+        <input class="form-control shadowed-input" id="wealth-goal" placeholder="Target Wealth"/>
         <script>
             kendo.syncReady(function () {
                 $("#wealth-goal").kendoMaskedTextBox();
@@ -1498,23 +1452,16 @@
         <label for="" class="col-form-label">
             How important this goal?
         </label>
-        <div class="row">
-            <div class="radio-toolbar row w-100">
-                <div class="col-md-4">
-                    <input type="radio" id="w4" name="priority-wealth" value="Low"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="w4">Low</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="w5" name="priority-wealth" value="Medium"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="w5">Medium</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" id="w6" name="priority-wealth" value="High"
-                           class="k-button k-radio"/>
-                    <label class="k-radio-label w-100" for="w6">High</label>
-                </div>
+        <div class="col-md-12">
+            <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
             </div>
         </div>
     </div>
@@ -1543,7 +1490,7 @@
         </script>
     </div>
     <div class="form-group mt-5">
-        <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form>
 
@@ -1551,8 +1498,8 @@
 <form class="" id="form-retirement_goal" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-retirement" class="col-form-label">Goal name</label>
-        <input type="text" class="form-control shadowed-input" id="goal-name-retirement"
-               placeholder="" value="Johnny’s Retirement">
+        <input class="form-control shadowed-input" id="goal-name-retirement"
+               placeholder="" value="Johnny’s Retirement"/>
 
         <script>
             kendo.syncReady(function () {
@@ -1561,7 +1508,7 @@
         </script>
     </div>
     <div class="form-group">
-        <label for="goal-name" class="col-form-label">Which spouse does this goal apply
+        <label class="col-form-label">Which spouse does this goal apply
             to?</label>
 
 
@@ -1586,23 +1533,16 @@
                         How important this
                         goal?
                     </label>
-                    <div class="row">
-                        <div class="radio-toolbar row w-100">
-                            <div class="col-md-4">
-                                <input type="radio" id="r1" name="priority-retirement" value="Low"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="r1">Low</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="r2" name="priority-retirement" value="Medium"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="r2">Medium</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="radio" id="r3" name="priority-retirement" value="High"
-                                       class="k-button k-radio"/>
-                                <label class="k-radio-label w-100" for="r3">High</label>
-                            </div>
+                    <div class="col-md-12">
+                        <div class="btn-toolbar row justify-content-between" role="toolbar">
+
+                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
+                            <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
+                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
+
                         </div>
                     </div>
                 </div>
@@ -1674,7 +1614,7 @@
     </div>
 
     <div class="form-group mt-5">
-        <button type="button" class="btn btn-ok btn-block">Save And Continue</button>
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
     </div>
 </form><!--End Form Wealth goal -->
 

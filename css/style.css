@@ -378,6 +378,8 @@ input.priority_[type=radio]+label {
   background: #DBE6F2;
   padding: 9px 28px;
   border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
 }
 input.priority_[type=radio]:checked+label {
   background: #499DF2;
@@ -408,10 +410,11 @@ input.priority_2[type=radio]:checked+label {
   background: #DBE6F2;
   color: #5C7599;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   border-radius: 50%;
-  min-width: 28px;
+  min-width: 22px;
   padding: 0;
+  margin-left: 5px;
 }
 .goal-page-title a{
   font-size: 35px;
@@ -496,7 +499,7 @@ h6{font-size: 14px}
 .canvas-value{
   position: absolute;
   font-size: 20px;
-  left: 100px;
+  right: 130px;
   top: 124px;
   width: 113px;
   text-align: center;
@@ -578,7 +581,8 @@ h6{font-size: 14px}
 }
 .grey-block .block-value{
   font-family: Avenir-black;
-  font-size: 32px;
+  font-size: 1.7vw;
+  /*font-size: 32px;*/
   margin-top: 20px;
 }
 .case-plus{
@@ -629,7 +633,7 @@ position: relative;
   color: #499DF2;
 }
 .btn-goal {
-  border-radius: 18px;
+  border-radius: 8px;
   box-shadow: 0 2px 14px 2px rgba(0, 0, 0, 0.15);
   background-color: #FFFFFF;
   color: #3D4E66;
@@ -640,6 +644,7 @@ position: relative;
 .btn-goal button {
   background: transparent;
   border: 0 none;
+  color: #546393;
 }
 .success {
   display: inline-block;
@@ -675,7 +680,7 @@ position: relative;
 
 .black-title{
   font-family: Avenir-black;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 900;
   color:#3D4E66;
 }
@@ -718,7 +723,10 @@ td[data-style='leftBorder'] {
     margin-top: -8px!important;}
 .progress {background: rgba(245, 245, 245, 1); border: 2px solid rgba(245, 245, 245, 1); border-radius: 15px; height: 12px;}
 .progress-bar-custom {background: #09ACFE;}
-.blue-text{color:#5395F2}
+.blue-text{
+  /*font-size: 20px;*/
+  color: #5395F2;
+  font-weight: bold;}
 .dropdown-sort a{color:#5C7599; font-size: 14px}
 .dropdown .dropdown-toggle:after{margin-left: 10px}
 
@@ -737,7 +745,7 @@ td[data-style='leftBorder'] {
 .pr > div:last-child{text-align: right!important;}
 .big-title-big {
   margin-bottom: 0;
-  font-size: 50px;
+  font-size: 45px;
   color: #fff;
 }
 .back-btn {
@@ -853,10 +861,6 @@ personal information pages
 .title3 {
   color: #fff;
   font-size: 3em;
-}
-.middle-text {
-  color: #fff;
-  font-size: 1.4em;
 }
 .chat-content {
   background: #fff;
@@ -974,10 +978,11 @@ personal information pages
 .score-and-value{
   font-weight: bold;
   color: #fff;
+  padding-top: 10px;
 }
 .score-and-value h6{
-  margin-bottom: 6px;
-  font-weight: bolder;
+  color: #fff;
+  margin: 0;
 }
 .dropdown-item.active, .dropdown-item:active{
   background-color: #f8f9fa;
@@ -1133,10 +1138,6 @@ responsiveness
     color: #fff;
     font-size: 2em;
   }
-  .middle-text {
-    color: #fff;
-    font-size: 1.1em;
-  }
   .middle-value {
     width: 390px;
     min-height: 200px;
@@ -1243,3 +1244,19 @@ responsiveness
 .k-textbox-container{width: 49%}
 .k-numerictextbox .k-numeric-wrap .k-select{display: none!important;}
 .k-dropdown .k-dropdown-wrap{background: #fff!important;}
+.for-add-goal{overflow-y: hidden}
+
+
+/*STYLE CHANGES*/
+
+.middle-text {
+  color: #fff;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.card-subtext {
+  font-size: 20px;
+}
+.w-30{width: 30%!important;}
+.k-daterangepicker .k-dateinput, .k-daterangepicker .k-numerictextbox{width: 49%!important;}

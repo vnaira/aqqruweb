@@ -27,7 +27,7 @@ function drawTable(profile, prior = priority) {
     document.getElementById("table-canvas").innerHTML = "";
 
     table = document.createElement("table");
-    table.className = "table goals-table table-responsive ml-3";
+    table.className = "table goals-table table-responsive pl-5 pr-4";
     row = table.insertRow();
 
     canvasWidth = $('#table-canvas').width();
@@ -136,7 +136,7 @@ var caefecentOfWidth = function (o, val) {
 function drawGridLabels(years) {
     document.getElementById("grid-labels").innerText = '';
     table = document.createElement("table");
-    table.className = "table grid-labels table-responsive ml-4";
+    table.className = "table grid-labels table-responsive pl-5";
     row = table.insertRow();
 
     var stepCell = Math.floor(years.length / 15);
@@ -218,7 +218,7 @@ document.addEventListener("click", function (event) {
                 "amountAxisDescription": "Car Price",
                 "timeAxisDescription": "CAR PURCHASE YEARS FROM NOW",
                 "ages": ['4 Years', '5 Years', '6 Years'],
-                "amount": [50000, 40000, 35000],
+                "amount": [50000, 40000.25, 35000.6],
                 "state": [
                     [
                         {"color": [0.0, 1.0, 0.0], "value": 70,},
@@ -312,7 +312,7 @@ trmodal += '<div class="modal-dialog modal-dialog-centered" role="document"><div
 
             for (var j = goalObject.tradeoff.amount.length -1; j >= 0 ; j--) {
                 trmodal += '<tr>';
-                trmodal += '<th>' + goalObject.tradeoff.amount[j] + '</th>';
+                trmodal += '<th>' + Math.round(goalObject.tradeoff.amount[j]) + '</th>';
                 for (var it = 0; it < goalObject.tradeoff.state.length; it++) {
                     trmodal += '<td><div class="card-value"  style="background:' +
                         generateColor(goalObject.tradeoff.state[j][it].color) + '">' +
@@ -432,11 +432,13 @@ function progrssAchievability(achievValue, state) {
     var colorS = generateColor(state);
     if (achievValue <= 50) {
         styleValue = "background-image: linear-gradient(" + (90 - achievValue * 3.6) +
-            "deg," + lightenDarkenColor(colorS, 80) + " 50%, transparent 50%), linear-gradient(90deg, " +
-            colorS + " 50%, " + lightenDarkenColor(colorS, 80) + " 50%);";
+            "deg," + "#E9F0F7" + " 50%, transparent 50%), linear-gradient(90deg, " +
+            colorS + " 50%, " + "#E9F0F7" + " 50%);";
+            // colorS + " 50%, " + lightenDarkenColor(colorS, 80) + " 50%);";
     } else {
         styleValue = "background-image: linear-gradient(90deg," + colorS + " 50%, transparent 50%), linear-gradient(" +
-            (270 - achievValue * 3.6) + "deg, " + colorS + " 50%, " + lightenDarkenColor(colorS, 80) + " 50%);";
+            (270 - achievValue * 3.6) + "deg, " + colorS + " 50%, " + "#E9F0F7" + " 50%);";
+            // (270 - achievValue * 3.6) + "deg, " + colorS + " 50%, " + lightenDarkenColor(colorS, 80) + " 50%);";
     }
     return styleValue;
 }
@@ -610,16 +612,16 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
                     modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
                         '<div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(0, [0.9, 0.2, 0.5]) + '">' +
-                        '<div class="overlay dart-title"><p class="mt-2">0%</p>' +
-                        '<p><small></small></p></div></div></div>';
+                        '<div class="overlay dart-title"><div class="pt-2"><p>0%</p>' +
+                        '<p><small></small></p></div></div></div></div>';
                     modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
                         '<div class="row justify-content-between"><p class="col-md-6">' +
                         '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>';
                     modalContent += '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(changedObject.calc_goal_result.score, changedObject.calc_goal_result.state) + '">' +
-                        '<div class="overlay dart-title"><p>' +
+                        '<div class="overlay dart-title"><div class="pt-2"><p>' +
                         changedObject.calc_goal_result.score +
-                        '%</p><p><small>' + dateWithMonth(changedObject.calc_goal_result.date) + '</small></p></div></div></div></div>';
+                        '%</p><p><small>' + dateWithMonth(changedObject.calc_goal_result.date) + '</small></p></div></div></div></div></div>';
                     modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
                         '<small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p><p class="col-md-6 text-right">' +
                         '<small>Goal Achievability</small></p></div></div></div></div></div>';
@@ -658,16 +660,16 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
 
                         '<div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(initObject.calc_goal_result.score, initObject.calc_goal_result.state) + '">' +
-                        '<div class="overlay dart-title"><p>' +
+                        '<div class="overlay dart-title"><div class="pt-2"><p>' +
                         initObject.calc_goal_result.score + '%</p>' +
                         '<p><small>' + dateWithMonth(initObject.goal_data.date) +
-                        '</small></p></div></div></div>';
+                        '</small></p></div></div></div></div>';
                     modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
                         '<div class="row justify-content-between"><p class="col-md-6">' +
                         '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>';
                     modalContent += '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(0, [0.9, 0.2, 0.5]) + '">' +
-                        '<div class="overlay dart-title"><p class="mt-2">0%</p><p><small></small></p></div></div></div></div>';
+                        '<div class="overlay dart-title"><div class="pt-2"><p>0%</p><p><small></small></p></div></div></div></div></div>';
                     modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
                         '<small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p><p class="col-md-6 text-right">' +
                         '<small>Goal Achievability</small></p></div></div></div></div></div>';
@@ -702,18 +704,18 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
                     modalContent += '<div class="col-md-7"><div class="row"><div class="col-md-4">' +
                         '<div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(initObject.calc_goal_result.score, initObject.calc_goal_result.state) + '">' +
-                        '<div class="overlay dart-title"><p>' +
+                        '<div class="overlay dart-title"><div class="pt-2"><p>' +
                         initObject.calc_goal_result.score + '%</p>' +
                         '<p><small>' + dateWithMonth(initObject.goal_data.date) +
-                        '</small></p></div></div></div>';
+                        '</small></p></div></div></div></div>';
                     modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
                         '<div class="row justify-content-between"><p class="col-md-6">' +
                         '<small>From</small></p><p class="col-md-6 text-right"><small>To</small></p></div></div>';
                     modalContent += '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(changedObject.calc_goal_result.score, changedObject.calc_goal_result.state) + '">' +
-                        '<div class="overlay dart-title"><p>' +
+                        '<div class="overlay dart-title"><div class="pt-2"><p>' +
                         changedObject.calc_goal_result.score +
-                        '%</p><p><small>' + dateWithMonth(changedObject.goal_data.date) + '</small></p></div></div></div></div>';
+                        '%</p><p><small>' + dateWithMonth(changedObject.goal_data.date) + '</small></p></div></div></div></div></div>';
                     modalContent += '<div class="row justify-content-between mt-2"><p class="col-md-6">' +
                         '<small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p><p class="col-md-6 text-right">' +
                         '<small>Goal Achievability</small></p></div></div></div></div></div>';
@@ -745,9 +747,9 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
 
                         '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(initObject2.calc_goal_result.score, initObject2.calc_goal_result.state) + '">' +
-                        '<div class="overlay dart-title"><p>' +
+                        '<div class="overlay dart-title"><div class="pt-2"><p>' +
                         initObject2.calc_goal_result.score + '%</p><p>' +
-                        '<small>' + dateWithMonth(initObject2.goal_data.date) + '</small></p></div></div></div>';
+                        '<small>' + dateWithMonth(initObject2.goal_data.date) + '</small></p></div></div></div></div>';
 
                     modalContent += '<div class="col-md-4"><div class="von-bis"></div>' +
                         '<div class="row justify-content-between"><p class="col-md-6">' +
@@ -755,9 +757,9 @@ function createEffectOfChangesModal(changesResponseObj, is_informational) {
 
                         '<div class="col-md-4"><div class="radialProgressBar left-20 small" style="' +
                         progrssAchievability(changedObject2.calc_goal_result.score, changedObject2.calc_goal_result.state) + '">' +
-                        '<div class="overlay dart-title"><p>' +
+                        '<div class="overlay dart-title"><div class="pt-2"><p>' +
                         changedObject2.calc_goal_result.score +
-                        '%</p><p><small>' + dateWithMonth(changedObject2.goal_data.date) + '</small></p></div></div></div></div>';
+                        '%</p><p><small>' + dateWithMonth(changedObject2.goal_data.date) + '</small></p></div></div></div></div></div>';
                     modalContent += '<div class="row justify-content-between mt-2">' +
                         '<p class="col-md-6"><small style="display: inline-block; margin-left: 10px">Goal Achievability</small></p>' +
                         '<p class="col-md-6 text-right"><small>Goal Achievability</small></p>' +
