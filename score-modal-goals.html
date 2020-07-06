@@ -330,20 +330,20 @@
                     <!--Car goal-->
                     <div class="carousel-item">
                         <div class="row justify-content-between" style="background: #68D12F">
-                            <div class="col-lg-7 m-auto">
+                            <div class="col-lg-7 m-md-auto col-sm-6 float-sm-left">
                                 <div class="col-md-12">
                                     <p class="white-grey-text">Initial Assessment: On-Track</p>
                                 </div>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-5 col-sm-6">
                                 <div class="col-md-12">
                                     <div class="score-and-value text-center row">
-                                        <div class="col-md-6 col-lg-6 text-right">
+                                        <div class="col-md-5 col-lg-5 col-sm-3 text-right">
                                             <div class="row justify-content-end">
                                                 <p class="big-title-big">83</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-lg-6 text-left">
+                                        <div class="col-md-7 col-lg-7 col-sm-9 text-left">
                                             <h6 class="mt-3 ml-1 ">Financial</h6>
                                             <h6 class="ml-1 ">Wellness Score</h6>
                                         </div>
@@ -1286,38 +1286,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-lg-12 col-form-label text-left">
-                                        <span class="text-bold">
-									 Flexible Monthly Expenses
-									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
-								        </span>
-                                        <p class="text13">Expenses like reading or personal care products are
-                                            flexible.</p>
-                                    </label>
-                                    <div class="col-lg-10">
-                                        <input type="text"
-                                               class="form-control form-control-sm number expense-part"
-                                               name="expense-part" value="" placeholder=""/>
-                                    </div>
-
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-lg-12 col-form-label text-left">
-								<span class="text-bold">
-									 Very Flexible Monthly Expenses
-									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
-								</span>
-                                        <p class="text13">Some expenses like alcohol, entertainment, and apparel are
-                                            very flexible.
-                                        </p>
-                                    </label>
-                                    <div class="col-lg-10">
-                                        <input type="text"
-                                               class="form-control form-control-sm number expense-part"
-                                               name="expense-part" value="" placeholder="$"/>
-                                    </div>
-                                </div>
 
                                 <div class="form-group row">
 
@@ -1334,6 +1302,42 @@
                                                name="expense-part" value="" placeholder="$"/>
                                     </div>
                                 </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+                                                <span class="text-bold">
+                                                     Somewhat Flexible Monthly Expenses
+                                                    <i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+                                                </span>
+                                        <p class="text13">Somewhat flexible expenses like food and transportation can
+                                            still be trimmed if needed.</p>
+                                    </label>
+                                    <div class="col-lg-10">
+                                        <input type="text" id="somewhat-expense"
+                                               class="form-control form-control-sm number expense-part"
+                                               name="" value="" placeholder=""/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-lg-12 col-form-label text-left">
+                                        <span class="text-bold">
+									 Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								        </span>
+                                        <p class="text13">Expenses like reading or personal care products are
+                                            flexible.</p>
+                                    </label>
+                                    <div class="col-lg-10">
+                                        <input type="text"
+                                               class="form-control form-control-sm number expense-part"
+                                               name="expense-part" value="" placeholder=""/>
+                                    </div>
+
+                                </div>
+
+
+
                             </div>
                             <div class="col-md-6 col-lg-6 text-right">
                                 <h2 class="modal-title text-bold">Expenses</h2>
@@ -1347,20 +1351,21 @@
                                     [zipcode].
                                 </p>
                             </div>
-                            <div class="col-md-10 col-lg-10">
+                            <div class="col-md-6 col-lg-6">
                                 <div class="form-group row">
                                     <label for="" class="col-lg-12 col-form-label text-left">
-                                                <span class="text-bold">
-                                                     Somewhat Flexible Monthly Expenses
-                                                    <i class="fa fa-question-circle invisible" aria-hidden="true"></i>
-                                                </span>
-                                        <p class="text13">Somewhat flexible expenses like food and transportation can
-                                            still be trimmed if needed.</p>
+								<span class="text-bold">
+									 Very Flexible Monthly Expenses
+									<i class="fa fa-question-circle invisible" aria-hidden="true"></i>
+								</span>
+                                        <p class="text13">Some expenses like alcohol, entertainment, and apparel are
+                                            very flexible.
+                                        </p>
                                     </label>
-                                    <div class="col-lg-6">
-                                        <input type="text" id="somewhat-expense"
+                                    <div class="col-lg-10">
+                                        <input type="text"
                                                class="form-control form-control-sm number expense-part"
-                                               name="" value="" placeholder=""/>
+                                               name="expense-part" value="" placeholder="$"/>
                                     </div>
                                 </div>
 
@@ -1951,7 +1956,9 @@
         $("#chart").kendoChart({
             chartArea: {
                 width: 280,
-                height: 280
+                height: 280,
+                background: "",
+                margin: 0
             },
             seriesDefaults: {
                 border: {
@@ -1959,9 +1966,7 @@
                     width: 1
                 },
                 labels: {
-                    template: "#= kendo.format('{0:d}%', percentage*100)#",
-                    position: "outsideEnd",
-                    visible: true,
+                    visible: false,
                     background: "transparent"
                 }
             },
@@ -1999,7 +2004,9 @@
         $("#chart-car").kendoChart({
             chartArea: {
                 width: 280,
-                height: 280
+                height: 280,
+                background: "",
+                margin: 0
             },
             seriesDefaults: {
                 border: {
@@ -2009,7 +2016,7 @@
                 labels: {
                     template: "#= kendo.format('{0:d}%', percentage*100)#",
                     position: "outsideEnd",
-                    visible: true,
+                    visible: false,
                     background: "transparent"
                 }
             },

@@ -159,7 +159,7 @@ $(document).ready(function () {
 
 //After closing modal hide edit-delete message bar
     $('#confirmDelete').on('hidden.bs.modal', function () {
-        console.log($('.msg_history').find('.active'));
+        //console.log($('.msg_history').find('.active'));
         $('.msg_history').find('.active').removeClass('active');
     });
 

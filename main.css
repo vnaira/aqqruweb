@@ -90,9 +90,6 @@ body {
 }
 
 .middle-value {
-    background: url("css/img/arrowright.png");
-    background-repeat: no-repeat;
-    background-position: bottom 0 right 0;
     width: 390px;
     min-height: 260px;
 }

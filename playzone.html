@@ -6,7 +6,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
+          rel="stylesheet">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
 
@@ -27,7 +28,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.bootstrap-v4.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.bootstrap-v4.min.css"/>
     <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.aspnetmvc.min.js"></script>
 
@@ -35,8 +36,9 @@
         div.balSlider {
             width: 100%;
         }
-        .k-slider-horizontal .k-slider-buttons .k-slider-track{
-            width: 85%!important;
+
+        .k-slider-horizontal .k-slider-buttons .k-slider-track {
+            width: 85% !important;
         }
     </style>
 </head>
@@ -63,7 +65,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href=""  data-toggle="modal" data-target="#summary">
                         <i class="nc-icon nc-summary"></i>
                         <p>Summary</p>
                     </a>
@@ -102,29 +104,31 @@
         <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-blue">
             <div class="container-fluid pr-0">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="">Aqqru<i class="tm"></i>
+                    <a class="navbar-brand" href="">
+                        Aqqru<span class="tm">TM</span>
                     </a>
                 </div>
-                <div class="col-md-6 pr-0 nav-panel">
+                <div class="col-md-10 col-lg-10 pr-0 nav-panel">
                     <div class="row justify-content-end align-items-center">
-                        <div class="col border-right text-center mt-2">
+                        <div class="switch-container border-right text-center">
                             <label class="switch">
-                                <input type="checkbox" checked/>
+                                <input type="checkbox">
                                 <span class="slider round"></span>
                             </label>
                             <span class="nb-icon pl-2">Plan Locked</span>
                         </div>
-                        <div class="col text-center">
-                            <span class="nb-icon nb-user">Johnny Appleseed</span>
+                        <div class="user-box text-center">
+                            <span class="nb-icon nb-user" data-toggle="modal"
+                                  data-target="#profileModal">asssssss</span>
                         </div>
-                        <div class="col">
-                            <div class="score-show text-center row" style="background: #68D12F">
+                        <div class="score-show">
+                            <div class="text-center row" style="background: #4ECC63">
                                 <div class="col-md-4 col-lg-3">
-                                    <p class="big-title-big">75</p>
+                                    <p class="big-title-big">100</p>
                                 </div>
                                 <div class="col-md-8 col-lg-9 text-left">
-                                    <h6 class="mt-3 ml-1 col-md-12">Financial</h6>
-                                    <h6 class="ml-1 col-md-12">Wellness Score</h6>
+                                    <h6 class="mtop-20 col-md-12">Financial</h6>
+                                    <h6 class="col-md-12">Wellness Score</h6>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +155,8 @@
                                             <div class="goal-name"><p>Add a Goal</p></div>
                                         </div>
                                         <div class="col-4">
-                                            <button class="small ml-1 mt-3" data-toggle="modal" data-dismiss="modal" data-target="#centralModalSm">
+                                            <button class="small ml-1 mt-3" data-toggle="modal" data-dismiss="modal"
+                                                    data-target="#centralModalSm">
                                                 <span class="fa fa-plus-circle"></span>
                                             </button>
                                         </div>
@@ -214,17 +219,67 @@
 
                             <div id="grid-labels"></div>
 
-                            <form name="form_aaff11dd_bf31_4331_9f02_e51f7badbab0" id="form_aaff11dd_bf31_4331_9f02_e51f7badbab0" method="post" action="/Main/SaveChanges">
-                                <input type="hidden" id="ChangesInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0" name="ChangesInfo" value="00000000-0000-0000-0000-000000000000" />
-                                <input type="hidden" id="AvatarFullInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0" name="AvatarFullInfo" value="00000000-0000-0000-0000-000000000000" />
-                                <input type="hidden" id="RedirectURL_aaff11dd_bf31_4331_9f02_e51f7badbab0" name="RedirectURL" />
-                                <input name="_AntiforgeryToken" type="hidden" value="CfDJ8EFY60LBDvVKtB5W5nGCzNhAhrZX_MtOOubMteS-RQphjj3kEZXBYGR2f7i05fse6D1zAAOu0m3ymjUBVDeX4FKDHbwJFVW-g3rFztm4WDMoHLjsinxtT8txPT51MUyYSp5faaRnFNVGcuzHB0qSUe4AbyPTkpsSQLJJ6BK55uuKJvv54DOB_Z2b6X2KEAmnxQ" />
+                            <form name="form_aaff11dd_bf31_4331_9f02_e51f7badbab0"
+                                  id="form_aaff11dd_bf31_4331_9f02_e51f7badbab0" method="post"
+                                  action="/Main/SaveChanges">
+                                <input type="hidden" id="ChangesInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0"
+                                       name="ChangesInfo" value="00000000-0000-0000-0000-000000000000"/>
+                                <input type="hidden" id="AvatarFullInfo_aaff11dd_bf31_4331_9f02_e51f7badbab0"
+                                       name="AvatarFullInfo" value="00000000-0000-0000-0000-000000000000"/>
+                                <input type="hidden" id="RedirectURL_aaff11dd_bf31_4331_9f02_e51f7badbab0"
+                                       name="RedirectURL"/>
+                                <input name="_AntiforgeryToken" type="hidden"
+                                       value="CfDJ8EFY60LBDvVKtB5W5nGCzNhAhrZX_MtOOubMteS-RQphjj3kEZXBYGR2f7i05fse6D1zAAOu0m3ymjUBVDeX4FKDHbwJFVW-g3rFztm4WDMoHLjsinxtT8txPT51MUyYSp5faaRnFNVGcuzHB0qSUe4AbyPTkpsSQLJJ6BK55uuKJvv54DOB_Z2b6X2KEAmnxQ"/>
                             </form>
 
                             <script>
                                 // object for effect of changes modal
-                                var profiles = [{ "name": "qwerty asdfg", "birthdate": "1976-04-13T18:38:57Z", "gender": "Undefined", "household_member": "HeadOfHousehold", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Married", "zip_code": "32124", "profile_type": "person_headofhousehold", "id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9" }, { "name": "Child 3", "birthdate": "2014-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "275bb19c-571e-492b-8d1a-3d758137599b" }, { "name": "Child 2", "birthdate": "2015-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "985d4277-ecda-45ff-b18c-81ea6d7bd520" }, { "name": "Child 1", "birthdate": "2016-04-13T18:38:57Z", "gender": "Undefined", "household_member": "Child", "state_of_residence": "CA", "risk_tolerance": "Balanced", "tax_filing_status": "Single", "zip_code": "32124", "profile_type": "person_child", "id": "08b1b2c0-2e6a-4244-8c9d-9ad6bb84cda2" }];
-                                var initialAvatarResult = { "score": 69.0, "state": [0.0, 1.0, 0.0], "weight": 61.0 };
+                                var profiles = [{
+                                    "name": "qwerty asdfg",
+                                    "birthdate": "1976-04-13T18:38:57Z",
+                                    "gender": "Undefined",
+                                    "household_member": "HeadOfHousehold",
+                                    "state_of_residence": "CA",
+                                    "risk_tolerance": "Balanced",
+                                    "tax_filing_status": "Married",
+                                    "zip_code": "32124",
+                                    "profile_type": "person_headofhousehold",
+                                    "id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9"
+                                }, {
+                                    "name": "Child 3",
+                                    "birthdate": "2014-04-13T18:38:57Z",
+                                    "gender": "Undefined",
+                                    "household_member": "Child",
+                                    "state_of_residence": "CA",
+                                    "risk_tolerance": "Balanced",
+                                    "tax_filing_status": "Single",
+                                    "zip_code": "32124",
+                                    "profile_type": "person_child",
+                                    "id": "275bb19c-571e-492b-8d1a-3d758137599b"
+                                }, {
+                                    "name": "Child 2",
+                                    "birthdate": "2015-04-13T18:38:57Z",
+                                    "gender": "Undefined",
+                                    "household_member": "Child",
+                                    "state_of_residence": "CA",
+                                    "risk_tolerance": "Balanced",
+                                    "tax_filing_status": "Single",
+                                    "zip_code": "32124",
+                                    "profile_type": "person_child",
+                                    "id": "985d4277-ecda-45ff-b18c-81ea6d7bd520"
+                                }, {
+                                    "name": "Child 1",
+                                    "birthdate": "2016-04-13T18:38:57Z",
+                                    "gender": "Undefined",
+                                    "household_member": "Child",
+                                    "state_of_residence": "CA",
+                                    "risk_tolerance": "Balanced",
+                                    "tax_filing_status": "Single",
+                                    "zip_code": "32124",
+                                    "profile_type": "person_child",
+                                    "id": "08b1b2c0-2e6a-4244-8c9d-9ad6bb84cda2"
+                                }];
+                                var initialAvatarResult = {"score": 69.0, "state": [0.0, 1.0, 0.0], "weight": 61.0};
                                 var initial_goals = [{
                                     "goal_data": {
                                         "id": "9c2165c9-e757-4d71-bef7-e655ca92491a",
@@ -448,9 +503,137 @@
                                     //changedObj.changed_avatar_full_info = changedObjectData.avatar_full_info;
                                     //changedObj.redirect_url = changedObjectData.redirect_url;
 
-                                    changedObj.active_changed_goals = [{ "start_date": "2023-01-01T00:00:00Z", "end_date": "2023-01-01T00:00:00Z", "goal_type": "wedding_goal", "name": "Wedding", "amount": 20933, "image_id": null, "priority": "Low", "created_date": "2020-04-13T18:38:58Z", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "avatar_id": "00000000-0000-0000-0000-000000000000", "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47" }];
-                                    changedObj.changed_avatar_result = { "score": 68, "state": [0, 1, 0], "weight": 61 };
-                                    changedObj.changed_goals = [{ "goal_data": { "id": "9c2165c9-e757-4d71-bef7-e655ca92491a", "goal_type": "car_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Car", "amount": 35000, "percentExpenses": null, "priority": "Medium", "start_date": "2021-04-01T00:00:00Z", "end_date": "2022-04-01T00:00:00Z", "date": "2021-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 59, "state": [0, 1, 0], "weight": 3.761044082836465 } }, { "goal_data": { "id": "355cd57b-27b8-401f-bd49-e0860022808d", "goal_type": "college_education_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "275bb19c-571e-492b-8d1a-3d758137599b", "name": "College Education", "amount": 240000, "percentExpenses": null, "priority": "Medium", "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2032-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 52, "state": [0.119, 0.881, 0], "weight": 22.730184093849434 } }, { "goal_data": { "id": "701b6957-a0bd-48aa-9e50-6392e6da90b6", "goal_type": "emergency_fund", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Emergency Fund", "amount": 0, "percentExpenses": null, "priority": "High", "start_date": "0001-01-01T00:00:00", "end_date": "0001-01-01T00:00:00", "date": "2020-04-13T18:40:30.518924Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 98, "state": [0, 0, 1], "weight": 0 } }, { "goal_data": { "id": "7c950c1a-8df4-4717-a3a3-22084da27d92", "goal_type": "house_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "House", "amount": 267072, "percentExpenses": null, "priority": "Medium", "start_date": "2023-04-01T00:00:00Z", "end_date": "2025-04-01T00:00:00Z", "date": "2023-04-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 70, "state": [0, 0.993, 0.007], "weight": 34.04981577258645 } }, { "goal_data": { "id": "5acfe5ac-988f-4bc7-828f-561d23e3c7af", "goal_type": "retirement_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Retirement", "amount": 0, "percentExpenses": null, "priority": "Medium", "start_date": "2083-04-13T18:40:30.5189656Z", "end_date": "2087-04-13T18:40:30.5189803Z", "date": "2083-04-13T18:40:30.5189806Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 91, "state": [0, 0.269, 0.731], "weight": 0 } }, { "goal_data": { "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47", "goal_type": "wedding_goal", "avatar_id": "00000000-0000-0000-0000-000000000000", "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9", "name": "Wedding", "amount": 20933, "percentExpenses": null, "priority": "Low", "start_date": "2023-01-01T00:00:00Z", "end_date": "2023-01-01T00:00:00Z", "date": "2023-01-01T00:00:00Z", "icon_path": null, "css_class": null }, "calc_goal_result": { "score": 52, "state": [0, 0.119, 0.881], "weight": 0.660848532828542 } }];
+                                    changedObj.active_changed_goals = [{
+                                        "start_date": "2023-01-01T00:00:00Z",
+                                        "end_date": "2023-01-01T00:00:00Z",
+                                        "goal_type": "wedding_goal",
+                                        "name": "Wedding",
+                                        "amount": 20933,
+                                        "image_id": null,
+                                        "priority": "Low",
+                                        "created_date": "2020-04-13T18:38:58Z",
+                                        "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                        "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                        "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47"
+                                    }];
+                                    changedObj.changed_avatar_result = {"score": 68, "state": [0, 1, 0], "weight": 61};
+                                    changedObj.changed_goals = [{
+                                        "goal_data": {
+                                            "id": "9c2165c9-e757-4d71-bef7-e655ca92491a",
+                                            "goal_type": "car_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "Car",
+                                            "amount": 35000,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "2021-04-01T00:00:00Z",
+                                            "end_date": "2022-04-01T00:00:00Z",
+                                            "date": "2021-04-01T00:00:00Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {
+                                            "score": 59,
+                                            "state": [0, 1, 0],
+                                            "weight": 3.761044082836465
+                                        }
+                                    }, {
+                                        "goal_data": {
+                                            "id": "355cd57b-27b8-401f-bd49-e0860022808d",
+                                            "goal_type": "college_education_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "275bb19c-571e-492b-8d1a-3d758137599b",
+                                            "name": "College Education",
+                                            "amount": 240000,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "0001-01-01T00:00:00",
+                                            "end_date": "0001-01-01T00:00:00",
+                                            "date": "2032-04-01T00:00:00Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {
+                                            "score": 52,
+                                            "state": [0.119, 0.881, 0],
+                                            "weight": 22.730184093849434
+                                        }
+                                    }, {
+                                        "goal_data": {
+                                            "id": "701b6957-a0bd-48aa-9e50-6392e6da90b6",
+                                            "goal_type": "emergency_fund",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "Emergency Fund",
+                                            "amount": 0,
+                                            "percentExpenses": null,
+                                            "priority": "High",
+                                            "start_date": "0001-01-01T00:00:00",
+                                            "end_date": "0001-01-01T00:00:00",
+                                            "date": "2020-04-13T18:40:30.518924Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        }, "calc_goal_result": {"score": 98, "state": [0, 0, 1], "weight": 0}
+                                    }, {
+                                        "goal_data": {
+                                            "id": "7c950c1a-8df4-4717-a3a3-22084da27d92",
+                                            "goal_type": "house_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "House",
+                                            "amount": 267072,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "2023-04-01T00:00:00Z",
+                                            "end_date": "2025-04-01T00:00:00Z",
+                                            "date": "2023-04-01T00:00:00Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {
+                                            "score": 70,
+                                            "state": [0, 0.993, 0.007],
+                                            "weight": 34.04981577258645
+                                        }
+                                    }, {
+                                        "goal_data": {
+                                            "id": "5acfe5ac-988f-4bc7-828f-561d23e3c7af",
+                                            "goal_type": "retirement_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "Retirement",
+                                            "amount": 0,
+                                            "percentExpenses": null,
+                                            "priority": "Medium",
+                                            "start_date": "2083-04-13T18:40:30.5189656Z",
+                                            "end_date": "2087-04-13T18:40:30.5189803Z",
+                                            "date": "2083-04-13T18:40:30.5189806Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        }, "calc_goal_result": {"score": 91, "state": [0, 0.269, 0.731], "weight": 0}
+                                    }, {
+                                        "goal_data": {
+                                            "id": "1458ef2a-4df5-4dfb-8269-7d7f3d528b47",
+                                            "goal_type": "wedding_goal",
+                                            "avatar_id": "00000000-0000-0000-0000-000000000000",
+                                            "person_id": "02dd5200-b66c-4bd3-aac5-4be6f23664c9",
+                                            "name": "Wedding",
+                                            "amount": 20933,
+                                            "percentExpenses": null,
+                                            "priority": "Low",
+                                            "start_date": "2023-01-01T00:00:00Z",
+                                            "end_date": "2023-01-01T00:00:00Z",
+                                            "date": "2023-01-01T00:00:00Z",
+                                            "icon_path": null,
+                                            "css_class": null
+                                        },
+                                        "calc_goal_result": {
+                                            "score": 52,
+                                            "state": [0, 0.119, 0.881],
+                                            "weight": 0.660848532828542
+                                        }
+                                    }];
                                     changedObj.changed_info = "860dd838_6a2e_47aa_935f_0e8ee127740e_637224000304505835";
                                     changedObj.changed_avatar_full_info = "ee42007f_8b40_42b3_82d7_f75d4ff165a8_637224000304875296";
                                     changedObj.redirect_url = null;
@@ -530,98 +713,62 @@
                                     <div class="col-md-12 mb-4 card-border-radius border">
                                         <div class="card-block p-3">
                                             <span class="">Goal Suggestion</span>
-                                            <p class="card-text mt-3">Consider delaying retirement by 3 years to increase achievability of your House goal from 45% to 70%</p>
+                                            <p class="card-text mt-3">Consider delaying retirement by 3 years to
+                                                increase achievability of your House goal from 45% to 70%</p>
                                             <div class="row justify-content-end">
                                                 <div class="col-md-9"></div>
 
                                                 <script>
 
-                                                    function animateGoal(suggestionId) {
-                                                        var suggestion = $.grep(suggestions, function (n, i) {
-                                                            return n.id === suggestionId;
-                                                        })[0];
+                                                    function animateGoal(goal_id, dateValue) {
 
-                                                        if (suggestion == null && suggestion.goalInfo == null)
-                                                            kendo.alert("There is no suggestion information to process.");
-
-                                                        var goal_id = suggestion.goalInfo.goal_item.id;
-                                                        var priorityValue = suggestion.goalInfo.goal_item.priority;
-                                                        var dateValue = new Date(suggestion.goalInfo.goal_result.end_date).getFullYear();
-
+                                                        //window.scrollTo({top: 0, behavior: 'smooth'});
+                                                        // setTimeout(function() {},10000)
                                                         var draggedElement = document.getElementById(goal_id);
+
+                                                        var priorityValue = draggedElement.getAttribute('data-status-priority');
                                                         var oldate = draggedElement.getAttribute('data-status-year');
+                                                        //  if (dateValue > oldate) {
+
+                                                        var oldPlace = document.querySelector("[data-priority='" + priorityValue + "'][data-target='" + oldate + "']");
+
+                                                        var newPlace = document.querySelector("[data-priority='" + priorityValue + "'][data-target='" + dateValue + "']");
+                                                        $("#" + goal_id).animate({
+                                                            left: oldPlace.offsetLeft + 60 + 'px',
+                                                            top: '-=15px',
+                                                            height: '+=20px',
+                                                            width: '+=20px'
+                                                        });
+
+                                                        $("#" + goal_id).animate({
+                                                            left: newPlace.offsetLeft + 'px',
+
+                                                        }, 6000);
+                                                        $("#" + goal_id).animate({
+                                                            left: newPlace.offsetLeft + 'px',
+                                                            top: '+=15px',
+                                                            height: '-=20px',
+                                                            width: '-=20px'
+                                                        });
+
+                                                        oldPlace.removeChild(draggedElement);
+                                                        newPlace.appendChild(draggedElement);
 
 
-                                                        if (goal_id !== 'undefined' || goal_id !== null) {
-
-                                                            // when goal moves to right
-                                                            if (dateValue > oldate) {
-
-                                                                for (var i = oldate; i < dateValue; i++) {
-
-                                                                    var oldPlace = document.querySelector("[data-priority='" + priorityValue + "'][data-target='" + i + "']");
-                                                                    setTimeout(() => {
-                                                                    }, 3000);
-                                                                    oldPlace.removeChild(draggedElement);
-                                                                    var j = parseInt(i) + 1;
-                                                                    var cellByPriority = document.querySelector("[data-priority='" + priorityValue + "'][data-target='" + j + "']");
-                                                                    cellByPriority.appendChild(draggedElement);
-                                                                }
-                                                            }
-                                                            // when gola moves to left
-                                                            else {
-                                                                for (var t = oldate; t > dateValue; t--) {
-
-                                                                    var oldPlace = document.querySelector("[data-priority='" + priorityValue + "'][data-target='" + t + "']");
-                                                                    setTimeout(() => {
-                                                                    }, 3000);
-                                                                    oldPlace.removeChild(draggedElement);
-                                                                    var k = parseInt(t) - 1;
-                                                                    var cellByPriority = document.querySelector("[data-priority='" + priorityValue + "'][data-target='" + k + "']");
-                                                                    cellByPriority.appendChild(draggedElement)
-
-                                                                }
-                                                            }
-                                                            draggedElement.setAttribute('data-status-priority', priorityValue);
-                                                            draggedElement.setAttribute('data-status-year', dateValue);
-                                                        }
+                                                        draggedElement.setAttribute('data-status-priority', priorityValue);
+                                                        draggedElement.setAttribute('data-status-year', dateValue);
 
                                                         // After animation open effect of changes modal with a new goals
-                                                        $.ajax({
-                                                            type: "POST",
-                                                            url: "/api/MainAPI/PrepareGoalSuggestion",
-                                                            beforeSend: function (xhr) {
-                                                                xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
-                                                            },
-                                                            data: JSON.stringify({
-                                                                id: suggestion.id,
-                                                                actionType: suggestion.actionType,
-                                                                goalInfo: suggestion.goalInfo
-                                                            }),
-                                                            contentType: "application/json; charset=utf-8",
-                                                            dataType: "json",
-                                                            //async: false,
-                                                            success: function (msg) {
-                                                                var changedObjectData = msg;
-                                                                changedObj.active_changed_goals = changedObjectData.changed_objects;
-                                                                changedObj.changed_avatar_result = changedObjectData.avatar_result;
-                                                                changedObj.changed_goals = changedObjectData.goals;
-                                                                changedObj.changed_info = changedObjectData.changes_info;
-                                                                changedObj.changed_avatar_full_info = changedObjectData.avatar_full_info;
-                                                                changedObj.redirect_url = changedObjectData.redirect_url;
-
-                                                                createEffectOfChangesModal(changedObj, false);
-                                                                $('#effect-of-changes').modal('show');
-                                                            },
-                                                            error: function (req, status, error) {
-                                                                kendo.alert("Something went wrong. Could not open Effect of Changes window.");
-                                                            }
-                                                        });
+                                                        createEffectOfChangesModal(changedObj, false);
+                                                        $('#effect-of-changes').modal('show');
                                                     }
                                                 </script>
 
                                                 <div class="text-right col-md-3">
-                                                    <button class="btn btn-blue w-100" onclick="animateGoal('355cd57b-27b8-401f-bd49-e0860022808d','2048')">Try It</button>
+                                                    <button class="btn btn-blue w-100"
+                                                            onclick="animateGoal('5acfe5ac-988f-4bc7-828f-561d23e3c7af','2030')">
+                                                        Try It
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -632,17 +779,22 @@
                                             <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
                                                     data-placement="right" title="">?
                                             </button>
-                                            <p class="card-text mt-3">Given our projections for interest rates going forward, we see a 98% chance of refinancing your mortgage in the future with an average savings of $17,871</p>
+                                            <p class="card-text mt-3">Given our projections for interest rates going
+                                                forward, we see a 98% chance of refinancing your mortgage in the future
+                                                with an average savings of $17,871</p>
                                         </div>
                                     </div>
                                     <div class="col-md-12 mb-4 card-border-radius border">
                                         <div class="card-block p-3">
                                             <span class="">Goal Suggestion</span>
-                                            <p class="card-text mt-3">Consider delaying retirement by 3 years to increase achievability of your House goal from 45% to 70%</p>
+                                            <p class="card-text mt-3">Consider delaying retirement by 3 years to
+                                                increase achievability of your House goal from 45% to 70%</p>
                                             <div class="row justify-content-end">
                                                 <div class="col-md-9"></div>
                                                 <div class="text-right col-md-3">
-                                                    <button class="btn btn-blue w-100" onclick="animateGoal(null,'2048')">Try It</button>
+                                                    <button class="btn btn-blue w-100"
+                                                            onclick="animateGoal(null,'2048')">Try It
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -658,8 +810,778 @@
 </div>
 
 
+
+
+
+
+<!--new code 24.06.2020-->
+
+<!--user modal-->
+<div class="modal right" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="profile-modal-scroll">
+                    <div class="status-content">
+                        <div class="profile_name  border-bottom">Me</div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-12">
+
+                                    <div class="form-group mt-3">
+                                        <label for="name_" class="col-form-label">Name</label>
+                                        <input id="name_" placeholder="" class="shadowed-input" autocomplete="off">
+                                        <script>
+                                            kendo.syncReady(function () {
+                                                $("#name_").kendoMaskedTextBox();
+                                            });
+                                        </script>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label for="date_picker_bd" class="col-form-label">Age</label>
+                                        <input id="date_picker_bd" class="shadowed-input"/>
+
+                                        <script>
+                                            kendo.syncReady(function () {
+                                                $("#date_picker_bd").kendoNumericTextBox({
+                                                    labels: false
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label for="zip_code" class="col-form-label">ZIP Code</label>
+                                        <input id="zip_code" placeholder="" class="shadowed-input" autocomplete="off">
+                                        <script>
+                                            kendo.syncReady(function () {
+                                                $("#zip_code").kendoMaskedTextBox();
+                                            });
+                                        </script>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label for="marital_status" class="col-form-label">Marital Status</label>
+                                        <input id="marital_status" placeholder="Select marital status"
+                                               class="shadowed-input"/>
+                                        <script>
+                                            kendo.syncReady(function () {
+                                                $("#marital_status").kendoComboBox();
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--spouse block-->
+                    <div id="spouse-parent">
+                        <div class="status-content-spouse mt-5" id="spouse" data-type="spouse">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="spouse_name">My Spouse</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="remove-block align-self-center" data-id="spouse_1"
+                                            onclick="removeElement(this,'spouse')"></button>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="border-bottom"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12">
+
+                                        <div class="form-group mt-3">
+                                            <label for="name_spouse" class="col-form-label">Name</label>
+                                            <input id="name_spouse" placeholder="" class="shadowed-input"
+                                                   autocomplete="off">
+                                            <script>
+                                                kendo.syncReady(function () {
+                                                    $("#name_spouse").kendoMaskedTextBox();
+                                                });
+                                            </script>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="db_spouse" class="col-form-label">Date of Birth</label>
+                                            <input id="db_spouse" class="shadowed-input"/>
+
+                                            <script>
+                                                kendo.syncReady(function () {
+                                                    $("#db_spouse").kendoNumericTextBox({
+                                                        labels: false
+                                                    });
+                                                });
+                                            </script>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--child block-->
+                    <div id="child-parent">
+                        <!--child item-->
+                        <div class="status-content-child mt-3 child-item" id="child1">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-9">
+                                    <div class="profile_name">My Child</div>
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <button class="remove-block align-self-center"
+                                            onclick="removeElement(this)" id="1"></button>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="border-bottom"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12">
+
+                                        <div class="form-group mt-3">
+                                            <label for="name_child" class="col-form-label">Name</label>
+                                            <input id="name_child" placeholder="" class="shadowed-input"
+                                                   autocomplete="off">
+                                            <script>
+                                                kendo.syncReady(function () {
+                                                    $("#name_child").kendoMaskedTextBox();
+                                                });
+                                            </script>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="dob_child" class="col-form-label">Age</label>
+                                            <input id="dob_child" class="shadowed-input"/>
+
+                                            <script>
+                                                kendo.syncReady(function () {
+                                                    $("#dob_child").kendoNumericTextBox({
+                                                        labels: false
+                                                    });
+                                                });
+                                            </script>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="status-content-child mt-3 child-item" id="child2">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="profile_name">My Child</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="remove-block align-self-center"
+                                            onclick="removeElement(this)" id="2"></button>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="border-bottom"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12">
+
+                                        <div class="form-group mt-3">
+                                            <label for="name_child_2" class="col-form-label">Name</label>
+                                            <input id="name_child_2" placeholder="" class="shadowed-input"
+                                                   autocomplete="off">
+                                            <script>
+                                                kendo.syncReady(function () {
+                                                    $("#name_child_2").kendoMaskedTextBox();
+                                                });
+                                            </script>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="dob_child_2" class="col-form-label">Age</label>
+                                            <input id="dob_child_2" class="shadowed-input"/>
+
+                                            <script>
+                                                kendo.syncReady(function () {
+                                                    $("#dob_child_2").kendoNumericTextBox({
+                                                        labels: false
+                                                    });
+                                                });
+                                            </script>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--add spouse button-->
+                    <div class="add-child-btn mt-5" id="add-spouse-btn">
+                        <div class="row justify-content-between">
+                            <div class="col-lg-9 col-md-9 mt-2">
+                                <div class="goal-name col-12"><p>Add a Spouse</p></div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="small mt-2" id="add-spouse" onclick="addSpouse()">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--add child button-->
+                    <div class="add-child-btn mt-3" id="add-child-button">
+                        <div class="row justify-content-between">
+                            <div class="col-lg-9 col-md-9 mt-2">
+                                <div class="goal-name col-12"><p>Add a Child</p></div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="small mt-2" id="add-child" onclick="addChild()">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-3 mb-3">
+                        <div class="border-bottom"></div>
+                    </div>
+
+                    <div class="col-lg-12 mt-3">
+                        <button class="grey-btn-profile" id="help-menu">Help</button>
+                    </div>
+                    <div class="col-lg-12 mt-3 mb-3">
+                        <button class="grey-btn-profile">Reset Data</button>
+                    </div>
+                </div>
+                <div class="row save-container">
+                    <div class="col-lg-12 mt-3">
+                        <button class="btn save-btn-profile">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="help-content-menu" id="help-content-menu" style="display: none;">
+        <div class="col-lg-12 mt-3">
+            <button class="grey-btn-profile">Provide Feedback</button>
+        </div>
+        <div class="col-lg-12 mt-3 mb-3">
+            <button class="grey-btn-profile">Report An Error</button>
+        </div>
+        <div class="col-lg-12 mt-3 mb-3">
+            <button class="grey-btn-profile">FAQ</button>
+        </div>
+    </div>
+    <script>
+        (function (){
+            $("#help-menu").click(function(){
+                $("#help-content-menu").toggle();
+            });
+
+            $('#profileModal').on('hide.bs.modal', function (e) {
+                $("#help-content-menu").hide();
+            });
+        }());
+
+        function addSpouse() {
+            var addContent = '';
+            if(document.getElementById('spouse') == null ){
+                addContent += '<div class="status-content-spouse mt-5" id="spouse" data-type="spouse"><div class="row">\n' +
+                    '<div class="col-lg-9 col-md-9"><div class="spouse_name">My Spouse</div></div><div class="col-lg-3 col-md-3"><button class="remove-block align-self-center" data-id="spouse"\n' +
+                    'onclick="removeElement(this, \'spouse\')"></button></div><div class="col-md-12"><div class="border-bottom"></div></div>\n' +
+                    '</div><div class="row"><div class="col-lg-12"><div class="col-lg-12"><div class="form-group mt-3">' +
+                    '<label for="name_spouse" class="col-form-label">Name</label><input id="name_spouse" placeholder="" class="shadowed-input"\n' +
+                    'autocomplete="off"></div><div class="form-group mt-3"><label for="db_spouse" class="col-form-label">Age</label>\n' +
+                    '<input id="db_spouse" class="shadowed-input"/></div></div></div></div></div>';
+                $('#spouse-parent').append(addContent);
+                $('#add-spouse-btn').css('display','none');
+                kendo.syncReady(function () {
+                    $("#name_spouse").kendoMaskedTextBox();
+                });
+                kendo.syncReady(function () {
+                    $("#db_spouse").kendoNumericTextBox({
+                    });
+                });
+
+            }
+        }
+
+        function addChild() {
+            var childHtml = '';
+            var child = $('#child-parent').find('.child-item');
+            var childItemCount = child.length;
+            if(childItemCount < 10){
+                var it = 'child' +(childItemCount +1);
+
+                childHtml += '<div class="status-content-child mt-3 child-item" id="'+it+'"><div class="row">\n' +
+                    '<div class="col-lg-9 col-md-9"><div class="profile_name">My Child</div>\n' +
+                    '</div><div class="col-lg-3 col-md-3"><button class="remove-block align-self-center remove-child" id="'+(childItemCount+1)+'"\n' +
+                    'onclick="removeElement(this)"></button></div>\n' +
+                    '<div class="col-md-12"><div class="border-bottom"></div>\n' +
+                    '</div></div><div class="row"><div class="col-lg-12">\n' +
+                    '<div class="col-lg-12"><div class="form-group mt-3">\n' +
+                    '<label for="name_'+it+'" class="col-form-label">Name</label>\n' +
+                    '<input id="name_'+it+'" placeholder="" class="shadowed-input"></div>\n' +
+                    ' <div class="form-group mt-3"><label for="dob_'+it+'" class="col-form-label">Age</label>\n' +
+                    '<input id="dob_'+it+'" class="shadowed-input"/></div>\n' +
+                    '</div></div></div></div>';
+
+
+                $('#child-parent').append(childHtml);
+                kendo.syncReady(function () {
+                    $("#name_"+it).kendoMaskedTextBox();
+                });
+
+                kendo.syncReady(function () {
+                    $("#dob_"+it).kendoNumericTextBox({
+                    });
+                });
+            }else {
+                alert('already 10 children');
+                $('#add-child-button').css('display','none')
+            }
+
+        }
+
+function removeElement(elem,elementId = 'child') {
+    if(confirm('Are you sure?')){
+        var element;
+        if(elementId === "spouse"){
+            element = document.getElementById(elementId);
+            element.parentNode.removeChild(element);
+            $('#add-spouse-btn').css('display','block');
+        }else {
+            var id = elem.id;
+            element = document.getElementById(elementId+id);
+            element.parentNode.removeChild(element);
+
+            var count = $('#child-parent').find('.child-item').length;
+           if(count< 10){
+               $('#add-child-button').css('display','block');
+           }
+        }
+    }
+}
+    </script>
+</div>
+<!--end of user modal-->
+
+<!--end new code 24.06.2020-->
+
+
+<!--summary modal code 07.07.2020-->
+<div class="modal right" id="summary" tabindex="-1" role="dialog" aria-labelledby="summaryLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header pt-0 pb-0">
+                <div class="modal-header-blue row">
+                    <div class="col-md-12">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <img src="css/img/link.png" alt="" width="30" class="ml-2"><span class="link-text">Save time by linking your financial accounts.</span>
+                        </div>
+                    </div>
+                    <nav class="col-md-12">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Income & Expenses</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Assets & Liabilities</a>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+
+            <div class="modal-body row">
+                <div class="col-md-12">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="profile-modal-scroll">
+                                <div class="status-content">
+                                    <div class="profile_name  border-bottom">Me</div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-12">
+
+                                                <div class="form-group mt-3">
+                                                    <label for="name_" class="col-form-label">Name</label>
+                                                    <input id="name_" placeholder="" class="shadowed-input" autocomplete="off">
+                                                    <script>
+                                                        kendo.syncReady(function () {
+                                                            $("#name_").kendoMaskedTextBox();
+                                                        });
+                                                    </script>
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label for="date_picker_bd" class="col-form-label">Age</label>
+                                                    <input id="date_picker_bd" class="shadowed-input"/>
+
+                                                    <script>
+                                                        kendo.syncReady(function () {
+                                                            $("#date_picker_bd").kendoNumericTextBox({
+                                                                labels: false
+                                                            });
+                                                        });
+                                                    </script>
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label for="zip_code" class="col-form-label">ZIP Code</label>
+                                                    <input id="zip_code" placeholder="" class="shadowed-input" autocomplete="off">
+                                                    <script>
+                                                        kendo.syncReady(function () {
+                                                            $("#zip_code").kendoMaskedTextBox();
+                                                        });
+                                                    </script>
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label for="marital_status" class="col-form-label">Marital Status</label>
+                                                    <input id="marital_status" placeholder="Select marital status"
+                                                           class="shadowed-input"/>
+                                                    <script>
+                                                        kendo.syncReady(function () {
+                                                            $("#marital_status").kendoComboBox();
+                                                        });
+                                                    </script>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--spouse block-->
+                                <div id="spouse-parent">
+                                    <div class="status-content-spouse mt-5" id="spouse" data-type="spouse">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <div class="spouse_name">My Spouse</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button class="remove-block align-self-center" data-id="spouse_1"
+                                                        onclick="removeElement(this,'spouse')"></button>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="border-bottom"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
+
+                                                    <div class="form-group mt-3">
+                                                        <label for="name_spouse" class="col-form-label">Name</label>
+                                                        <input id="name_spouse" placeholder="" class="shadowed-input"
+                                                               autocomplete="off">
+                                                        <script>
+                                                            kendo.syncReady(function () {
+                                                                $("#name_spouse").kendoMaskedTextBox();
+                                                            });
+                                                        </script>
+                                                    </div>
+                                                    <div class="form-group mt-3">
+                                                        <label for="db_spouse" class="col-form-label">Date of Birth</label>
+                                                        <input id="db_spouse" class="shadowed-input"/>
+
+                                                        <script>
+                                                            kendo.syncReady(function () {
+                                                                $("#db_spouse").kendoNumericTextBox({
+                                                                    labels: false
+                                                                });
+                                                            });
+                                                        </script>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--child block-->
+                                <div id="child-parent">
+                                    <!--child item-->
+                                    <div class="status-content-child mt-3 child-item" id="child1">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-md-9">
+                                                <div class="profile_name">My Child</div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3">
+                                                <button class="remove-block align-self-center"
+                                                        onclick="removeElement(this)" id="1"></button>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="border-bottom"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
+
+                                                    <div class="form-group mt-3">
+                                                        <label for="name_child" class="col-form-label">Name</label>
+                                                        <input id="name_child" placeholder="" class="shadowed-input"
+                                                               autocomplete="off">
+                                                        <script>
+                                                            kendo.syncReady(function () {
+                                                                $("#name_child").kendoMaskedTextBox();
+                                                            });
+                                                        </script>
+                                                    </div>
+                                                    <div class="form-group mt-3">
+                                                        <label for="dob_child" class="col-form-label">Age</label>
+                                                        <input id="dob_child" class="shadowed-input"/>
+
+                                                        <script>
+                                                            kendo.syncReady(function () {
+                                                                $("#dob_child").kendoNumericTextBox({
+                                                                    labels: false
+                                                                });
+                                                            });
+                                                        </script>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="status-content-child mt-3 child-item" id="child2">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <div class="profile_name">My Child</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button class="remove-block align-self-center"
+                                                        onclick="removeElement(this)" id="2"></button>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="border-bottom"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
+
+                                                    <div class="form-group mt-3">
+                                                        <label for="name_child_2" class="col-form-label">Name</label>
+                                                        <input id="name_child_2" placeholder="" class="shadowed-input"
+                                                               autocomplete="off">
+                                                        <script>
+                                                            kendo.syncReady(function () {
+                                                                $("#name_child_2").kendoMaskedTextBox();
+                                                            });
+                                                        </script>
+                                                    </div>
+                                                    <div class="form-group mt-3">
+                                                        <label for="dob_child_2" class="col-form-label">Age</label>
+                                                        <input id="dob_child_2" class="shadowed-input"/>
+
+                                                        <script>
+                                                            kendo.syncReady(function () {
+                                                                $("#dob_child_2").kendoNumericTextBox({
+                                                                    labels: false
+                                                                });
+                                                            });
+                                                        </script>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--add spouse button-->
+                                <div class="add-child-btn mt-5" id="add-spouse-btn">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-9 col-md-9 mt-2">
+                                            <div class="goal-name col-12"><p>Add a Spouse</p></div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button class="small mt-2" id="add-spouse" onclick="addSpouse()">
+                                                <span class="fa fa-plus-circle"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--add child button-->
+                                <div class="add-child-btn mt-3" id="add-child-button">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-9 col-md-9 mt-2">
+                                            <div class="goal-name col-12"><p>Add a Child</p></div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button class="small mt-2" id="add-child" onclick="addChild()">
+                                                <span class="fa fa-plus-circle"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 mt-3 mb-3">
+                                    <div class="border-bottom"></div>
+                                </div>
+
+                                <div class="col-lg-12 mt-3">
+                                    <button class="grey-btn-profile" id="help-menu">Help</button>
+                                </div>
+                                <div class="col-lg-12 mt-3 mb-3">
+                                    <button class="grey-btn-profile">Reset Data</button>
+                                </div>
+                            </div></div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                    </div>
+
+                    <div class="">
+                        <div class="col-lg-12 mt-3">
+                            <button class="btn save-btn-profile">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="help-content-menu" id="help-content-menu" style="display: none;">
+        <div class="col-lg-12 mt-3">
+            <button class="grey-btn-profile">Provide Feedback</button>
+        </div>
+        <div class="col-lg-12 mt-3 mb-3">
+            <button class="grey-btn-profile">Report An Error</button>
+        </div>
+        <div class="col-lg-12 mt-3 mb-3">
+            <button class="grey-btn-profile">FAQ</button>
+        </div>
+    </div>
+    <script>
+        (function (){
+            $("#help-menu").click(function(){
+                $("#help-content-menu").toggle();
+            });
+
+            $('#profileModal').on('hide.bs.modal', function (e) {
+                $("#help-content-menu").hide();
+            });
+        }());
+
+        function addSpouse() {
+            var addContent = '';
+            if(document.getElementById('spouse') == null ){
+                addContent += '<div class="status-content-spouse mt-5" id="spouse" data-type="spouse"><div class="row">\n' +
+                    '<div class="col-lg-9 col-md-9"><div class="spouse_name">My Spouse</div></div><div class="col-lg-3 col-md-3"><button class="remove-block align-self-center" data-id="spouse"\n' +
+                    'onclick="removeElement(this, \'spouse\')"></button></div><div class="col-md-12"><div class="border-bottom"></div></div>\n' +
+                    '</div><div class="row"><div class="col-lg-12"><div class="col-lg-12"><div class="form-group mt-3">' +
+                    '<label for="name_spouse" class="col-form-label">Name</label><input id="name_spouse" placeholder="" class="shadowed-input"\n' +
+                    'autocomplete="off"></div><div class="form-group mt-3"><label for="db_spouse" class="col-form-label">Age</label>\n' +
+                    '<input id="db_spouse" class="shadowed-input"/></div></div></div></div></div>';
+                $('#spouse-parent').append(addContent);
+                $('#add-spouse-btn').css('display','none');
+                kendo.syncReady(function () {
+                    $("#name_spouse").kendoMaskedTextBox();
+                });
+                kendo.syncReady(function () {
+                    $("#db_spouse").kendoNumericTextBox({
+                    });
+                });
+
+            }
+        }
+
+        function addChild() {
+            var childHtml = '';
+            var child = $('#child-parent').find('.child-item');
+            var childItemCount = child.length;
+            if(childItemCount < 10){
+                var it = 'child' +(childItemCount +1);
+
+                childHtml += '<div class="status-content-child mt-3 child-item" id="'+it+'"><div class="row">\n' +
+                    '<div class="col-lg-9 col-md-9"><div class="profile_name">My Child</div>\n' +
+                    '</div><div class="col-lg-3 col-md-3"><button class="remove-block align-self-center remove-child" id="'+(childItemCount+1)+'"\n' +
+                    'onclick="removeElement(this)"></button></div>\n' +
+                    '<div class="col-md-12"><div class="border-bottom"></div>\n' +
+                    '</div></div><div class="row"><div class="col-lg-12">\n' +
+                    '<div class="col-lg-12"><div class="form-group mt-3">\n' +
+                    '<label for="name_'+it+'" class="col-form-label">Name</label>\n' +
+                    '<input id="name_'+it+'" placeholder="" class="shadowed-input"></div>\n' +
+                    ' <div class="form-group mt-3"><label for="dob_'+it+'" class="col-form-label">Age</label>\n' +
+                    '<input id="dob_'+it+'" class="shadowed-input"/></div>\n' +
+                    '</div></div></div></div>';
+
+
+                $('#child-parent').append(childHtml);
+                kendo.syncReady(function () {
+                    $("#name_"+it).kendoMaskedTextBox();
+                });
+
+                kendo.syncReady(function () {
+                    $("#dob_"+it).kendoNumericTextBox({
+                    });
+                });
+            }else {
+                alert('already 10 children');
+                $('#add-child-button').css('display','none')
+            }
+
+        }
+
+        function removeElement(elem,elementId = 'child') {
+            if(confirm('Are you sure?')){
+                var element;
+                if(elementId === "spouse"){
+                    element = document.getElementById(elementId);
+                    element.parentNode.removeChild(element);
+                    $('#add-spouse-btn').css('display','block');
+                }else {
+                    var id = elem.id;
+                    element = document.getElementById(elementId+id);
+                    element.parentNode.removeChild(element);
+
+                    var count = $('#child-parent').find('.child-item').length;
+                    if(count< 10){
+                        $('#add-child-button').css('display','block');
+                    }
+                }
+            }
+        }
+    </script>
+</div>
+
+
+
+
+
+
+
+
+
 <!--Effect of changes modal-->
-<div class="modal fade" id="effect-of-changes" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+<div class="modal fade" id="effect-of-changes" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false"
+     data-backdrop="static">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" id="changesModal">
             <!-- modal body container -->
@@ -693,7 +1615,8 @@
                         <img src="css/img/wealth_goal.png" width="25" alt=""/> Target wealth</a>
                     <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="house_goal">
                         <img src="css/img/house_goal.png" width="25" alt=""/> House</a>
-                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="college_education_goal">
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal"
+                       data-type="college_education_goal">
                         <img src="css/img/collage_goal.png" width="25" alt=""/> Kids
                         Education</a>
                     <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="car_goal">
@@ -703,7 +1626,8 @@
                     </a>
                     <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="vacation_goal">
                         <img src="css/img/vacation_goal.png" width="25" alt=""/> Vacation</a>
-                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="continued_education_goal">
+                    <a class="dropdown-item" data-dismiss="modal" data-toggle="modal"
+                       data-type="continued_education_goal">
                         <img src="css/img/continued_education_goal.png" width="25"
                              alt=""/> Continued Education</a>
                     <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-type="purchase_goal">
@@ -717,13 +1641,14 @@
 
 
 <!-- Modal for Goal adding-->
-<div class="modal fade for-add-goal" id="add-form" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade for-add-goal" id="add-form" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+     data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
 
         <div class="modal-content">
 
             <div class="modal-body">
-                <button type="button" class="close p-2 text-right"  >
+                <button type="button" class="close p-2 text-right">
                     <span aria-hidden="true" data-dismiss="modal" aria-label="Close">×</span>
                 </button>
                 <!--goal icon and title -->
@@ -743,128 +1668,130 @@
 </div>
 
 
-
 <!-- Forms for Car goal-->
 <form class="" id="form-car_goal" style="display: none">
-            <div class="form-group mt-3">
-                <label for="car-goal-name" class="col-form-label">Goal name</label>
-                <input class="form-control shadowed-input" id="car-goal-name" value="Car">
+    <div class="form-group mt-3">
+        <label for="car-goal-name" class="col-form-label">Goal name</label>
+        <input class="form-control shadowed-input" id="car-goal-name" value="Car">
 
-                <script>
-                    kendo.syncReady(function () {
-                    $("#car-goal-name").kendoMaskedTextBox();
-                    });
-                </script>
-            </div>
-            <div class="form-group">
-                <label class="col-form-label">How important this goal?</label>
-                <div class="row">
-                    <div class="radio-toolbar row w-100">
-                        <div class="col-md-4">
-                            <input type="radio" id="car1" name="priority-house" value="Low"
-                                   class="k-button k-radio"/>
-                            <label class="k-radio-label w-100" for="car1">Low</label>
-                        </div>
-                        <div class="col-md-4">
-                            <input type="radio" id="car2" name="priority-house" value="Medium"
-                                   class="k-button k-radio"/>
-                            <label class="k-radio-label w-100" for="car2">Medium</label>
-                        </div>
-                        <div class="col-md-4">
-                            <input type="radio" id="car3" name="priority-house" value="High"
-                                   class="k-button k-radio"/>
-                            <label class="k-radio-label w-100" for="car3">High</label>
-                        </div>
-                    </div>
+        <script>
+            kendo.syncReady(function () {
+                $("#car-goal-name").kendoMaskedTextBox();
+            });
+        </script>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">How important this goal?</label>
+        <div class="row">
+            <div class="radio-toolbar row w-100">
+                <div class="col-md-4">
+                    <input type="radio" id="car1" name="priority-house" value="Low"
+                           class="k-button k-radio"/>
+                    <label class="k-radio-label w-100" for="car1">Low</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" id="car2" name="priority-house" value="Medium"
+                           class="k-button k-radio"/>
+                    <label class="k-radio-label w-100" for="car2">Medium</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" id="car3" name="priority-house" value="High"
+                           class="k-button k-radio"/>
+                    <label class="k-radio-label w-100" for="car3">High</label>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-form-label">Target purchase date</label>
-                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                        data-placement="right" title="Target start date description">?
-                </button>
-                <div class="demo-section k-content">
-                    <div id="daterangepicker" class="daterangepicker" title="daterangepicker"></div>
-                </div>
-                <small class="text-muted">You have selected 6</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Target purchase date</label>
+        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                data-placement="right" title="Target start date description">?
+        </button>
+        <div class="demo-section k-content">
+            <div id="daterangepicker" class="daterangepicker" title="daterangepicker"></div>
+        </div>
+        <small class="text-muted">You have selected 6</small>
+        <script>
+            kendo.syncReady(function () {
+                $("#daterangepicker").kendoDateRangePicker({
+                    labels: false
+                });
+            });
+        </script>
+    </div>
+
+    <div class="form-group">
+
+        <label class="col-form-label">Expected Car Price</label>
+        <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
+                data-placement="right" title="Expected Car Price">?
+        </button>
+        <input id="currency" type="number" class="form-control shadowed-input w-100"/>
+
+        <script>
+            kendo.syncReady(function () {
+                $("#currency").kendoNumericTextBox({
+                    format: "c",
+                    decimals: 3
+                });
+            });
+        </script>
+    </div>
+
+    <div class="form-group">
+        <p class="col-form-label">Condition</p>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" name="condition"
+                   id="customRadio1"/>
+            <label class="custom-control-label" for="customRadio1">New</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" name="condition"
+                   id="customRadio2"/>
+            <label class="custom-control-label" for="customRadio2">Used</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <label for="Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a">Car Size</label>
+                <input class="browser-default w-100 shadowed-input"
+                       id="Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a" name="Goal.CarType" type="text" value="1"
+                       data-role="dropdownlist">
                 <script>
                     kendo.syncReady(function () {
-                        $("#daterangepicker").kendoDateRangePicker({
-                            labels: false
+                        jQuery("#Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a").kendoDropDownList({
+                            "dataTextField": "Text", "dataValueField": "Value", "value": "1", "dataSource":
+                                [{"Text": "Compact Car", "Value": "1", "Selected": false},
+                                    {"Text": "Hybrid", "Value": "2", "Selected": false},
+                                    {"Text": "Electric", "Value": "3", "Selected": false},
+                                    {"Text": "Subcompact SUV", "Value": "4", "Selected": false},
+                                    {"Text": "Mid-size Car", "Value": "5", "Selected": false},
+                                    {"Text": "Mid-size SUV", "Value": "6", "Selected": false},
+                                    {"Text": "Full-size Car", "Value": "7", "Selected": false},
+                                    {"Text": "Mid-size Pickup Truck", "Value": "8", "Selected": false},
+                                    {"Text": "Compact SUV", "Value": "9", "Selected": false},
+                                    {"Text": "Entry-level Luxury Car", "Value": "10", "Selected": false},
+                                    {"Text": "Full-size Pickup Truck", "Value": "11", "Selected": false},
+                                    {"Text": "Full-size SUV", "Value": "12", "Selected": false},
+                                    {"Text": "High Performance Car", "Value": "13", "Selected": false},
+                                    {"Text": "High-end Luxury Car", "Value": "14", "Selected": false},
+                                    {"Text": "Luxury Car", "Value": "15", "Selected": false},
+                                    {"Text": "Luxury Compact SUV", "Value": "16", "Selected": false},
+                                    {"Text": "Luxury Full-size SUV", "Value": "17", "Selected": false},
+                                    {"Text": "Luxury Mid-size SUV", "Value": "18", "Selected": false},
+                                    {"Text": "Luxury Subcompact SUV", "Value": "19", "Selected": false},
+                                    {"Text": "Minivan", "Value": "20", "Selected": false},
+                                    {"Text": "Sports Car", "Value": "21", "Selected": false},
+                                    {"Text": "Subcompact Car", "Value": "22", "Selected": false},
+                                    {"Text": "Van", "Value": "23", "Selected": false}]
                         });
                     });
                 </script>
             </div>
-
-            <div class="form-group">
-
-                <label class="col-form-label">Expected Car Price</label>
-                <button type="button" class="btn tooltip-badge" data-toggle="tooltip"
-                        data-placement="right" title="Expected Car Price">?
-                </button>
-                    <input id="currency" type="number" class="form-control shadowed-input w-100" />
-
-                <script>
-                    kendo.syncReady(function () {
-                        $("#currency").kendoNumericTextBox({
-                            format: "c",
-                            decimals: 3
-                        });
-                    });
-                </script>
-            </div>
-
-            <div class="form-group">
-                <p class="col-form-label">Condition</p>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" name="condition"
-                           id="customRadio1"/>
-                    <label class="custom-control-label" for="customRadio1">New</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" name="condition"
-                           id="customRadio2"/>
-                    <label class="custom-control-label" for="customRadio2">Used</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12">
-                        <label for="Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a">Car Size</label>
-                        <input class="browser-default w-100 shadowed-input" id="Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a" name="Goal.CarType" type="text" value="1" data-role="dropdownlist">
-                        <script>
-                            kendo.syncReady(function () {
-                                jQuery("#Goal_CarType_34a8e8c3_ba10_4280_97a7_04e25504438a").kendoDropDownList({
-                                    "dataTextField": "Text", "dataValueField": "Value", "value": "1", "dataSource":
-                                        [{ "Text": "Compact Car", "Value": "1", "Selected": false },
-                                            { "Text": "Hybrid", "Value": "2", "Selected": false },
-                                            { "Text": "Electric", "Value": "3", "Selected": false },
-                                            { "Text": "Subcompact SUV", "Value": "4", "Selected": false },
-                                            { "Text": "Mid-size Car", "Value": "5", "Selected": false },
-                                            { "Text": "Mid-size SUV", "Value": "6", "Selected": false },
-                                            { "Text": "Full-size Car", "Value": "7", "Selected": false },
-                                            { "Text": "Mid-size Pickup Truck", "Value": "8", "Selected": false },
-                                            { "Text": "Compact SUV", "Value": "9", "Selected": false },
-                                            { "Text": "Entry-level Luxury Car", "Value": "10", "Selected": false },
-                                            { "Text": "Full-size Pickup Truck", "Value": "11", "Selected": false },
-                                            { "Text": "Full-size SUV", "Value": "12", "Selected": false },
-                                            { "Text": "High Performance Car", "Value": "13", "Selected": false },
-                                            { "Text": "High-end Luxury Car", "Value": "14", "Selected": false },
-                                            { "Text": "Luxury Car", "Value": "15", "Selected": false },
-                                            { "Text": "Luxury Compact SUV", "Value": "16", "Selected": false },
-                                            { "Text": "Luxury Full-size SUV", "Value": "17", "Selected": false },
-                                            { "Text": "Luxury Mid-size SUV", "Value": "18", "Selected": false },
-                                            { "Text": "Luxury Subcompact SUV", "Value": "19", "Selected": false },
-                                            { "Text": "Minivan", "Value": "20", "Selected": false },
-                                            { "Text": "Sports Car", "Value": "21", "Selected": false },
-                                            { "Text": "Subcompact Car", "Value": "22", "Selected": false },
-                                            { "Text": "Van", "Value": "23", "Selected": false }] });
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </div>
 
     <div class="form-group mt-5">
         <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
@@ -971,13 +1898,14 @@
     </div>
     <div class="form-group">
         <label for="mortgage_type" class="col-form-label">Mortgage Type</label>
-        <input class="browser-default w-100 shadowed-input" id="mortgage_type" name="Goal.HouseGoal" type="text" value="1" data-role="dropdownlist"/>
+        <input class="browser-default w-100 shadowed-input" id="mortgage_type" name="Goal.HouseGoal" type="text"
+               value="1" data-role="dropdownlist"/>
         <script>
             kendo.syncReady(function () {
                 jQuery("#mortgage_type").kendoDropDownList({
                     "dataTextField": "Text", "dataValueField": "Value", "value": "1", "dataSource":
-                        [{ "Text": "3D Years Fixed", "Value": "1", "Selected": false },
-                            { "Text": "3D Years Fixed", "Value": "2", "Selected": false },
+                        [{"Text": "3D Years Fixed", "Value": "1", "Selected": false},
+                            {"Text": "3D Years Fixed", "Value": "2", "Selected": false},
 
                         ]
                 });
@@ -1006,11 +1934,17 @@
         <div class="col-md-12">
             <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                       value="High"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio"
+                       value="Medium"/>
+                <label class="k-radio-label w-30"
+                       for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
             </div>
@@ -1046,7 +1980,7 @@
     </div>
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
-        <input id="currency-edu" type="number" class="form-control shadowed-input w-100" />
+        <input id="currency-edu" type="number" class="form-control shadowed-input w-100"/>
 
         <script>
             kendo.syncReady(function () {
@@ -1110,11 +2044,18 @@
                     <div class="col-md-12">
                         <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                            <input class="k-radio k-radio answer-btn opacity priority_ "
+                                   id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                                   value="High"/>
                             <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                            <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                            <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                                   id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority"
+                                   type="radio" value="Medium"/>
+                            <label class="k-radio-label w-30"
+                                   for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                            <input class="k-radio k-radio answer-btn opacity priority_ "
+                                   id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio"
+                                   value="Low"/>
                             <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
                         </div>
@@ -1127,7 +2068,7 @@
                     </button>
                     <div class="form-inline row">
                         <div class="form-group col-md-12">
-                            <input id="datepicker-kids-edu2" class="shadowed-input w-100"  placeholder="Years from now"/>
+                            <input id="datepicker-kids-edu2" class="shadowed-input w-100" placeholder="Years from now"/>
 
                             <script>
                                 kendo.syncReady(function () {
@@ -1191,11 +2132,17 @@
         <div class="col-md-12">
             <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                       value="High"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio"
+                       value="Medium"/>
+                <label class="k-radio-label w-30"
+                       for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
             </div>
@@ -1220,7 +2167,7 @@
 
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
-        <input id="currency-purchase" type="number" class="form-control shadowed-input w-100" title="wedding" />
+        <input id="currency-purchase" type="number" class="form-control shadowed-input w-100" title="wedding"/>
 
         <script>
             kendo.syncReady(function () {
@@ -1254,11 +2201,17 @@
         <div class="col-md-12">
             <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                       value="High"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio"
+                       value="Medium"/>
+                <label class="k-radio-label w-30"
+                       for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
             </div>
@@ -1282,24 +2235,24 @@
         </script>
 
     </div>
-        <div class="form-group">
-            <label class="col-form-label">Expected total cost </label>
-                <input id="currency-wedding" type="number" class="form-control shadowed-input w-100" title="wedding" />
+    <div class="form-group">
+        <label class="col-form-label">Expected total cost </label>
+        <input id="currency-wedding" type="number" class="form-control shadowed-input w-100" title="wedding"/>
 
-            <script>
-                kendo.syncReady(function () {
-                    $("#currency-wedding").kendoNumericTextBox({
-                        format: "c",
-                        decimals: 0
-                    });
+        <script>
+            kendo.syncReady(function () {
+                $("#currency-wedding").kendoNumericTextBox({
+                    format: "c",
+                    decimals: 0
                 });
-            </script>
+            });
+        </script>
 
-        </div>
+    </div>
 
-        <div class="form-group mt-5">
-            <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
-        </div>
+    <div class="form-group mt-5">
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
+    </div>
 
 </form>
 
@@ -1307,7 +2260,7 @@
 <form class="" id="form-emergency_fund" style="display: none">
     <div class="form-group mt-3">
         <label for="goal-name-emergency" class="col-form-label">Goal name</label>
-        <input class="form-control shadowed-input"  id="goal-name-emergency" value="Rainy Day Fund"/>
+        <input class="form-control shadowed-input" id="goal-name-emergency" value="Rainy Day Fund"/>
         <script>
             kendo.syncReady(function () {
                 $("#goal-name-emergency").kendoMaskedTextBox();
@@ -1320,11 +2273,17 @@
         <div class="col-md-12">
             <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                       value="High"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio"
+                       value="Medium"/>
+                <label class="k-radio-label w-30"
+                       for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
             </div>
@@ -1333,11 +2292,12 @@
 
 
             <label class="col-form-label">Months of living expenses to cover</label>
-            <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title="" data-original-title="Assuming all of the current expenses cannot be reduced, determines how much money you would need to last that many months if you lost your income.">
+            <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title=""
+                    data-original-title="Assuming all of the current expenses cannot be reduced, determines how much money you would need to last that many months if you lost your income.">
                 ?
             </button>
             <div class="form-group">
-                <input id="slider-fund" class="balSlider" value="0" title="Rainy Day Fund" />
+                <input id="slider-fund" class="balSlider" value="0" title="Rainy Day Fund"/>
             </div>
             <small>You have selected 6 Months</small>
             <script>
@@ -1351,26 +2311,26 @@
                 });
             </script>
 
-            </div>
-
         </div>
-        <div class="form-group">
-            <label class="col-form-label">Expected total cost</label>
-            <input id="currency-fund" type="number" class="form-control shadowed-input w-100" />
 
-            <script>
-                kendo.syncReady(function () {
-                    $("#currency-fund").kendoNumericTextBox({
-                        format: "c"
-                    });
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Expected total cost</label>
+        <input id="currency-fund" type="number" class="form-control shadowed-input w-100"/>
+
+        <script>
+            kendo.syncReady(function () {
+                $("#currency-fund").kendoNumericTextBox({
+                    format: "c"
                 });
-            </script>
+            });
+        </script>
 
-        </div>
+    </div>
 
-        <div class="form-group mt-5">
-            <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
-        </div>
+    <div class="form-group mt-5">
+        <button type="submit" class="btn btn-ok btn-block">Save And Continue</button>
+    </div>
 </form>
 
 <!--Add Vacation goal modal-->
@@ -1389,11 +2349,17 @@
         <div class="col-md-12">
             <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                       value="High"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio"
+                       value="Medium"/>
+                <label class="k-radio-label w-30"
+                       for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
             </div>
@@ -1420,7 +2386,8 @@
     </div>
     <div class="form-group">
         <label class="col-form-label">Expected total cost</label>
-        <input id="currency-vacation" type="number" class="form-control shadowed-input" title="co education" style="width: 100%;" />
+        <input id="currency-vacation" type="number" class="form-control shadowed-input" title="co education"
+               style="width: 100%;"/>
 
         <script>
             kendo.syncReady(function () {
@@ -1455,11 +2422,17 @@
         <div class="col-md-12">
             <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                       value="High"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio"
+                       value="Medium"/>
+                <label class="k-radio-label w-30"
+                       for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                <input class="k-radio k-radio answer-btn opacity priority_ "
+                       id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low"/>
                 <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
             </div>
@@ -1467,8 +2440,10 @@
     </div>
     <div class="form-group">
         <label for="goal-age" class="col-form-label">Target age</label>
-        <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right" title="Target age description">?</button>
-        <input id="goal-age" type="number" class="form-control shadowed-input w-100" />
+        <button type="button" class="btn tooltip-badge" data-toggle="tooltip" data-placement="right"
+                title="Target age description">?
+        </button>
+        <input id="goal-age" type="number" class="form-control shadowed-input w-100"/>
 
         <script>
             kendo.syncReady(function () {
@@ -1478,7 +2453,7 @@
     </div>
     <div class="form-group">
         <label for="goal-price" class="col-form-label">Target Wealth</label>
-        <input id="goal-price" type="number" class="form-control shadowed-input w-100" />
+        <input id="goal-price" type="number" class="form-control shadowed-input w-100"/>
 
         <script>
             kendo.syncReady(function () {
@@ -1536,11 +2511,18 @@
                     <div class="col-md-12">
                         <div class="btn-toolbar row justify-content-between" role="toolbar">
 
-                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio" value="High" />
+                            <input class="k-radio k-radio answer-btn opacity priority_ "
+                                   id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High" name="Priority" type="radio"
+                                   value="High"/>
                             <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_High">High</label>
-                            <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority" type="radio" value="Medium" />
-                            <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
-                            <input class="k-radio k-radio answer-btn opacity priority_ " id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio" value="Low" />
+                            <input checked="checked" class="k-radio k-radio answer-btn opacity priority_ "
+                                   id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium" name="Priority"
+                                   type="radio" value="Medium"/>
+                            <label class="k-radio-label w-30"
+                                   for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Medium">Medium</label>
+                            <input class="k-radio k-radio answer-btn opacity priority_ "
+                                   id="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low" name="Priority" type="radio"
+                                   value="Low"/>
                             <label class="k-radio-label w-30" for="Priority_224274a2_78b5_407d_b605_2f5bb7b20f34_Low">Low</label>
 
                         </div>
@@ -1619,15 +2601,10 @@
 </form><!--End Form Wealth goal -->
 
 
-
 <!--tradeoff modal-->
 <div class="modal fade" id="tradeoffModal_" tabindex="-1" role="dialog" aria-hidden="true">
 </div>
 <!-- Tradeoff Modal -->
-
-
-
-
 
 
 <!-- jQuery, Popper.js, Bootstrap JS -->
@@ -1653,8 +2630,8 @@
         // navbar active and inactive links
         var activeNavbar = changedObj.available_new_goal_items;
         const navItems = document.querySelectorAll('#goal-navbar a');
-        for(let items of navItems){
-            for(var i = 0; i < activeNavbar.length; i++) {
+        for (let items of navItems) {
+            for (var i = 0; i < activeNavbar.length; i++) {
                 if (activeNavbar[i].goal_type === items.getAttribute('data-type')) {
                     var g_type = activeNavbar[i].goal_type;
                     if (activeNavbar[i].enable === false) {
@@ -1662,7 +2639,7 @@
                         document.querySelector("[data-type='" + g_type + "']").removeAttribute('data-dismiss');
                         document.querySelector("[data-type='" + g_type + "']").classList.add('inactive');
                     } else {
-                        document.querySelector("[data-type='" + g_type + "']").setAttribute('data-target', '#add-'+g_type );
+                        document.querySelector("[data-type='" + g_type + "']").setAttribute('data-target', '#add-' + g_type);
                         document.querySelector("[data-type='" + g_type + "']").setAttribute('data-dismiss', 'modal');
                     }
                 }
@@ -1680,7 +2657,7 @@
 
 
         $('#tradeoffModal_').on('hidden.bs.modal', function () {
-            $('.radialProgressBar').css('z-index',1);
+            $('.radialProgressBar').css('z-index', 1);
         });
 
 
